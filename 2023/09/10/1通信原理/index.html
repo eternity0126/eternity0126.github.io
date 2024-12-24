@@ -1,0 +1,2091 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Eternity">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="通信原理笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通信原理">
+<meta property="og:url" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="通信原理笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/post/pc/%E6%A8%A1%E6%8B%9F%E9%80%9A%E4%BF%A1.png">
+<meta property="og:image" content="http://example.com/img/post/pc/%E6%95%B0%E5%AD%97%E9%80%9A%E4%BF%A1.png">
+<meta property="og:image" content="http://example.com/img/post/pc/%E4%BF%A1%E6%81%AF%E9%80%9F%E7%8E%87.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/img">
+<meta property="og:image" content="http://example.com/img/post/pc/%E8%87%AA%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0%E6%9B%B2%E7%BA%BF.png">
+<meta property="og:image" content="http://example.com/img/post/pc/%E8%87%AA%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E4%BE%8B%E9%A2%98.png">
+<meta property="og:image" content="http://example.com/img/post/pc/%E5%8A%9F%E7%8E%87.png">
+<meta property="og:image" content="http://example.com/img/post/pc/%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F.png">
+<meta property="og:image" content="http://example.com/img/post/pc/%E7%AA%84%E5%B8%A6.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/img">
+<meta property="og:image" content="http://example.com/img/post/pc/AM.png">
+<meta property="og:image" content="http://example.com/img/post/pc/AM%E8%A7%A3%E8%B0%83.png">
+<meta property="og:image" content="http://example.com/img/post/pc/SSB%E8%B0%83%E5%88%B6.png">
+<meta property="og:image" content="http://example.com/img/post/pc/SSB.png">
+<meta property="og:image" content="http://example.com/img/post/pc/VSB.png">
+<meta property="og:image" content="http://example.com/img/post/pc/%E5%9F%BA%E5%B8%A6%E7%B3%BB%E7%BB%9F.png">
+<meta property="og:image" content="http://example.com/img/post/pc/DSB%E6%8A%97%E5%99%AA%E5%A3%B0.png">
+<meta property="og:image" content="http://example.com/img/post/pc/SSB%E6%8A%97%E5%99%AA%E5%A3%B0.png">
+<meta property="og:image" content="http://example.com/img/post/pc/AM%E6%8A%97%E5%99%AA%E5%A3%B0.png">
+<meta property="og:image" content="http://example.com/img/post/pc/%E9%89%B4%E9%A2%91%E5%99%A8.png">
+<meta property="og:image" content="http://example.com/img/post/pc/FM%E7%9B%B8%E5%B9%B2%E8%A7%A3%E8%B0%83.png">
+<meta property="og:image" content="http://example.com/img/post/pc/%E8%A7%92%E5%BA%A6%E8%B0%83%E5%88%B6%E7%B3%BB%E7%BB%9F%E6%8A%97%E5%99%AA%E5%A3%B0.png">
+<meta property="og:image" content="c:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226211951101.png">
+<meta property="og:image" content="c:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226212143477.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/undefined">
+<meta property="og:image" content="http://example.com/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226222018513.png">
+<meta property="og:image" content="http://example.com/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226222619528.png">
+<meta property="og:image" content="http://example.com/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226222744128.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="c:\Users\Eternity\AppData\Roaming\Typora\typora-user-images\image-20231118104605997.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="c:\Users\Eternity\AppData\Roaming\Typora\typora-user-images\image-20231118105204772.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226230241368.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231213222800939.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="c:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229225322715.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="c:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103103924839.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/C:">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86/Users">
+<meta property="article:published_time" content="2023-09-10T10:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-24T15:00:05.361Z">
+<meta property="article:author" content="Eternity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/post/pc/%E6%A8%A1%E6%8B%9F%E9%80%9A%E4%BF%A1.png">
+  
+  
+  
+  <title>通信原理 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Eternity@SJTU</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="通信原理"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-10 18:00" pubdate>
+          2023年9月10日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          20k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          164 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">通信原理</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="通信原理"><a href="#通信原理" class="headerlink" title="通信原理"></a>通信原理</h1><h2 id="第一章-通信系统概论"><a href="#第一章-通信系统概论" class="headerlink" title="第一章 通信系统概论"></a>第一章 通信系统概论</h2><h3 id="通信系统的模型"><a href="#通信系统的模型" class="headerlink" title="通信系统的模型"></a>通信系统的模型</h3><h4 id="通信系统的组成"><a href="#通信系统的组成" class="headerlink" title="通信系统的组成"></a>通信系统的组成</h4><pre><code class=" mermaid">graph LR
+信源--&gt;发送设备--&gt;传输媒介--&gt;接收设备--&gt;信宿
+噪声--&gt;传输媒介
+</code></pre>
+
+<ul>
+<li>信源：将消息转换成<strong>基带信号</strong><ul>
+<li>基带信号的能力主要分布在<strong>低频部分</strong></li>
+</ul>
+</li>
+<li>发送设备：基带信号处理（例如：滤波、放大、调制）后转变为适合在信道中传输的形式<ul>
+<li>调制：频谱搬移、提高抗干扰能力、实现多路复用<ul>
+<li>多路复用<ul>
+<li>时分</li>
+<li>频分</li>
+<li>码分：使用弱相关的伪随机码，进行扩频通讯</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>信道：信息传输的媒质<ul>
+<li>信号经过信道会产生畸变：$y(t)&#x3D;x(t)*h(t)+n(t)$，理想情况下，$h(t)&#x3D;\delta(t),n(t)&#x3D;0$</li>
+</ul>
+</li>
+<li>接收设备：将基带信号从带畸变的信号与噪声和干扰的混合波形中恢复出来——<strong>解调</strong></li>
+<li>信宿：将恢复出来的基带信号转变为用户所需的要的消息形式</li>
+</ul>
+<h4 id="模拟通信和数字通信"><a href="#模拟通信和数字通信" class="headerlink" title="模拟通信和数字通信"></a>模拟通信和数字通信</h4><p><img src="/img/post/pc/%E6%A8%A1%E6%8B%9F%E9%80%9A%E4%BF%A1.png" srcset="/img/loading.gif" lazyload alt="模拟通信"></p>
+<p><img src="/img/post/pc/%E6%95%B0%E5%AD%97%E9%80%9A%E4%BF%A1.png" srcset="/img/loading.gif" lazyload alt="数字通信"></p>
+<ul>
+<li>模拟信号与数字信号</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>时间t连续</th>
+<th>时间t离散</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>信号幅度连续</strong></td>
+<td>模拟信号</td>
+<td>抽样信号</td>
+</tr>
+<tr>
+<td><strong>信号幅度离散</strong></td>
+<td>量化信号</td>
+<td>数字信号</td>
+</tr>
+</tbody></table>
+<h3 id="通信系统的质量指标"><a href="#通信系统的质量指标" class="headerlink" title="通信系统的质量指标"></a>通信系统的质量指标</h3><h4 id="数字通信系统的质量指标"><a href="#数字通信系统的质量指标" class="headerlink" title="数字通信系统的质量指标"></a>数字通信系统的质量指标</h4><ul>
+<li><p>有效性（信息传输的速度）：</p>
+<ul>
+<li><p>码元速率&#x2F;波特率($R_B$)：每秒传送的码元数，单位波特(Baud)或符号每秒(symbol&#x2F;s)</p>
+<p><strong>码元：携带信息的信号单元，设$T$为码元持续时间或码元宽度，则$R_B&#x3D;\frac{1}{T}$</strong></p>
+<p><strong>注意：$T$为完整传输一个码元的时间，如使用二进制脉冲表示符号A，每个脉冲宽度为5ms，则码元宽度为10ms</strong></p>
+</li>
+<li><p>信息速率&#x2F;比特率($R_b$)：每秒传送的信息量，单位为比特每秒(bit&#x2F;s)</p>
+<p><img src="/img/post/pc/%E4%BF%A1%E6%81%AF%E9%80%9F%E7%8E%87.png" srcset="/img/loading.gif" lazyload></p>
+<p>上图码元速率相同，均为$R_B&#x3D;\frac{1}{T}$，四进制的比特率为二进制的两倍。</p>
+<p><strong>提高传输速率需要窄的信号脉冲，从而导致传输带宽增大</strong>。</p>
+</li>
+<li><p>频带利用率：$\eta&#x3D;\frac{\text{信息速率}}{\text{频带宽度}}$(bit&#x2F;s.Hz)，<strong>是常用的传输有效性指标</strong></p>
+</li>
+</ul>
+</li>
+<li><p>可靠性（信息传输的质量）：</p>
+<ul>
+<li><p>误码率($Pe$)：出错的码元数&#x2F;传输的总码元数</p>
+<p>误信率($Pb$)：错误信息的比特数&#x2F;传输的总比特数</p>
+<p><strong>二进制下误码率等于误信率</strong>；两种均取决于信号功率、信道特性和调制方式等</p>
+<p><strong>系统输出端的信噪比（接收机输出端信号平均功率与噪声平均功率的比值）：$\text{SNR(dB)}&#x3D;10\lg\frac{P_{signal}}{P_{noise}}$</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="信息的度量"><a href="#信息的度量" class="headerlink" title="信息的度量"></a>信息的度量</h3><ul>
+<li><p>信息量：设消息$m_k$，其出现的概率为$P_k$，传输的信息量为$I(m_k)$，则</p>
+<ul>
+<li>当$P_k&lt;P_j$时，$I(m_k)&gt;I(m_j)$</li>
+<li>当$P_k\rightarrow1$时，$I(m_k)\rightarrow0$</li>
+<li>$0\le P_k\le1$，且$I(m_k)\ge0$</li>
+<li>当$m_k,m_j$为两个统计独立的消息时，$I(m_k,m_j)&#x3D;I(m_k)+I(m_j)$</li>
+</ul>
+<p>因而将信息量定义为：<br>$$<br>I(m_k)&#x3D;\log_a(\frac{1}{P_k})&#x3D;-\log_aP_k<br>$$<br>当$a&#x3D;2$时，信息量的单位记为bit</p>
+</li>
+<li><p>平均信息量&#x2F;信息熵：设消息由有限个符号$S_1,S_2,…,S_N$构成，它们之间相互统计独立， 每个符号出现的概率为$P_1,P_2,…,P_N$，则由这$N$个符号构成的消息的平均信息量为<strong>各符号</strong>的信息量加权求和，即：<br>$$<br>H&#x3D;\sum_{i&#x3D;1}^NP_i\log_2(\frac{1}{P_i})&#x3D;-\sum_{i&#x3D;1}^NP_i\log_2P_i<br>$$<br>单位为$\text{bit&#x2F;symbol}$，其代表消息中<strong>平均每个符号携带的信息量，与符号个数无关</strong></p>
+<p><strong>当$N$个符号等概率出现时，信源含有的平均信息量最大：</strong><br>$$<br>H_{max}&#x3D;\log_2N<br>$$</p>
+</li>
+<li><p>码元速率与信息速率</p>
+<p>在数字通信系统中，若$N$进制数字信号的码元速率为$R_{BN}$，则$N$进制数字信号的信息速率为<br>$$<br>R_{bN}&#x3D;R_{BN}\cdot H<br>$$<br><strong>当$N$进制各码元速率等概率出现时，有</strong><br>$$<br>R_{bN}&#x3D;\log_2N\cdot R_{BN}<br>$$<br>对应单位为$\text{bit&#x2F;s}&#x3D;\text{bit&#x2F;symbol}\cdot\text{symbol&#x2F;s}$</p>
+</li>
+</ul>
+<h3 id="信道与信道容量"><a href="#信道与信道容量" class="headerlink" title="信道与信道容量"></a>信道与信道容量</h3><h4 id="信道"><a href="#信道" class="headerlink" title="信道"></a>信道</h4><h5 id="编码信道"><a href="#编码信道" class="headerlink" title="编码信道"></a>编码信道</h5><p>编码信道(大多数为无记忆信道)。其中，无记忆信道：</p>
+<ul>
+<li>信道内只存在起伏噪声</li>
+<li>输出码元与前后码元的差错无关</li>
+</ul>
+<p>无记忆二进制编码信道：</p>
+<img src="/2023/09/10/1通信原理/img" srcset="/img/loading.gif" lazyload  style="zoom: 67%;" />
+
+<p>有<br>$$<br>\begin{align}<br>P_{00}+P_{01}&#x3D;1\<br>P_{10}+P_{11}&#x3D;1<br>\end{align}<br>$$<br>转移概率矩阵为<br>$$<br>P&#x3D;\left(<br>\begin{align}<br>P_{00}\quad P_{01}\newline<br>P_{10}\quad P_{11}<br>\end{align}<br>\right)<br>$$<br>当信道不存在失真时，转移概率矩阵$P$为单位矩阵。拓展到四进制有<br>$$<br>P&#x3D;\left(<br>\begin{align}<br>P_{00}\quad P_{01}\quad P_{02}\quad P_{03}\newline<br>P_{10}\quad P_{11}\quad P_{12}\quad P_{13}\newline<br>P_{20}\quad P_{21}\quad P_{22}\quad P_{23}\newline<br>P_{30}\quad P_{31}\quad P_{32}\quad P_{33}\newline<br>\end{align}<br>\right)<br>$$<br><strong>非对角线元素表示收发不一致的错误转移概率</strong></p>
+<h5 id="调制信道"><a href="#调制信道" class="headerlink" title="调制信道"></a>调制信道</h5><ul>
+<li>具有一对（多对）输入输出端</li>
+<li>大部分信道是线性的，满足叠加定理</li>
+<li>信号通过信道后，一般会产生失真</li>
+<li>所有信道都存在干扰和噪声</li>
+</ul>
+<h5 id="恒参信道"><a href="#恒参信道" class="headerlink" title="恒参信道"></a>恒参信道</h5><p>满足信道参数$H(\omega)&#x3D;A(\omega)e^{-j\theta(\omega)}$为<br>$$<br>\begin{align}<br>A(\omega)&amp;&#x3D;A\newline<br>\theta(\omega)&amp;&#x3D;\omega t_0<br>\end{align}<br>$$</p>
+<h5 id="变参信道"><a href="#变参信道" class="headerlink" title="变参信道"></a>变参信道</h5><p>满足信道参数$H(\omega,t)&#x3D;A(\omega,t)e^{-j\theta(\omega,t)}$</p>
+<h4 id="信道容量"><a href="#信道容量" class="headerlink" title="信道容量"></a>信道容量</h4><p><strong>香农定理：</strong>给出了高斯信道上可靠传送信息速率的理论极限。<br>$$<br>C&#x3D;B\log_2(1+\frac{S}{N})<br>$$<br>其中，$C$为最大信息速率，$B$为信道带宽，$S$为**信道输出端(接收器输入端)<strong>的信号平均功率，$N$为</strong>信道输出端(接收器输入端)**的噪声平均功率。$B$涉及码间串扰问题。</p>
+<p>当$B,\frac{S}{N}$给定时，要实现可靠传输，则<br>$$<br>R\le C&#x3D;B\log_2(1+\frac{S}{N})<br>$$<br>当$R,\frac{S}{N}$给定时，要实现可靠传输，则<br>$$<br>B\ge B_{min}&#x3D;\frac{R}{\log_2(1+\frac{S}{N})}<br>$$</p>
+<h2 id="第二章-随机信号和噪声"><a href="#第二章-随机信号和噪声" class="headerlink" title="第二章 随机信号和噪声"></a>第二章 随机信号和噪声</h2><h3 id="随机过程的基本概念"><a href="#随机过程的基本概念" class="headerlink" title="随机过程的基本概念"></a>随机过程的基本概念</h3><h4 id="随机过程的定义"><a href="#随机过程的定义" class="headerlink" title="随机过程的定义"></a>随机过程的定义</h4><p>由概率论中随机变量$X(e)$推广到不仅与样本元素$e$有关，还与时间$t$有关，得到随机过程$X(t,e)$。</p>
+<p>随机过程的两种定义：</p>
+<ul>
+<li>设随机实验E的样本空间为$S&#x3D;{e}$，若对每个元素$e\in S$，总有一个确知的时间函数$X(t,e)$，$t\in T$与之对应。对于所有的$e\in S$，可得到一簇时间$t$的函数，将这簇函数的全体称为随机过程，记作$X(t,e)$或$X(t)$<ul>
+<li>对给定的$t_i$和$e_j$，$X(t,e)$是一个确定的数值</li>
+<li>对给定的$t_i$，$X(t,e)$是一个随机变量$X(e)$</li>
+<li>对给定的$e_j$，$X(t,e)$是一个时间函数，称为样本函数$x(t,e_j)$</li>
+<li>当$t,e$都为变量时，$X(t,e)$是一个随机过程</li>
+</ul>
+</li>
+<li>若对每个特定的时间$t_i(i&#x3D;1,2,…)$，$X(t_i,e)$都是随机变量，则称$X(t,e)$为随机过程。<strong>即将随机过程看作是依赖于时间$t$的一簇随机变量</strong></li>
+</ul>
+<h4 id="随机过程的概率分布函数和概率密度函数"><a href="#随机过程的概率分布函数和概率密度函数" class="headerlink" title="随机过程的概率分布函数和概率密度函数"></a>随机过程的概率分布函数和概率密度函数</h4><p>设随机过程$X(t)$在任意$n$个时刻的取值$X(t_1),X(t_2),…,X(t_n)$构成$n$维随机变量$[X(t_1),X(t_2),…,X(t_n)]$，则定义随机过程$X(t)$的$n$维分布函数和$n$维概率密度函数为<br>$$<br>\begin{align}<br>F_X(x_1,x_2,…,x_n;t_1,t_2,…,t_n)&amp;&#x3D;P{X(t_1)\le x_1,X(t_2)\le x_2,…,X(t_n)\le x_n}\newline<br>f_X(x_1,x_2,…,x_n;t_1,t_2,…,t_n)&amp;&#x3D;\frac{\partial ^nF_X(x_1,x_2,…,x_n)}{\partial x_1,\partial x_2,…, \partial x_n}<br>\end{align}<br>$$</p>
+<h4 id="随机过程的数字特征"><a href="#随机过程的数字特征" class="headerlink" title="随机过程的数字特征"></a>随机过程的数字特征</h4><ul>
+<li><p>数学期望：时间$t$的确定函数，描述$X(t)$的所有样本在任一时刻$t$的取值的统计平均<br>$$<br>m_X(t)&#x3D;E[X(t)]&#x3D;\int_{-\infty}^{\infty}X(t)f_X(x,t)dx<br>$$<br><strong>注意：对随机变量积分</strong></p>
+</li>
+<li><p>方差：时间$t$的确定函数，描述$X(t)$的所有样本与数学期望的偏离程度<br>$$<br>\sigma^2_X(t)&#x3D;D[X(t)]&#x3D;Var[X(t)]&#x3D;E{[X(t)-m_X(t)]^2}&#x3D;\int_{-\infty}^{\infty}[X(t)-m_X(t)]^2f_X(x,t)dx<br>$$</p>
+</li>
+<li><p>自相关函数：<strong>反映了$X(t)$在任意两时刻的取值的相关程度</strong><br>$$<br>R_X(t_1,t_2)&#x3D;E[X(t_1)X(t_2)]&#x3D;\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}x_1x_2f_X(x_1,x_2;t_1,t_2)dx_1dx_2<br>$$</p>
+</li>
+<li><p>自协方差函数：<strong>反映了$X(t)$在任意两时刻的起伏值之间的相关程度</strong><br>$$<br>\begin{align}<br>C_X(t_1,t_2)&amp;&#x3D;E{[X(t_1)-m_X(t_1)][X(t_2)-m_X(t_2)]}\newline<br>&amp;&#x3D;E[X(t_1)X(t_2)-m_X(t_1)X(t_2)-m_X(t_2)X(t_1)+m_X(t_1)m_X(t_2)]\newline<br>&amp;&#x3D;E[X(t_1)X(t_2)]-m_X(t_1)E[X(t_2)]-m_X(t_2)E[X(t_1)]+m_X(t_1)m_X(t_2)\newline<br>&amp;&#x3D;R_X(t_1,t_2)-m_X(t_1)m_X(t_2)<br>\end{align}<br>$$</p>
+<ul>
+<li><p>当$m_X(t_1)&#x3D;m_X(t_2)&#x3D;0$时，$C_X(t_1,t_2)&#x3D;R_X(t_1,t_2)$</p>
+</li>
+<li><p><strong>当$t_1&#x3D;t_2$时，有$\sigma^2_X(t)&#x3D;E[X^2(t)]-m_X^2(t)$</strong></p>
+</li>
+</ul>
+</li>
+<li><p>互相关函数：描述两个不同的随机变量过程$X(t)$和$Y(t)$的取值之间的相关程度<br>$$<br>R_{XY}(t_1,t_2)&#x3D;E[X(t_1)Y(t_2)]&#x3D;\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xyf_{XY}(x,y;t_1,t_2)dxdy<br>$$</p>
+</li>
+<li><p>互协方差函数：描述两个不同的随机变量过程$X(t)$和$Y(t)$的起伏值之间的相关程度<br>$$<br>C_{XY}(t_1,t_2)&#x3D;E{[X(t_1)-m_X(t_1)][Y(t_2)-m_Y(t_2)]}&#x3D;R_{XY}(t_1,t_2)-m_X(t_1)m_Y(t_2)<br>$$</p>
+</li>
+</ul>
+<p>存在几个<strong>重要关系</strong>：</p>
+<ul>
+<li><p>正交</p>
+<p>对任意的$t_1,t_2$，总有$R_{XY}(t_1,t_2)&#x3D;0$，则$X(t)$与$Y(t)$正交</p>
+</li>
+<li><p>不相关</p>
+<p>对任意的$t_1,t_2$，总有$C_{XY}(t_1,t_2)&#x3D;0$，则$X(t)$和$Y(t)$不相关</p>
+<p>若$X(t)$和$Y(t)$不相关，则必有$E[X(t_1)Y(t_2)]&#x3D;E[X(t_1)]E[Y(t_2)]$</p>
+</li>
+<li><p>相互独立</p>
+<p>对所有的$t_1,t_2$，$f_{XY}(x,y;t_1,t_2)&#x3D;f_X(x,t_1)f_Y(y,t_2)$，则$X(t)$和$Y(t)$相互独立</p>
+</li>
+</ul>
+<p><strong>注意：均值为0时，正交与不相关等价；独立一定不相关，反之不一定</strong></p>
+<h3 id="随机过程的平稳性与各态遍历性"><a href="#随机过程的平稳性与各态遍历性" class="headerlink" title="随机过程的平稳性与各态遍历性"></a>随机过程的平稳性与各态遍历性</h3><h4 id="随机过程的平稳性"><a href="#随机过程的平稳性" class="headerlink" title="随机过程的平稳性"></a>随机过程的平稳性</h4><ul>
+<li><p>严平稳随机过程</p>
+<p>对于任意的$n$和$\epsilon$，随机过程$X(t)$的联合概率密度函数满足$f(x_1,x_2,…,x_n;t_1,t_2,…,t_n)&#x3D;f(x_1,x_2,…,x_n;t_1+\epsilon,t_2+\epsilon,…,t_n+\epsilon)$，则称$X(t)$为n阶严平稳随机过程。</p>
+<p><strong>过程的统计特性与所选取的时间起点无关，实际意义在于测试一个平稳过程的统计特性时，无论何时进行，其结果是相同的。</strong></p>
+<p>仅一维和二维概率密度函数与时间起点无关，即<br>$$<br>\begin{aligned}<br>f_X(x_1,t_1)&#x3D;f_X(x_1,t_1+\epsilon)\rightarrow f_X(x,0)&#x3D;f_X(x)\newline<br>f_X(x_1,x_2;t_1,t_2)&#x3D;f_X(x_1,x_2;t_1+\epsilon,t_2+\epsilon)\newline\rightarrow f_X(x_1,x_2;0,t_2-t_1)&#x3D;f_X(x_1,x_2;t_2-t_1)<br>\end{aligned}<br>$$<br>称为二阶严平稳。</p>
+</li>
+<li><p>宽平稳随机过程</p>
+<p>若随机过程$X(t)$的<strong>①数学期望为一常数</strong>，<strong>②自相关函数只与时间间隔$\tau&#x3D;t_2-t_1$有关</strong>，且<strong>③它的均方根有限</strong>，即<br>$$<br>\left{<br>\begin{align}<br>&amp;E[X(t)]&#x3D;m_X\newline<br>&amp;R_X(t_1,t_2)&#x3D;E[X(t_1)X(t_2)]&#x3D;R_X(\tau)\newline<br>&amp;E[X^2(t)]&lt;\infty<br>\end{align}<br>\right.<br>$$<br>则称$X(t)$为宽平稳过程。</p>
+<p><em>在证明某个随机过程宽平稳时，以上三点必须同时证明成立！！！</em></p>
+<p>证明广义平稳：首先证明$E[X(t)]$为与$t$无关的定值，其次证明$R(t,t+\tau)$只与$\tau$有关，最后证明均方根有限。</p>
+<p><strong>宽平稳与二阶严平稳等价；严平稳随机过程必定是宽平稳，反之不一定</strong>。</p>
+</li>
+</ul>
+<p><strong>当$X(t)$为广义平稳随机过程，有</strong><br>$$<br>\begin{align}<br>&amp;C_X(t_1,t_2)&#x3D;R_X(t_1,t_2)-m_X(t_1)m_X(t_2)\newline<br>\Rightarrow &amp;C_X(\tau)&#x3D;R_X(\tau)-m_X^2\newline<br>\Rightarrow &amp;C_X(0)&#x3D;R_X(0)-m_X^2\newline<br>\Rightarrow &amp;\sigma^2_X&#x3D;E[X^2(t)]-m_X^2<br>\end{align}<br>$$</p>
+<h4 id="广义平稳随机过程相关函数的性质"><a href="#广义平稳随机过程相关函数的性质" class="headerlink" title="广义平稳随机过程相关函数的性质"></a>广义平稳随机过程相关函数的性质</h4><ul>
+<li><p>自相关函数</p>
+<ul>
+<li><p>$R_X(0)&#x3D;E[X^2(t)]&#x3D;m_X^2+\sigma_X^2\ge0$</p>
+</li>
+<li><p>$R_X(\tau)&#x3D;R_X(-\tau)$，偶对称，可由定义式证明</p>
+</li>
+<li><p>$R_X(0)\ge|R(\tau)|$，即$X(t)$在同一时刻取值的相关性最大</p>
+</li>
+<li><p><strong>如果$E[X(t)]&#x3D;m_X\neq 0$，那么$\lim\limits_{\tau\rightarrow \infty}R_X(\tau)&#x3D;m_X^2$</strong></p>
+<p>当$\tau\rightarrow\infty$，可以将$X(t)$与$X(t+\tau)$视为不相关，则$E[X(t)X(t+\tau)]&#x3D;E[X(t)]E[X(t+\tau)]$，两者均值均为$m_X$</p>
+</li>
+<li><p>如果$X(t)$含有周期分量，那么$R_X(\tau)$也将含有相同周期的周期分量</p>
+</li>
+</ul>
+<p><img src="/img/post/pc/%E8%87%AA%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0%E6%9B%B2%E7%BA%BF.png" srcset="/img/loading.gif" lazyload alt="image-20230920204044338"></p>
+<p><strong>注意：$R_X(\tau)$可以存在小于0的部分</strong></p>
+<p><em>已知广义平稳随机过程的自相关函数，可直接求出均方值$R_X(0)$、均值$\lim\limits_{\tau\rightarrow\infty}R_X(\tau)&#x3D;m_X^2$、方差$\sigma^2_X&#x3D;R_X(0)-\lim\limits_{\tau\rightarrow\infty}R_X(\tau)$</em></p>
+</li>
+<li><p>互相关函数：若$R_{XY}(t_1,t_2)&#x3D;R_{XY}(t_2-t_1)&#x3D;R_{XY}(\tau)$，则称$X(t),Y(t)$联合平稳</p>
+<ul>
+<li>$R_{XY}(-\tau)&#x3D;R_{YX}(\tau)$</li>
+<li>$|R_{XY}(\tau)|\le\sqrt{R_X(0)R_Y(0)}\le\frac{1}{2}[R_X(0)+R_Y(0)]$</li>
+</ul>
+</li>
+</ul>
+<p><img src="/img/post/pc/%E8%87%AA%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E4%BE%8B%E9%A2%98.png" srcset="/img/loading.gif" lazyload alt="自相关系数例题"><br>$$<br>\begin{aligned}<br>R_X(t_1,t_2)&amp;&#x3D;E[X(t_1)X(t_2)]\newline&amp;&#x3D;E[X(t_1)X(t_2)|A]P(A)+E[X(t_1)X(t_2)|\overline{A}]P(\overline{A})\newline&amp;&#x3D;\left{<br>\begin{aligned}<br>&amp;1-\frac{|\tau|}{T_b},|t|&lt;T_b\newline<br>&amp;0,o.w.<br>\end{aligned}<br>\right.<br>\end{aligned}<br>$$</p>
+<h4 id="随机过程的各态遍历性"><a href="#随机过程的各态遍历性" class="headerlink" title="随机过程的各态遍历性"></a>随机过程的各态遍历性</h4><ul>
+<li><p>时间均值：$\left&lt;X(t)\right&gt;&#x3D;\lim\limits_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}X(t)dt$</p>
+</li>
+<li><p>时间自相关函数：$\left&lt;X(t),X(t+\tau)\right&gt;&#x3D;\lim\limits_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^TX(t)X(t+\tau)dt$</p>
+</li>
+<li><p>各态遍历性</p>
+<p>设$X(t)$为平稳随机过程，若<br>$$<br>\left{<br>\begin{align}<br>&amp;\left&lt;X(t)\right&gt;&#x3D;E[X(t)]&#x3D;m_X\newline<br>&amp;\left&lt;X(t)X(t+\tau)\right&gt;&#x3D;E[X(t)X(t+\tau)]&#x3D;R_X(\tau)<br>\end{align}<br>\right.<br>$$<br>即$X(t)$的<strong>时间均值等于它的统计均值，时间自相关函数等于统计自相关函数</strong>，则称$X(t)$为遍历过程，或具有各态遍历性。</p>
+</li>
+</ul>
+<p><strong>遍历过程一定是平稳的，但平稳随机过程并不都具有遍历性。</strong></p>
+<p><strong>当$X(t)$为各态遍历的随机信号，则</strong></p>
+<ul>
+<li><p>$E[X(t)]&#x3D;\left&lt;X(t)\right&gt;$，代表信号的<strong>直流分量</strong></p>
+</li>
+<li><p>$E[X^2(t)]&#x3D;\left&lt;X^2(t)\right&gt;$，代表信号的<strong>平均功率</strong></p>
+</li>
+<li><p>$\sigma^2_X(t)&#x3D;E[X^2(t)]-m_X^2(t)$，代表信号的<strong>交流功率</strong></p>
+</li>
+</ul>
+<p><img src="/img/post/pc/%E5%8A%9F%E7%8E%87.png" srcset="/img/loading.gif" lazyload alt="功率"></p>
+<p>$$<br>E[n^2(t)]&#x3D;E[n_1^2(t)]+E[n_2^2(t)]+2E[n_1(t)n_2(t)]<br>$$</p>
+<ul>
+<li>正交时，$E[n_1(t)n_2(t)]&#x3D;0,E[n^2(t)]&#x3D;15W$</li>
+<li>不相关，$E[n_1(t)n_2(t)]&#x3D;E[n_1(t)]E[n_2(t)]&#x3D;-2,E[n^2(t)]&#x3D;11W$</li>
+<li>$E[n_1(t)n_2(t)]&#x3D;R_{n_1n_2}(0)&#x3D;2,,E[n^2(t)]&#x3D;19W$</li>
+</ul>
+<h3 id="随机过程的功率谱密度"><a href="#随机过程的功率谱密度" class="headerlink" title="随机过程的功率谱密度"></a>随机过程的功率谱密度</h3><h4 id="功率谱密度的定义"><a href="#功率谱密度的定义" class="headerlink" title="功率谱密度的定义"></a>功率谱密度的定义</h4><p>引入$x(t)$的截尾函数$x_T(t)$，$x_T(t)$的频谱为$X_T(f)&#x3D;\int_{-T}^Tx_T(t)e^{-j2\pi ft}dt$，根据Parseval方程，有<br>$$<br>\begin{align}<br>P&amp;&#x3D;\lim\limits_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^Tx^2(t)dt\newline<br>&amp;&#x3D;\lim\limits_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^Tx_T^2(t)dt\newline<br>&amp;&#x3D;\lim\limits_{T\rightarrow\infty}\frac{1}{2T}\int_{-\infty}^{\infty}|X_T(f)|^2df\newline<br>&amp;&#x3D;\int_{-\infty}^{\infty}\lim\limits_{T\rightarrow\infty}\frac{|X_T(f)|^2}{2T}df\newline<br>\Rightarrow S_X(f)&amp;&#x3D;\lim\limits_{T\rightarrow\infty}\frac{|X_T(f)|^2}{2T}<br>\end{align}<br>$$<br>其中，$S_X(f)$为$x(t)$的功率谱密度。</p>
+<p>对随机过程$X(t)$，$x(t)$的时间平均功率具有随机性，对其进一步求统计平均，则随机过程$X(t)$的功率谱密度为<br>$$<br>S_X(f)&#x3D;\lim\limits_{T\rightarrow\infty}\frac{E[|X_T(f)|^2]}{2T}<br>$$</p>
+<h4 id="功率谱密度与自相关函数"><a href="#功率谱密度与自相关函数" class="headerlink" title="功率谱密度与自相关函数"></a>功率谱密度与自相关函数</h4><p>对任意随机过程，有<br>$$<br>S_X(f)\leftrightarrow\left&lt;R_X(t,t+\tau)\right&gt;<br>$$<br>其中，<br>$$<br>&lt;R_X(t,t+\tau)&gt;&#x3D;\lim\limits_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}R_X(t,t+\tau)dt<br>$$<br>为统计自相关函数的时间均值。</p>
+<p><strong>维纳辛钦定理：对于广义平稳随机过程有$\left&lt;R_X(t,t+\tau)\right&gt;&#x3D;R_X(\tau)$，则</strong><br>$$<br>S_X(f)\leftrightarrow\left&lt;R_X(\tau)\right&gt;<br>$$</p>
+<h4 id="功率谱密度的性质"><a href="#功率谱密度的性质" class="headerlink" title="功率谱密度的性质"></a>功率谱密度的性质</h4><ul>
+<li><p>$S_X(f)\ge0$</p>
+</li>
+<li><p>$S_X(f)$总是实函数</p>
+</li>
+<li><p>$S_X(-f)&#x3D;S_X(f)$，当$X(t)$为实信号</p>
+</li>
+</ul>
+<p><strong>判断函数能否作为$R_X(\tau)$，还要分析$S_X(f)$是否恒大于等于0。</strong></p>
+<p><strong>平均功率的求法</strong></p>
+<ul>
+<li>$P_X&#x3D;\int S_X(f)df$</li>
+<li>$P_X&#x3D;R_X(0)&#x3D;E[X^2(t)]$，若$X(t)$满足各态遍历性，则还有$P_X&#x3D;\left&lt;X^2(t)\right&gt;$</li>
+</ul>
+<h4 id="相关时间"><a href="#相关时间" class="headerlink" title="相关时间"></a>相关时间</h4><p>构造与$C_X(\tau)$曲线面积相等的等效矩形，<br>$$<br>\tau_0&#x3D;\frac{\int_{-\infty}^{\infty}C_X(\tau)d\tau}{2C_X(0)}<br>$$<br>当$E[X(t)]&#x3D;0$时，<br>$$<br>\tau_0&#x3D;\frac{S_X(0)}{2R_X(0)}<br>$$<br>$\tau_0$称为相关时间，可以反映随机过程的自相关性强弱，$\tau_0$越小，自相关性越强。</p>
+<h4 id="功率谱等效带宽"><a href="#功率谱等效带宽" class="headerlink" title="功率谱等效带宽"></a>功率谱等效带宽</h4><p>构造与$S_X(\tau)$曲线面积相等的等效矩形，<br>$$<br>B_N&#x3D;\frac{\int_{-\infty}^{\infty}S_X(f)df}{2S_X(0)}&#x3D;\frac{R_X(0)}{2S_X(0)}<br>$$</p>
+<h4 id="互功率谱密度"><a href="#互功率谱密度" class="headerlink" title="互功率谱密度"></a>互功率谱密度</h4><p>联合平稳随机过程$X(t)$和$Y(t)$的互功率谱密度为<br>$$<br>S_{XY}(f)\leftrightarrow R_{XY}(f)<br>$$<br>有以下性质。<br>$$<br>S_{XY}(f)&#x3D;S^*_{YX}(f)&#x3D;S_{YX}(-f)<br>$$</p>
+<h3 id="线性系统对随机信号的响应"><a href="#线性系统对随机信号的响应" class="headerlink" title="线性系统对随机信号的响应"></a>线性系统对随机信号的响应</h3><p>当输入为随机过程$X(t)$时，对于给定的$e$，输出样本函数为$y(t,e)&#x3D;x(t,e)*h(t)$。</p>
+<p>对于不同的$e$，在输出端可得到一簇样本函数，将这簇样本函数的全体记为新的随机过程$Y(t)$，有$Y(t)&#x3D;X(t)*h(t)$。</p>
+<ul>
+<li><p>输出的均值<br>$$<br>\begin{aligned}<br>E[Y(t)]&#x3D;E[\int_{-\infty}^{\infty}X(t-\tau)*h(\tau)d\tau]&#x3D;\int_{-\infty}^{\infty}E[X(t-\tau)]*h(\tau)d\tau<br>\end{aligned}<br>$$<br>**当$X(t)$广义平稳时，$E[X(t-\tau)]&#x3D;E[X(t)]&#x3D;m_X$**，有<br>$$<br>E[Y(t)]&#x3D;m_X\int_{-\infty}^{\infty}h(\tau)d\tau&#x3D;m_XH(0)<br>$$</p>
+</li>
+<li><p>输出的自相关函数<br>$$<br>\begin{aligned}<br>R_Y(t_1,t_2)&amp;&#x3D;E[Y(t_1)Y(t_2)]\newline&amp;&#x3D;E[\int_{-\infty}^{\infty}X(t_1-u)*h(u)du\int_{-\infty}^{\infty}X(t_2-v)*h(v)dv]\newline&amp;&#x3D;\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}R_X(t_1-u,t_2-v)h(u)h(v)dudv<br>\end{aligned}<br>$$<br>**当$X(t)$广义平稳时，$R_X(t_1-u,t_2-v)&#x3D;R_X(\tau+u-v)$**，有<br>$$<br>R_Y(\tau)&#x3D;\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}R_X(\tau+u-v)h(u)h(v)dudv&#x3D;R_X(\tau)*h(\tau)*h(-\tau)<br>$$<br>输出也为广义平稳随机过程。</p>
+</li>
+<li><p>输出的功率谱密度</p>
+<p><strong>当$X(t)$广义平稳时，</strong>由$R_Y(\tau)&#x3D;R_X(\tau)*h(\tau)<em>h(-\tau)$，进行傅里叶变换得<br>$$<br>S_Y(f)&#x3D;S_X(f)\cdot H(f)\cdot H^</em>(f)&#x3D;S_X(f)|H(f)|^2<br>$$<br>此处，$|H(f)|^2$为系统的功率谱传输函数。</p>
+</li>
+<li><p>输入输出的互相关函数<br>$$<br>\begin{aligned}<br>R_{XY}(t_1,t_2)&amp;&#x3D;E[X(t_1)Y(t_2)]\newline<br>&amp;&#x3D;E[X(t_1)\int_{-\infty}^{\infty}X(t_2-u)h(u)du]\newline<br>&amp;&#x3D;\int_{-\infty}^{\infty}R_X(t_1,t_2-u)h(u)du<br>\end{aligned}<br>$$<br><strong>当$X(t)$广义平稳时，</strong>$R_X(t_1,t_2-u)&#x3D;R_X(\tau-u)$，有<br>$$<br>R_{XY}(\tau)&#x3D;\int_{-\infty}^{\infty}R_X(\tau-u)h(u)du&#x3D;R_X(\tau)*h(\tau)<br>$$<br>此时，$X(t)$和$Y(t)$联合广义平稳。</p>
+<p>同理，$R_{YX}(\tau)&#x3D;R_X(\tau)*h(-\tau)$。</p>
+</li>
+<li><p>输入输出的互功率谱密度</p>
+<p><strong>当$X(t)$广义平稳时，</strong>$R_{XY}(\tau)&#x3D;h(\tau)<em>R_X(\tau)$，有<br>$$<br>S_{XY}(f)&#x3D;S_X(f)H(f)<br>$$<br>同理有$S_{YX}(f)&#x3D;S_X(f)H^</em>(f)&#x3D;S_{XY}^*(f)$</p>
+</li>
+</ul>
+<p><img src="/img/post/pc/%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F.png" srcset="/img/loading.gif" lazyload alt="线性系统"></p>
+<h3 id="高斯过程和白噪声过程"><a href="#高斯过程和白噪声过程" class="headerlink" title="高斯过程和白噪声过程"></a>高斯过程和白噪声过程</h3><h4 id="高斯过程"><a href="#高斯过程" class="headerlink" title="高斯过程"></a>高斯过程</h4><p>随机过程的任意N维联合概率密度函数都是联合高斯分布</p>
+<p>对随机高斯过程，从不相关可以推出相互独立。</p>
+<ul>
+<li>高斯过程，广义平稳和狭义平稳等价</li>
+<li>高斯过程不相关与相互独立等价</li>
+<li>高斯随机矢量的线性变换仍为高斯随机矢量</li>
+</ul>
+<h4 id="白噪声过程"><a href="#白噪声过程" class="headerlink" title="白噪声过程"></a>白噪声过程</h4><p>功率谱密度在整个频域内为常数<br>$$<br>S_X(f)&#x3D;\frac{N_0}{2}\leftrightarrow R_X(\tau)&#x3D;\frac{N_0}{2}\delta(\tau)<br>$$<br>通过线性系统，输出噪声功率谱密度：$S_{n_0}(f)&#x3D;\frac{N_0}{2}|H(f)|^2$</p>
+<h3 id="窄带随机过程"><a href="#窄带随机过程" class="headerlink" title="窄带随机过程"></a>窄带随机过程</h3><p>若实平稳随机过程$X(t)$的功率谱密度满足<br>$$<br>\begin{aligned}<br>S_X(f)&#x3D;\left{<br>\begin{aligned}<br>&amp;S_X(f),&amp;f_0-f_x\le|f|\le f_0+f_x\newline<br>&amp;0,&amp;\text{o.w.}<br>\end{aligned}<br>\right.<br>\end{aligned}<br>$$<br>且带宽$B&#x3D;2f_x,B&lt;&lt;f_0$，则称$X(t)$为窄带平稳随机过程。</p>
+<h4 id="窄带平稳随机过程的正交表示"><a href="#窄带平稳随机过程的正交表示" class="headerlink" title="窄带平稳随机过程的正交表示"></a>窄带平稳随机过程的正交表示</h4><p>$$<br>n(t)&#x3D;n_c(t)\cos\omega_0t-n_s(t)\sin\omega_0t<br>$$</p>
+<p>可通过乘以$\cos\omega_0t$与$\sin\omega_0t$后滤波获得$n_c(t)$与$n_s(t)$。</p>
+<p>设$n(t)$均值为0，方差为$\sigma^2$的窄带随机平稳过程，则</p>
+<ul>
+<li><p>均值和均方值、方差<br>$$<br>\begin{aligned}<br>&amp;E[n_c(t)]&#x3D;E[n_s(t)]&#x3D;E[n(t)]&#x3D;0\newline<br>&amp;E[n_c^2(t)]&#x3D;E[n_s^2(t)]&#x3D;E[n^2(t)]&#x3D;\sigma^2<br>\end{aligned}<br>$$</p>
+</li>
+<li><p><strong>功率谱密度</strong><br>$$<br>\begin{aligned}<br>S_{n_c}(f)&#x3D;S_{n_s}(f)&#x3D;|H(f)|^2[S_n(f-f_0)+S_n(f+f_0)]\newline<br>S_{n_cn_s}(f)&#x3D;j\cdot|H(f)|^2[S_n(f-f_0)-S_n(f+f_0)]<br>\end{aligned}<br>$$<br>式中<br>$$<br>H(f)&#x3D;\left{<br>\begin{aligned}<br>&amp;1,&amp;|f|\le\frac{B}{2}\newline<br>&amp;0,&amp;\text{o.w.}<br>\end{aligned}<br>\right.<br>$$<br><img src="/img/post/pc/%E7%AA%84%E5%B8%A6.png" srcset="/img/loading.gif" lazyload alt="窄带"></p>
+</li>
+<li><p>自相关函数和互相关函数<br>$$<br>\begin{aligned}<br>R_{n_c}(\tau)&amp;&#x3D;R_{n_s}(\tau)\newline<br>R_{n_cn_s}(\tau)&amp;&#x3D;-R_{n_sn_c}(\tau)\newline<br>|H(f)|^2[S_n(f-f_0)-S_n(f&amp;+f_0)]&#x3D;0\Rightarrow R_{n_cn_s}(\tau)\equiv0\newline<br>|H(f)|^2[S_n(f-f_0)-S_n(f&amp;+f_0)]\neq0\Rightarrow R_{n_cn_s}(0)\equiv0<br>\end{aligned}<br>$$</p>
+</li>
+<li><p>概率分布</p>
+<p>若$n(t)$是高斯过程，则$n_c(t)$和$n_s(t)$也是高斯过程</p>
+<p>当$R_{n_cn_s}(\tau)&#x3D;0$时，$n_c(t)$和$n_s(t)$是相互独立的高斯随机过程</p>
+<p>当$R_{n_cn_s}(0)&#x3D;0$时，同一时刻的$n_c$和$n_s$是相互独立的高斯随机变量</p>
+</li>
+<li><p>零均值窄带平稳高斯过程的特点</p>
+<ul>
+<li>同相和正交分量也是平稳高斯过程，均值、方差相同；</li>
+<li>同相和正交分量的功率谱密度可由窄带过程的功率谱做 搬移再经过低通滤波后得到；</li>
+<li>同一时刻的同相和正交分量是统计独立的随机变量</li>
+</ul>
+</li>
+</ul>
+<h4 id="窄带高斯过程的包络相位表示"><a href="#窄带高斯过程的包络相位表示" class="headerlink" title="窄带高斯过程的包络相位表示"></a>窄带高斯过程的包络相位表示</h4><p>$$<br>\begin{aligned}<br>n(t)&#x3D;R(t)\cos(\omega_0t+\Phi(t))\newline<br>R(t)&#x3D;\sqrt{n_c^2(t)+n_s^2(t)}\newline<br>\Phi(t)&#x3D;tg^{-1}\frac{n_s(t)}{n_c(t)}<br>\end{aligned}<br>$$</p>
+<p>其中，$R(t)$、$\Phi(t)$是低通慢变换的实随机过程。</p>
+<h3 id="正弦信号与窄带信号"><a href="#正弦信号与窄带信号" class="headerlink" title="正弦信号与窄带信号"></a>正弦信号与窄带信号</h3><p>$$<br>\begin{aligned}<br>s(t)&amp;&#x3D;a\cos(\omega_0t+\theta)\newline&amp;&#x3D;a\cos\theta\cos\omega_0t-a\sin\theta\sin\omega_0t\newline<br>x(t)&amp;&#x3D;s(t)+n(t)\newline<br>&amp;&#x3D;[a\cos\theta+n_c(t)]\cos\omega_0t-[a\sin\theta+n_s(t)]\sin\omega_0t\newline<br>&amp;&#x3D;A_c(t)\cos\omega_0t-A_s(t)\sin\omega_0t\newline<br>&amp;&#x3D;A(t)\cos(\omega_0t+\varphi(t))<br>\end{aligned}<br>$$</p>
+<p>对于正弦信号和窄带信号的叠加，</p>
+<ul>
+<li>幅度不恒定，变成莱斯分布的随机起伏的包络$A(t)$；小信噪比时，$f(A)$为瑞利分布；大信噪比时为正态分布</li>
+<li>相角在初值$\theta$附近以相位偏差$\varphi’(t)$随机起伏；小信噪比，$f(\varphi’)$均匀分布；大信噪比时，$f(\varphi’)$正态分布</li>
+</ul>
+<h2 id="第三章-模拟调制系统"><a href="#第三章-模拟调制系统" class="headerlink" title="第三章 模拟调制系统"></a>第三章 模拟调制系统</h2><p>调制的目的：将基带信号转换成适合在信道中传输的信号</p>
+<p>调制的实现：使载波的某些参数随基带信号的改变而改变</p>
+<h3 id="幅度调制"><a href="#幅度调制" class="headerlink" title="幅度调制"></a>幅度调制</h3><p>幅度调制为线性调制，即频谱的线性搬移。</p>
+<p>分析中假设</p>
+<ul>
+<li><p>载波信号为$c(t)&#x3D;A_c\cos(\omega_ct+\theta_0)$，其中$\theta_0$为$[0,2\pi)$均匀分布的随机变量</p>
+</li>
+<li><p>基带信号为$x(t)$，带宽为$f_x$(带宽指的是正频率下信号的频谱宽度)</p>
+</li>
+</ul>
+<h4 id="双边带调制-DSB"><a href="#双边带调制-DSB" class="headerlink" title="双边带调制(DSB)"></a>双边带调制(DSB)</h4><ul>
+<li><p>时域：$x_c(t)&#x3D;A_cx(t)\cos(\omega_ct)$</p>
+<p><strong>当调制信号极性改变时，已调信号会发生极性反转。</strong></p>
+</li>
+<li><p>频域：$X_c(f)&#x3D;\frac{A_c}{2}[X(f+f_c)+X(f-f_c)]$</p>
+<p>已调信号分为上边带(USB)与下边带(LSB)，<strong>无载波分量</strong>——抑制载波的双边带调制。</p>
+<img src="/2023/09/10/1通信原理/img" srcset="/img/loading.gif" lazyload  alt="DSB" style="zoom: 80%;" />
+</li>
+<li><p>带宽：$B_T&#x3D;2B&#x3D;2f_x$</p>
+</li>
+<li><p>发送功率：$S_T&#x3D;E[x^2_c(t)]&#x3D;\frac{A_c^2}{2}S_X$，<strong>设初始相位$\theta_0$在$[0,2\pi)$上均匀分布。</strong></p>
+</li>
+<li><p>解调：设接收信号为$x_r(t)&#x3D;a_cx(t)\cos(\omega_ct)$，则<br>$$<br>\begin{aligned}<br>z(t)&amp;&#x3D;[a_cx(t)\cos(\omega_ct)]\cdot2\cos\omega_ct\newline<br>&amp;&#x3D;a_cx(t)+a_cx(t)\cos2\omega_ct\newline<br>\Rightarrow Z(f)&amp;&#x3D;a_cX(f)+\frac{a_c}{2}[X(f+2f_c)+X(f-2f_c)]<br>\end{aligned}<br>$$<br>之后使用低通滤波器可以恢复原信号。</p>
+<p><strong>需要采用相干解调，接收端须产生和发送端同频同相的本地载波。</strong></p>
+</li>
+</ul>
+<h4 id="振幅调制-AM"><a href="#振幅调制-AM" class="headerlink" title="振幅调制(AM)"></a>振幅调制(AM)</h4><ul>
+<li><p>时域：$x_c(t)&#x3D;[A_0+x’(t)]\cdot A_c’\cos\omega_ct$，其中$A_0&gt;|x(t)|_{\text{max}}$，否则会出现过调失真。</p>
+<p>令$\frac{|x’(t)|<em>{\text{max}}}{A_0}&#x3D;m,\frac{x’(t)}{|x’(t)|</em>{\text{max}}}&#x3D;x(t)$，则$x_c(t)&#x3D;A_c[1+mx(t)]\cos\omega_ct$。</p>
+<p>$m$称为调制系数，**包络检波解调的条件是$m\le1$**。</p>
+</li>
+<li><p>频域：$X_c(f)&#x3D;\frac{A_c}{2}[\delta(f+f_c)+\delta(f-f_c)]+\frac{mA_c}{2}[X(f+f_c)+X(f-f_c)]$，<strong>需要发送单独的载波分量</strong>。</p>
+<p><img src="/img/post/pc/AM.png" srcset="/img/loading.gif" lazyload alt="AM"></p>
+</li>
+<li><p>带宽：$B_T&#x3D;2B&#x3D;2f_x$</p>
+</li>
+<li><p>发送功率：<br>$$<br>S_T&#x3D;E[x^2(t)]&#x3D;E{A_c^2[1+2mx(t)+m^2x^2(t)]\cos^2(\omega_ct+\theta)}<br>$$<br>设$E[x(t)]&#x3D;0$，则<br>$$<br>S_T&#x3D;\frac{A_c^2}{2}+\frac{A_c^2m^2}{2}S_X<br>$$</p>
+</li>
+<li><p>调制效率：$E&#x3D;\frac{\frac{A_c^2m^2}{2}S_X}{\frac{A_c^2}{2}+\frac{A_c^2m^2}{2}S_X}&#x3D;\frac{m^2S_X}{1+m^2S_X}&lt;1$</p>
+</li>
+<li><p>解调：包络检波，要求$m\le1,f_c&gt;&gt;f_x$</p>
+<p><img src="/img/post/pc/AM%E8%A7%A3%E8%B0%83.png" srcset="/img/loading.gif" lazyload alt="AM解调"></p>
+</li>
+<li><p>特点：可非相干解调，但需要发送单独的载波分量，调制效率低。</p>
+</li>
+</ul>
+<h4 id="单边带调制-SSB"><a href="#单边带调制-SSB" class="headerlink" title="单边带调制(SSB)"></a>单边带调制(SSB)</h4><p><img src="/img/post/pc/SSB%E8%B0%83%E5%88%B6.png" srcset="/img/loading.gif" lazyload alt="SSB调制"></p>
+<ul>
+<li><p>频域：$X_{SSB}(f)&#x3D;X_{DSB}(f)\cdot H_{SSB}(f)$</p>
+</li>
+<li><p>SSB信号的产生</p>
+<ul>
+<li><p>滤波法：边带滤波，使用上边带滤波器或者下边带滤波器</p>
+</li>
+<li><p>移相法：希尔伯特变换：90°的宽带相移网络<br>$$<br>\begin{aligned}<br>\hat{x}(t)&amp;&#x3D;x(t)*\frac{1}{\pi t}&#x3D;\frac{1}{\pi}\int_{-\infty}^{\infty}\frac{x(\tau)}{t-\tau}d\tau\newline<br>\Rightarrow\hat{X}(f)&amp;&#x3D;(-j\text{sgn}f)\cdot X(f)<br>\end{aligned}<br>$$</p>
+</li>
+</ul>
+<p>当$x(t)$为正弦信号时，相当于将其相位延后90°。</p>
+</li>
+<li><p>边带信号</p>
+<ul>
+<li>下边带信号：$x_{LSB}(t)&#x3D;\frac{A_c}{2}[x(t)\cos2\pi f_ct+\hat{x}(t)\sin2\pi f_ct]$</li>
+<li>上边带信号：$x_{USB}(t)&#x3D;\frac{A_c}{2}[x(t)\cos2\pi f_ct-\hat{x}(t)\sin2\pi f_ct]$</li>
+</ul>
+<p><img src="/img/post/pc/SSB.png" srcset="/img/loading.gif" lazyload alt="SSB"></p>
+</li>
+<li><p>带宽：$B_T&#x3D;B&#x3D;f_x$</p>
+</li>
+<li><p>发送功率：$S_T&#x3D;\frac{A_c^2}{4}S_X$</p>
+</li>
+<li><p>信号产生：滤波法、移相法</p>
+</li>
+<li><p>解调：采用相干解调</p>
+</li>
+</ul>
+<h4 id="残留边带调制-VSB"><a href="#残留边带调制-VSB" class="headerlink" title="残留边带调制(VSB)"></a>残留边带调制(VSB)</h4><p>处理双边带调制信号，所使用的滤波器为残留边带滤波器。</p>
+<p><strong>要求残留边带氯气的滚降特性关于$f_c$满足互补对称特性。</strong></p>
+<p>解调为相干解调，要求**$H_{VSB}(f-f_c)+H_{VSB}(f+f_c)&#x3D;\text{constant}$**。</p>
+<p><img src="/img/post/pc/VSB.png" srcset="/img/loading.gif" lazyload alt="VSB"></p>
+<h3 id="幅度调制系统的抗噪声性能"><a href="#幅度调制系统的抗噪声性能" class="headerlink" title="幅度调制系统的抗噪声性能"></a>幅度调制系统的抗噪声性能</h3><p>$$<br>(\frac{S}{N})_0&#x3D;\frac{E[x_0^2(t)]}{E[n_0^2(t)]}<br>$$</p>
+<p><strong>分别为接收机输出端信号与噪声</strong></p>
+<p><img src="/img/post/pc/%E5%9F%BA%E5%B8%A6%E7%B3%BB%E7%BB%9F.png" srcset="/img/loading.gif" lazyload alt="基带系统"></p>
+<h4 id="DSB系统的抗噪声性能"><a href="#DSB系统的抗噪声性能" class="headerlink" title="DSB系统的抗噪声性能"></a>DSB系统的抗噪声性能</h4><p><img src="/img/post/pc/DSB%E6%8A%97%E5%99%AA%E5%A3%B0.png" srcset="/img/loading.gif" lazyload alt="DSB抗噪声"><br>$$<br>\begin{aligned}<br>y(t)&amp;&#x3D;x_c(t)+n(t)\newline<br>&amp;&#x3D;A_cx(t)\cos\omega_ct+n_c(t)\cos\omega_ct-n_s(t)\sin\omega_ct\newline<br>&amp;&#x3D;[A_cx(t)+n_c(t)]\cos\omega_ct-n_s(t)\sin\omega_ct\newline<br>\newline<br>2y(t)\cos\omega_ct&amp;&#x3D;[A_cx(t)+n_c(t)]+[A_cx(t)+n_c(t)]\cos2\omega_ct-n_s(t)\sin2\omega_ct\newline<br>\newline<br>z_0(t)&amp;&#x3D;A_cx(t)+n_c(t)<br>\end{aligned}<br>$$</p>
+<h4 id="SSB系统的抗噪声性能"><a href="#SSB系统的抗噪声性能" class="headerlink" title="SSB系统的抗噪声性能"></a>SSB系统的抗噪声性能</h4><p><img src="/img/post/pc/SSB%E6%8A%97%E5%99%AA%E5%A3%B0.png" srcset="/img/loading.gif" lazyload alt="SSB抗噪声"></p>
+<p>结论：在接收信号平均功率相同时，SSB的输出信噪比与DSB相同，<strong>但要获得相同的接收功率，SSB所要求的载波幅度大于DSB</strong>。</p>
+<h4 id="AM系统的抗噪声性能"><a href="#AM系统的抗噪声性能" class="headerlink" title="AM系统的抗噪声性能"></a>AM系统的抗噪声性能</h4><p><img src="/img/post/pc/AM%E6%8A%97%E5%99%AA%E5%A3%B0.png" srcset="/img/loading.gif" lazyload alt="AM抗噪声"></p>
+<p>存在门限效应：当检波器输入的信噪比低于某一个“门限”值时，输出 信噪比不是随输入信噪比按比例下降，而是急剧“恶化”的现象。</p>
+<h3 id="角度调制"><a href="#角度调制" class="headerlink" title="角度调制"></a>角度调制</h3><p>角度调制——非线性调制</p>
+<p>$x_c(t)&#x3D;A_c\cos(\omega_ct+\phi(t))$</p>
+<ul>
+<li>瞬时相位：$\theta(t)&#x3D;\omega_ct+\phi(t)$</li>
+<li>瞬时频率：$\omega_i&#x3D;\frac{d\theta(t)}{dt}&#x3D;\omega_c+\frac{d\phi(t)}{dt}$</li>
+<li>瞬时相位偏移：$\phi(t)$</li>
+<li>瞬时频率偏移：$\frac{\phi(t)}{dt}$</li>
+</ul>
+<p>FM-瞬时频率改变与调制信号成正比($\frac{\phi(t)}{dt}&#x3D;k_fx(t)$)，PM-瞬时相位改变与调制信号成正比($\phi(t)&#x3D;k_px(t)$)，两者没有本质区别。</p>
+<h4 id="频率调制-FM"><a href="#频率调制-FM" class="headerlink" title="频率调制(FM)"></a>频率调制(FM)</h4><h5 id="调制"><a href="#调制" class="headerlink" title="调制"></a>调制</h5><p>以单音信号调制为例，$x(t)&#x3D;A\cos\omega_mt$。FM信号为<br>$$<br>\begin{aligned}<br>x_c(t)&amp;&#x3D;A_c\cos(\omega_ct+k_f\int_{0}^{t}A_m\cos\omega_m\tau d\tau)\newline<br>&amp;&#x3D;A_c\cos(\omega_ct+\frac{k_fA_m}{\omega_m}\sin\omega_mt)<br>\end{aligned}<br>$$<br>瞬时相移：$\phi(t)&#x3D;\frac{k_fA_m}{\omega_m}\sin\omega_c t$</p>
+<p>瞬时频移：$\frac{\phi(t)}{dt}&#x3D;k_fA_m\cos\omega_ct$</p>
+<p><strong>最大频率偏移：</strong><br>$$<br>\Delta\omega&#x3D;k_fA_m<br>$$<br><strong>频偏比&#x2F;调频指数：最大频域与调制信号角频率比</strong><br>$$<br>\beta&#x3D;\frac{\Delta\omega}{\omega_m}&#x3D;\frac{k_fA_m}{\omega_m}<br>$$</p>
+<h5 id="频谱分析"><a href="#频谱分析" class="headerlink" title="频谱分析"></a>频谱分析</h5><p>$$<br>\begin{aligned}<br>e^{j\beta\sin\omega_mt}&amp;&#x3D;\sum_{-\infty}^{\infty}C_ne^{jn\omega_mt}\newline<br>C_n&amp;&#x3D;\frac{1}{T_m}\int_{-\frac{T_m}{2}}^{\frac{T_m}{2}}e^{j\beta\sin\omega_mt}e^{-jn\omega_mt}dt&#x3D;J_n(\beta)\newline<br>J_n(\beta)&amp;&#x3D;\sum_{k&#x3D;0}^{\infty}\frac{(-1)^k(\frac{\beta}{2})^{n+2k}}{k!(k+n)!}\newline<br>x_c(t)&amp;&#x3D;A_c\sum J_n(\beta)\cos(\omega_c+n\omega_m)t\newline<br>X_c(f)&amp;&#x3D;\frac{A_c}{2}\sum_{-\infty}^{\infty}J_n(\beta)[\delta(f-f_c-nf_m)+\delta(f+f_c+nf_m)]\newline</p>
+<p>\end{aligned}<br>$$</p>
+<ul>
+<li><p>$J_n(\beta)$的特性：</p>
+<ul>
+<li>$J_{-n}(\beta)&#x3D;(-1)^nJ_n(\beta)$，如$J_{-1}(\beta)&#x3D;-J_1(\beta),J_{-2}(\beta)&#x3D;J_2(\beta)$</li>
+<li>整体上随$n$增大而减小</li>
+</ul>
+</li>
+<li><p>窄带调频(NBFM，$\beta&lt;&lt;1$)</p>
+<p>认为$J_n(\beta)\rightarrow0,n&gt;1$</p>
+<p>$X_c(f)&#x3D;\frac{A_c}{2}[\delta(f-f_c)+\delta(f+f_c)]+\frac{A_c}{4}\beta[\delta(f-f_c-f_m)+\delta(f+f_c+f_m)]-\frac{A_c}{4}\beta[\delta(f-f_c+f_m)+\delta(f+f_c-f_m)]$</p>
+<p>带宽近似为$B_T&#x3D;2f_m$，近似幅度调制</p>
+</li>
+<li><p>宽带调频(WBFM，$\beta&gt;1$)</p>
+<p>保留边频数$n&#x3D;\beta+1$，带宽为$B_T&#x3D;2(\beta+1)f_m&#x3D;2(\Delta f+f_m)$，即卡森定则</p>
+</li>
+</ul>
+<h5 id="FM信号的产生"><a href="#FM信号的产生" class="headerlink" title="FM信号的产生"></a>FM信号的产生</h5><ul>
+<li><p>直接调频：将调制信号加在变容二极管上，可获得较大频偏，但稳定度不高<br>$$<br>\begin{aligned}<br>C(t)&#x3D;C_0-kx(t)\newline<br>f_i&#x3D;\frac{1}{2\pi\sqrt{LC(t)}}&#x3D;\frac{1}{2\pi\sqrt{LC_0}}[1-\frac{k}{C_0}x(t)]^{-\frac{1}{2}}\newline<br>f_i&#x3D;f_c[1+\frac{k}{2C_0}x(t)]<br>\end{aligned}<br>$$</p>
+</li>
+<li><p>间接调频：先产生NBFM，在经过倍频器产生WBFM<br>$$<br>x_c(t)&#x3D;A_c\cos(\omega_ct+k_f\int_{0}^{\infty}x(\tau)d\tau)&#x3D;A_c\cos\omega_ct\cos[k_f\int_{0}^{\infty}x(\tau)d\tau]-A_c\sin\omega_ct\sin[k_f\int_{0}^{\infty}x(\tau)d\tau]\rightarrow A_c\cos\omega_ct-A_c\sin\omega_ct\cdot k_f\int_0^{\infty}x(\tau)d\tau<br>$$<br>经倍频后，载频增加N倍，调制指数也增加N倍</p>
+</li>
+</ul>
+<h5 id="解调"><a href="#解调" class="headerlink" title="解调"></a>解调</h5><ul>
+<li><p>非相干解调</p>
+<p><strong>鉴频器</strong>：$y_d(t)&#x3D;k_d\cdot k_fx(t)$(鉴频灵敏度$k_d$单位为$V&#x2F;rad\cdot s$)</p>
+<p><img src="/img/post/pc/%E9%89%B4%E9%A2%91%E5%99%A8.png" srcset="/img/loading.gif" lazyload alt="AM抗噪声"></p>
+</li>
+<li><p>相干解调</p>
+<p><img src="/img/post/pc/FM%E7%9B%B8%E5%B9%B2%E8%A7%A3%E8%B0%83.png" srcset="/img/loading.gif" lazyload alt="AM抗噪声"></p>
+</li>
+</ul>
+<h4 id="相位调制"><a href="#相位调制" class="headerlink" title="相位调制"></a>相位调制</h4><p>$$<br>\begin{aligned}<br>\Delta \omega&#x3D;k_pA_m\omega_m\newline<br>\beta&#x3D;\frac{\Delta\omega}{\omega_m}&#x3D;k_pA_m<br>\end{aligned}<br>$$</p>
+<p>传输带宽仍满足卡森定则，发送功率为$S_T&#x3D;\frac{A_c^2}{2}$</p>
+<h3 id="角度调制的抗噪声性能"><a href="#角度调制的抗噪声性能" class="headerlink" title="角度调制的抗噪声性能"></a>角度调制的抗噪声性能</h3><p><img src="/img/post/pc/%E8%A7%92%E5%BA%A6%E8%B0%83%E5%88%B6%E7%B3%BB%E7%BB%9F%E6%8A%97%E5%99%AA%E5%A3%B0.png" srcset="/img/loading.gif" lazyload alt="AM抗噪声"></p>
+<p>BPF的输出：接收信号与窄带噪声的叠加<br>$$<br>y(t)&#x3D;x_c(t)+n(t)&#x3D;A_c\cos[\omega_ct+\phi(t)]+R_n(t)\cos[\omega_c t+\theta_n(t)]&#x3D;R_y(t)\cos[\omega_ct+\theta_y(t)]<br>$$</p>
+<ul>
+<li><p>FM系统：噪声功率谱与频率有关，输出信噪比与传输带宽有关<br>$$<br>\begin{aligned}<br>S_{n_0}(f)&#x3D;\frac{k_d^2}{A_c^2}(2\pi f)^2N_0,|f|\le f_x\newline<br>(\frac{S}{N})&#x3D;3\beta^2S_X(\frac{S_R}{N_0f_x})\newline<br>\end{aligned}<br>$$</p>
+</li>
+<li><p>PM系统：<br>$$<br>\begin{aligned}<br>S_{n_0}(f)&#x3D;(\frac{k_d’}{A_c})^2N_0,|f|\le f_x\newline<br>\frac{S}{N}&#x3D;k_p^2\cdot\frac{S_R}{N_0f_x}\cdot S_X<br>\end{aligned}<br>$$</p>
+</li>
+<li><p>存在门限效应：小信噪比时信号完全淹没在噪声中无法解调，<strong>不可无限制实现带宽与信号功率的互换</strong>，实际中$\beta$受信号带宽与接收功率的限制</p>
+</li>
+</ul>
+<h3 id="频分多路复用-FDM"><a href="#频分多路复用-FDM" class="headerlink" title="频分多路复用(FDM)"></a>频分多路复用(FDM)</h3><p>将多个信号复合成一个已调信号，在同一个信道中传输，实际FDM采用多次复用的方法实现大容量通信。</p>
+<p>如载波电话系统：12个SSB形成基群，5个基群形成超群，5个超群形成主群。</p>
+<h2 id="第四章-模拟信号的数字传输"><a href="#第四章-模拟信号的数字传输" class="headerlink" title="第四章 模拟信号的数字传输"></a>第四章 模拟信号的数字传输</h2><p>AD转换的全过程，包括取样、量化、编码三部分。实际中量化编码都由编码器完成。</p>
+<ul>
+<li>取样：将模拟信号转变为幅值连续、时域离散的采样信号脉冲序列。</li>
+<li>量化：将采样信号的取值连续的样值用取值离散的量化电平替代。</li>
+<li>编码：将取样量化得到的离散值转换成二进制代码的过程。</li>
+</ul>
+<p>框图：</p>
+<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226211951101.png" srcset="/img/loading.gif" lazyload alt="image-20231226211951101"></p>
+<hr>
+<h3 id="4-1-模拟信号的取样"><a href="#4-1-模拟信号的取样" class="headerlink" title="4.1 模拟信号的取样"></a>4.1 模拟信号的取样</h3><h4 id="低通信号的取样"><a href="#低通信号的取样" class="headerlink" title="低通信号的取样"></a>低通信号的取样</h4><p>通过对模拟信号乘以采样脉冲序列实现采样。<br>$$<br>\begin{aligned}<br>x_s(t)&amp;&#x3D;x(t)\cdot\sum_{n&#x3D;-\infty}^{\infty}\delta(t-nT_s)\<br>\Rightarrow X_s(\omega)&amp;&#x3D;\sum_nP_nX(\omega-n\omega_s)<br>\end{aligned}<br>$$<br>频谱上实现了搬移。</p>
+<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226212143477.png" srcset="/img/loading.gif" lazyload alt="image-20231226212143477"></p>
+<ul>
+<li>奈奎斯特定理：设模拟信号$x(t)$为一<strong>带限信号</strong>，最高频率为$f_x$。为了避免频谱混叠，实现信号无失真还原，需要满足$f_s&gt;2f_x$。抽样序列经过幅度为$T_s$，截止频率为$f_c(f_x&lt;f_c&lt;f_s-f_x)$的理想低通滤波器后，可以不失真地恢复原信号。</li>
+</ul>
+<h4 id="带通信号的取样"><a href="#带通信号的取样" class="headerlink" title="带通信号的取样"></a>带通信号的取样</h4><p>带通信号的取样定理：设带通信号$x(t)$的频谱宽度为$B_T$，最高频率为$f_H&#x3D;mB_T+kB_T$，$m$是小于$\frac{f_H}{B_T}$的最大整数，$0&lt;k&lt;1$。则当采样频率为$f_s&#x3D;\frac{2f_H}{m}&#x3D;2B_T(1+\frac{k}{m})$时，$x(t)$可由取样值$x(nT_s)$完全确定。</p>
+<p>即带通信号取样频率与信号带宽相关；对于窄带高频信号，$f_H&gt;&gt;B_T$，$f_s\rightarrow2B_T$，此时$x(t)$可视为低通信号。</p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230130449279" style="zoom:50%;" />
+
+<hr>
+<h3 id="4-2-模拟信号的量化"><a href="#4-2-模拟信号的量化" class="headerlink" title="4.2 模拟信号的量化"></a>4.2 模拟信号的量化</h3><img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231226212549583" style="zoom:50%;" />
+
+<ul>
+<li>量化的步骤：<ul>
+<li>将$x(t)$的幅值分为$Q$个量化级(量化电平数)，每个量化间隔记为$\Delta_i&#x3D;x_i-x_{i-1},(i&#x3D;1,2,…,Q)$。</li>
+<li>如果样值$x(nT_s)$落在区间$(x_{i-1},x_i)$内，相应的量化值$x_q(nT_s)$取$m_i$，这一步是由量化器的特性决定的。</li>
+</ul>
+</li>
+</ul>
+<p>量化误差：取样值与量化电平的误差，$e&#x3D;x-x_q$，该误差无法消除，称为量化误差。</p>
+<h4 id="均匀量化"><a href="#均匀量化" class="headerlink" title="均匀量化"></a>均匀量化</h4><p>设信号幅度在$x_p&#x3D;\pm|x(t)_{max}|$之间。则$\Delta&#x3D;\frac{2x_p}{Q}&#x3D;\frac{2x_p}{2^L}$，其中$L$为量化电平的二进制代码长度。</p>
+<p>特点：量化间隔$\Delta$为常数；$m_i$取值为$m_i&#x3D;\pm\frac{\Delta}{2},\pm\frac{3\Delta}{2},…,\pm\frac{(Q-1)\Delta}{2}$，量化误差$e\in(-\frac{\Delta}{2},\frac{\Delta}{2}]$</p>
+<ul>
+<li><p>量化噪声的平均功率：$N_q&#x3D;\frac{\Delta^2}{12}$，<strong>只与量化台阶有关</strong>。</p>
+<blockquote>
+<p>计算：<br>$$<br>N_q&#x3D;E[e^2]&#x3D;E[(x-x_q)^2]&#x3D;\int_{-x_p}^{x_p}(x-x_q)^2f(x)dx&#x3D;\sum_{i&#x3D;1}^Q\int_{x_{i-1}}^{x_i}(x-m_i)^2\cdot f_i(x)dx<br>$$<br>当$\Delta$足够小时，认为$f_i(x)&#x3D;P_i\cdot\frac{1}{\Delta}$。</p>
+<p>则有<br>$$<br>N_q&#x3D;\sum_{i&#x3D;1}^Q\frac{P_i}{\Delta}\int_{x_{i-1}}^{x_i}(x-m_i)^2dx&#x3D;\sum_{i&#x3D;1}^Q\frac{P_i}{\Delta}\int_{-\frac{\Delta}{2}}^{\frac{\Delta}{2}}e^2de&#x3D;\frac{\Delta^2}{12}<br>$$</p>
+</blockquote>
+</li>
+<li><p>量化信噪比：定义为<strong>量化器输入的模拟信号的平均功率与量化噪声平均功率的比值</strong>。</p>
+<blockquote>
+<p>推导：</p>
+<p>$S&#x3D;E[x^2(t)]&#x3D;\overline{x^2(t)}$，$N_q&#x3D;\frac{\Delta^2}{12}&#x3D;\frac{x_p^2}{3\cdot2^{2L}}$，因此$\frac{S}{N_q}&#x3D;3\cdot2^{2L}&#x2F;k^2$，其中$k^2&#x3D;\frac{x_p^2}{\overline{x^2(t)}}$，为峰值功率与平均功率的比值。取dB可得，<br>$$<br>(\frac{S}{N_q})_{dB}&#x3D;4.77+6.02L-20\lg k<br>$$<br><strong>注意：该公式只适用于双极性信号的量化信噪比计算。</strong></p>
+</blockquote>
+</li>
+</ul>
+<p>因此，量化信噪比的相关因素仅有码元长度（或量化级数或量化台阶）和模拟信号功率。</p>
+<p>当输入信号为正弦信号时，$x_p&#x3D;A,\overline{x^2(t)}&#x3D;\frac{A^2}{2}\Rightarrow k&#x3D;\sqrt{2}$</p>
+<p>当输入信号功率等于峰值功率时，有$(\frac{S}{N_q})_{max}&#x3D;4.77+6.02L$。</p>
+<p>而当输入信号幅值概率分布为均匀分布且双极性正负峰值相等时，有<br>$$<br>\begin{aligned}<br>\overline{x^2(t)}&amp;&#x3D;\int_{-x_p}^{x_p}x^2\cdot\frac{1}{2x_p}dx&#x3D;\frac{x_p^2}{3}\newline<br>k&amp;&#x3D;\sqrt\frac{x_p^2}{\overline{x^2(t)}}&#x3D;\sqrt{3}\newline<br>(\frac{S}{N_q})_{dB}&amp;&#x3D;6.02L<br>\end{aligned}<br>$$<br><strong>从定义式考虑，相关因素仅有两方面：量化台阶（由量化器决定）和模拟信号功率。当提升码元表示的进制数时，量化信噪比是不变的。</strong></p>
+<h4 id="非均匀量化"><a href="#非均匀量化" class="headerlink" title="非均匀量化"></a>非均匀量化</h4><p>实现$\Delta$随信号幅度而改变，目的是扩大小信号的量化信噪比、信号的动态范围。</p>
+<p>实现方法为对取样信号进行非线性压扩后在进行均匀量化。</p>
+<hr>
+<h3 id="4-3-编码"><a href="#4-3-编码" class="headerlink" title="4.3 编码"></a>4.3 编码</h3><h4 id="A87-6的13折线近似"><a href="#A87-6的13折线近似" class="headerlink" title="A87.6的13折线近似"></a>A87.6的13折线近似</h4><p>原理：$x$、$y$轴均为归一化信号，将$x$轴采用<strong>对分法</strong>，$y$轴采用<strong>等分法</strong>，均分为8段，再将每段16等分，得到各段的量化台阶。</p>
+<p>最小的量化台阶为$\Delta&#x3D;\frac{1}{2048}$。</p>
+<p>编码为8位折叠二进制码，其关于零电平对称，对小信号的影响小。</p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231226214900261" style="zoom: 80%;" />
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>终点坐标</td>
+<td>1&#x2F;128</td>
+<td>1&#x2F;64</td>
+<td>1&#x2F;32</td>
+<td>1&#x2F;16</td>
+<td>1&#x2F;8</td>
+<td>1&#x2F;4</td>
+<td>1&#x2F;2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>量化台阶</td>
+<td>1&#x2F;2048</td>
+<td>1&#x2F;2048</td>
+<td>1&#x2F;1024</td>
+<td>1&#x2F;512</td>
+<td>1&#x2F;256</td>
+<td>1&#x2F;128</td>
+<td>1&#x2F;64</td>
+<td>1&#x2F;32</td>
+</tr>
+<tr>
+<td>量化台阶（量化单位）</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>8</td>
+<td>16</td>
+<td>32</td>
+<td>64</td>
+</tr>
+<tr>
+<td>起始电平（量化单位）</td>
+<td>0</td>
+<td>16</td>
+<td>32</td>
+<td>64</td>
+<td>128</td>
+<td>256</td>
+<td>512</td>
+<td>1024</td>
+</tr>
+</tbody></table>
+<p>第二段往后的量化台阶与起始电平有以下关系：<br>$$<br>\Delta_{i+1}&#x3D;2\Delta_i\<br>x_{i+1}&#x3D;x_i+16\times\Delta_i<br>$$</p>
+<ul>
+<li>$b_7$为极性码，取样值为正取1否则取0。</li>
+<li>$b_6b_5b_4$为段落码，表明所处段落，共8段，<strong>段间不等分</strong>。</li>
+<li>$b_3b_2b_1b_0$为段内码，表明所处段内的量化级，每段16个量化级，<strong>段内等分</strong>。</li>
+</ul>
+<blockquote>
+<p>由输入信号样值判断编码：</p>
+<ul>
+<li>根据极性确定极性码。</li>
+<li>按照0、16、32、64、128、256、512、1024、2048，分析输入信号样值在哪个区间内，如在32与64之间，则判断在第3段，段落码为010。</li>
+<li>在段内根据段长度确定段内$\Delta$，从而确定段内码。</li>
+</ul>
+<p>由编码进行译码：</p>
+<ul>
+<li>根据极性码确定量化电平极性。</li>
+<li>根据段落码确定段落，8个段落的边界电平分别为0、16、32、64、128、256、512、1024、2048。</li>
+<li>在段内根据段长度确定段内$\Delta$，使用段内码确定在段内的第几个量化级，同时**加上$\frac{\Delta}{2}$<strong>，保证量化误差小于$\frac{\Delta}{2}$。因此</strong>最大量化误差也为$\frac{\Delta}{2}$**。</li>
+</ul>
+</blockquote>
+<p>硬件电路中采取逐次反馈比较法获得编码。</p>
+<p>译码时，如果是向下取整，则给译码电平加上$\frac{\Delta_i}{2}$；如果是向上取整，则给译码电平减去$\frac{\Delta_i}{2}$。目的是保证量化误差小于$\frac{\Delta_i}{2}$，但不一定保证量化误差最小。</p>
+<p>编码采用折叠码的优点：</p>
+<ul>
+<li>相对自然二进制码，当正、负极性的码绝对值相同时，折叠码相对零电平对称折叠，这使其编码过程大大简化</li>
+<li>在传输过程中出现误码时，折叠码对小信号的影响小。例如，小信号因误码从1000变为0000时，对自然二进制码造成的误差是8个量化级，而对折叠二进制码造成的误差只有1个量化级。因此在信号幅度较小的语音信号中选用了折叠码</li>
+</ul>
+<p>均匀量化编码与非均匀量化编码对比：<strong>非均匀量化的编码位数更少，所需传输带宽减小</strong>。</p>
+<hr>
+<h3 id="4-4-PCM通信系统"><a href="#4-4-PCM通信系统" class="headerlink" title="4.4 PCM通信系统"></a>4.4 PCM通信系统</h3><p>将模拟信号经取样、量化、编码，以数字信号传输的过程称为脉冲编码调制(PCM)。</p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231226220555903" style="zoom:50%;" />
+
+<p>两次低通滤波作用分别为：</p>
+<ul>
+<li>获得带限信号</li>
+<li>进行内插获得原始波形</li>
+</ul>
+<h4 id="传输指标"><a href="#传输指标" class="headerlink" title="传输指标"></a>传输指标</h4><p>设样值以$L$位<strong>二进制码元</strong>表示，传输时要求在每个$T_s$时间内传输$L$位码元，因此**码元传输速率(最小)为$R_B&#x3D;\frac{L}{T_s}&#x3D;Lf_s$**。</p>
+<blockquote>
+<p>对于取样量化后的信号，可以编码获得对应的数字序列，如$Q$个量化级，码组长度为$L&#x3D;\log_2Q$，码元宽度是相对于码组中的每一个码元而言的，而每个码组最后也可以解码得到对应的量化电平。</p>
+<p>一般的，使用二进制PCM信号时，$R_b&#x3D;R_B$。</p>
+<p>对于话音信号，采样频率$f_s&#x3D;8\text{kHz}$，使用8位二进制编码表示，则$R_B&#x3D;64\text{kbit&#x2F;s}$</p>
+</blockquote>
+<p><strong>奈奎斯特第一准则：不失真传输宽度为$T$的二进制脉冲，所需最小的传输带宽为$\frac{1}{2T}$。</strong></p>
+<p>因此，传输PCM信号的<strong>最小带宽</strong>(对应码元脉冲为$\frac{\sin x}{x}$)为<br>$$<br>B_{PCM}\ge\frac{L}{2T_s}&#x3D;\frac{Lf_s}{2}&#x3D;\frac{R_B}{2}<br>$$<br>通常，PCM信号的传输带宽为$B_{PCM}&#x3D;Lf_s$，对应码元脉冲为<strong>矩形脉冲</strong>。</p>
+<blockquote>
+<p>结论：编码长度$L$增加，量化信噪比增大，但是所需要的传输带宽也会增加。</p>
+</blockquote>
+<p><strong>注意区分模拟信号$x(t)$的带宽与量化器输出的PCM信号的带宽！！！</strong></p>
+<h4 id="时分复用"><a href="#时分复用" class="headerlink" title="时分复用"></a>时分复用</h4><p>设取样周期为$T_s$，若传输一路信号的每个样点值所占用的时间为$\tau$，则可在$T_s-\tau$的时间里传送其它路信号的样点值，只要各样点值不重叠。这种用时间划分从而在同一信道中同时传输多路信号的方式称为时分复用(TDM)。</p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230111717801" style="zoom:50%;" />
+
+<hr>
+<h3 id="4-5-增量调制"><a href="#4-5-增量调制" class="headerlink" title="4.5 增量调制"></a>4.5 增量调制</h3><p>减小冗余和降低带宽的一种方法就是对相邻样值的差值作PCM调制——差分脉冲编码调制(DPCM)。一种简单的方法是将差值用一位二进制编码表示，即增量调制(DM)。</p>
+<ul>
+<li><p>原理图</p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230111805650" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230111855719" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230111911269" style="zoom:50%;" />
+</li>
+<li><p>过载噪声</p>
+<p>当$\Delta$和$f_s$给定后，$x(t)$的变化率不能太快，否则$\hat{x}(t)$的变化速度跟不上$x(t)$，而产生“斜率过载” ，由此产生的噪声为过载噪声。即模拟信号$x(t)$的变化率应满足$x(t)$的最大斜率不大于$\hat{x}(t)$的斜率。</p>
+<blockquote>
+<p>$$<br>|\frac{dx(t)}{dt}|_{max}\le\Delta\cdot f_s<br>$$</p>
+<p>对于$x(t)&#x3D;A\sin2\pi ft$可得临界过载输入电压为<br>$$<br>A_{max}&#x3D;\frac{\Delta\cdot f_s}{2\pi f}<br>$$</p>
+</blockquote>
+</li>
+<li><p>量化噪声</p>
+<p>单边功率谱密度为<br>$$<br>S_e(f)&#x3D;\frac{\Delta^2}{3f_s},0&lt;f&lt;f_s<br>$$</p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230160343217" style="zoom:50%;" /></li>
+</ul>
+<h2 id="第五章-数字基带传输"><a href="#第五章-数字基带传输" class="headerlink" title="第五章 数字基带传输"></a>第五章 数字基带传输</h2><img src="/2023/09/10/1通信原理/undefined" srcset="/img/loading.gif" lazyload  style="zoom:67%;" />
+
+<p>数字基带传输系统</p>
+<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226222018513.png" srcset="/img/loading.gif" lazyload alt="image-20231226222018513"></p>
+<hr>
+<h3 id="5-1-数字基带传输的常用码型"><a href="#5-1-数字基带传输的常用码型" class="headerlink" title="5.1 数字基带传输的常用码型"></a>5.1 数字基带传输的常用码型</h3><p>传输码适合用于信道传输，具有以下特点：</p>
+<ul>
+<li>无直流分量或者较小的低频分量，可避免部分信道对低频信号响应较差的问题</li>
+<li>利于从基带信号中获取位定时信息</li>
+<li>频谱结构不受信源统计特征影响</li>
+</ul>
+<h4 id="基本码型"><a href="#基本码型" class="headerlink" title="基本码型"></a>基本码型</h4><p>按脉冲极性分为</p>
+<ul>
+<li>单极性码：包含0、正电平</li>
+<li>双极性码：包含正负电平</li>
+</ul>
+<p>按脉冲占空比分为</p>
+<ul>
+<li>归零码：在单个码元时间内脉冲归零</li>
+<li>不归零码：单个码元时间内脉冲不归零</li>
+</ul>
+<p>按脉冲幅度的电平数分为</p>
+<ul>
+<li>二电平码：仅两个电平</li>
+<li>多电平码：包含多个电平</li>
+</ul>
+<h4 id="差分码"><a href="#差分码" class="headerlink" title="差分码"></a>差分码</h4><ul>
+<li><p>定义：用相邻码元是否有电平转换表示消息代码的‘0’与‘1’，也称为相对码。</p>
+</li>
+<li><p>编码器为：$a_k&#x3D;d_k\oplus a_{k-1}&#x3D;(d_k+a_{k-1})\mod2$。</p>
+<blockquote>
+<p>示例：消息码‘10110001’的传输码为‘011011110’</p>
+</blockquote>
+</li>
+<li><p>译码器为：$d_k&#x3D;a_k\oplus a_{k-1}&#x3D;(a_k+a_{k-1})\mod2$，即对传输码相邻码元进行比较，极性相同输出0，否则输出1。</p>
+</li>
+<li><p>特点：<strong>消息代码与差分码码元间是否发生改变相关，因此差分码即使极性反转也不影响译码结果，可以克服相位键控的相位模糊问题。</strong>不影响信源特性，功率谱与原信号功率谱相同。</p>
+</li>
+</ul>
+<h4 id="AMI码"><a href="#AMI码" class="headerlink" title="AMI码"></a>AMI码</h4><ul>
+<li><p>定义：传号交替反转码，消息代码中的‘1’转变为传输码中交替转换的‘1’与‘-1’，消息代码中的‘0’则转变为传输码中的‘0’。</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>一般‘1’与‘-1’等概率出现，因此低频成分少，适合低频响应不良的信道。</li>
+<li>可以通过极性交替进行自纠错。</li>
+<li>出现连‘0’时难以提取定时信息。</li>
+<li><strong>性能与信源统计特性相关，即0、1的分布概率。</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="HDB-3-码"><a href="#HDB-3-码" class="headerlink" title="$HDB_3$码"></a>$HDB_3$码</h4><ul>
+<li><p>定义：基于AMI码的改进型，克服连‘0’无法提取定时信息的缺点。</p>
+</li>
+<li><p>改进：对于4个以上的连‘0’码，使用取代节（B00V或000V）对‘0000’进行替代</p>
+<blockquote>
+<p>B为符合极性交替的传号码，V为<strong>破坏极性交替的传号码</strong>，B的意义就是保证V在满足V之间极性交替的同时能破坏前一个非零符号的极性交替特性。比如前一个为-V，此时一定为+V，若前面一个非零符号为负，则需要加上一个+B使+V能破坏极性交替性质。</p>
+</blockquote>
+</li>
+<li><p>特点：保持了AMI的优点，并且将连‘0’减少至3个，<strong>不受信源统计特征约束</strong>。有误码扩散、具有误码自检能力。</p>
+</li>
+<li><p>编码方式：先获得AMI码，再对其中的4个以上连‘0’码进行替换。</p>
+</li>
+<li><p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226222619528.png" srcset="/img/loading.gif" lazyload alt="image-20231226222619528"></p>
+</li>
+</ul>
+<h4 id="Manchester码"><a href="#Manchester码" class="headerlink" title="Manchester码"></a>Manchester码</h4><ul>
+<li><p>定义：双相码、裂项码，将每个二进制码用两个不同相位的二进制码取代</p>
+<p>对应关系为消息代码的‘1’对应传输码的‘10’，消息代码的‘0’对于传输码的‘01’。</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>每个码元中心存在跳变，利于提取定时信息</li>
+<li>周期内正负电平持续时间相同，无直流分量</li>
+<li><strong>传输带宽大</strong></li>
+<li>调制速率变大，而码元速率不变</li>
+</ul>
+</li>
+</ul>
+<h4 id="Miller码"><a href="#Miller码" class="headerlink" title="Miller码"></a>Miller码</h4><ul>
+<li>定义：Manchester码的变形，消息代码中的‘1’对应传输码元的中间发生跳变，消息代码中的‘0’对应传输码元的中间不发生跳变，<strong>出现连零时，对应的传输码元间发生跳变</strong>。</li>
+<li><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226222744128.png" srcset="/img/loading.gif" lazyload alt="image-20231226222744128"></li>
+<li>特点：<ul>
+<li>最大宽度为两个码元周期，可用于误码检测</li>
+<li>传输带宽相较Manchester码较小</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-2-数字基带信号的功率谱密度"><a href="#5-2-数字基带信号的功率谱密度" class="headerlink" title="5.2 数字基带信号的功率谱密度"></a>5.2 数字基带信号的功率谱密度</h3><h4 id="二进制随机基带脉冲序列的功率谱"><a href="#二进制随机基带脉冲序列的功率谱" class="headerlink" title="二进制随机基带脉冲序列的功率谱"></a>二进制随机基带脉冲序列的功率谱</h4><p>设数字基带信号可以表示为<br>$$<br>s(t)&#x3D;\sum_{n&#x3D;-\infty}^{\infty}a_ng(t-nT_s)<br>$$<br>其中$a_n$代表二进制序列的第$n$个符号电平值，各符号统计独立；<br>$$<br>g(t_n-T_s)&#x3D;\left{\begin{aligned}g_1(t-nT_s)\newline<br>g_2(t-nT_s)\end{aligned}\right.<br>$$<br>对应不同二进制码的码元波形，设出现概率分别为$P$和$1-P$（这与信源统计特性相关）。则功率谱密度为<br>$$<br>P_s(f)&#x3D;f_sP(1-P)|G_1(f)-G_2(f)|^2+f_s^2\sum_{m&#x3D;-\infty}^{\infty}|PG_1(mf_s)+(1-P)G_2(mf_s)|^2\delta(f-mf_s)<br>$$<br>一般二进制随机基带脉冲序列的PSD包含连续谱和离散谱：</p>
+<ul>
+<li>连续谱的形状主要取决于码元脉冲波形$G_1(f)$与$G_2(f)$。</li>
+<li>离散谱线出现在$f&#x3D;mf_s$处，谱线强度与$G_1(f)$与$G_2(f)$在$f&#x3D;mf_s$的取值有关。</li>
+</ul>
+<blockquote>
+<p>考虑$g_1(t)&#x3D;0,g_2(t)$为$[-\frac{T_s}{2},\frac{T_s}{2}]$上的矩形波，令$P&#x3D;\frac{1}{2}$，则<br>$$<br>\begin{aligned}<br>G_2(f)&amp;&#x3D;T_s\frac{\sin\pi fT_s}{\pi fT_s}\newline<br>P_s(f)&amp;&#x3D;\frac{1}{4}f_s\cdot |G(f)|^2+\frac{1}{4}\delta(f)\newline<br>&amp;&#x3D;\frac{1}{4}T_s\cdot |\frac{\sin\pi fT_s}{\pi fT_s}|^2+\frac{1}{4}\delta(f)<br>\end{aligned}<br>$$</p>
+</blockquote>
+<p>当$g_1(t)&#x3D;0$，$g_2(t)$为单极性非归零码时，仅在$f&#x3D;0$处存在离散谱线。</p>
+<p><strong>当$g_1(t)$与$g_2(t)$为双极性脉冲且等概时，离散谱不存在。</strong></p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231231204712989" style="zoom:50%;" />
+
+<hr>
+<h3 id="5-3-数据传输中的码间串扰"><a href="#5-3-数据传输中的码间串扰" class="headerlink" title="5.3 数据传输中的码间串扰"></a>5.3 数据传输中的码间串扰</h3><p>码间串扰指相邻码元由于波形展宽、畸变对当前码元判决造成影响。</p>
+<p>将输入信号写为$d(t)&#x3D;\sum_{i&#x3D;0}^{\infty}a_i\delta(t-iT)$，信道噪声为$n_c(t)$，功率谱密度为$S_{n_c}(f)$。令$g(t)&#x3D;g_T(t)*h_c(t)*h_R(t)$，输出为<br>$$<br>y(t)&#x3D;d(t)*g(t)+n_c(t)*h_R(t)&#x3D;\sum_{i}a_ig(t-iT)+n(t)<br>$$<br>$n(t)$为经过接收滤波器的输出噪声，功率谱密度为$S_n(f)&#x3D;S_{n_c}(f)\cdot|H_R(f)|^2$。</p>
+<p>在第$k$个码元取样时刻，即$t&#x3D;t_0+kT$，有<br>$$<br>y(t_0+kT)&#x3D;\sum_{i}a_ig(t_0+kT-iT)+n(t_0+kT)<br>$$<br>上式可以简记为<br>$$<br>y_k&#x3D;\sum_ia_ig_{k-i}+n_k&#x3D;a_kg_0+\sum_{i\neq k}a_kg_{k-i}+n_k<br>$$<br>分析上式，可以得到$y_k$由三部分组成：</p>
+<ul>
+<li><p>$a_kg_0$：第$k$个码元波形在取样时刻$t_k$时的输出</p>
+</li>
+<li><p>$\sum_{i\neq k}a_kg_{k-i}$：除第$k$个码元波形外，其他所有码元在取样时刻$t_k$输出总和，这部分会对当前码元波形的判决产生干扰，即ISI，<strong>应尽可能使这部分为0</strong>。</p>
+</li>
+<li><p>$n_k$：信道噪声，为随机干扰。</p>
+</li>
+</ul>
+<hr>
+<h3 id="5-4-无ISI带限信号设计——Nyquist第一准则"><a href="#5-4-无ISI带限信号设计——Nyquist第一准则" class="headerlink" title="5.4 无ISI带限信号设计——Nyquist第一准则"></a>5.4 无ISI带限信号设计——Nyquist第一准则</h3><h4 id="Nyquist第一准则"><a href="#Nyquist第一准则" class="headerlink" title="Nyquist第一准则"></a>Nyquist第一准则</h4><p>对于<br>$$<br>y_k&#x3D;\sum_ia_ig_{k-i}+n_k&#x3D;a_kg_0+\sum_{i\neq k}a_kg_{k-i}+n_k<br>$$<br>要消除ISI，应保证<br>$$<br>g_k&#x3D;g(t_k)&#x3D;\left{<br>\begin{aligned}<br>1,k&#x3D;0\newline<br>0,k\neq 0<br>\end{aligned}<br>\right.<br>$$<br>即要求当前码元波形在自身取样时刻为1，其他取样时刻的取值均为0，减少对其他码元判决的影响。</p>
+<p>无ISI的系统总频率响应为<br>$$<br>G_{\sum}(f)&#x3D;\sum_nG(f+\frac{n}{T})&#x3D;T,|f|&lt;\frac{1}{2T}<br>$$<br><strong>即$G(f)$通过向左向右移动$\frac{n}{T},n&#x3D;\pm 1,\pm 2,…$后，能保证在$|f|&lt;\frac{1}{2T}$范围内是平坦的。</strong></p>
+<p>Nyquist第一准则提出了消除ISI的条件：<br>$$<br>g_k&#x3D;g(t_k)&#x3D;\left{<br>\begin{aligned}<br>1,k&#x3D;0\newline<br>0,k\neq 0<br>\end{aligned}<br>\right.\<br>G(f)\longleftrightarrow g(t)\<br>G_{\sum}(f)&#x3D;\sum_nG(f+\frac{n}{T})&#x3D;T,|f|&lt;\frac{1}{2T}<br>$$<br>给定<strong>码元速率</strong>为$R_B&#x3D;\frac{1}{T}$的信号序列，满足无ISI的$G(f)$的取法有两种可能：</p>
+<ul>
+<li>$G(f)$带宽为$B_T&#x3D;\frac{1}{2T}$，此时为最小带宽，$G(f)$是唯一的：<br>$$<br>\begin{aligned}<br>G_{\sum}(f)&amp;&#x3D;G(f)&#x3D;T,|f|&lt;\frac{1}{2T}\newline<br>g(t)&amp;&#x3D;\frac{\sin\frac{\pi t}{T}}{\frac{\pi t}{T}}<br>\end{aligned}<br>$$</li>
+</ul>
+<p>对二进制信号进行分析，$R_b&#x3D;R_B&#x3D;\frac{1}{T}$，传输频带为$B_T&#x3D;\frac{1}{2T}$，有最大频带利用率$\eta&#x3D;\frac{R_b}{B_T}&#x3D;2\text{bit&#x2F;s&#x2F;Hz}$。</p>
+<blockquote>
+<p>基带数字系统最大频带利用率为$2\text{Baud&#x2F;s}$</p>
+<p>频带数字系统最大频带利用率为$1\text{Baud&#x2F;s}$</p>
+</blockquote>
+<ul>
+<li>$G(f)$带宽满足$\frac{1}{2T}&lt;B_T\leq\frac{1}{T}$，此时条件为**$G(f)$关于$f&#x3D;0$偶对称， $G(f)$的滚降部分关于$f&#x3D;\frac{1}{2T}$奇对称**。由于带宽增大，频带利用率下降，但是$G(f)$更容易实现。</li>
+</ul>
+<blockquote>
+<p><strong>上述均为码元速率为$R_B&#x3D;\frac{1}{T}$下的最佳传输特性，从时域波形来分析，即码元波形距离$t&#x3D;0$处最近的一个过零点为$t&#x3D;T$。而满足$G_{\sum}(f)$平坦特性的$G(f)$带宽也可大于$\frac{1}{T}$，但其频带利用率会更低，在时域上表现为$t&#x3D;0$与$t&#x3D;T$之间有其他过零点。</strong></p>
+</blockquote>
+<p>如果输入脉冲为矩形脉冲序列时，相当于$d(t)$经过脉冲产生器$p(t)$得到$x(t)$，则$x(t)&#x3D;d(t)*p(t)&#x3D;\sum_{i&#x3D;0}^{\infty}a_ip(t-iT)$，系统总特性为$G’(f)&#x3D;P(f)\cdot G(f)$。</p>
+<h4 id="升余弦谱"><a href="#升余弦谱" class="headerlink" title="升余弦谱"></a>升余弦谱</h4><p>升余弦谱的传输特性满足：<br>$$<br>G(f)&#x3D;\left{<br>\begin{aligned}<br>&amp;T,|f|&lt;\frac{1}{2T}-\beta\newline<br>&amp;T\cos^2\frac{\pi}{4\beta}(|f|-\frac{1}{2T}+\beta),\frac{1}{2T}-\beta&lt;|f|\leq\frac{1}{2T}+\beta\newline<br>&amp;0,|f|&gt;\frac{1}{2T}+\beta<br>\end{aligned}<br>\right.<br>$$</p>
+<p>其中$\beta$为滚降区域宽度，满足$0&lt;\beta\leq\frac{1}{2T}$。定义滚降系数为$\alpha&#x3D;\beta&#x2F;\frac{1}{2T}$，则升余弦谱带宽为<br>$$<br>B_T&#x3D;\frac{1}{2T}+\beta&#x3D;\frac{1+\alpha}{2T}<br>$$<br><img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231226225106074" style="zoom:67%;" /></p>
+<p>特点：$G(f)$易实现，波形收敛速度快。</p>
+<blockquote>
+<p>注意的重点是，上述的$T$都是码元速率，在此条件下，无ISI的条件都是在$[-\frac{1}{2T},\frac{1}{2T}]$内平坦。</p>
+</blockquote>
+<hr>
+<h3 id="5-5-部分响应信号——Nyquist第二准则"><a href="#5-5-部分响应信号——Nyquist第二准则" class="headerlink" title="5.5 部分响应信号——Nyquist第二准则"></a>5.5 部分响应信号——Nyquist第二准则</h3><p>先前的系统传输特性存在难以实现或频带利用率低的问题，要想获得易实现、收敛速度快、频带利用率为$2\text{bit&#x2F;s&#x2F;Hz}$的传输特性，则需要引入ISI，可以尝试保证ISI可控。</p>
+<p><strong>Nyquist第二准则：人为引入可控的ISI，使频带利用率达到$2\text{bit&#x2F;s&#x2F;Hz}$。</strong></p>
+<p>$H_L(f)$为满足Nyquist第一准则的理想LPF，即将传输特性限制在$B_T&#x3D;\frac{1}{2T}$，保证频带利用率最大。</p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231231213214414" style="zoom:50%;" />
+
+<h4 id="双二进制系统"><a href="#双二进制系统" class="headerlink" title="双二进制系统"></a>双二进制系统</h4><p><img src="C:\Users\Eternity\AppData\Roaming\Typora\typora-user-images\image-20231118104605997.png" srcset="/img/loading.gif" lazyload alt="image-20231118104605997"></p>
+<p>预编码：$c_k&#x3D;a_k\oplus c_{k-1},b_k&#x3D;c_k+c_{k-1}$，先由信息码获得差分码，再将差分码进行相关编码。</p>
+<p>译码：</p>
+<ul>
+<li><p>单极性波：$\hat{a}_k&#x3D;b_k\mod2$</p>
+</li>
+<li><p>双极性波：<br>$$<br>\hat{a}_k&#x3D;\left{<br>\begin{align}<br>&amp;0,y_k&#x3D;\pm2\newline<br>&amp;1,y_k&#x3D;0<br>\end{align}<br>\right.<br>$$<br>$\hat{a}_k$只取决于$b_k$，不会发生误码扩散。</p>
+</li>
+</ul>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231231213417724" style="zoom:50%;" />
+
+
+
+<h4 id="修正双二进制系统"><a href="#修正双二进制系统" class="headerlink" title="修正双二进制系统"></a>修正双二进制系统</h4><p>预编码：$c_k&#x3D;a_k\oplus c_{k-2},b_k&#x3D;c_k-c_{k-2}&#x3D;(a_k\oplus c_{k-2})-c_{k-2}$</p>
+<p>译码：$\hat{a}_k&#x3D;b_k\mod2$</p>
+<h4 id="一般部分响应系统"><a href="#一般部分响应系统" class="headerlink" title="一般部分响应系统"></a>一般部分响应系统</h4><p>相关编码可用有限抽头的横向滤波器实现：$b_k&#x3D;\sum_{i&#x3D;0}^{N}k_ia_{k-i}$。</p>
+<p>对于M进制PAM信号：</p>
+<ul>
+<li>预编码：$a_k&#x3D;\left(\sum_{i&#x3D;0}^Nk_ic_{k-i}\right)\mod M$</li>
+<li>相关编码：$a_k&#x3D;\sum_{i&#x3D;0}^Nk_ic_{k-i}$</li>
+<li>译码：$\hat{a}_k&#x3D;b_k\mod M$</li>
+</ul>
+<p><img src="C:\Users\Eternity\AppData\Roaming\Typora\typora-user-images\image-20231118105204772.png" srcset="/img/loading.gif" lazyload alt="image-20231118105204772"></p>
+<hr>
+<h3 id="5-6-最佳传输系统"><a href="#5-6-最佳传输系统" class="headerlink" title="5.6 最佳传输系统"></a>5.6 最佳传输系统</h3><p>定义：发送功率一定条件下，错误概率$Pe$最小的基带系统。</p>
+<p>从两个影响$Pe$的因素考虑：</p>
+<ul>
+<li>ISI：使系统总特性满足Nyquist第一准则，$G(f)$选择升余弦谱。</li>
+<li>信道噪声：发送功率一定，则需要$\left(\frac{S}{N}\right)_0$最大。</li>
+</ul>
+<p>特例：当信道噪声为白噪声：$S_n(f)&#x3D;\frac{N_0}{2}$，信道为理想低通特性：$|H_c(f)|&#x3D;k_c,|f|&lt;\frac{1}{2T_s}+\beta$时，若$p(t)$取足够窄的脉冲，即$P(f)\rightarrow1,|f|&lt;B_T$，则有<br>$$<br>|H_R(f)|&#x3D;|G_T(f)|&#x3D;|G(f)|^{\frac{1}{2}}<br>$$<br>此时，<br>$$<br>\begin{aligned}<br>\left(\frac{A^2}{\sigma^2}\right)<em>{\text{max}}&amp;&#x3D;\left(\frac{3P_Tk_c^2T_s}{M^2-1}\right)\cdot\left(\frac{2}{N_0}\right)&#x3D;\left(\frac{3}{M^2-1}\right)\cdot\left(\frac{2E_s}{N_0}\right)\newline<br>(P_e)</em>{\text{min}}&amp;&#x3D;\frac{2(M-1)}{M}Q\left(\sqrt{\left(\frac{3}{M^2-1}\right)\cdot\frac{2E_s}{N_0}}\right)<br>\end{aligned}<br>$$<br>最佳基带传输系统的设计步骤：</p>
+<ul>
+<li>明确技术要求：如$R_b$、$P_{eb}$、传输距离、发送功率上限等。</li>
+<li>选择信道，了解信道特征，如$H_c(f)$、$S_n(f)$。</li>
+<li>选择波形和码型：</li>
+<li>波形——根据无ISI条件，如$G(f)$选择升余弦谱，$p(t)$选尽量窄的脉冲。</li>
+<li>码型——低通信道选二电平码，低频响应不良信道选择AMI、$HDB_3$、Machester码等。</li>
+<li>设计接收、发送滤波器。</li>
+<li>计算所需发送功率$P_T$<ul>
+<li>若$P_T$小于允许值，设计结束</li>
+<li>若$P_T$大于允许值，考虑改良信道特性</li>
+<li>若信道无法改善可考虑采用差错控制技术，从而降低对$P_{eb}$的要求。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>功率谱关系：<br>$$<br>S_o(f)&#x3D;S_i(f)|H(f)|^2<br>$$</p>
+</blockquote>
+<hr>
+<h3 id="5-7-均衡器"><a href="#5-7-均衡器" class="headerlink" title="5.7 均衡器"></a>5.7 均衡器</h3><p>由于$H_c(f)$的不确定性和可变性以及实现误差的存在，实际系统中不可避免地仍存在ISI，为此需在系统中附加可调节的滤波器，以校正、补偿此失真。</p>
+<p>定义：对系统中的线性失真进行校正的过程称为均衡。专门用以实现均衡的滤波器称为均衡器（Equalizer)。均衡器通常接在传输系统的线性部分。<strong>在数字基带系统中一般放在取样判决之前。</strong></p>
+<p>根据工作原理可分为：</p>
+<ul>
+<li><p>频域均衡：使包括均衡器在内的整个系统的传输函数满足无失真传输的条件。</p>
+<p>$H_{eq}(f)&#x3D;\frac{k\cdot\exp(-j2\pi ft_d)}{H_c(f)}$</p>
+</li>
+<li><p>时域均衡：使包括均衡器在内的整个系统的冲激响应满足无ISI的条件，使用横向滤波器消除ISI。</p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231231214415256" style="zoom:50%;" /></li>
+</ul>
+<p>评价最佳准则可分为：</p>
+<ul>
+<li><p>最小峰值准则：选择${c_n}$使得$D&#x3D;\frac{1}{g_0}\sum_{i\neq 0}|g_i|$最小，导出迫零算法，即迫使$g_0$附近有限个$g_{k},k\neq0$为0。</p>
+<p>可转换为求解矩阵方程：<br>$$<br>\left[\begin{aligned}&amp;g_{F,0}\quad g_{F,-1}\quad …\quad g_{F,-2N}\newline<br>  &amp;g_{F,1}\quad g_{F,0}\quad …\quad g_{F,-2N+1}\newline<br>  &amp;…\quad\space …\quad\space…\quad\space…\newline<br>  &amp;g_{F,2N}\quad g_{F,2N-1}\quad …\quad g_{F,0}<br>  \end{aligned}\right]\cdot\left[\begin{aligned}c_{-N}\newline c_{-N+1}\newline<br>  …\newline<br>  c_0\newline<br>  …\newline<br>  c_{N-1}\newline<br>  c_{N}<br>  \end{aligned}\right]&#x3D;\left[\begin{align}0\newline0\newline…\newline1\newline…\newline0\newline0\end{align}\right]<br>$$<br>计算$g_k$时，<br>$$<br>g_k&#x3D;\sum_{n&#x3D;-N}^{N}c_{n}g_{F,k-n}<br>$$</p>
+</li>
+<li><p>最小均方误差准则：选择${c_n}$使得$\epsilon_k&#x3D;E[e^2_k]$最小，导出最小均方算法。</p>
+</li>
+</ul>
+<h2 id="第六章-匹配滤波器"><a href="#第六章-匹配滤波器" class="headerlink" title="第六章 匹配滤波器"></a>第六章 匹配滤波器</h2><p>最佳基带传输系统的设计也可以是在信道特征$H_c(f)$已知以及发送滤波器$G_T(f)$给定条件下，寻找最佳接受滤波器$H_R(f)$。</p>
+<p>最佳接收滤波器&#x3D;匹配滤波器(实现特性匹配，以获得最大输出信噪比)+无限抽头横向滤波器(消除ISI)</p>
+<h3 id="6-1-最大信噪比准则——MF的导出"><a href="#6-1-最大信噪比准则——MF的导出" class="headerlink" title="6.1 最大信噪比准则——MF的导出"></a>6.1 最大信噪比准则——MF的导出</h3><p><strong>匹配滤波器：最大输出信噪比（滤波器输出端信号瞬时功率&#x2F;滤波器输出端噪声平均功率）准则下的最佳线性滤波器。</strong></p>
+<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226230241368.png" srcset="/img/loading.gif" lazyload alt="image-20231226230241368"></p>
+<p>以下对于波形（因为是已知的固定波形）的分析基于时间自相关：</p>
+<ul>
+<li>$R(\tau)&#x3D;\int_{-\infty}^{\infty}s(t)s(t+\tau)d\tau$</li>
+<li>$R(-\tau)&#x3D;R(\tau)$</li>
+<li>$R(0)&#x3D;\int_{-\infty}^{\infty}s^2(t)dt&#x3D;E$</li>
+<li>$R(\tau)\leftrightarrow|A(f)|^2$，代表信号能谱密度</li>
+</ul>
+<p>而对于白噪声（随机过程，服从高斯分布）基于自相关统计自相关。</p>
+<p>当滤波器为$h(t)$时，输出信号在$t&#x3D;t_0$时的取值：$s_0(t_0)&#x3D;\int_{-\infty}^{\infty}A(f)H(f)e^{j2\pi ft_0}df$</p>
+<p>输出噪声的平均功率：$E[n_0^2(t)]&#x3D;\int_{-\infty}^{\infty}\frac{N_0}{2}|H(f)|^2df$</p>
+<p><em><em>当$H_m(f)&#x3D;A^</em>(f)e^{-j2\pi ft_0}$时，$h_m(t)&#x3D;s_i^</em>(t_0-t)$，此时$d&#x3D;\frac{2E}{N_0}$**</p>
+<blockquote>
+<p>推导：</p>
+<p>满足$h_m(t)&#x3D;s(t_0-t)$时，<br>$$<br>s_0(t)&#x3D;\int_{-\infty}^{\infty}|A(f)|^2df&#x3D;E<br>$$<br>当噪声为白噪声时，<br>$$<br>\begin{aligned}R_{n_0}(\tau)&amp;&#x3D;R_{ni}(\tau)*h_m(\tau)*h_m(-\tau)\newline<br>&amp;&#x3D;\frac{N_0}{2}\int_{-\infty}^{\infty}s(t_0-t)s(t_0-t+\tau)d\tau\newline<br>&amp;&#x3D;\frac{N_0}{2}\int_{-\infty}^{\infty}s(t’)s(t’+\tau)d\tau\newline<br>\Rightarrow E[n_0^2(t)]&amp;&#x3D;R_{n0}(0)&#x3D;\frac{N_0}{2}\int_{-\infty}^{\infty}s^2(t’)d\tau&#x3D;\frac{N_0}{2}E<br>\end{aligned}<br>$$</p>
+</blockquote>
+<p>结论：加性白噪声背景下，获得最大输出信噪比的最佳线性滤波器，其传输函数时输入信号的复共轭，其脉冲响应是输入信号的镜像：<br>$$<br>\begin{aligned}<br>H_m(f)&amp;&#x3D;A^*(f)e^{-j2\pi ft_0}\newline<br>h_m(t)&amp;&#x3D;s_i^*(t_0-t)&#x3D;s_i(t_0-t)<br>\end{aligned}<br>$$<br>此时最大瞬时信噪比为<br>$$<br>d&#x3D;\frac{s_0^2(t)}{E[n^2_0(t)]}&#x3D;\frac{2E}{N_0}<br>$$<br>MF可以理解为一个能量累计器。</p>
+<p>根据画图理解，$s_o(t)&#x3D;s_i(t)*h_m(t)&#x3D;s(t)*s(t_0-t)$，实际上类似自相关操作，只有当两者重合时，自相关程度最高，此时$t&#x3D;t_0$，为原始波形平均功率乘以时间得到的结果，即波形能量。</p>
+<hr>
+<h3 id="6-2-MF的性质"><a href="#6-2-MF的性质" class="headerlink" title="6.2 MF的性质"></a>6.2 MF的性质</h3><h4 id="MF的设计"><a href="#MF的设计" class="headerlink" title="MF的设计"></a>MF的设计</h4><ul>
+<li><p>MF只与输入信号波形有关</p>
+</li>
+<li><p>$t_0$选取：需满足$h_m(t)$为因果信号，所以取$t_0&#x3D;T$，$T$为码元长度。</p>
+</li>
+<li><p>等效实现：相关器<br>$$<br>y(t)&#x3D;x(t)*h_m(t)&#x3D;\int_{0}^{T}x(\tau)s_i[T-(t-\tau)]d\tau<br>$$<br>当$t&#x3D;T$时，$y(T)&#x3D;\int_{0}^{T}x(\tau)s_i(\tau)d\tau$，为时间自相关。</p>
+</li>
+</ul>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231231221235009" style="zoom:50%;" />
+
+<h4 id="MF的性质"><a href="#MF的性质" class="headerlink" title="MF的性质"></a>MF的性质</h4><ul>
+<li><p>输出信号$s_0(t)$是输入信号$s_i(t)$的自相关函数。</p>
+</li>
+<li><p>输出信号$s_0(t)$关于$t&#x3D;t_0$对称。</p>
+</li>
+<li><p>输出信号$s_0(t)$在$t&#x3D;t_0$时刻取得峰值$E$，$E$为MF的输入信号能量，即<br>$$<br>\begin{aligned}<br>s_0(t)&#x3D;\int_{-\infty}^{\infty}|A(f)|^2e^{j2\pi f(t-t_0)}df\Rightarrow s_0(t_0)&#x3D;\int_{-\infty}^{\infty}|A(f)|^2df&#x3D;E\newline<br>s_0(t)&#x3D;\int_{0}^Ts_i(t-t_0+\tau)s_i(\tau)d\tau\Rightarrow s_0(t_0)&#x3D;\int_{-\infty}^{\infty}s_i^2(\tau)d\tau&#x3D;E<br>\end{aligned}<br>$$</p>
+</li>
+</ul>
+<h4 id="MF的输出噪声"><a href="#MF的输出噪声" class="headerlink" title="MF的输出噪声"></a>MF的输出噪声</h4><p>当输入噪声为<strong>白噪声</strong>时，</p>
+<ul>
+<li>输出噪声的统计自相关函数与输入信号的时间自相关函数形状相同</li>
+<li><strong>输出噪声的平均功率为$\frac{N_0}{2}E$</strong></li>
+</ul>
+<hr>
+<h3 id="6-3-MF的计算举例"><a href="#6-3-MF的计算举例" class="headerlink" title="6.3 MF的计算举例"></a>6.3 MF的计算举例</h3><h4 id="矩形脉冲的MF"><a href="#矩形脉冲的MF" class="headerlink" title="矩形脉冲的MF"></a>矩形脉冲的MF</h4><p>$$<br>s_i(t)&#x3D;\left{<br>\begin{aligned}<br>&amp;A,0\le t\le T\newline<br>&amp;0,o.w.<br>\end{aligned}<br>\right.<br>$$</p>
+<blockquote>
+<p>MF设计：<br>$$<br>s_i(t)\leftrightarrow A(f)&#x3D;\int_{-\infty}^{\infty}s_i(t)e^{-j2\pi ft}dt&#x3D;\frac{A}{j2\pi f}[1-e^{-j2\pi fT}]\<br>H_m(f)&#x3D;A^*(f)e^{-j2\pi fT}&#x3D;\frac{A}{j2\pi f}(e^{j2\pi fT}-1)e^{-j2\pi ft_0}<br>$$</p>
+</blockquote>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231231221442998" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231231221511494" style="zoom:50%;" />
+
+<h4 id="射频脉冲的MF"><a href="#射频脉冲的MF" class="headerlink" title="射频脉冲的MF"></a>射频脉冲的MF</h4><p>$$<br>s_i(t)&#x3D;\left{<br>\begin{aligned}<br>&amp;A\cos\omega_0t,0\le t\le T\newline<br>&amp;0,o.w.<br>\end{aligned}<br>\right.<br>$$</p>
+<p>式中$\omega_0&#x3D;2\pi f_0$为射频频率，设脉冲宽度为射频周期$T_0$的整数倍，即$T&#x3D;kT_0$</p>
+<blockquote>
+<p>MF设计：</p>
+<p>设$s_1(t)$为矩形脉冲，则<br>$$<br>\begin{aligned}<br>s_i(t)&amp;&#x3D;s_1(t)\cdot \cos\omega_0t\newline<br>H_m(f)&amp;&#x3D;\frac{A}{2}[\frac{1}{j2\pi(f-f_0)}+\frac{1}{j2\pi(f+f_0)}](1-e^{-j2\pi fT})\newline</p>
+<p>\end{aligned}<br>$$</p>
+</blockquote>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231231221846625" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231231221858735" style="zoom:50%;" />
+
+
+
+<hr>
+<h3 id="6-4-将色噪声转化为白噪声的方法"><a href="#6-4-将色噪声转化为白噪声的方法" class="headerlink" title="6.4 将色噪声转化为白噪声的方法"></a>6.4 将色噪声转化为白噪声的方法</h3><p>可将MF分解为$H(f)&#x3D;H_1(f)H_2(t)$，当色噪声功率谱为$S_n(f)$，需要$S_n(f)|H_1(f)|^2&#x3D;C$，此时信号经过$H_1(f)$后输出为<br>$$<br>A’(f)&#x3D;A(f)H_1(f)<br>$$<br>$H_2(f)$起匹配作用：<br>$$<br>H_2(f)&#x3D;A’^*(f)e^{-j2\pi ft_0}&#x3D;A^*(f)H^*_1(f)e^{-j2\pi ft_0}<br>$$<br>所以等效输出为：<br>$$<br>H(f)&#x3D;H_1(f)H_2(f)&#x3D;|H_1(f)|^2A^*(f)e^{-j2\pi ft_0}&#x3D;\frac{C}{S_n(f)}A^*(f)e^{-j2\pi ft_0}<br>$$</p>
+<h2 id="第七章-最佳接收"><a href="#第七章-最佳接收" class="headerlink" title="第七章 最佳接收"></a>第七章 最佳接收</h2><p>对二进制信号的检测：</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240102214705487" style="zoom:50%;" />
+
+
+
+<p>对有噪信号，检测属于有限状态中的哪一个，需要借助怎样的判决依据？</p>
+<p>接收机的组成：</p>
+<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231213222800939.png" srcset="/img/loading.gif" lazyload alt="image-20231213222800939"></p>
+<p>其中，信号解调器的作用是将接收信号$r(t)$转化为一个可判决的判决变量$y$，经过判决器使用特定最佳准则进行状态判断。</p>
+<hr>
+<h3 id="7-1-判决理论"><a href="#7-1-判决理论" class="headerlink" title="7.1 判决理论"></a>7.1 判决理论</h3><p>本章中最佳指<strong>差错概率最小</strong>。</p>
+<h4 id="最大后验与最小差错概率准则"><a href="#最大后验与最小差错概率准则" class="headerlink" title="最大后验与最小差错概率准则"></a>最大后验与最小差错概率准则</h4><ul>
+<li><p>最大后验概率准则：<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231213223200215" style="zoom:50%;" /></p>
+<p>将此转换为对条件概率的求解：</p>
+</li>
+</ul>
+<p>$$<br>  P(H_1|y)&#x3D;\frac{P(H_1)P(y|H_1)}{P(y)}&#x3D;\frac{P(H_1)f(y|H_1)}{f(y)}<br>$$<br>  可得似然比检验。</p>
+<ul>
+<li><p>似然比检验：<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231213223528119" style="zoom:50%;" /></p>
+<p>一般写作：</p>
+</li>
+</ul>
+<p>$$<br>  \lambda(y)&#x3D;\frac{f(y|H_1)}{f(y|H_0)}\<br>$$<br>  当选用最小差错概率准则时，$\lambda_0&#x3D;\frac{P(H_0)}{P(H_1)}$</p>
+<ul>
+<li>最大似然检验：当$P(H_0)&#x3D;P(H_1)$时，为最大似然检验。</li>
+</ul>
+<blockquote>
+<p>通过似然比检验，可以求出对应的观测变量，并确定对应的判决门限。</p>
+</blockquote>
+<h4 id="单次观测"><a href="#单次观测" class="headerlink" title="单次观测"></a>单次观测</h4><p>二元数字信号的单次观测：<br>$$<br>\left{\begin{aligned}<br>s_0(t)&#x3D;0\newline<br>s_1(t)&#x3D;1<br>\end{aligned}\right.\quad0&lt;t&lt;T<br>$$<br>先验概率为$P(H_0)$与$P(H_1)$，信道噪声$n(t)$为均值为0，方差为1的高斯噪声。</p>
+<ul>
+<li><p>判决门限</p>
+<p>接收信号：$H_0:r(t)&#x3D;s_0(t)+n(t)\sim N(0,1),H_1:r(t)&#x3D;s_1(t)+n(t)\sim N(1,1)$</p>
+<p>似然函数为：<br>$$<br>\begin{aligned}<br>f(y|H_0)&amp;&#x3D;\frac{1}{\sqrt{2\pi}}\exp(-\frac{y^2}{2})\newline<br>f(y|H_1)&amp;&#x3D;\frac{1}{\sqrt{2\pi}}\exp(-\frac{(y-1)^2}{2})<br>\end{aligned}<br>$$<br>则似然比为：<br>$$<br>\lambda(y)&#x3D;\frac{f(y|H_1)}{f(y|H_0)}&#x3D;\exp(y-\frac{1}{2})<br>$$<br>推导出判决门限为：<br>$$<br>y_T&#x3D;\frac{1}{2}+\ln(\frac{P(H_0)}{P(H_1)})<br>$$</p>
+</li>
+<li><p>系统平均差错概率</p>
+<p>将“0”判为“1”的概率：<br>$$<br>P(D_1|H_0)&#x3D;\int_{y_T}^{\infty}f(y|H_0)dy<br>$$<br>将“1”判为“0”的概率：<br>$$<br>P(D_0|H_1)&#x3D;\int_{-\infty}^{y_T}f(y|H_1)dy<br>$$<br>平均错误概率：<br>$$<br>\begin{aligned}<br>Pe&amp;&#x3D;P(H_0)P(D_1|H_0)+P(H_1)P(D_0|H_1)\newline&amp;&#x3D;P(H_0)\int_{y_T}^{\infty}f(y|H_0)dy+P(H_1)\int_{-\infty}^{y_T}f(y|H_1)dy<br>\end{aligned}<br>$$</p>
+</li>
+</ul>
+<h4 id="多次观测"><a href="#多次观测" class="headerlink" title="多次观测"></a>多次观测</h4><p>与单次观测类似，取观测变量$\hat{m}_y$：<br>$$<br>\hat{m}<em>y&#x3D;\frac{1}{m}\sum</em>{i&#x3D;1}^{m}y_i<br>$$<br>此时判决门限变为：<br>$$<br>\lambda_0’&#x3D;\frac{1}{2}+\frac{\sigma^2}{m}\ln\lambda_0<br>$$<br>同时，误码率求解与单次观测类似，但是观测变量的方差由$\sigma^2$变为$\sigma^2&#x2F;m$。<strong>（采样点之间互不相关）</strong></p>
+<hr>
+<h3 id="7-2-二元确知信号的检测"><a href="#7-2-二元确知信号的检测" class="headerlink" title="7.2 二元确知信号的检测"></a>7.2 二元确知信号的检测</h3><p>确知信号：$s_i(t)$所有参数均已知。</p>
+<h4 id="相关接收机模型"><a href="#相关接收机模型" class="headerlink" title="相关接收机模型"></a>相关接收机模型</h4><p>已知$(0,T)$的二进制信号为$s_0(t)$和$s_1(t)$ ，信道噪声$n(t)$是均值为0，双边功率谱密度为$\frac{N_0}{2}$的高斯噪声。在连续观测下，观测变量为<br>$$<br>\int_{0}^{T}r(t)s_1(t)dt-\int_{0}^{T}r(t)s_0(t)dt<br>$$<br>判决门限为<br>$$<br>V_T&#x3D;\frac{1}{2}N_0\ln\lambda_0-\frac{1}{2}\int_{0}^{T}[s_0^2(t)-s_1^2(t)]dt<br>$$<br>先验等概时，<br>$$<br>V_T&#x3D;\frac{1}{2}\int_{0}^T[s_1^2(t)-s_0^2(t)]dt<br>$$</p>
+<p>接收机模型为：</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228220441319" style="zoom:67%;" />
+
+
+
+
+
+<p>可以使用MF进行等效：</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228221343689" style="zoom:67%;" />
+
+<p>对于某一判决变量$X$，求解其在$H_0$和$H_1$下的概率密度分布。</p>
+<p>首先要明确：</p>
+<p>求均值、积分是线性操作，确知信号$r(t)$在经过线性变换后仍是高斯分布，同时两种操作可交换次序。</p>
+<p>此外，明确信号与噪声不相关。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103222216513" style="zoom:50%;" />
+
+
+
+<p>引入参量：码元平均能量和相关系数<br>$$<br>\begin{aligned}<br>E&amp;&#x3D;\frac{1}{2}\int_{0}^{T}[s_0^2(t)+s_1^2(t)]dt\newline<br>\rho&amp;&#x3D;\frac{1}{E}\int_{0}^{T}s_1(t)s_0(t)dt,|\rho|\le1<br>\end{aligned}<br>$$<br>此时最小差错概率为<br>$$<br>Pe&#x3D;\frac{1}{2}\text{erfc}(\sqrt{\frac{E(1-\rho)}{2N_0}})<br>$$</p>
+<blockquote>
+<p>数字通信接收机的性能取决于：</p>
+<ul>
+<li>信号平均能量$E$</li>
+<li>白噪声功率谱$N_0$</li>
+<li>信号相关系数$\rho$，在$E,N_0$相等情况下，极性相反的信号差错概率最小。</li>
+</ul>
+</blockquote>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228221540899" style="zoom:50%;" />
+
+
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228221710399" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228221641895" style="zoom:50%;" />
+
+<hr>
+<h3 id="7-3-随机相位信号检测"><a href="#7-3-随机相位信号检测" class="headerlink" title="7.3 随机相位信号检测"></a>7.3 随机相位信号检测</h3><p>随相信号：$s_i(t)$同一码元内相位取值不变，不同码元内相位取值随机。</p>
+<h4 id="正交接收机模型"><a href="#正交接收机模型" class="headerlink" title="正交接收机模型"></a>正交接收机模型</h4><p>已知二进制信号<br>$$<br>\begin{aligned}<br>H_1:&amp;s_1(t)&#x3D;A\cos(\omega_0t+\theta)\newline<br>H_0:&amp;s_0(t)&#x3D;0<br>\end{aligned}<br>$$<br>其中$A,\omega_0$已知，$\theta$是随机参数，且有<br>$$<br>f(\theta)&#x3D;\left{<br>\begin{aligned}<br>&amp;\frac{1}{2\pi},0\le\theta\le 2\pi\newline<br>&amp;0,\text{o.w.}<br>\end{aligned}<br>\right.<br>$$<br>信道噪声是高斯白噪声，双边功率谱密度为$\frac{N_0}{2}$。</p>
+<p>令<br>$$<br>\begin{aligned}<br>&amp;R\cos\varphi&#x3D;\int_{0}^Tr(t)\cos\omega_0tdt\newline<br>&amp;R\sin\varphi&#x3D;\int_{0}^Tr(t)\sin\omega_0tdt<br>\end{aligned}<br>$$<br>取$R$为观测变量，判决变量$\eta$满足$I_0(\frac{2A\eta}{N_0})&#x3D;\lambda_0\exp(\frac{A^2T}{2N_0})$。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228222526219" style="zoom: 50%;" />
+
+<p>使用MF替代：</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228222550877" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228222630249" style="zoom:67%;" />
+
+<hr>
+<h3 id="7-4-准最佳接受"><a href="#7-4-准最佳接受" class="headerlink" title="7.4 准最佳接受"></a>7.4 准最佳接受</h3><p>准最佳接收就是将最佳接收机中的相关器部分不是用MF代替，而是用准匹配滤波器（例如LPF或BPF）代替，此时系统性能会有一定程度下降，但简单，易实现。</p>
+<h2 id="第八章-数字信号的带通传输"><a href="#第八章-数字信号的带通传输" class="headerlink" title="第八章 数字信号的带通传输"></a>第八章 数字信号的带通传输</h2><p>主要指标</p>
+<ul>
+<li>频带利用率：单位频带内信息传输速率：$\frac{R_b}{B}(\text{biy&#x2F;s&#x2F;Hz})$</li>
+<li>功率利用率：达到一定误比特$P_e$时所需的最小$\frac{E_b}{N_0}$</li>
+</ul>
+<p><strong>在频带传输中，注意带宽的计算。</strong></p>
+<hr>
+<h3 id="8-1-二进制幅度键控-2ASK"><a href="#8-1-二进制幅度键控-2ASK" class="headerlink" title="8.1 二进制幅度键控(2ASK)"></a>8.1 二进制幅度键控(2ASK)</h3><h4 id="调制-1"><a href="#调制-1" class="headerlink" title="调制"></a>调制</h4><ul>
+<li><p>时域波形：<br>$$<br>s_{ASK}(t)&#x3D;[\sum_na_ng(t-nT)]\cos\omega_0t<br>$$<br>实现：即在原始数字信号序列上乘以载波$\cos\omega_0t$。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228223617749" style="zoom:50%;" />
+
+
+</li>
+<li><p>功率谱</p>
+<p>设载波的初始相位均匀分布，则功率谱为基带信号功率谱的线性搬移（类比模拟信号幅度调制）。</p>
+</li>
+</ul>
+<p>$$<br>\begin{aligned}<br>R_{ASK}(\tau)&amp;&#x3D;E{b(t)\cos(\omega_0t+\theta)\cdot b(t+\tau)\cos(\omega_0(t+\tau)+\theta)}\<br>&amp;&#x3D;E[b(t)b(t+\tau)]\cdot E[\cos(\omega_0t+\theta)\cos(\omega_0(t+\tau)+\theta)]\<br>&amp;&#x3D;\frac{1}{2}R_b(\tau)\cos\omega_0\tau\newline<br>\Rightarrow S_{ASK}(f)&amp;&#x3D;\frac{1}{4}[S_b(f-f_0)+S_b(f+f_0)]<br>\end{aligned}<br>$$</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228223834488" style="zoom:50%;" />
+
+
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231228223846664" style="zoom:50%;" />
+
+<h4 id="解调-1"><a href="#解调-1" class="headerlink" title="解调"></a>解调</h4><ul>
+<li><p>相干解调</p>
+<p>使用最佳相关接收机，<strong>其中一路$s_0(t)&#x3D;0$，所以最终只需要一路相关。</strong></p>
+</li>
+</ul>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231220211704570" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231220213040916" style="zoom:50%;" />
+
+<ul>
+<li><p>非相干解调</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231229110505306" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231229110620932" style="zoom:50%;" />
+
+<p>在大信噪比下，$erfc(x)\rightarrow\frac{1}{\sqrt{\pi}x}e^{-x^2}$</p>
+<p>$Pe&#x3D;\frac{1}{2}\exp(-\frac{A^2T}{8N_0})&#x3D;\frac{1}{2}\exp(-\frac{E}{2N_0})$</p>
+</li>
+</ul>
+<p>相干检测误码性能比非相干好，但需要同频同相的本地载波。</p>
+<hr>
+<h3 id="8-2-二进制频移键控-2FSK"><a href="#8-2-二进制频移键控-2FSK" class="headerlink" title="8.2 二进制频移键控(2FSK)"></a>8.2 二进制频移键控(2FSK)</h3><h4 id="调制-2"><a href="#调制-2" class="headerlink" title="调制"></a>调制</h4><ul>
+<li><p>时域波形：<br>$$<br>s_{FSK}(t)&#x3D;\sum_ia_ig(t-iT_b)\cos(\omega_1t+\theta_1)+\sum_i\overline{a}_ig(t-iT_b)\cos(\omega_0t+\theta_0)<br>$$<br>  由两个独立载波源产生，会发生相位不连续问题。</p>
+</li>
+<li><p>功率谱</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231220213733231" style="zoom:50%;" />
+
+<p>2）当基带信号为升余弦谱时，2FSK信号传输带宽为$B&#x3D;2\Delta F+(1+\alpha)R$。</p>
+</li>
+</ul>
+<h4 id="相位连续调制——载波调频法"><a href="#相位连续调制——载波调频法" class="headerlink" title="相位连续调制——载波调频法"></a>相位连续调制——载波调频法</h4><p>$$<br>s_{FSK}(t)&#x3D;A\cos\left[\omega_ct+\Delta\omega\int^{t}_{0}b(\tau)d\tau\right]<br>$$<br><img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231220215109552" style="zoom:50%;" /></p>
+<h4 id="解调-2"><a href="#解调-2" class="headerlink" title="解调"></a>解调</h4><ul>
+<li><p>相干解调</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231220215222390" style="zoom:50%;" />
+
+<p>$Pe&#x3D;\frac{1}{2}erfc(\sqrt{\frac{E}{2N_0}})&#x3D;\frac{1}{2}erfc(\sqrt{\frac{A^2T}{4N_0}})$</p>
+<blockquote>
+<p>当$\frac{E}{N_0}$相等时，2FSK相干检测的误码性能与2ASK相同，但是2ASK的信号幅度$A$要大于2FSK</p>
+<p>分析：对于2ASK，$s_0(t)&#x3D;0$，无能量贡献。</p>
+</blockquote>
+</li>
+<li><p>非相干解调：两路正交接收机</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231220215653488" style="zoom:50%;" />
+
+<p>满足$\omega_1-\omega_0&#x3D;\frac{2\pi}{T}$，此时解调器一个支路在$t&#x3D;T$时刻取峰值，另一个支路恰好为0，从而最大可能消除两支路的相互干扰。</p>
+<p>$Pe&#x3D;\frac{1}{2}\exp(-\frac{E}{2N_0})&#x3D;\frac{1}{2}\exp(-\frac{A^2T}{4N_0})$</p>
+<blockquote>
+<p>当$\frac{E_b}{N_0}$相同时，2ASK与2FSK的功率利用率相同，但是<strong>2FSK的频带利用率更低</strong>。</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="8-3-二进制移相键控-2PSK、2DPSK"><a href="#8-3-二进制移相键控-2PSK、2DPSK" class="headerlink" title="8.3 二进制移相键控(2PSK、2DPSK)"></a>8.3 二进制移相键控(2PSK、2DPSK)</h3><h4 id="2PSK"><a href="#2PSK" class="headerlink" title="2PSK"></a>2PSK</h4><h5 id="调制-3"><a href="#调制-3" class="headerlink" title="调制"></a>调制</h5><ul>
+<li><p>时域波形：$a_i$取值为$\pm1$<br>$$<br>s_{2PSK}(t)&#x3D;[\sum_na_ng(t-nT)]\cos\omega_0t<br>$$</p>
+</li>
+<li><p>功率谱：$S_{2PSK}(f)&#x3D;\frac{1}{4}[S_b(f-f_0)+S_b(f+f_0)]$</p>
+<p>主瓣带宽：$B_T&#x3D;\frac{2}{T}&#x3D;2R$</p>
+<p>频带利用率：$\eta&#x3D;\frac{R}{B_T}&#x3D;\frac{1}{2}\text{bit&#x2F;s&#x2F;Hz}$</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231229125003930" style="zoom:50%;" /></li>
+</ul>
+<h5 id="解调-3"><a href="#解调-3" class="headerlink" title="解调"></a>解调</h5><p><strong>必须采用相干解调，无法检波</strong>。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231220221156337" style="zoom:50%;" />
+
+<p>因为两路信号完全反相，$\rho&#x3D;-1$，误码性能最优。</p>
+<p><strong>存在180°相位模糊问题。</strong></p>
+<h4 id="2DPSK"><a href="#2DPSK" class="headerlink" title="2DPSK"></a>2DPSK</h4><p>将数字信息承载在相邻码元载波相位的改变上，或说以前一码元的 载波相位作为参考相位，称为相对调相或差分相移键控（2DPSK： Differential Phase- Shift Keying）。</p>
+<p>对于信息码，“1”对应相对前一码元相位改变$\pi$，“0”对应相对前一码元相位改变$0$。</p>
+<h5 id="调制-4"><a href="#调制-4" class="headerlink" title="调制"></a>调制</h5><p>对信息码进行差分编码，得到相对码：<br>$$<br>d_k&#x3D;a_k\oplus d_{k-1}<br>$$</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231220222000741" style="zoom:50%;" />
+
+<h5 id="解调-4"><a href="#解调-4" class="headerlink" title="解调"></a>解调</h5><img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103094903787" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103094930743" style="zoom:50%;" />
+
+<p>$Pe&#x3D;\frac{1}{2}\exp(-\frac{A^2T}{2N_0})$，比相干解调弱一些，类似非相干。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103095458419" style="zoom:50%;" />
+
+<hr>
+<h3 id="8-4-四相移相键控-QPSK、QDPSK"><a href="#8-4-四相移相键控-QPSK、QDPSK" class="headerlink" title="8.4 四相移相键控(QPSK、QDPSK)"></a>8.4 四相移相键控(QPSK、QDPSK)</h3><p>多进制调制：用$M$个幅度、频率、相位不同的载波波形表示基带信号的$M$个不同状态。<strong>频带利用率提升，但是功率利用率下降。（以多相调制为例，随着$M$增大，相邻信号相位差减小，更易误判）</strong></p>
+<h4 id="QPSK"><a href="#QPSK" class="headerlink" title="QPSK"></a>QPSK</h4><p>QPSK使用四个不同相位表示四进制数字信息。</p>
+<p>输入为二进制数字序列，<strong>每2bit为一组，组合后获得四种状态，用载波四个不同相位表征。</strong></p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231229224716465" style="zoom:50%;" />
+
+<h5 id="调制-5"><a href="#调制-5" class="headerlink" title="调制"></a>调制</h5><ul>
+<li><p>时域波形：<br>$$<br>s_{QPSK}(t)&#x3D;\sum_ng(t-nT_s)\cos(\omega_0t+\Phi(n)),\Phi(n)&#x3D;\phi_i,i&#x3D;1,2,3,4<br>$$<br>其中$T_s$为<strong>双比特码元宽度</strong>。</p>
+<p>将其改为正交表达式：<br>$$<br>\begin{aligned}s_{QPSK}(t)&amp;&#x3D;\sum_nX_ng(t-nT_s)\cos\omega_0t+\sum_nY_ng(t-nT_s)\sin\omega_0t\newline<br>X_n&amp;&#x3D;\cos\Phi(n)\newline<br>Y_n&amp;&#x3D;-\sin\Phi(n)<br>\end{aligned}<br>$$<br>使用B方式调制时，可视作两路载波正交的2PSK合成：<br>$$<br>s_{QPSK}(t)&#x3D;I(t)\cos\omega_0+Q(t)\sin\omega_0t<br>$$<br>其中$I(t)&#x3D;\sum_nX_ng(t-nT_s),Q(t)&#x3D;\sum_nY_ng(t-nT_s)$分别为同相（正交）等效数据。</p>
+<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229225322715.png" srcset="/img/loading.gif" lazyload alt="image-20231229225322715"></p>
+<blockquote>
+<p>注意点：</p>
+<ul>
+<li><p>串并转换时，码元速率降为一半。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231229225609952" style="zoom:50%;" />
+</li>
+<li><p>2bit的正交合成如下图所示：</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231229225729240" style="zoom:50%;" /></li>
+</ul>
+</blockquote>
+</li>
+<li><p>功率谱：信息速率相同时，调制后码元速率变为原来的一半，因此传输带宽为2PSK的一半，频带利用率提高一倍。</p>
+</li>
+</ul>
+<h5 id="解调-5"><a href="#解调-5" class="headerlink" title="解调"></a>解调</h5><blockquote>
+<p><strong>和2PSK类似只能采用相干解调，对同相和正交支路作相干解调。</strong></p>
+</blockquote>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231229230053663" style="zoom:50%;" />
+
+<p>误比特率：与2PSK相同。</p>
+<h4 id="QDPSK"><a href="#QDPSK" class="headerlink" title="QDPSK"></a>QDPSK</h4><p>将二进制信息的四种可能组合反映在相邻(双比特)码元的相位变化上。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231229230147103" style="zoom:50%;" />
+
+<h5 id="调制-6"><a href="#调制-6" class="headerlink" title="调制"></a>调制</h5><p>在二进制信息<strong>串并转换后先做差分编码</strong>，之后对序列作QPSK调制（$\pm\frac{\pi}{4}$相移）。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231229230239723" style="zoom:50%;" />
+
+<h5 id="解调-6"><a href="#解调-6" class="headerlink" title="解调"></a>解调</h5><img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231229230535209" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103101333762" style="zoom:50%;" />
+
+
+
+
+
+<hr>
+<h3 id="8-5-正交振幅调制-QAM"><a href="#8-5-正交振幅调制-QAM" class="headerlink" title="8.5 正交振幅调制(QAM)"></a>8.5 正交振幅调制(QAM)</h3><p>QAM是正交载波调制技术与多电平振幅键控的结合。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231230102428461" style="zoom:50%;" />
+
+<h4 id="调制-7"><a href="#调制-7" class="headerlink" title="调制"></a>调制</h4><ul>
+<li><p>时域表示：<br>$$<br>s_{QAM}(t)&#x3D;I(t)\cos\omega_0t+Q(t)\sin\omega_0t<br>$$<br>其中，<br>$$<br>\begin{aligned}I(t)&#x3D;\sum_nX_ng(t-nT_s),X_n&#x3D;\pm1,\pm3…\pm(L-1)\newline<br>Q(t)&#x3D;\sum_nY_ng(t-nT_s),Y_n&#x3D;\pm1,\pm3…\pm(L-1)<br>\end{aligned}<br>$$</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231230102828201" style="zoom:50%;" />
+
+
+</li>
+<li><p>功率谱：</p>
+</li>
+</ul>
+<h4 id="解调-7"><a href="#解调-7" class="headerlink" title="解调"></a>解调</h4><img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231230103051402" style="zoom:50%;" />
+
+
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20231230103123944" style="zoom:50%;" />
+
+<p>差错率：比MPSK有着更好的抗噪声性能。</p>
+<hr>
+<h3 id="8-6-最小频移键控-MSK"><a href="#8-6-最小频移键控-MSK" class="headerlink" title="8.6 最小频移键控(MSK)"></a>8.6 最小频移键控(MSK)</h3><p>MSK为相位连续的FSK的改进，特点为：</p>
+<ul>
+<li>相关系数$\rho&#x3D;0$，信号正交</li>
+<li>频移指数最小，$h&#x3D;0.5$</li>
+<li>相位连续</li>
+</ul>
+<p>对于$\rho&#x3D;0,h&#x3D;0.5$，</p>
+<blockquote>
+<p>分析：$\rho&#x3D;\frac{\sin(\omega_1-\omega_0)T_b}{(\omega_1-\omega_0)T_b}+\frac{\sin2\omega_cT_b}{2\omega_cT_b}$</p>
+<p>当$\rho\equiv0$时，使频移最小，有<br>$$<br>\begin{aligned}<br>f_1-f_0&amp;&#x3D;\frac{1}{2T_b}\newline<br>f_c&amp;&#x3D;\frac{k}{4T_b}\newline<br>\Rightarrow f_1&amp;&#x3D;(N+\frac{m+1}{4})\frac{1}{T_b}&#x3D;f_c+\frac{R_B}{4}\newline<br>f_0&amp;&#x3D;(N+\frac{m-1}{4})\frac{1}{T_b}&#x3D;f_c-\frac{R_B}{4}<br>\end{aligned}<br>$$</p>
+</blockquote>
+<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103103924839.png" srcset="/img/loading.gif" lazyload alt="image-20240103103924839"></p>
+<p>对于相位连续，$\theta(t)$每经过一个码元宽度相位变化$\pm\frac{\pi}{2}$。<br>$$<br>\begin{aligned}<br>\theta(t)&#x3D;a_k\cdot \frac{\pi t}{2T_b}+\phi_k\newline<br>\phi_k\mod 2&#x3D;0\quad\text{or}\quad\pi<br>\end{aligned}<br>$$<br><img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230105158052" style="zoom:50%;" /></p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230105120729" style="zoom:50%;" />
+
+<h4 id="调制-8"><a href="#调制-8" class="headerlink" title="调制"></a>调制</h4><ul>
+<li><p>时域表示<br>$$<br>\begin{aligned}<br>s_{MSK}(t)&amp;&#x3D;I_k\cos(\frac{\pi t}{2T_b})\cos\omega_ct+Q_k\sin(\frac{\pi t}{2T_b})\sin\omega_ct\newline<br>I_k&amp;&#x3D;\cos\phi_k\newline<br>Q_k&amp;&#x3D;-a_k\cos\phi_k<br>\end{aligned}<br>$$<br>相比之前的2PSK调制，存在<strong>时域加权函数</strong>$\cos(\frac{\pi t}{2T_b})$与$\sin(\frac{\pi t}{2T_b})$。</p>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230105800449" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230110145065" style="zoom:50%;" /></li>
+</ul>
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230110202825" style="zoom:50%;" />
+
+<h4 id="解调-8"><a href="#解调-8" class="headerlink" title="解调"></a>解调</h4><img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230110303719" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/C:" srcset="/img/loading.gif" lazyload  alt="image-20231230110627017" style="zoom:50%;" />
+
+<p>考虑180°相位模糊，其中$\pm\cos(\frac{\pi t}{2T_b})\cos\omega_ct$和$\pm\sin(\frac{\pi t}{2T_b})\sin\omega_ct$可由$\pm\cos\omega_1t$和$\pm\cos\omega_0t$相加减获得。**注意I支路与Q支路错开一个$T_b$**。</p>
+<p>误码性能：与QPSK相同。</p>
+<h2 id="第九章-同步"><a href="#第九章-同步" class="headerlink" title="第九章 同步"></a>第九章 同步</h2><h3 id="9-1-载波同步"><a href="#9-1-载波同步" class="headerlink" title="9.1 载波同步"></a>9.1 载波同步</h3><p>当采用相干解调时，接收端都需要提供一个与发送端调制载波同频同相的本地载波，以保证无失真地恢复出基带信号。这个获取本地相干载波的过程称为载波同步。</p>
+<h4 id="插入导频法"><a href="#插入导频法" class="headerlink" title="插入导频法"></a>插入导频法</h4><h5 id="窄带滤波"><a href="#窄带滤波" class="headerlink" title="窄带滤波"></a>窄带滤波</h5><p>发送有用信号的同时，在适当的频谱位置插入载波分量，由于所插入的载波分量具有较高的频率稳定度，故称为导频信号，该方法也称为插入导频法。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240102230347653" style="zoom: 67%;" />
+
+<p>导频引入90°相移，防止解调时载波幅度混入原始信号中。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240102230538416" style="zoom:67%;" />
+
+<p>存在问题：</p>
+<ul>
+<li><p>滤波器的带宽不够窄</p>
+</li>
+<li><p>中心频率固定，因此载波频率和导频相对于窄带滤波器的中心频率 不能有漂移</p>
+</li>
+</ul>
+<h5 id="PLL"><a href="#PLL" class="headerlink" title="PLL"></a>PLL</h5><img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240102230847554" style="zoom:50%;" />
+
+<p>同步系统中主要是利用锁相环的跟踪、窄带滤波和记忆功能：</p>
+<ul>
+<li>利用跟踪能力，可以获得只有很小相位误差的同步信号；</li>
+<li>利用窄带滤波特性，可以滤除数据调制带来的自噪声及减小加性噪声 的影响；</li>
+<li>利用记忆作用，可以使同步保持足够的时间。</li>
+</ul>
+<h4 id="直接法"><a href="#直接法" class="headerlink" title="直接法"></a>直接法</h4><p>直接提取载波的方法可分为两类：</p>
+<ul>
+<li>接收信号的频谱中已包含显著的载波分量，则可用窄带滤波器或 锁相环直接提取。 </li>
+<li>对于抑制载波的已调信号，则可通过对信号做非线性变换或采用 特殊的锁相环来获取相干载波。</li>
+</ul>
+<h5 id="平方变换法"><a href="#平方变换法" class="headerlink" title="平方变换法"></a>平方变换法</h5><img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103091805885" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103091827163" style="zoom:50%;" />
+
+
+
+
+
+<h5 id="Costas环"><a href="#Costas环" class="headerlink" title="Costas环"></a>Costas环</h5><img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103091947183" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103091959947" style="zoom:50%;" />
+
+<p>特点：</p>
+<ul>
+<li><p>Costas环的工作频率是$f_c$而平方环是$2f_c$。所以当载波频率$f_c$较高时，Costas环更易实现</p>
+</li>
+<li><p>同相支路的输出$r_2(t)$就是调制信号$f(t)$</p>
+</li>
+</ul>
+<h3 id="9-2-码元同步"><a href="#9-2-码元同步" class="headerlink" title="9.2 码元同步"></a>9.2 码元同步</h3><p>数字信号是由一串相继的码元波形构成，接收端必须知道每个码元的起止时刻。这个在接收端产生与所接收码元的重复频率和相位一致的定时脉冲序列的过程称为码元同步，所产生的定时脉冲序列称为码元同步脉冲。</p>
+<h5 id="非线性变换法"><a href="#非线性变换法" class="headerlink" title="非线性变换法"></a>非线性变换法</h5><img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103092231495" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103092241078" style="zoom:50%;" />
+
+
+
+<h5 id="数字锁相环"><a href="#数字锁相环" class="headerlink" title="数字锁相环"></a>数字锁相环</h5><img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103092257823" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103092322006" style="zoom:50%;" />
+
+<h3 id="9-3-帧同步"><a href="#9-3-帧同步" class="headerlink" title="9.3 帧同步"></a>9.3 帧同步</h3><p>数字信号通常是由若干个码元构成一个码字，而若干个码字又 可能构成一个有意义的数据段，很多时候我们需要已知这些码 字或数据段的起止时刻。这个在接收端产生与这些码字或信息 段起止时刻一致的定时脉冲序列的过程称为群同步，群同步中最常见的是<strong>帧同步</strong>。</p>
+<p>帧同步主要是通过对数据格式的特殊设计——即插入特殊的帧 同步码字来完成，因此帧同步是对同步标志进行检测的问题。</p>
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103091049718" style="zoom:50%;" />
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103091109994" style="zoom:50%;" />
+
+
+
+<img src="/2023/09/10/1通信原理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240103091433159" style="zoom:50%;" />
+
+<h2 id="第十章-差错控制编码"><a href="#第十章-差错控制编码" class="headerlink" title="第十章 差错控制编码"></a>第十章 差错控制编码</h2><h3 id="10-1-差错控制编码的基本概念"><a href="#10-1-差错控制编码的基本概念" class="headerlink" title="10.1 差错控制编码的基本概念"></a>10.1 差错控制编码的基本概念</h3><p>从差错控制角度看，信道可分为：</p>
+<ul>
+<li>随机信道</li>
+<li>突发信道</li>
+<li>混合信道</li>
+</ul>
+<p>差错控制编码：</p>
+<ul>
+<li>分组码：监督码元仅与本码组的信息码元有关</li>
+<li>卷积码：监督码元与本组信息码元、前面码组信息码元有关</li>
+</ul>
+<hr>
+<h3 id="10-2-纠错编码的基本原理"><a href="#10-2-纠错编码的基本原理" class="headerlink" title="10.2 纠错编码的基本原理"></a>10.2 纠错编码的基本原理</h3><p>分组码一般用$(n,k)$表示：</p>
+<ul>
+<li>$n$：码组长度，码组中的码元个数</li>
+<li>$k$：信息码元的数目</li>
+<li>$n-k$：监督码元的个数</li>
+</ul>
+<p>分组码$(n,k)$包含$2^k$个许用码和$2^n-2^k$个禁用码，<strong>即监督码的所有组合个数为许用码个数</strong>。</p>
+<p>关于码距和码重：</p>
+<ul>
+<li>码重：码组中非零码元的个数。如011的码重为2。</li>
+<li>码距：两个码组中对应码位上不同码元的位数。如101和011的码距为2.</li>
+</ul>
+<p>其中最小码距可以衡量编码性能。</p>
+<blockquote>
+<p>为检测$e$个错码，要求最小码距为$d_{min}\ge e+1$</p>
+<p>为纠正$t$个错码，要求最小码距为$d_{min}\ge 2t+1$</p>
+<p>为纠正$t$个错码，同时检测$e$个错码，要求最小码距为$d_{min}\ge e+t+1(e&gt;t)$</p>
+</blockquote>
+<p>编码效率：码组中信息码所占比重$\eta&#x3D;\frac{k}{n}$，越高越好，但是与最小码距是矛盾的。</p>
+<hr>
+<h3 id="10-3-几种常用的简单编码"><a href="#10-3-几种常用的简单编码" class="headerlink" title="10.3 几种常用的简单编码"></a>10.3 几种常用的简单编码</h3><h4 id="奇偶监督码"><a href="#奇偶监督码" class="headerlink" title="奇偶监督码"></a>奇偶监督码</h4><p>监督码元只有一位：使码组中“1”个数为奇（偶）称为奇（偶）监督码。</p>
+<blockquote>
+<p>偶监督码：$a_{n-1}\oplus a_{n-2}\oplus…\oplus a_{0}&#x3D;0$</p>
+<p>奇监督码：$a_{n-1}\oplus a_{n-2}\oplus…\oplus a_{0}&#x3D;1$</p>
+<p>只能检测奇数个错码，无纠错能力。</p>
+</blockquote>
+<h4 id="水平垂直奇偶监督码"><a href="#水平垂直奇偶监督码" class="headerlink" title="水平垂直奇偶监督码"></a>水平垂直奇偶监督码</h4><h4 id="恒比码"><a href="#恒比码" class="headerlink" title="恒比码"></a>恒比码</h4><p>确定长度的码组中“0”和“1”的比例恒定的码组作为许用码组。</p>
+<hr>
+<h3 id="10-4-线性分组码"><a href="#10-4-线性分组码" class="headerlink" title="10.4 线性分组码"></a>10.4 线性分组码</h3><p>性质：</p>
+<ul>
+<li>任意两许用码组之和仍为许用码组，具有<strong>封闭性</strong>。</li>
+<li>除去全零码，最小码距等于最小码重。</li>
+</ul>
+<h4 id="汉明码"><a href="#汉明码" class="headerlink" title="汉明码"></a>汉明码</h4><p>汉明码为能纠正单个错误的线性分组码，$d_{min}&#x3D;3,t&#x3D;1,e&#x3D;2$。</p>
+<p>对于汉明码$(n,k)$，可构造出$n-k$个监督关系式，有$2^{n-k}\ge k+r+1$。</p>
+<p>对于$(7,4)$汉明码，有16个许用码组，每个信息码对应的监督码是唯一的。</p>
+<p>关于监督矩阵$H$，行数等于监督码元个数$r&#x3D;n-k$，列数等于整个码组长度$n$。</p>
+<p>$H$可分解为$[P\quad I_r]$，此形式下为<strong>典型监督矩阵，各行线性无关</strong>。</p>
+<p>关于生成矩阵$G$，行数等于信息码元个数$k$，列数等于整个码组长度$n$。</p>
+<p>生成矩阵$G$可分解为$[I_k\quad P^T]$，此形式下为<strong>典型生成矩阵，各行线性无关</strong>。</p>
+<blockquote>
+<p>编码获得监督码时需要生成矩阵，$[a_6\quad a_5\quad a_4\quad a_3\quad a_2\quad a_1\quad a_0]&#x3D;[a_6\quad a_5\quad a_4\quad a_3]\cdot G$</p>
+<p>译码时需要监督矩阵，$S&#x3D;[S_3\quad S_2\quad S_1]^T&#x3D;H\cdot [a_6\quad a_5\quad a_4\quad a_3\quad a_2\quad a_1\quad a_0]^T$，若码元无错，$S&#x3D;O$。</p>
+<p><strong>$H$的每一列对应码组该位置元素出错时的矫正子，因此可以根据矫正子与错码位置直接写出$H$，或者根据$H$得出任意码元出错时的矫正子。</strong></p>
+</blockquote>
+<p>错误图样：收发码组之差：$E&#x3D;B-A$，有$S&#x3D;EH^T$。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Curriculum/" class="category-chain-item">Curriculum</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>通信原理</div>
+      <div>http://example.com/2023/09/10/1通信原理/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Eternity</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

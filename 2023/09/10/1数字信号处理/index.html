@@ -1,0 +1,1411 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Eternity">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="数字信号处理笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字信号处理">
+<meta property="og:url" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数字信号处理笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="c:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240106165133039.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="c:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240106153753145.png">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="og:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+<meta property="article:published_time" content="2023-09-10T11:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-24T15:00:10.799Z">
+<meta property="article:author" content="Eternity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2023/09/10/1%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/Users">
+  
+  
+  
+  <title>数字信号处理 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Eternity@SJTU</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="数字信号处理"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-10 19:00" pubdate>
+          2023年9月10日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          35 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">数字信号处理</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><font size="6"><strong>数字信号处理</strong></font></p>
+<h2 id="第一章-离散时间信号与系统基础"><a href="#第一章-离散时间信号与系统基础" class="headerlink" title="第一章 离散时间信号与系统基础"></a>第一章 离散时间信号与系统基础</h2><h3 id="离散时间信号：序列"><a href="#离散时间信号：序列" class="headerlink" title="离散时间信号：序列"></a>离散时间信号：序列</h3><h4 id="序列的定义和分类"><a href="#序列的定义和分类" class="headerlink" title="序列的定义和分类"></a>序列的定义和分类</h4><p>序列的能量：$E&#x3D;\sum_{n&#x3D;-\infty}^{\infty}|x[n]|^2&#x3D;\sum_{n&#x3D;-\infty}^{\infty}x[n]x^*[n]$</p>
+<p><strong>因果序列：$x[n]&#x3D;0,\text{for } n&lt;0$</strong></p>
+<h4 id="基本序列"><a href="#基本序列" class="headerlink" title="基本序列"></a>基本序列</h4><ul>
+<li><p>单位采样序列<br>$$<br>\delta[n]&#x3D;\left{<br>\begin{align}<br>1,n&#x3D;0\newline<br>0,n\neq0<br>\end{align}<br>\right.<br>$$<br>任何序列都可以表示成：$x[n]&#x3D;\sum_{-\infty}^{\infty}x[k]\delta[n-k]&#x3D;x[n]*\delta[n]$</p>
+</li>
+<li><p>单位阶跃序列<br>$$<br>u[n]&#x3D;\left{<br>\begin{align}<br>1,n\ge0\newline<br>0,n&lt;0<br>\end{align}<br>\right.<br>$$<br><strong>$u[n]&#x3D;\sum_{k&#x3D;0}^{\infty}\delta[n-k]&#x3D;\sum_{k&#x3D;-\infty}^{n}\delta[k],\delta[n]&#x3D;u[n]-u[n-1]$</strong></p>
+</li>
+<li><p>矩形序列(用于表示有限长序列)<br>$$<br>R_N[n]&#x3D;\left{<br>\begin{align}<br>&amp;1,&amp;0\le n\le N-1\newline<br>&amp;0,&amp;\text{otherwise}<br>\end{align}<br>\right.<br>$$</p>
+</li>
+<li><p>指数序列<br>$$<br>x[n]&#x3D;a^n<br>$$</p>
+</li>
+<li><p>正弦序列<br>$$<br>x[n]&#x3D;A\cos(\omega n+\phi)&#x3D;\frac{A}{2}(e^{j(\omega n+\phi)}+e^{-j(\omega n+\phi)})\newline<br>x[n]&#x3D;A\sin(\omega n+\phi)&#x3D;\frac{A}{2j}(e^{j(\omega n+\phi)}-e^{-j(\omega n+\phi)})<br>$$<br><strong>在一个周期$0$到$2\pi$内，越接近$0$或者$2\pi$，振荡越慢；越接近$\pi$，振荡越快</strong>，即低频在$\pm2k\pi$附近，高频在$\pm(2k+1)\pi$附近</p>
+</li>
+</ul>
+<h4 id="序列的周期性和对称性"><a href="#序列的周期性和对称性" class="headerlink" title="序列的周期性和对称性"></a>序列的周期性和对称性</h4><ul>
+<li><p>序列的周期性</p>
+<p>如果$x[n]&#x3D;x[n+N],-\infty&lt;n&lt;\infty$，那么整数$N$是周期，<strong>一般周期取最小正整数，称为基本周期</strong></p>
+<p><strong>对于正弦序列，有</strong></p>
+</li>
+</ul>
+<p>$$<br>\frac{2\pi}{\omega}&#x3D;\left{<br>\begin{align}<br>&amp;\text{integer},&amp;\text{period}&#x3D;N&#x3D;\frac{2\pi}{\omega}\newline<br>&amp;\text{rational number} \frac{P}{Q},&amp;\text{period}&#x3D;P\newline<br>&amp;\text{irrational number},&amp;\text{period}&#x3D;\infty<br>\end{align}<br>\right.<br>$$</p>
+<ul>
+<li><p>序列的对称性</p>
+<ul>
+<li><p>对于实序列，定义：</p>
+<p>偶序列：$x[n]&#x3D;x[-n]$</p>
+<p>奇序列：$x[n]&#x3D;-x[-n]$</p>
+<p>$x[n]&#x3D;x_e[n]+x_o[n]$，其中$x_e&#x3D;\frac{x[n]+x[-n]}{2},x_o&#x3D;\frac{x[n]-x[-n]}{2}$</p>
+</li>
+<li><p>对于复数序列，定义：</p>
+<p>$x[n]&#x3D;x^*[-n]$，称为共轭对称序列，有<br>$$<br>\Re{x[n]}&#x3D;\Re{x[-n}\newline<br>\Im{x[n]}&#x3D;-\Im{x[-n]}<br>$$</p>
+<p>$x[n]&#x3D;-x^*[-n]$，称为反共轭对称序列，有<br>$$<br>\Re{x[n]}&#x3D;-\Re{x[-n}\newline<br>\Im{x[n]}&#x3D;\Im{x[-n]}<br>$$<br>任何复数序列都可以分解为上述两者之和：$x[n]&#x3D;x_e[n]+x_o[n]$，其中$x_e[n]&#x3D;x_e^*[-n],x_o[n]&#x3D;-x_o^*[-n],x_e[n]&#x3D;\frac{x[n]+x^*[-n]}{2},x_o[n]&#x3D;\frac{x[n]-x^*[-n]}{2}$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="卷积的性质"><a href="#卷积的性质" class="headerlink" title="卷积的性质"></a>卷积的性质</h4><ul>
+<li><p>交换律、分配律、结合律</p>
+</li>
+<li><p><strong>如果$x[n]\neq0,\text{for }N_0\le n\le N_1,\text{length}&#x3D;L_1&#x3D;N_1-N_0+1$，$h[n]\neq0,\text{for }N_2\le n\le N_3,\text{length}&#x3D;L_2&#x3D;N_3-N_2+1$，那么$y[n]\neq0,\text{for }N_0+N_2\le n \le N_1+N_3,\text{length}&#x3D;L_1+L_2-1$</strong></p>
+</li>
+</ul>
+<h4 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h4><ul>
+<li><p>互相关：绝对值越大相似度越高<br>$$<br>\begin{aligned}<br>r_{xy}[n]&#x3D;\sum_{k&#x3D;-\infty}^{\infty}x^\ast[k]y[k+n]&#x3D;x^\ast[-n]\ast y[n]&#x3D;r^\ast_{yx}[-n] \newline<br>\overline{r}<em>{xy}[n]&#x3D;\sum</em>{k&#x3D;-\infty}^{\infty}x^\ast[k]y[k-n]&#x3D;x^\ast[n]\ast y[-n]&#x3D;\overline{r}<em>{yx}^\ast[-n] \newline<br>\overline{r}</em>{xy}[n]&#x3D;r_{xy}[-n]<br>\end{aligned}<br>$$</p>
+</li>
+<li><p>自相关：<strong>绝对值越大则随机性越小</strong><br>$$<br>r_{xx}[n]&#x3D;\sum_{k&#x3D;-\infty}^{\infty}x^\ast[k]x[k+n]&#x3D;x^\ast[-n]\ast x[n]&#x3D;r^{\ast}_{xx}[-n]<br>$$</p>
+</li>
+</ul>
+<h3 id="离散时间系统"><a href="#离散时间系统" class="headerlink" title="离散时间系统"></a>离散时间系统</h3><h4 id="定义与分类"><a href="#定义与分类" class="headerlink" title="定义与分类"></a>定义与分类</h4><ul>
+<li><p>定义</p>
+<p>离散时间系统就是通过<strong>加法、乘法和延迟运算</strong>将输入序列映射成输出序列</p>
+<p>$\delta[n]$的响应定义为单位脉冲响应$h[n]$，$u[n]$的响应定义为单位阶跃响应$s[n]$</p>
+</li>
+<li><p>分类</p>
+<ul>
+<li><p>线性系统</p>
+</li>
+<li><p>时不变系统</p>
+<p>满足$T{x[n-n_0]}&#x3D;y[n-n_0]$</p>
+<p><strong>注意：前者为先时移再经过系统，后者为先经过系统再时移，系统的变换只对$n$生效。</strong></p>
+<p>如$y[n]&#x3D;x[2n],y[n-n_0]&#x3D;x[2n-2n_0],T{x[n-n_0]}&#x3D;x[2n-n_0]$，为时变系统。</p>
+</li>
+<li><p>无记忆系统</p>
+</li>
+<li><p>因果系统：<strong>若非LTI系统，$h[n]$因果不能推出系统为因果系统。</strong></p>
+</li>
+<li><p>稳定系统</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="线性时不变系统"><a href="#线性时不变系统" class="headerlink" title="线性时不变系统"></a>线性时不变系统</h4><p>$y[n]&#x3D;\sum_{k&#x3D;-\infty}^{\infty}x[n-k]h[k]$</p>
+<p>FIR系统：$h[n]$有限长</p>
+<p>IIR系统：$h[n]$无限长</p>
+<p>稳定充要条件：$\sum_{n&#x3D;-\infty}^{\infty}|h[n]|&lt;\infty$</p>
+<h4 id="线性常系数差分方程"><a href="#线性常系数差分方程" class="headerlink" title="线性常系数差分方程"></a>线性常系数差分方程</h4><p>$$<br>\sum_{k&#x3D;0}^Na_ky[n-k]&#x3D;\sum_{k&#x3D;0}^{M}b_kx[n-k]<br>$$</p>
+<blockquote>
+<p><strong>某些LTI系统能用差分方程表示；差分方程表示的不一定是LTI系统。</strong></p>
+<p><strong>非递归的差分方程一定是FIR，递归方程FIR、IIR都可以。</strong></p>
+<p>FIR的卷积表示的就是一种差分方程。</p>
+<p>IIR可用差分方程由有限项表示。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>FIR</th>
+<th>IIR</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$h[n]$</td>
+<td>有限长</td>
+<td>无限长</td>
+</tr>
+<tr>
+<td>$y[n]$由$x[n]$加权求和</td>
+<td>有限项</td>
+<td>无限项</td>
+</tr>
+<tr>
+<td>实现</td>
+<td>卷积（无递归）或差分方程（有递归）</td>
+<td>差分方程（<strong>一定</strong>有递归）</td>
+</tr>
+<tr>
+<td>稳定性</td>
+<td><strong>一定稳定</strong></td>
+<td>不一定稳定</td>
+</tr>
+</tbody></table>
+<h2 id="第二章-Z变换"><a href="#第二章-Z变换" class="headerlink" title="第二章 Z变换"></a>第二章 Z变换</h2><h3 id="Z变换的定义"><a href="#Z变换的定义" class="headerlink" title="Z变换的定义"></a>Z变换的定义</h3><p>定义式：<br>$$<br>X(z)&#x3D;\sum_{n&#x3D;-\infty}^{\infty}x[n]z^{-n}<br>$$<br>收敛域满足$\text{ROC}&#x3D;{z&#x3D;re^{j\omega},\text{such that} \sum_{n&#x3D;-\infty}^{\infty}|x[n]r^{-n}|&lt;\infty}$</p>
+<p>常用Z变换：</p>
+<table>
+<thead>
+<tr>
+<th>$x[n]$</th>
+<th>$X(z)$</th>
+<th>ROC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$\delta[n]$</td>
+<td>$1$</td>
+<td>$0\le</td>
+</tr>
+<tr>
+<td>$u[n]$</td>
+<td>$\frac{1}{1-z^{-1}}$</td>
+<td>$</td>
+</tr>
+<tr>
+<td>$-u[-n-1]$</td>
+<td>$\frac{1}{1-z^{-1}}$</td>
+<td>$</td>
+</tr>
+<tr>
+<td>$R_N[n]$</td>
+<td>$\frac{1-z^{-N}}{1-z^{-1}}&#x3D;1+z^{-1}+z^{-2}+…+z^{-(N-1)}$</td>
+<td>$</td>
+</tr>
+<tr>
+<td>$a^nu[n]$</td>
+<td>$\frac{1}{1-az^{-1}}$</td>
+<td>$</td>
+</tr>
+<tr>
+<td>$-a^nu[-n-1]$</td>
+<td>$\frac{1}{1-az^{-1}}$</td>
+<td>$</td>
+</tr>
+<tr>
+<td>$a^nR_N[n]$</td>
+<td>$\frac{1-a^Nz^{-N}}{1-az^{-1}}$</td>
+<td>$</td>
+</tr>
+</tbody></table>
+<p>零极点：将z变换化成标准的有理式函数**(分子分母全为z的负幂次方)<strong>：分子根为零点，分母根为极点，</strong>零极点个数相等（包含$|z|&#x3D;0,\infty$）**</p>
+<h3 id="Z变换的收敛域性质"><a href="#Z变换的收敛域性质" class="headerlink" title="Z变换的收敛域性质"></a>Z变换的收敛域性质</h3><ul>
+<li>收敛域是中心为原点的圆域与圆环域</li>
+<li>收敛域不包含极点</li>
+<li>。。。</li>
+</ul>
+<h3 id="Z变换的性质"><a href="#Z变换的性质" class="headerlink" title="Z变换的性质"></a>Z变换的性质</h3><ul>
+<li><p>线性</p>
+</li>
+<li><p>时域平移</p>
+<p>$$<br>x[n-n_0]\longleftrightarrow z^{-n_0}X(z)\quad\text{ROC}&#x3D;R_x<br>$$</p>
+</li>
+<li><p>时域乘以指数序列<br>$$<br>z_0^nx[n]\longleftrightarrow X(\frac{z}{z_0})\quad\text{ROC}&#x3D;R_x<br>$$</p>
+</li>
+<li><p>Z域微分<br>$$<br>nx[n]\longleftrightarrow -z\frac{dX(z)}{dz}\quad\text{ROC}&#x3D;R_x<br>$$</p>
+</li>
+<li><p>序列取共轭<br>$$<br>x^*[n]\longleftrightarrow X^*(z^*)\newline<br>\Re[x[n]]\longleftrightarrow\frac{1}{2}(X(z)+X^*(z^*))\newline<br>\Im[x[n]]\longleftrightarrow \frac{1}{2j}(X(z)-X^*(z^*))<br>$$<br><strong>实数绪论z变换的复数零极点以共轭对存在</strong></p>
+</li>
+<li><p>时间反转<br>$$<br>x[-n]\longleftrightarrow X(\frac{1}{z}) \quad\text{ROC}&#x3D;\frac{1}{R_x}\newline<br>x^*[-n]\longleftrightarrow X^*(\frac{1}{z^*}) \quad\text{ROC}&#x3D;\frac{1}{R_x}<br>$$</p>
+</li>
+<li><p>初值、终值定理<br>$$<br>x[0]&#x3D;\lim\limits_{z\rightarrow\infty}X(z)\newline<br>\lim\limits_{n\rightarrow \infty}x[n]&#x3D;\lim\limits_{z\rightarrow 1}(z-1)X(z)<br>$$</p>
+</li>
+<li><p>卷积性质</p>
+</li>
+</ul>
+<h2 id="第三章-傅里叶变换和离散傅里叶级数"><a href="#第三章-傅里叶变换和离散傅里叶级数" class="headerlink" title="第三章 傅里叶变换和离散傅里叶级数"></a>第三章 傅里叶变换和离散傅里叶级数</h2><h3 id="DTFT的定义"><a href="#DTFT的定义" class="headerlink" title="DTFT的定义"></a>DTFT的定义</h3><p>很多非周期信号都可以表示成复指数序列的加权积分。</p>
+<ul>
+<li><p>傅里叶逆变换：$x[n]&#x3D;\frac{1}{2\pi}\int_{-\pi}^{\pi}X(e^{j\omega})e^{j\omega n }d\omega$</p>
+</li>
+<li><p>傅里叶变换：$X(e^{j\omega})&#x3D;\sum_{-\infty}^{\infty}x[n]e^{-j\omega n}$</p>
+</li>
+</ul>
+<p>DTFT具有周期性，频域以$2\pi$为周期，存在特殊变换对：<br>$$<br>\begin{aligned}<br>\sum_{n&#x3D;-\infty}^{\infty}x[n]&amp;&#x3D;X(e^{j\omega})|<em>{\omega&#x3D;0}\newline<br>\int</em>{-\pi}^{\pi}X(e^{j\omega})d\omega&amp;&#x3D;2\pi x[n]|_{n&#x3D;0}<br>\end{aligned}<br>$$<br>一般信号的频域都是复数函数：$X(e^{j\omega})&#x3D;|X(e^{j\omega})|e^{j\angle X(e^{j\omega})}$</p>
+<h3 id="矩阵序列的傅里叶变换："><a href="#矩阵序列的傅里叶变换：" class="headerlink" title="矩阵序列的傅里叶变换："></a><strong>矩阵序列的傅里叶变换</strong>：</h3><p>$$<br>\begin{aligned}<br>R_{M+1}[n]&#x3D;\left{<br>\begin{aligned}<br>&amp;1,&amp;0\le n\le M\newline<br>&amp;0,&amp;\text{other}<br>\end{aligned}<br>\right.<br>\end{aligned}<br>$$</p>
+<p>对应的傅里叶变换为<br>$$<br>R_{M+1}(e^{j\omega})&#x3D;e^{-j\omega M&#x2F;2}\frac{\sin\left[\omega(M+1)&#x2F;2\right]}{\sin(\omega&#x2F;2)}<br>$$<br>矩形窗的特点：</p>
+<ul>
+<li>最大旁瓣幅度&#x2F;主瓣幅度约为$\frac{3\pi}{2}$，为常数</li>
+<li>主瓣宽$\frac{4\pi}{M+1}$与窗长成反比</li>
+</ul>
+<h3 id="离散傅里叶变换性质"><a href="#离散傅里叶变换性质" class="headerlink" title="离散傅里叶变换性质"></a>离散傅里叶变换性质</h3><ul>
+<li><p>对称性：<br>$$<br>x^*[n]\longleftrightarrow X^*(e^{-j\omega})\newline<br>$$</p>
+</li>
+<li><p>时间反转：<br>$$<br>x[-n]\longleftrightarrow X(e^{-j\omega})<br>$$</p>
+</li>
+</ul>
+<p>推论：<strong>序列的实部（虚部）为序列本身与序列共轭之和（差）的一半，序列的偶部（奇部）为序列本身与序列共轭对称之和（差）的一半。</strong><br>$$<br>Re[x[n]]&#x3D;\frac{x[n]+x^*[n]}{2}\rightarrow X_e(e^{j\omega})&#x3D;\frac{X(e^{j\omega})+X^*(e^{-j\omega})}{2}<br>$$<br><strong>实数序列的傅里叶变换为共轭对称函数，纯虚序列的傅里叶变换为共轭反对称函数，共轭对称序列的傅里叶变换为实函数，共轭反对称序列的傅里叶变换为纯虚函数，且上述关系可逆。</strong></p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106161523392" style="zoom:50%;" />
+
+<h3 id="周期序列的傅里叶变换——离散傅里叶级数"><a href="#周期序列的傅里叶变换——离散傅里叶级数" class="headerlink" title="周期序列的傅里叶变换——离散傅里叶级数"></a>周期序列的傅里叶变换——离散傅里叶级数</h3><ul>
+<li><p>对称性：<br>$$<br>\tilde{x}^*[n]\longleftrightarrow \tilde{X}^*(-k)\newline<br>\tilde{x}^*[-n]\longleftrightarrow \tilde{X}^*(k)<br>$$</p>
+</li>
+<li><p>周期卷积：<br>$$<br>\tilde{x}[n]&#x3D;\sum_{m&#x3D;0}^{N-1}\tilde{x}_1[m]\tilde{x}_2[n-m]<br>$$<br><strong>周期卷积等效于两个周期信号的主周期做线性卷积，再以$N$为周期的延拓；由于线性卷积的长度为$2N-1$，所以各延拓周期之间有重叠。</strong></p>
+</li>
+</ul>
+<h2 id="第四章-LTI系统变换域分析"><a href="#第四章-LTI系统变换域分析" class="headerlink" title="第四章 LTI系统变换域分析"></a>第四章 LTI系统变换域分析</h2><h3 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h3><h4 id="系统函数的定义"><a href="#系统函数的定义" class="headerlink" title="系统函数的定义"></a>系统函数的定义</h4><p>系统函数定义为：$H(z)&#x3D;\sum_{n&#x3D;-\infty}^{\infty}h[n]z^{-n}$</p>
+<p>零状态响应为$y[n]&#x3D;x[n]*h[n]$</p>
+<h4 id="系统函数与差分方程的关系"><a href="#系统函数与差分方程的关系" class="headerlink" title="系统函数与差分方程的关系"></a>系统函数与差分方程的关系</h4><p>给定差分方程：$\sum_{k&#x3D;0}^{N}a_ky[n-k]&#x3D;\sum_{k&#x3D;0}^Mb_kx[n-k]$</p>
+<p>对应的系统函数为$H(z)&#x3D;\frac{Y(z)}{X(z)}&#x3D;\frac{\sum_{k&#x3D;0}^{M}b_kz^{-k}}{\sum_{k&#x3D;0}^{N}a_kz^{-k}}$</p>
+<p><strong>任何系统的差分方程形式不唯一，可通过任意增加相同的零极点得到不同的差分方程。</strong></p>
+<h4 id="系统函数的零点极点和ROC的特点"><a href="#系统函数的零点极点和ROC的特点" class="headerlink" title="系统函数的零点极点和ROC的特点"></a>系统函数的零点极点和ROC的特点</h4><blockquote>
+<p>极点表示$H(z)$趋向于无穷，而ROC外的非极点表示不能使求和式收敛</p>
+</blockquote>
+<ul>
+<li><p>若考虑原点和无穷远处的零极点，则零点极点数量相等。</p>
+</li>
+<li><p><strong>若$H(z)$的系数都是实数或$h[n]$为实序列，则复数零点（或极点）两两共轭。</strong></p>
+</li>
+<li><p>LTI系统因果的充要条件：$h[n]$为因果序列，即ROC包含$|z|&#x3D;\infty$。$z&#x3D;\infty$不是极点不能推出LTI系统是因果系统（要保持$\sum_{k&#x3D;M}^{N}x[k]z^{-k}$有界）。</p>
+</li>
+<li><p>LTI系统稳定的充要条件：$h[n]$绝对可和，即ROC包含$|z|&#x3D;1$。单位圆上不能有极点。</p>
+</li>
+<li><p><strong>极点全在单位圆内，是LTI系统因果稳定的必要条件。</strong></p>
+</li>
+<li><p>FIR系统的特点：$h[n]$有限长。<strong>ROC是整个平面($z&#x3D;0$和$z&#x3D;\infty$)可能例外</strong>。因为一定包含$|z|&#x3D;1$，且没有$z&#x3D;0$和$z&#x3D;\infty$以外的极点，所以<strong>FIR系统一定稳定且$H(z)$化简后是有限项整式，差分方程无递归（可由卷积实现）或有递归。</strong></p>
+</li>
+<li><p>IIR系统的特点：$h[n]$无限长。所以z平面上一定有除$z&#x3D;0$和$z&#x3D;\infty$以外的极点。则$H(z)$一定为有理分式，<strong>差分方程一定有递归</strong>。</p>
+</li>
+<li><p>因果性：$z&#x3D;\infty$无极点</p>
+</li>
+<li><p>稳定性：$\text{ROC}$包括$|z|&#x3D;1$，在单位圆上无极点</p>
+</li>
+<li><p>因果稳定系统：$\text{ROC}:R_-&lt;|z|&lt;\infty,R_-&lt;1$，全部极点位于单位圆内</p>
+</li>
+<li><p><strong>最小相位系统：零、极点全在单位圆内</strong></p>
+</li>
+<li><p><strong>FIR：$\text{ROC}$包含整个z平面（$z&#x3D;0,\infty$可能除外），系统稳定</strong></p>
+</li>
+<li><p><strong>IIR：$\text{ROC}$可能是圆的内部，圆的外部或者圆环</strong></p>
+</li>
+</ul>
+<p><strong>系统函数是有理函数的系统一定有逆系统；一个因果稳定系统，只有系统函数的零点全部位于单位圆内，其逆系统才是因果稳定的。</strong></p>
+<ul>
+<li>群延迟定义：<br>$$<br>\tau(\omega)&#x3D;-\frac{d}{d\omega}{\arg[H(e^{j\omega})]}<br>$$</li>
+</ul>
+<h3 id="有理函数的频率响应"><a href="#有理函数的频率响应" class="headerlink" title="有理函数的频率响应"></a>有理函数的频率响应</h3><ul>
+<li><p>全通系统：<br>$$<br>H_{ap}(z)&#x3D;\frac{z^{-1}-a^*}{1-az^{-1}}\Rightarrow |H_{ap}(z)|&#x3D;1,arg[H_{ap}(z)]&#x3D;-\omega-2\arctan(\frac{r\sin(\omega-\theta)}{1-r\cos(\omega-\theta)})<br>$$<br>一般形式：<br>$$<br>H_{ap}(z)&#x3D;A\prod_{k&#x3D;1}^{M_r}\frac{z^{-1}-d_k}{1-d_kz^{-1}}\prod_{k&#x3D;1}^{M_c}\frac{(z^{-1}-e_k^*)(z^{-1}-e_k)}{(1-e_kz^{-1})(1-e_k^*z^{-1})}<br>$$<br><strong>全通系统零极点互为共轭倒数关系。</strong></p>
+<p>稳定全通分解：应用于将因果非稳定系统变成因果稳定系统<br>$$<br>H(z)&#x3D;H_{stable}(z)H_{ap}(z)<br>$$</p>
+</li>
+<li><p>最小相位系统：零点和极点全在单位圆内。</p>
+</li>
+</ul>
+<p>可将系统函数分解为全通系统与最小相位系统的级联：<br>$$<br>H_d(z)&#x3D;H_{min}(z)H_{ap}(z)<br>$$<br><strong>分解时要注意保证最小相位系统的零点全在单位圆内，即单位圆外的零点属于全通系统</strong></p>
+<p>幅度补偿系统为<br>$$<br>H_c(z)&#x3D;\frac{1}{H_{min}(z)}<br>$$</p>
+<h3 id="广义线性相位系统变换域分析"><a href="#广义线性相位系统变换域分析" class="headerlink" title="广义线性相位系统变换域分析"></a>广义线性相位系统变换域分析</h3><h4 id="广义线性相位系统"><a href="#广义线性相位系统" class="headerlink" title="广义线性相位系统"></a>广义线性相位系统</h4><p>将系统函数分解为$H(e^{j\omega})&#x3D;A(e^{j\omega})e^{\arg[H(e^{j\omega})]}$，则</p>
+<ul>
+<li>线性相位：幅度为<strong>非负实数函数</strong>，相位为$\arg[H(e^{j\omega})]&#x3D;-\alpha\omega$</li>
+<li>广义线性相位：幅度为<strong>实数函数</strong>，相位为$\arg[H(e^{j\omega})]&#x3D;\beta-\alpha\omega$</li>
+</ul>
+<p>广义线性相位系统也即常群延迟系统，$\tau(\omega)&#x3D;\alpha$</p>
+<blockquote>
+<p>要求$\sum_{n&#x3D;-\infty}^{\infty}h[n]\sin(\omega(n-a)+\beta)&#x3D;0$对所有$\omega$恒成立，推出两种情况</p>
+<ul>
+<li>$\beta&#x3D;0,\pi\rightarrow h[2n-a]&#x3D;h[n]$</li>
+<li>$\beta&#x3D;\frac{\pi}{2},\frac{3\pi}{2}\rightarrow h[2n-a]&#x3D;-h[n]$</li>
+</ul>
+</blockquote>
+<h4 id="因果广义线性相位系统"><a href="#因果广义线性相位系统" class="headerlink" title="因果广义线性相位系统"></a>因果广义线性相位系统</h4><p>特点：$h[n]$序列长度为$M+1$</p>
+<ul>
+<li>对于$h[M-n]&#x3D;h[n]$，系统函数相位为$\phi(\omega)&#x3D;-\frac{\omega M}{2}$，群延迟为$\tau(\omega)&#x3D;\frac{M}{2}$，$H(z)&#x3D;z^{-M}H(z^{-1})$</li>
+<li>对于$h[M-n]&#x3D;-h[n]$，系统函数相位为$\phi(\omega)&#x3D;-\frac{\omega M}{2}+\frac{\pi}{2}$，群延迟为$\tau(\omega)&#x3D;\frac{M}{2}$，$H(z)&#x3D;-z^{-M}H(z^{-1})$</li>
+<li><strong>零点共轭和倒数 4个 一组，除了原点没有其他极点的零极点特点</strong></li>
+</ul>
+<p>再根据$M$奇偶，分为四类：</p>
+<ul>
+<li>类型I：$h[M-n]&#x3D;h[n]$，$M$为偶数，无固定零点，可做任意类型滤波器</li>
+<li>类型II：$h[M-n]&#x3D;h[n]$，$M$为奇数，固定零点为$z&#x3D;-1$，高频响应差，不能做高通和带阻滤波器</li>
+<li>类型III：$h[M-n]&#x3D;-h[n]$，$M$为偶数，固定零点为$z&#x3D;\pm1$，<strong>只能</strong>做带通滤波器</li>
+<li>类型IV：$h[M-n]&#x3D;-h[n]$，$M$为奇数，固定零点为$z&#x3D;1$，不能做低通和带阻滤波器</li>
+</ul>
+<h2 id="第五章-连续时间信号采样"><a href="#第五章-连续时间信号采样" class="headerlink" title="第五章 连续时间信号采样"></a>第五章 连续时间信号采样</h2><h3 id="周期性采样"><a href="#周期性采样" class="headerlink" title="周期性采样"></a>周期性采样</h3><p>采样周期为$T_s$，采样频率为$\frac{1}{f_s}$，采样角频率为$\Omega_s&#x3D;\frac{2\pi}{T}$。</p>
+<p>最后转换的结果$x[n]&#x3D;x_c(nT),-\infty&lt;n&lt;\infty$</p>
+<h3 id="采样的频域表示"><a href="#采样的频域表示" class="headerlink" title="采样的频域表示"></a>采样的频域表示</h3><p>$$<br>x_s(t)&#x3D;x_c(t)s(t)&#x3D;x_c(t)\sum_{n&#x3D;-\infty}^{\infty}\delta(t-nT)&#x3D;\sum_{n&#x3D;-\infty}^{\infty}x_c(nT)\delta(t-nT)<br>$$</p>
+<p>考虑频域下，<br>$$<br>\begin{aligned}<br>S(j\Omega)&amp;&#x3D;\frac{2\pi}{T}\sum_{k&#x3D;-\infty}^{\infty}\delta(\Omega-k\Omega_s)\newline<br>X_s(j\Omega)&amp;&#x3D;\frac{1}{2\pi}X_c(j\Omega)*S(j\Omega)&#x3D;\frac{1}{T}\sum_{k&#x3D;-\infty}^{\infty}X_c[j(\Omega-k\Omega_s)]<br>\end{aligned}<br>$$</p>
+<blockquote>
+<p>Nyquist采样定理：</p>
+<p>对于<strong>有限带宽</strong>连续时间信号$x(t)$，频谱最高频率为$\Omega_N$，则采样频率满足$\Omega_s\ge2\Omega_N$时，可由$x(nT)$无失真恢复出$x(t)$。$\Omega_s$称为奈奎斯特频率，$2\Omega_N$称为奈奎斯特率。</p>
+</blockquote>
+<p>考虑$x[n]$在频域下的表示$X(e^{j\omega})$，可以发现其为$X(j\Omega)$在频率尺度上进行变换$\omega&#x3D;\Omega T$得到的结果，实际上为频率轴上的归一化。即$X(e^{j\omega})$在$[-\pi,\pi]$上反映的信息对应$X(j\Omega)$在$[-\Omega_N,\Omega_N]$的频域信息；同时$X(e^{j\omega})$的周期性导致其他数字角频率下的信息与$[-\pi,\pi]$相同，而$x(t)$的高频部分信息在采样后的$x[n]$频谱中就丢失了，这也是Nyquist采样频率确定的一种理解方式。</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106211903223" style="zoom:50%;" />
+
+<h3 id="带限信号利用采样的重建方式"><a href="#带限信号利用采样的重建方式" class="headerlink" title="带限信号利用采样的重建方式"></a>带限信号利用采样的重建方式</h3><p>对于采样序列$x[n]$，重建方法为先将其转换成间隔为采样周期$T$的时域冲激串，再使用截止频率为$\frac{\pi}{T}$理想低通滤波器进行滤波（即相当于理想内插）。在采样时刻点上等于采样值，在采样点之间的值通过内插的方式计算。</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105155457460" style="zoom:50%;" />
+
+<p>此时有<br>$$<br>x_r(t)&#x3D;\sum_{n&#x3D;-\infty}^{\infty}x[n]\frac{\sin[\pi(t-nT)&#x2F;T]}{\pi(t-nT)&#x2F;T}<br>$$<br><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105155709244" style="zoom:50%;" /></p>
+<h3 id="连续时间信号的离散处理"><a href="#连续时间信号的离散处理" class="headerlink" title="连续时间信号的离散处理"></a>连续时间信号的离散处理</h3><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105155834763" style="zoom:50%;" />
+$$
+H_{eff}(j\Omega)=\left\{\begin{aligned}&H(e^{j\omega})|_{\omega=\Omega T},&|\Omega|\le\frac{\pi}{T}\newline
+&0,&|\Omega|>\frac{\pi}{T}\end{aligned}\right.
+$$
+等效连续时间系统的频率响应等于离散时间系统频率响应的主周期，并且频率轴作相应的线性映射。
+
+
+
+
+
+<h3 id="离散时间信号的连续处理"><a href="#离散时间信号的连续处理" class="headerlink" title="离散时间信号的连续处理"></a>离散时间信号的连续处理</h3><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105160432100" style="zoom:50%;" />
+$$
+H(e^{j\omega})=H_c(j\Omega)|_{\Omega=\frac{\omega}{T}},|\omega|<\pi
+$$
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105160625209" style="zoom:33%;" />
+
+<h3 id="利用离散时间处理改变采样率"><a href="#利用离散时间处理改变采样率" class="headerlink" title="利用离散时间处理改变采样率"></a>利用离散时间处理改变采样率</h3><h4 id="整数倍降采样"><a href="#整数倍降采样" class="headerlink" title="整数倍降采样"></a>整数倍降采样</h4><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105160826505" style="zoom:50%;" />
+$$
+X_d(e^{j\omega})=\frac{1}{M}\sum_{i=0}^{M-1}X(e^{j(\omega-2\pi i)/M})
+$$
+降采样频域变换如下：
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105160948292" style="zoom:50%;" />
+
+
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105161002649" style="zoom:50%;" />
+
+<p><strong>从$x[n]$降采样到$x_d[n]$频域变化可概括为：将$[-\pi,\pi]$内的频率扩大$M$倍，幅度缩小为$\frac{1}{M}$，之后以$2\pi$为周期进行拓展。</strong>为避免混叠，在降采样前一般使用抗混叠滤波器：</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105161547665" style="zoom:50%;" />
+
+<p>系统总框图：</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105161620395" style="zoom:50%;" />
+
+
+
+<h4 id="整数倍升采样"><a href="#整数倍升采样" class="headerlink" title="整数倍升采样"></a>整数倍升采样</h4><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105161655938" style="zoom:50%;" />
+$$
+X_e(e^{j\omega})=\sum_{n=-\infty}^{\infty}(\sum_{k=-\infty}^{\infty}x[k]\delta[n-kL])e^{-j\omega n}=\sum_{k=-\infty}^{\infty}x[k]e^{-j\omega Lk}=X(e^{j\omega L})
+$$
+**从$x[n]$内插到$x_e[n]$频域变化可概括为：整体频域压缩至原来的$\frac{1}{L}$，幅值不变化。**
+
+<p>此时$x_e[n]$仅为零值内插得到的结果，需要经过理想低通滤波器进行内插获得升采样序列，从频域上看，理想低通滤波器消除了$\frac{\pi}{L}&lt;|\omega|&lt;\pi$的镜像成分。滤波器增益为$L$是为了使$x_i[n]$与$x[n]$在时域具有相同的幅度。</p>
+<h4 id="非整数倍数改变采样率"><a href="#非整数倍数改变采样率" class="headerlink" title="非整数倍数改变采样率"></a>非整数倍数改变采样率</h4><p><strong>遵循先升采样后降采样达到将采样速率改变为原来$\frac{L}{M}$的目的。</strong></p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105162936922" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105163021518" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105163036054" style="zoom:50%;" />
+
+
+
+
+
+
+
+<h2 id="第六章-离散傅里叶变换"><a href="#第六章-离散傅里叶变换" class="headerlink" title="第六章 离散傅里叶变换"></a>第六章 离散傅里叶变换</h2><h3 id="离散傅里叶变换DFT"><a href="#离散傅里叶变换DFT" class="headerlink" title="离散傅里叶变换DFT"></a>离散傅里叶变换DFT</h3><p>N点DFT定义为：<br>$$<br>X[k]&#x3D;X(e^{j\omega})|<em>{\omega&#x3D;\frac{2\pi}{N}k}&#x3D;\sum</em>{n&#x3D;0}^{N-1}x[n]e^{-j\frac{2\pi}{N}kn}<br>$$<br>N点IDFT定义为：<br>$$<br>x[n]&#x3D;\frac{1}{N}\sum_{k&#x3D;0}^{N-1}X[k]e^{j\frac{2\pi}{N}kn}<br>$$<br>引进记号：$W_N&#x3D;e^{-j\frac{2\pi}{N}}$</p>
+<p><strong>DFT可以视作在离散时间信号频域上对一个周期如$[0,2\pi)$内的采样，对信号序列补零后进行DFT可以增加频域一个周期内的采样点数，但是截断的窗长度没有变化，所以主瓣宽度不变，不改变频率分辨率。</strong></p>
+<h3 id="DFT与DFS"><a href="#DFT与DFS" class="headerlink" title="DFT与DFS"></a>DFT与DFS</h3><p>⻓度为$M$的序列$x[n]$以$N$为周期延拓得到周期序列$\tilde{x}[n]$。</p>
+<ul>
+<li><p>当$M&gt;N$时，会发生时域混叠。</p>
+</li>
+<li><p>当$M\le N$时，无混叠周期延拓，此时可以使用矩形序列$R_N[n]$表示：$x[n]&#x3D;\tilde{x}[n]R_N[n]$</p>
+<p>且<br>$$<br>X(k)&#x3D;\sum_{n&#x3D;0}^{N-1}x[n]e^{-j\frac{2\pi}{N}kn}&#x3D;\sum_{n&#x3D;0}^{N-1}\tilde{x}[n]e^{-j\frac{2\pi}{N}kn}&#x3D;\tilde{X}(k)<br>$$<br>从上面的表达式可以看出求和只限在主值区间进行。</p>
+</li>
+</ul>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106215736039" style="zoom:50%;" />
+
+<h3 id="频域抽样"><a href="#频域抽样" class="headerlink" title="频域抽样"></a>频域抽样</h3><p>$X(z)$在单位圆上进行N个均分点上抽样，可得<br>$$<br>X(k)&#x3D;X(z)|<em>{z&#x3D;e^{j\frac{2\pi}{N}k}}<br>$$<br>相反地，利用N个频率抽样可以恢复$X(z)$：<br>$$<br>X(z)&#x3D;\sum</em>{k&#x3D;0}^{N-1}x(k)\phi_k(z)&#x3D;\frac{1}{N}\sum_{k&#x3D;0}^{N-1}x(k)\cdot\frac{1-z^{-N}}{1-W^{-k}_Nz^{-1}}<br>$$</p>
+<p>$$<br>\tilde{x}[n]&#x3D;IDFS[\tilde{X}(k)]&#x3D;\frac{1}{N}\sum_{k&#x3D;0}^{N-1}X(e^{j\omega})|<em>{\omega&#x3D;\frac{2\pi}{N}k}W^{-nk}<em>N&#x3D;\frac{1}{N}\sum</em>{k&#x3D;0}^{N-1}[\sum</em>{m&#x3D;-\infty}^{\infty}x[m]W^{mk}_{N}]W^{-nk}_N<br>$$</p>
+<p>利用正交性得<br>$$<br>\tilde{x}[n]&#x3D;\sum_{r&#x3D;-\infty}^{\infty}\sum_{m&#x3D;-\infty}^{\infty}x[m]\delta[m-n-rN]&#x3D;\sum_{r&#x3D;-\infty}^{\infty}x(n+rN)<br>$$<br><strong>时域抽样对应频域周期延拓，同样频域抽样对应时域周期延拓，由IDFT得到的周期序列是原周期序列$x[n]$的周期延拓。</strong></p>
+<p>若$x[n]$非有限长序列，则$X(k)$得到的序列会产生混叠，而对于有限长序列$x[n]$，长度为$M$，当IDFT点数$N\ge M$时，可以无失真得到$x[n]$，多余的点数部分会进行补零。</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105211709391" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106221422694" style="zoom:50%;" />
+
+<h3 id="DFT变换的性质"><a href="#DFT变换的性质" class="headerlink" title="DFT变换的性质"></a>DFT变换的性质</h3><ul>
+<li><p>线性</p>
+</li>
+<li><p>循环移位：一有限⻓序列的圆周位移是指⽤其⻓度为$N$的周期，将$x[n]$延拓成周期序列$\tilde{x}[n]$并加以移位， 然后取主值区间$[0,N-1]$上的序列值：<br>$$<br>x_m[n]&#x3D;x((n-m))_NR_N[n]<br>$$<br>则有<br>$$<br>X_m(k)&#x3D;W_N^{mk}X(k)<br>$$<br>有限长序列的圆周位移等效于在离散频域中引⼊⼀个和频率成正比的线性相移$W_N^{mk}$，对于DFT的幅度没有影响。</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106221936403" style="zoom:50%;" />
+
+<p>由此可推得调制特性：时间序列的调制等效于频域的圆周移位<br>$$<br>DFT[x[n]\cos\frac{2\pi nl}{N}]&#x3D;\frac{1}{2}[x((k-l))_N+X((x+l))_N]R_N[k]<br>$$</p>
+</li>
+<li><p>共轭对称性：</p>
+<p>引入圆周共轭对称<br>$$<br>x_{ep}[n]&#x3D;\frac{1}{2}[x[n]+x^*[N-n]]\newline<br>x_{op}[n]&#x3D;\frac{1}{2}[x[n]-x^*[N-n]]<br>$$<br>对应包含以下性质<br>$$<br>x_{ep}[n]&#x3D;x_{ep}^*[N-n]\newline<br>x_{op}[n]&#x3D;-x_{op}^*[N-n]<br>$$<br><strong>令$x[N]&#x3D;x[0]$，可以推得圆周共轭对称原点为实数，而圆周共轭反对称原点为虚数，其他点关于$\frac{N}{2}$对称。</strong></p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106222340591" style="zoom:50%;" />
+
+<p>对于$x((-n))_NR_N[n]&#x3D;x(N-n)$，可视为$x[0]$不变，其他值关于$\frac{N}{2}$左右交换。</p>
+<p>则DFT具有以下性质</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105213551022" style="zoom:50%;" />
+
+
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106222950770" style="zoom:50%;" />
+
+
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105213614316" style="zoom:50%;" />
+</li>
+<li><p>帕斯瓦尔定理：<br>$$<br>\sum_{n&#x3D;0}^{N-1}|x[n]|^2&#x3D;\frac{1}{N}\sum_{n&#x3D;0}^{N-1}|X(k)|^2<br>$$</p>
+</li>
+<li><p>循环卷积</p>
+<p>$L$点的循环卷积$y_c[n]$是线性卷积$y_l[n]$以$L$为周期的周期延拓序列的主值序列。</p>
+<p>不发生混叠，有$L\ge N_1+N_2-1$</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106223629125" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106223719086" style="zoom:50%;" /></li>
+</ul>
+<p>利用频域取样的概念证明线性卷积与循环卷积的关系： 因为循环卷积与线性卷积在频域是取样关系，所以时域是周期性延拓取主周期的关系。要求循环卷积点数N大于等于x[n]和h[n]的最大长度</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106224828892" style="zoom:50%;" />
+
+<h3 id="离散傅里叶变换的应用"><a href="#离散傅里叶变换的应用" class="headerlink" title="离散傅里叶变换的应用"></a>离散傅里叶变换的应用</h3><p>DFT的问题：</p>
+<ul>
+<li><p>时域加窗：引起频谱泄露</p>
+<p>由于进行DFT时默认会加有限长的矩形窗，在频域上相当于理想脉冲被Sa函数替代，从而导致频谱分量分散到其他频率上，若DFT点数不够，甚至会造成峰的混叠。</p>
+<p><strong>主瓣宽度与窗形状及窗长有关</strong></p>
+<p><strong>旁瓣的相对幅度与窗长无关，只与窗形状有关</strong></p>
+<p><strong>选择窗函数的依据：（1）根据对旁瓣干扰的要求选择窗形状；（2）再根据频率分辨率的要求选择窗长</strong></p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106225151304" style="zoom:50%;" />
+
+
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240105214313277" style="zoom: 50%;" />
+</li>
+<li><p>频域取样存在栅栏效应：由于DFT采样点数不够，导致频域取样无法取到某些峰，进而造成对实际频谱错误的分析判断，解决方法是补零进行更高点数的DFT从而增加频域采样点数。</p>
+</li>
+</ul>
+<h2 id="第七章-快速傅里叶变换"><a href="#第七章-快速傅里叶变换" class="headerlink" title="第七章 快速傅里叶变换"></a>第七章 快速傅里叶变换</h2><p>DFT运算需要$N^2$次复数乘法与$N(N-1)$次复数加法，相当于需要$4N^2$次实数乘法和$2N(2N-1)$次实数加法。</p>
+<p>利用$W_{N}^{nk}$的对称性和周期性，可以减少很多冗余计算。</p>
+<h3 id="按时间抽取的FFT算法（DIT-FFT）"><a href="#按时间抽取的FFT算法（DIT-FFT）" class="headerlink" title="按时间抽取的FFT算法（DIT-FFT）"></a>按时间抽取的FFT算法（DIT-FFT）</h3><p>基-2FFT，$N&#x3D;2^L,x(2r)&#x3D;x_1(r),x(2r+1)&#x3D;x_2(r),r&#x3D;0,1,…,\frac{N}{2}-1$</p>
+<p>可得<br>$$<br>X(k)&#x3D;X_1(k)+W_N^kX_2(k)\newline<br>X_1(k)&#x3D;\sum_{r&#x3D;0}^{\frac{N}{2}-1}x(2r)W_{\frac{N}{2}}^{rk}\newline<br>X_2(k)&#x3D;\sum_{r&#x3D;0}^{\frac{N}{2}-1}x(2r+1)W_{\frac{N}{2}}^{rk}<br>$$<br>即⼀个N点的DFT已被分为2个N&#x2F;2点的DFT，它们按照上式⼜组成了⼀个N点的DFT的前N&#x2F;2点。</p>
+<p>计算后半部分，使用周期性<br>$$<br>W_{N&#x2F;2}^{rk}&#x3D;W_{N&#x2F;2}^{r(k+\frac{N}{2})}\newline<br>X_1(\frac{N}{2}+k)&#x3D;X_1(k)<br>$$<br>则有<br>$$<br>X(k+\frac{N}{2})&#x3D;X_1(k+\frac{N}{2})+W_N^{k+\frac N2}X_2(k+\frac N2)&#x3D;X_1(k)-W_N^kX_2(k)<br>$$<br><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106095141395" style="zoom:50%;" /></p>
+<p>一个$\frac{N}{2}$点DFT运算量：复数乘法$(\frac{N}{2})^2&#x3D;\frac{N^2}{4}$次，复数加法$\frac{N}{2}(\frac{N}{2}-1)$</p>
+<p>合成$N$点DFT运算，需要$\frac{N}{2}$个蝶形运算，需要$\frac{N}{2}$次复数乘法和$N$次复数加法。</p>
+<p>此时总运算量为$\frac{N^2}{2}+\frac{N}{2}$次复数乘法和$N(\frac{N}{2}-1)+\frac{N}{2}$次复数加法。</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106100107327" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106100156374" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106100231805" style="zoom:50%;" />
+
+<p>完全分解的FFT运算量：需要$\frac{N}{2}\log_2N$次复数乘法与$N\log_2N$次复数加法，相当于需要$2N\log_2N$次实数乘法和$3N\log_2N$次实数加法。</p>
+<p>FFT算法特点：</p>
+<ul>
+<li><p>原位运算：<strong>每级均有$\frac{N}{2}$个蝶形运算</strong></p>
+<p>某一列的任何两个节点$k$、$j$的节点变量进行蝶形运算后，得到的结果为下列$k$、$j$⼆节点的节点变量，与其它节点无关。共需要$N+\frac{N}{2}$个存储单元。</p>
+</li>
+<li><p>倒位序排列</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106101102883" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106101127448" style="zoom:50%;" />
+</li>
+<li><p>$W_N^r$中$r$的确定方法：<strong>第$m$级有$2^{m-1}$个蝶形类型，因子可表示为：$W_{2^m}^r,r&#x3D;0,1,…,2^{m-1}-1$，表示为统一形式，则：</strong><br>$$<br>W_{2^m}^{r}&#x3D;W_{2^m\cdot2^{L-m}}^{r\cdot 2^{L-m}}&#x3D;W_N^{r\cdot 2^{L-m}},r&#x3D;0,1,…,2^{m-1}-1<br>$$</p>
+</li>
+<li><p>蝶形运算二节点间距为$2^{m-1}$</p>
+</li>
+</ul>
+<p>若原始序列按照顺序排列，则FFT序列按照倒位序排列：</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106101916699" style="zoom:33%;" />
+
+
+
+
+
+<h3 id="按频率抽取的FFT算法（DIF-FFT）"><a href="#按频率抽取的FFT算法（DIF-FFT）" class="headerlink" title="按频率抽取的FFT算法（DIF-FFT）"></a>按频率抽取的FFT算法（DIF-FFT）</h3><p>算法原理：设序列的⻓度为$N&#x3D;2^L$，将序列前后$N&#x2F;2$个样本分成两个序列，即<br>$$<br>X(k)&#x3D;\sum_{n&#x3D;0}^{\frac{N}{2}-1}[x[n]+x[n+\frac{N}{2}]W_N^{\frac{N}{2}k}]W_N^{nk},k&#x3D;0,1,…,N-1<br>$$<br>按照$k$的奇偶性将其分为两部分：<br>$$<br>X(2r)&#x3D;\sum_{n&#x3D;0}^{\frac N2-1}[x[n]+x[n+\frac{N}2]]W_{N&#x2F;2}^{nr}\newline<br>X(2r+1)&#x3D;\sum_{n&#x3D;0}^{\frac N2-1}[x[n]-x[n+\frac{N}{2}]W_N^n]W_{N&#x2F;2}^{nr}<br>$$<br><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106102634928" style="zoom:50%;" /></p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106102657531" style="zoom:50%;" />
+
+<p>算法特点：</p>
+<ul>
+<li><p>同地计算</p>
+</li>
+<li><p>$W_N^r$的计算：<strong>第$m$级的因子表示为$W_{2^{L-m+1}}^r,r&#x3D;0,1,…,2^{L-m}-1$，如果表示成统一形式，则</strong><br>$$<br>W_{2^{L-m+1}}^r&#x3D;W_{2^L}^{r\cdot 2^{m-1}}&#x3D;W_N^{r\cdot 2^{m-1}},r&#x3D;0,…,2^{L-m}-1<br>$$</p>
+</li>
+<li><p>DIF与DIT的比较：</p>
+<ul>
+<li><p>DIF中输入是顺序，输出是倒位序，蝶形运算不同，复数乘法在减法后；DIT中输入是倒序，输出是顺序。</p>
+</li>
+<li><p>运算量是⼀样的：$L$级运算，每级运算需要$N&#x2F;2$个蝶形来完成，需$\frac{N}{2}\log_2N$次复数乘法和$N\log_2N$次复数加法。</p>
+</li>
+<li><p>将DIF的基本蝶形加以倒置即得到DIT</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106103215698" style="zoom:50%;" />
+</li>
+<li><p>蝶形运算⼆结点的距离为$2^{L-m}$；以$N&#x3D;8$为例，在第⼀级为4；第⼆级为2；第三级为1。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="实序列的FFT算法"><a href="#实序列的FFT算法" class="headerlink" title="实序列的FFT算法"></a>实序列的FFT算法</h3><ul>
+<li><p>$x_1[n],x_2[n]$为N点实序列，要求计算这两个序列的N点DFT。</p>
+<p>合成N点复序列：$y[n]&#x3D;x_1[n]+jx_2[n]$，利用FFT计算$Y(k)$，则<br>$$<br>X_1(k)&#x3D;\frac{1}{2}(Y(k)+Y^*(N-k))\newline<br>X_2(k)&#x3D;\frac{1}{2j}(Y(k)-Y^*(N-k))<br>$$</p>
+</li>
+<li><p>利用N&#x2F;2点FFT计算N点实序列$x[n]$的N点DFT</p>
+<p>根据下标拆成两个N&#x2F;2点实序列，偶数下标为$x_1[n]$，奇数下标为$x_2[n]$，合成$y[n]&#x3D;x_1[n]+jx_2[n]$，则<br>$$<br>X_1(k)&#x3D;\frac{1}{2}(Y(k)+Y^*(\frac{N}{2}-k))\newline<br>X_2(k)&#x3D;\frac{1}{2j}(Y(k)-Y^*(\frac{N}{2}-k))<br>$$<br>再利用蝶形运算：<br>$$<br>X(k)&#x3D;X_1(k)+W_N^{k}X_2(k)\newline<br>X(k+\frac{N}{2})&#x3D;X_1(k)-W_N^kX_2(k)\newline<br>k&#x3D;0,1,…,\frac{N}{2}-1<br>$$</p>
+</li>
+</ul>
+<h3 id="IFFT"><a href="#IFFT" class="headerlink" title="IFFT"></a>IFFT</h3><ul>
+<li><p>方案1：将图中的$W_{N}^{nk}$改为$W_{N}^{-nk}$，每个蝶形乘以乘以常数$\frac{1}{2}$可从FFT转为IFFT。</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106155938174" style="zoom:50%;" />
+</li>
+<li><p>方案2：$X(k)$取共轭得到$X^*(k)$进行FFT，将结果取共轭乘以$\frac{1}{N}$即可得到$x[n]$。</p>
+</li>
+<li><p>方案3：根据DFT对偶性<br>$$<br>\sum_{k&#x3D;0}^{N-1}X(k)W^{nk}_N&#x3D;Nx[N-n]<br>$$</p>
+</li>
+</ul>
+<h2 id="第八章-数字滤波器设计"><a href="#第八章-数字滤波器设计" class="headerlink" title="第八章 数字滤波器设计"></a>第八章 数字滤波器设计</h2><h3 id="技术指标"><a href="#技术指标" class="headerlink" title="技术指标"></a>技术指标</h3><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106105445109" style="zoom:50%;" />
+
+<p>定义：</p>
+<ul>
+<li>最大通带增益：$20\log(1+\delta_p)$，最小通带增益：$20\log(1-\delta_p)$，理想通带增益为0dB</li>
+<li>最大阻带增益：$20\log(\delta_s)$</li>
+<li>幅度降为$\frac{1}{\sqrt2}$处为3dB截止频率$\omega_c$</li>
+<li><strong>最大通带衰减：$a_p&#x3D;-20\log(1-\delta_p)$</strong></li>
+<li><strong>最小阻带衰减：$a_s&#x3D;-20\log(\delta_s)$</strong></li>
+</ul>
+<h3 id="FIR滤波器设计"><a href="#FIR滤波器设计" class="headerlink" title="FIR滤波器设计"></a>FIR滤波器设计</h3><p>窗函数法设计：对零相位理想频率响应$H_d(e^{j\omega})$做傅里叶反变换，得到关于原点对称的无限长单位脉冲响应$h_d[n]$，对其使用窗函数截断，再右移获得因果序列$h[n]$。$h[n]$即为逼近理想频率响应的因果FIR滤波器的单位脉冲响应。</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106110133669" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106110539081" style="zoom:50%;" />
+
+
+
+<p>窗函数法设计的滤波器与理想滤波器的区别：</p>
+<ul>
+<li><p>过渡带的宽度不为零</p>
+</li>
+<li><p><strong>通带与阻带产生了同等幅度的波动</strong></p>
+</li>
+<li><p><strong>增加窗函数的窗长，主瓣和旁瓣宽度下降 、幅度增大，每个瓣的面积不变。所以，滤波器波动加快，但波动幅度不随窗长的增大而减小（这取决于窗函数的形状）。</strong></p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106110815429" style="zoom:33%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106111143103" style="zoom:33%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106111205843" style="zoom:33%;" /></li>
+</ul>
+<p>理想矩形窗对频响的影响：</p>
+<ul>
+<li>过渡带的宽度取决于窗的频响的主瓣宽度</li>
+<li>在截止频率$\omega_c$的两边$\omega&#x3D;\omega_c\pm \frac{2\pi}{N}$处出现正肩峰值和负肩峰值，肩峰两侧形成起伏振荡。振荡幅度取决于旁瓣相对幅度，而振荡的多少取决于旁瓣的多少</li>
+</ul>
+<h4 id="不同窗函数比较"><a href="#不同窗函数比较" class="headerlink" title="不同窗函数比较"></a>不同窗函数比较</h4><h5 id="布莱克曼窗族"><a href="#布莱克曼窗族" class="headerlink" title="布莱克曼窗族"></a>布莱克曼窗族</h5><p>$$<br>w[n]&#x3D;\left{\begin{aligned}&amp;\sum_{k&#x3D;0}^k(-1)^ka_k\cos\frac{2\pi nk}{M},&amp;0\le n\le M\newline &amp;0,&amp;\text{o.w.}\end{aligned}\right.<br>$$</p>
+<table>
+<thead>
+<tr>
+<th>窗类型</th>
+<th>矩形</th>
+<th>巴特利特</th>
+<th>汉宁</th>
+<th>海明</th>
+<th>布莱克曼</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>滤波器的过渡带宽(rad)</td>
+<td>$1.8\pi&#x2F;M$</td>
+<td>$6.1\pi&#x2F;M$</td>
+<td>$6.2\pi&#x2F;M$</td>
+<td>$6.6\pi&#x2F;M$</td>
+<td>$11.1\pi&#x2F;M$</td>
+</tr>
+<tr>
+<td>滤波器的最大误差相对值(dB)</td>
+<td>-21</td>
+<td>-25</td>
+<td>-44</td>
+<td>-53</td>
+<td>-74</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>基于窗函数法设计数字滤波器步骤：</p>
+<ul>
+<li>确定理想频率响应的截止频率，构造理想频率响应，通带内为线性相位响应，窗长$M$待定</li>
+<li>取最大允许逼近误差$\delta&#x3D;\min(\delta_s,\delta_p)$，计算对应衰减$A&#x3D;-20\lg\delta$，对应表格选择合适的窗</li>
+<li>根据过渡带宽确定窗长$\frac{k\pi}{M}&#x3D;|\omega_p-\omega_s|$</li>
+<li>对理想单位脉冲加上对应的窗函数</li>
+</ul>
+</blockquote>
+<h5 id="凯泽窗"><a href="#凯泽窗" class="headerlink" title="凯泽窗"></a>凯泽窗</h5><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106165006325" style="zoom:50%;" />
+
+
+
+
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106165032829" style="zoom:50%;" />
+
+
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106165050808" style="zoom:50%;" />
+
+
+
+<p><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106165116559" style="zoom:50%;" /><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240106165133039.png" srcset="/img/loading.gif" lazyload alt="image-20240106165133039"></p>
+<blockquote>
+<p>凯泽窗特性：</p>
+<ul>
+<li>$\beta$越小，窗边缘变化越突兀，$\beta&#x3D;0$时为矩形窗</li>
+<li>$\beta$越大，主瓣宽度越大，旁瓣幅值减小</li>
+<li>$M$越大，主瓣宽度越小，第一旁瓣幅值无变化</li>
+</ul>
+</blockquote>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106165133039" style="zoom:50%;" />
+
+<h3 id="IIR滤波器设计"><a href="#IIR滤波器设计" class="headerlink" title="IIR滤波器设计"></a>IIR滤波器设计</h3><p>本课程基于原型连续时间滤波器设计离散时间IIR滤波器。重点是实现如何从模拟域映射到数字域。注意这与等效连续时间滤波器不同。</p>
+<p>对之后使用的$T_d$，若是从数字滤波器指标推得原型连续时间滤波器，再进行数字滤波器设计，则$T_d$取值不影响结果，但是如果给定了原型连续时间滤波器，$T_d$的取值是受限的。</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240107105600158" style="zoom:50%;" />
+
+<h4 id="脉冲响应不变法"><a href="#脉冲响应不变法" class="headerlink" title="脉冲响应不变法"></a>脉冲响应不变法</h4><p>对模拟滤波器的单位脉冲响应$h(t)$等间隔抽样来获得数字滤波器的单位脉冲响应$h[n]$：<br>$$<br>h[n]&#x3D;T_dh_c(t)|<em>{t&#x3D;nT_d}<br>$$<br><strong>需要与采样时间进行区分，这两者完全不相干；相同指标下，IIR比FIR滤波器阶数更低。</strong><br>$$<br>H(z)&#x3D;Z{h[n]}&#x3D;\sum</em>{k&#x3D;0}^{N-1}\frac{A_kT_d}{1-e^{s_kT_d}z^{-1}}<br>$$<br>数字滤波器$\omega$与模拟滤波器$\Omega$的关系为：<br>$$<br>\Omega&#x3D;\frac{\omega}{T_d}<br>$$<br>设计时，给定了数字滤波器的$\omega_c,\omega_p$，则$\Omega_c&#x3D;\frac{\omega_c}{T_d},\Omega_p&#x3D;\frac{\omega_p}{T_d}$。<strong>当取样间隔$T_d$增大时，混叠无变化，因为模拟域的截止频率也发生了变化。</strong></p>
+<p>特点：数字滤波器和模拟滤波器的频率关系为线性，频率响应的形状保持不变。<strong>但是可能存在频谱混叠，故不能用脉冲响应不变法设计高通、带阻等滤波器。</strong></p>
+<blockquote>
+<p>设计步骤：</p>
+<ul>
+<li><p>将数字滤波器的频率指标$\omega$转换为模拟滤波器的频率指标$\Omega$<br>$$<br>\Omega_k&#x3D;\frac{\omega_k}{T_d}<br>$$</p>
+</li>
+<li><p>由模拟滤波器的指标设计模拟滤波器H(s)</p>
+</li>
+<li><p>利⽤脉冲响应不变法，将H(s)转换H(z)</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="双线性变换法"><a href="#双线性变换法" class="headerlink" title="双线性变换法"></a>双线性变换法</h4><p>基本思想：将非带限的模拟滤波器映射为最高频率为$\frac{\pi}{T}$的带限模拟滤波器。</p>
+<p><strong>模拟频率与数字频率的关系为：</strong><br>$$<br>\Omega&#x3D;\frac{2}{T_d}\tan\frac{\omega}{2}<br>$$<br> <strong>s域到z域的映射关系</strong><br>$$<br>s&#x3D;\frac{2}{T_d}\frac{1-z^{-1}}{1+z^{-1}}\rightarrow z&#x3D;\frac{2&#x2F;T_d+s}{2&#x2F;T_d-s}<br>$$<br>特点：<strong>不会产生混叠，但是幅度响应不是常数时会产生幅度失真</strong>，对于设计高通、带阻滤波器，只能用双线性变换法。</p>
+<blockquote>
+<p>设计步骤：</p>
+<ul>
+<li><p>将数字滤波器的频率指标$\omega$转换为模拟滤波器的频率指标$\Omega$，也称为预畸变。<br>$$<br>\Omega&#x3D;\frac{2}{T_d}\tan\frac{\omega}{2}<br>$$</p>
+</li>
+<li><p>由模拟滤波器的指标设计模拟滤波器的$H(s)$</p>
+</li>
+<li><p>利⽤双线性变换法，将$H(s)$转换$H(z)$<br>$$<br>H(z)&#x3D;H(s)|_{s&#x3D;\frac{2}{T_d}\frac{1-z^{-1}}{1+z^{-1}}}<br>$$</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="第九章-离散时间滤波器实现"><a href="#第九章-离散时间滤波器实现" class="headerlink" title="第九章 离散时间滤波器实现"></a>第九章 离散时间滤波器实现</h2><p>$$<br>y[n]&#x3D;\sum_{k&#x3D;1}^Na_ky[n-k]+\sum_{r&#x3D;0}^Mb_rx[n-r]<br>$$</p>
+<p>信号流图：</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106133514548" style="zoom:50%;" />
+
+
+
+<h3 id="IIR滤波器基本结构"><a href="#IIR滤波器基本结构" class="headerlink" title="IIR滤波器基本结构"></a>IIR滤波器基本结构</h3><p>IIR特点：</p>
+<ul>
+<li>单位冲激响应$h[n]$是无限长的</li>
+<li>系统函数$H(z)$在有限$z$平面上有极点存在</li>
+<li>结构上存在着输出到输入的反馈——递归型的</li>
+</ul>
+<h4 id="直接I型"><a href="#直接I型" class="headerlink" title="直接I型"></a>直接I型</h4><p>FIR$H_1(z)$与IIR$H_2(z)$的级联：先零点后极点<br>$$<br>H_1(z)&#x3D;\sum_{k&#x3D;0}^Mb_kz^{-k}\newline<br>H_2(z)&#x3D;\frac{1}{1-\sum_{k&#x3D;1}^Na_kz^{-k}}<br>$$<br><strong>$M+N+1$个系数，$M+N$个延迟单元。</strong></p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106152002735" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106152155294" style="zoom:50%;" />
+
+<h4 id="直接II型（典范型）"><a href="#直接II型（典范型）" class="headerlink" title="直接II型（典范型）"></a>直接II型（典范型）</h4><p>交换直接I型子系统顺序，**$M+N+1$个系数，$max{M,N}$个延迟单元。**</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106152306581" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106152419413" style="zoom:50%;" />
+
+
+
+<h4 id="级联型"><a href="#级联型" class="headerlink" title="级联型"></a>级联型</h4><p>使用零极点分步法表示：<br>$$<br>H(z)&#x3D;A\frac{\Pi_{k&#x3D;1}^{M_1}(1-p_kz^{-1})\Pi_{k&#x3D;1}^{M_2}(1-q_kz^{-1})(1-q_k^<em>z^{-1})}{\Pi_{k&#x3D;1}^{N_1}(1-c_kz^{-1})\Pi_{k&#x3D;1}^{N_2}(1-d_kz^{-1})(1-d_k^</em>z^{-1})}<br>$$<br>其中$M&#x3D;M_1+2M_2,N&#x3D;N_1+2N_2$</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106152942521" style="zoom:50%;" />
+
+<h4 id="并联型"><a href="#并联型" class="headerlink" title="并联型"></a>并联型</h4><p>因式分解并展开为部分分式的形式：<br>$$<br>H(z)&#x3D;\sum_{k&#x3D;0}^{M-N}c_kz^{-k}+\sum_{k&#x3D;1}^{[\frac{N}{2}]}\frac{d_{0,k}+d_{1,k}z^{-1}}{1-a_{1,k}z^{-1}+a_{2,k}z^{-2}}<br>$$<br>可以并行实现，速度快，但不易调整整个系统的零点，不适⽤于零点位置精度要求高的滤波器</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106153208547" style="zoom:50%;" />
+
+
+
+<p>转置结构，即信号流图方向取反，输入、输出对调。</p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106153349917" style="zoom:50%;" />
+
+
+
+
+
+<h3 id="FIR滤波器的基本结构"><a href="#FIR滤波器的基本结构" class="headerlink" title="FIR滤波器的基本结构"></a>FIR滤波器的基本结构</h3><p>FIR特点：</p>
+<ul>
+<li>ROC是整个平面（ 可能除外）</li>
+<li>结构上主要是非递归结构</li>
+</ul>
+<p>$$<br>H(z)&#x3D;\sum_{n&#x3D;0}^Mh[n]z^{-M}<br>$$</p>
+<p><strong>有$M$阶极点$z&#x3D;0$，有$M$个零点位于有限z平面的任何位置。FIR系统⼀般不考虑并联型结构。</strong></p>
+<h4 id="横截型"><a href="#横截型" class="headerlink" title="横截型"></a>横截型</h4><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106153552570" style="zoom:50%;" />
+
+<h4 id="级联型-1"><a href="#级联型-1" class="headerlink" title="级联型"></a>级联型</h4><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106153611387" style="zoom:50%;" />
+
+<h4 id="线性相位型"><a href="#线性相位型" class="headerlink" title="线性相位型"></a>线性相位型</h4><p>将FIR设计为广义线性相位：</p>
+<p><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106153736505" style="zoom:50%;" /><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240106153753145.png" srcset="/img/loading.gif" lazyload alt="image-20240106153753145"></p>
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106153753145" style="zoom:50%;" />
+
+
+
+<h3 id="卷积的DFT实现"><a href="#卷积的DFT实现" class="headerlink" title="卷积的DFT实现"></a>卷积的DFT实现</h3><p>采用分段处理信号进行卷积。</p>
+<h4 id="重叠相加法"><a href="#重叠相加法" class="headerlink" title="重叠相加法"></a>重叠相加法</h4><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106154739478" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106154856586" style="zoom:50%;" />
+
+<h4 id="重叠保留法"><a href="#重叠保留法" class="headerlink" title="重叠保留法"></a>重叠保留法</h4><img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106154923248" style="zoom:50%;" />
+
+<img src="/2023/09/10/1数字信号处理/Users" srcset="/img/loading.gif" lazyload  alt="image-20240106154948725" style="zoom:50%;" />
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Curriculum/" class="category-chain-item">Curriculum</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>数字信号处理</div>
+      <div>http://example.com/2023/09/10/1数字信号处理/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Eternity</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

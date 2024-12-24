@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Eternity">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Asymmetric numeral systems">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ANS">
+<meta property="og:url" content="http://example.com/2024/09/21/ans/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Asymmetric numeral systems">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bjlkeng.io/images/ans_even_odd.png">
+<meta property="og:image" content="https://bjlkeng.io/images/ans_ex3.png">
+<meta property="og:image" content="https://bjlkeng.io/images/ans_rans.png">
+<meta property="article:published_time" content="2024-09-21T05:02:16.000Z">
+<meta property="article:modified_time" content="2024-12-24T15:07:50.229Z">
+<meta property="article:author" content="Eternity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://bjlkeng.io/images/ans_even_odd.png">
+  
+  
+  
+  <title>ANS - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Eternity@SJTU</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="ANS"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-09-21 13:02" pubdate>
+          2024年9月21日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">ANS</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <center><font size=5>Asymmetric numeral systems: entropy coding combining speed of Human coding with compression rate of arithmetic coding</font></center>
+
+<p>参考博客：<a target="_blank" rel="noopener" href="https://bjlkeng.io/posts/lossless-compression-with-asymmetric-numeral-systems/">Lossless Compression with Asymmetric Numeral Systems | Bounded Rationality</a></p>
+<h3 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h3><p>对于数据编码定义以下概念：</p>
+<ul>
+<li><strong>bits</strong>：即数字通信中的0、1。</li>
+<li><strong>symbol</strong>：信息传输的单位，可以为bits或者由一系列bits表示的更高层次的概念，如”a”、”b”等。</li>
+<li><strong>alphabet</strong>：包含传输所有符号的集合。</li>
+<li><strong>message</strong>：由一系列symbols组成。</li>
+</ul>
+<p>数据压缩存在理论上限值，根据香农的信源<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BF%A1%E6%BA%90%E7%BC%96%E7%A0%81%E5%AE%9A%E7%90%86/16911659">信源编码定理</a>，数据无损压缩的理论上限即数据本身的熵，即编码每个符号的平均比特数不可能小于：<br>$$<br>H(X)&#x3D;-\sum_{i&#x3D;1}^n p_i\log_2 p_i<br>$$<br>考虑符号${a,b,c}$的两种分布情况$(\frac{4}{7},\frac{2}{7},\frac{1}{7})$与$(\frac{1}{3},\frac{1}{3},\frac{1}{3})$，前者的熵为$H(X)&#x3D;1.3788\text{bits}$，后者为$H(X)&#x3D;1.5850\text{bits}$。这说明平均分布的符号是最难压缩的，因为无法找到符号分布中的不对称性。</p>
+<h3 id="Asymmetric-numeral-systems的介绍"><a href="#Asymmetric-numeral-systems的介绍" class="headerlink" title="Asymmetric numeral systems的介绍"></a>Asymmetric numeral systems的介绍</h3><p>可以假设字节流$b_1b_2b_3\dots b_i$通过二进制转十进制编码为自然数$x_i$，则获得字节$b_{i+1}$时，可以使用以下方式进行编码：<br>$$<br>C(x_i,b_{i+1}):&#x3D;2x_i+b_{i+1}<br>$$<br>同样，基于自然数$x_i$，也可以通过迭代的方式逐步输出$b_i$与$x_{i-1}$：<br>$$<br>(x_{i-1}, b_i)&#x3D;D(x_{i}):&#x3D;(\lfloor \frac{x_i}{2}\rfloor), x_{i} \text{mod}{2})<br>$$<br>有以下注意点：</p>
+<ul>
+<li>为了区分”0”、”00”等，应该初始化$x_0&#x3D;1$。</li>
+<li>上述情况在0、1均匀分布时达到最优，即与二进制转十进制的方式相对应。</li>
+</ul>
+<p>对于字节流也给出奇偶的定义，即以0结尾的字节流视为偶数，以0结尾的字节流视为奇数。</p>
+<p>在上述编码中，$p_0&#x3D;p_1&#x3D;\frac{1}{2}$，字节流的奇数与偶数与自然数$x_i$的奇数与偶数一一对应。对于0、1分布不均匀的情况，假定$p_1&#x3D;p&lt;1-p&#x3D;p_0$，即对于任意一串字节流，以0结尾的概率大于以1结尾的概率，则应期望在给定范围内偶数字节流映射到的自然数的个数大约为奇数字节流映射自然数个数的$\frac{1-p}{p}$。或者说，给定在$[1,N]$范围内的自然数，其中代表奇数字节流与偶数字节流的自然数分别有$N\cdot p$与$N\cdot (1-p)$个。</p>
+<p>此时需要寻找一个最优的编码方式。从信息论的角度分析，自然数$x_i$包含的信息量为$\log_2x_i$，对于出现概率为$p_{b_{i+1}}$的$b_{i+1}$其信息量为$\log_2 \frac{1}{p_{b_{i+1}}}$，则添加该符号后整体的信息量$\log_2 x_{i+1}&#x3D;\log_2 {x_i}+\log_2 \frac{1}{p_{b_{i+1}}}&#x3D;\log_2 \frac{x_i}{p_{b_{i+1}}}$，那么最优的编码方式即为$C_{opt}(x_i,b_{i+1}) \approx \frac{x_i}{p_{b_{i+1}}}$</p>
+<p><img src="https://bjlkeng.io/images/ans_even_odd.png" srcset="/img/loading.gif" lazyload></p>
+<p>通过上面的分析，对于不均匀分布的0、1找到了最优的编码方式。这也是ABS的思路。</p>
+<h3 id="Uniform-Binary-Variant-uABS"><a href="#Uniform-Binary-Variant-uABS" class="headerlink" title="Uniform Binary Variant(uABS)"></a>Uniform Binary Variant(uABS)</h3><p>继续上面的分析，当0、1满足$p_1&#x3D;p&lt;1-p&#x3D;p_0$时，则前$N$个自然数大约有$N \cdot p$个被映射到1所对应的字符串。为了保证结果为整数，向上取整，则有<br>$$<br>\lceil(N+1)\cdot p\rceil-\lceil N\cdot p\rceil&#x3D;\left\lbrace<br>\begin{aligned}<br>&amp;1,\text{if } b_{b+1}&#x3D;0\newline<br>&amp;0,\text{otherwise}<br>\end{aligned}\right.<br>$$<br>可以证明下面的编码函数满足上式所具有的特性：<br>$$<br>C(x_i,b_{i+1})&#x3D;\left\lbrace<br>\begin{aligned}<br>&amp;\lceil\frac{x_i+1}{1-p} \rceil-1 \quad &amp;\text{if} \space b_{i+1}&#x3D;0\newline<br>&amp;\lfloor \frac{x_i}{p} \rfloor, &amp;\text{otherwise}<br>\end{aligned}<br>\right.<br>$$<br>对应的解码函数$(x_i,b_{i+1})&#x3D;D(x_{i+1})$满足：<br>$$<br>b_{i+1}&#x3D;\lceil(x_{i+1}+1) \cdot p\rceil-\lceil x_{i+1}\cdot p\rceil\<br>x_i&#x3D;\left\lbrace<br>\begin{aligned}<br>&amp;x_{i+1}-\lceil x_{i+1}\cdot p\rceil, &amp;\text{if }b_{i+1}&#x3D;0\newline<br>&amp;\lceil x_{i+1}\cdot p\rceil,&amp; \text{otherwise}<br>\end{aligned}<br>\right.<br>$$<br>uABS的编码过程可以使用映射表可视化：</p>
+<p><img src="https://bjlkeng.io/images/ans_ex3.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="Range-Variants-rANS"><a href="#Range-Variants-rANS" class="headerlink" title="Range Variants(rANS)"></a>Range Variants(rANS)</h3><p>uABS还是基于包含0、1的alphabet，实际上可以进一步分析任意尺寸的alphabet。ABS中的编码函数对于符号也是通用的：$C_{opt}(x_i,s_{i+1}) \approx \frac{x_i}{p_{s_{i+1}}}$，即增加一个symbol应只增加$\log_2\frac{x_i}{p_{s_{i+1}}}$比特的信息熵。为了避免大型alphabet对于寻找合适编解码函数的麻烦，将分布量化为$2^n$个块，则$p_s\approx \frac{f_s}{2^n}$，此处$f_s$为自然数。</p>
+<p><img src="https://bjlkeng.io/images/ans_rans.png" srcset="/img/loading.gif" lazyload></p>
+<p>此时采用以下编解码方式：<br>$$<br>\begin{aligned}<br>&amp;C(x_i, s_{i+1}):&#x3D;\lfloor \frac{x_i}{f_s}\rfloor\cdot 2^n+\text{CDF}[s]+(x_i\text{ mod }f_s)\newline&amp;<br>s_{i+1}&#x3D;\text{symbol}(x_{i+1}\text{ mod }2^n) \text{ such that CDF}[s]\leq x_{i+1}\text{ mod }2^n &lt; \text{CDF}[s+1]\newline&amp;<br>x_i&#x3D;f_s\cdot \lfloor \frac{x_{i+1}}{2^n}\rfloor-\text{CDF}[s]+(x_{i+1}\text{ mod }2^n)&amp;<br>\end{aligned}<br>$$<br>此处$\text{CDF}[s]:&#x3D;\sum_{i&#x3D;1}^{s-1}f_i$。实际上，由于将分布量化为了2的指数幂，乘除可以直接进行移位操作。</p>
+<h3 id="Renormalization"><a href="#Renormalization" class="headerlink" title="Renormalization"></a>Renormalization</h3><p>对于较长的字节流，实际上不能用自然数直接去表示，这里使用到的技巧是保证$x_i\in[2^M,2^{2M}-1]$，即当$x_i$过大时，仅保留最低的$M$位置来保证其位于$[2^M,2^{2M}-1]$，这里的$M$可以设为16等。在解码过程中，如果$x_i$过小，则将当前数字移位并读取$M$为作为低$M$位。伪代码如下：</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs llvm">MASK <span class="hljs-operator">=</span> <span class="hljs-number">2</span>**M - <span class="hljs-number">1</span><br>BOUND <span class="hljs-operator">=</span> <span class="hljs-number">2</span>**(<span class="hljs-number">2</span>*M) - <span class="hljs-number">1</span><br><br># Encoding<br>s <span class="hljs-operator">=</span> readSymbol()<br>x_test <span class="hljs-operator">=</span> (<span class="hljs-keyword">x</span> / f[s]) &lt;&lt; n + (<span class="hljs-keyword">x</span> % f[s]) + <span class="hljs-keyword">c</span>[s]<br>if (x_test &gt; BOUND):<br>    write<span class="hljs-number">16</span>bits(<span class="hljs-keyword">x</span> &amp; MASK)<br>    <span class="hljs-keyword">x</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">x</span> &gt;&gt; M<br><span class="hljs-keyword">x</span> <span class="hljs-operator">=</span> (<span class="hljs-keyword">x</span> / f[s]) &lt;&lt; n + (<span class="hljs-keyword">x</span> % f[s]) + <span class="hljs-keyword">c</span>[s]<br><br># Decoding<br>s <span class="hljs-operator">=</span> symbol[<span class="hljs-keyword">x</span> &amp; MASK]<br>writeSymbol(s)<br><span class="hljs-keyword">x</span> <span class="hljs-operator">=</span> f[s] (<span class="hljs-keyword">x</span> &gt;&gt; n) + (<span class="hljs-keyword">x</span> &amp; MASK) - <span class="hljs-keyword">c</span>[s]<br>if (<span class="hljs-keyword">x</span> &lt; <span class="hljs-number">2</span>**M):<br>    <span class="hljs-keyword">x</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">x</span> &lt;&lt; M + read<span class="hljs-number">16</span>bits()<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Compression/" class="category-chain-item">Compression</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>ANS</div>
+      <div>http://example.com/2024/09/21/ans/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Eternity</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年9月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/08/18/compression/" title="Image Compression">
+                        <span class="hidden-mobile">Image Compression</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
