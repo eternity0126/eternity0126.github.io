@@ -19,25 +19,21 @@
   <meta name="author" content="Eternity">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Asymmetric numeral systems">
+    <meta name="description" content="Linux笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ANS">
-<meta property="og:url" content="http://sf122458.github.io/2024/09/21/ans/index.html">
+<meta property="og:title" content="linux">
+<meta property="og:url" content="http://sf122458.github.io/2024/12/25/linux/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Asymmetric numeral systems">
+<meta property="og:description" content="Linux笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://bjlkeng.io/images/ans_even_odd.png">
-<meta property="og:image" content="https://bjlkeng.io/images/ans_ex3.png">
-<meta property="og:image" content="https://bjlkeng.io/images/ans_rans.png">
-<meta property="article:published_time" content="2024-09-21T05:02:16.000Z">
-<meta property="article:modified_time" content="2024-12-24T15:07:50.229Z">
+<meta property="article:published_time" content="2024-12-25T15:12:08.000Z">
+<meta property="article:modified_time" content="2024-12-25T16:00:24.448Z">
 <meta property="article:author" content="Eternity">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://bjlkeng.io/images/ans_even_odd.png">
   
   
   
-  <title>ANS - Hexo</title>
+  <title>linux - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -183,7 +179,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="ANS"></span>
+            <span id="subtitle" data-typed-text="linux"></span>
           
         </div>
 
@@ -194,8 +190,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-09-21 13:02" pubdate>
-          2024年9月21日 下午
+        <time datetime="2024-12-25 23:12" pubdate>
+          2024年12月25日 晚上
         </time>
       </span>
     
@@ -206,7 +202,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          708 字
         
       </span>
     
@@ -217,7 +213,7 @@
         
         
         
-          13 分钟
+          6 分钟
         
       </span>
     
@@ -254,68 +250,122 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">ANS</h1>
+            <h1 id="seo-header">linux</h1>
             
             
               <div class="markdown-body">
                 
-                <center><font size=5>Asymmetric numeral systems: entropy coding combining speed of Human coding with compression rate of arithmetic coding</font></center>
+                <h3 id="Linux基础指令"><a href="#Linux基础指令" class="headerlink" title="Linux基础指令"></a>Linux基础指令</h3><h4 id="Shell的通配符"><a href="#Shell的通配符" class="headerlink" title="Shell的通配符"></a>Shell的通配符</h4><p><code>*</code>匹配任意长字符串，<code>?</code>匹配一个字符，<code>[]</code>用于匹配所有出现在方括号内的字符，可使用<code>-</code>指定某个范围。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">ls *.cpp<br>ls text?<br>ls text[1A_]<br>ls text[2-5]<br></code></pre></td></tr></table></figure>
 
-<p>参考博客：<a target="_blank" rel="noopener" href="https://bjlkeng.io/posts/lossless-compression-with-asymmetric-numeral-systems/">Lossless Compression with Asymmetric Numeral Systems | Bounded Rationality</a></p>
-<h3 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h3><p>对于数据编码定义以下概念：</p>
-<ul>
-<li><strong>bits</strong>：即数字通信中的0、1。</li>
-<li><strong>symbol</strong>：信息传输的单位，可以为bits或者由一系列bits表示的更高层次的概念，如”a”、”b”等。</li>
-<li><strong>alphabet</strong>：包含传输所有符号的集合。</li>
-<li><strong>message</strong>：由一系列symbols组成。</li>
+
+
+<h4 id="ls指令"><a href="#ls指令" class="headerlink" title="ls指令"></a><code>ls</code>指令</h4><ul>
+<li><p><code>ls -a</code>会列举出隐含文件，即以<code>.</code>开头的文件与文件夹。</p>
+</li>
+<li><p><code>ls -F</code>在列举时可以区分可执行文件、文件夹、链接文件等。</p>
+</li>
+<li><p><code>ls -l</code>可以查看文件属性，共包含8个不同的信息栏：</p>
+</li>
+<li><p>文件的权限标志</p>
+</li>
+<li><p>文件的链接个数</p>
+</li>
+<li><p>文件所有者用户名</p>
+</li>
+<li><p>用户所在的用户组组名</p>
+</li>
+<li><p>文件大小</p>
+</li>
+<li><p>最后一次被修改的日期</p>
+</li>
+<li><p>最后一次被修改的时间</p>
+</li>
+<li><p>文件名</p>
+</li>
 </ul>
-<p>数据压缩存在理论上限值，根据香农的信源<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BF%A1%E6%BA%90%E7%BC%96%E7%A0%81%E5%AE%9A%E7%90%86/16911659">信源编码定理</a>，数据无损压缩的理论上限即数据本身的熵，即编码每个符号的平均比特数不可能小于：<br>$$<br>H(X)&#x3D;-\sum_{i&#x3D;1}^n p_i\log_2 p_i<br>$$<br>考虑符号${a,b,c}$的两种分布情况$(\frac{4}{7},\frac{2}{7},\frac{1}{7})$与$(\frac{1}{3},\frac{1}{3},\frac{1}{3})$，前者的熵为$H(X)&#x3D;1.3788\text{bits}$，后者为$H(X)&#x3D;1.5850\text{bits}$。这说明平均分布的符号是最难压缩的，因为无法找到符号分布中的不对称性。</p>
-<h3 id="Asymmetric-numeral-systems的介绍"><a href="#Asymmetric-numeral-systems的介绍" class="headerlink" title="Asymmetric numeral systems的介绍"></a>Asymmetric numeral systems的介绍</h3><p>可以假设字节流$b_1b_2b_3\dots b_i$通过二进制转十进制编码为自然数$x_i$，则获得字节$b_{i+1}$时，可以使用以下方式进行编码：<br>$$<br>C(x_i,b_{i+1}):&#x3D;2x_i+b_{i+1}<br>$$<br>同样，基于自然数$x_i$，也可以通过迭代的方式逐步输出$b_i$与$x_{i-1}$：<br>$$<br>(x_{i-1}, b_i)&#x3D;D(x_{i}):&#x3D;(\lfloor \frac{x_i}{2}\rfloor), x_{i} \text{mod}{2})<br>$$<br>有以下注意点：</p>
+  <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">drwxr</span>-xr-x <span class="hljs-number">2</span> root root <span class="hljs-number">4096</span> <span class="hljs-number">2003</span>-<span class="hljs-number">01</span>-<span class="hljs-number">26</span> <span class="hljs-number">21</span>:<span class="hljs-number">25</span> conf.d<br></code></pre></td></tr></table></figure>
+
+<h4 id="cat指令与less指令"><a href="#cat指令与less指令" class="headerlink" title="cat指令与less指令"></a><code>cat</code>指令与<code>less</code>指令</h4><p>用于直接在命令行打印出文件内容，如</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cat test.txt<br></code></pre></td></tr></table></figure>
+
+<p>使用<code>-n</code>可进一步显示行号。</p>
+<p><code>less</code>可实现与<code>cat</code>类似的功能，且还支持更多功能，底部有<code>:</code>等待输入命令</p>
 <ul>
-<li>为了区分”0”、”00”等，应该初始化$x_0&#x3D;1$。</li>
-<li>上述情况在0、1均匀分布时达到最优，即与二进制转十进制的方式相对应。</li>
+<li>按下空格键向下翻一页</li>
+<li>按下B键向上翻页</li>
+<li>支持光标键</li>
+<li>使用<code>/</code>加上搜索内容进行搜索，查找相同内容再输入<code>/</code>即可向下跳转。</li>
 </ul>
-<p>对于字节流也给出奇偶的定义，即以0结尾的字节流视为偶数，以0结尾的字节流视为奇数。</p>
-<p>在上述编码中，$p_0&#x3D;p_1&#x3D;\frac{1}{2}$，字节流的奇数与偶数与自然数$x_i$的奇数与偶数一一对应。对于0、1分布不均匀的情况，假定$p_1&#x3D;p&lt;1-p&#x3D;p_0$，即对于任意一串字节流，以0结尾的概率大于以1结尾的概率，则应期望在给定范围内偶数字节流映射到的自然数的个数大约为奇数字节流映射自然数个数的$\frac{1-p}{p}$。或者说，给定在$[1,N]$范围内的自然数，其中代表奇数字节流与偶数字节流的自然数分别有$N\cdot p$与$N\cdot (1-p)$个。</p>
-<p>此时需要寻找一个最优的编码方式。从信息论的角度分析，自然数$x_i$包含的信息量为$\log_2x_i$，对于出现概率为$p_{b_{i+1}}$的$b_{i+1}$其信息量为$\log_2 \frac{1}{p_{b_{i+1}}}$，则添加该符号后整体的信息量$\log_2 x_{i+1}&#x3D;\log_2 {x_i}+\log_2 \frac{1}{p_{b_{i+1}}}&#x3D;\log_2 \frac{x_i}{p_{b_{i+1}}}$，那么最优的编码方式即为$C_{opt}(x_i,b_{i+1}) \approx \frac{x_i}{p_{b_{i+1}}}$</p>
-<p><img src="https://bjlkeng.io/images/ans_even_odd.png" srcset="/img/loading.gif" lazyload></p>
-<p>通过上面的分析，对于不均匀分布的0、1找到了最优的编码方式。这也是ABS的思路。</p>
-<h3 id="Uniform-Binary-Variant-uABS"><a href="#Uniform-Binary-Variant-uABS" class="headerlink" title="Uniform Binary Variant(uABS)"></a>Uniform Binary Variant(uABS)</h3><p>继续上面的分析，当0、1满足$p_1&#x3D;p&lt;1-p&#x3D;p_0$时，则前$N$个自然数大约有$N \cdot p$个被映射到1所对应的字符串。为了保证结果为整数，向上取整，则有<br>$$<br>\lceil(N+1)\cdot p\rceil-\lceil N\cdot p\rceil&#x3D;\left\lbrace<br>\begin{aligned}<br>&amp;1,\text{if } b_{b+1}&#x3D;0\newline<br>&amp;0,\text{otherwise}<br>\end{aligned}\right.<br>$$<br>可以证明下面的编码函数满足上式所具有的特性：<br>$$<br>C(x_i,b_{i+1})&#x3D;\left\lbrace<br>\begin{aligned}<br>&amp;\lceil\frac{x_i+1}{1-p} \rceil-1 \quad &amp;\text{if} \space b_{i+1}&#x3D;0\newline<br>&amp;\lfloor \frac{x_i}{p} \rfloor, &amp;\text{otherwise}<br>\end{aligned}<br>\right.<br>$$<br>对应的解码函数$(x_i,b_{i+1})&#x3D;D(x_{i+1})$满足：<br>$$<br>b_{i+1}&#x3D;\lceil(x_{i+1}+1) \cdot p\rceil-\lceil x_{i+1}\cdot p\rceil\<br>x_i&#x3D;\left\lbrace<br>\begin{aligned}<br>&amp;x_{i+1}-\lceil x_{i+1}\cdot p\rceil, &amp;\text{if }b_{i+1}&#x3D;0\newline<br>&amp;\lceil x_{i+1}\cdot p\rceil,&amp; \text{otherwise}<br>\end{aligned}<br>\right.<br>$$<br>uABS的编码过程可以使用映射表可视化：</p>
-<p><img src="https://bjlkeng.io/images/ans_ex3.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="Range-Variants-rANS"><a href="#Range-Variants-rANS" class="headerlink" title="Range Variants(rANS)"></a>Range Variants(rANS)</h3><p>uABS还是基于包含0、1的alphabet，实际上可以进一步分析任意尺寸的alphabet。ABS中的编码函数对于符号也是通用的：$C_{opt}(x_i,s_{i+1}) \approx \frac{x_i}{p_{s_{i+1}}}$，即增加一个symbol应只增加$\log_2\frac{x_i}{p_{s_{i+1}}}$比特的信息熵。为了避免大型alphabet对于寻找合适编解码函数的麻烦，将分布量化为$2^n$个块，则$p_s\approx \frac{f_s}{2^n}$，此处$f_s$为自然数。</p>
-<p><img src="https://bjlkeng.io/images/ans_rans.png" srcset="/img/loading.gif" lazyload></p>
-<p>此时采用以下编解码方式：<br>$$<br>\begin{aligned}<br>&amp;C(x_i, s_{i+1}):&#x3D;\lfloor \frac{x_i}{f_s}\rfloor\cdot 2^n+\text{CDF}[s]+(x_i\text{ mod }f_s)\newline&amp;<br>s_{i+1}&#x3D;\text{symbol}(x_{i+1}\text{ mod }2^n) \text{ such that CDF}[s]\leq x_{i+1}\text{ mod }2^n &lt; \text{CDF}[s+1]\newline&amp;<br>x_i&#x3D;f_s\cdot \lfloor \frac{x_{i+1}}{2^n}\rfloor-\text{CDF}[s]+(x_{i+1}\text{ mod }2^n)&amp;<br>\end{aligned}<br>$$<br>此处$\text{CDF}[s]:&#x3D;\sum_{i&#x3D;1}^{s-1}f_i$。实际上，由于将分布量化为了2的指数幂，乘除可以直接进行移位操作。</p>
-<h3 id="Renormalization"><a href="#Renormalization" class="headerlink" title="Renormalization"></a>Renormalization</h3><p>对于较长的字节流，实际上不能用自然数直接去表示，这里使用到的技巧是保证$x_i\in[2^M,2^{2M}-1]$，即当$x_i$过大时，仅保留最低的$M$位置来保证其位于$[2^M,2^{2M}-1]$，这里的$M$可以设为16等。在解码过程中，如果$x_i$过小，则将当前数字移位并读取$M$为作为低$M$位。伪代码如下：</p>
-<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs llvm">MASK <span class="hljs-operator">=</span> <span class="hljs-number">2</span>**M - <span class="hljs-number">1</span><br>BOUND <span class="hljs-operator">=</span> <span class="hljs-number">2</span>**(<span class="hljs-number">2</span>*M) - <span class="hljs-number">1</span><br><br># Encoding<br>s <span class="hljs-operator">=</span> readSymbol()<br>x_test <span class="hljs-operator">=</span> (<span class="hljs-keyword">x</span> / f[s]) &lt;&lt; n + (<span class="hljs-keyword">x</span> % f[s]) + <span class="hljs-keyword">c</span>[s]<br>if (x_test &gt; BOUND):<br>    write<span class="hljs-number">16</span>bits(<span class="hljs-keyword">x</span> &amp; MASK)<br>    <span class="hljs-keyword">x</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">x</span> &gt;&gt; M<br><span class="hljs-keyword">x</span> <span class="hljs-operator">=</span> (<span class="hljs-keyword">x</span> / f[s]) &lt;&lt; n + (<span class="hljs-keyword">x</span> % f[s]) + <span class="hljs-keyword">c</span>[s]<br><br># Decoding<br>s <span class="hljs-operator">=</span> symbol[<span class="hljs-keyword">x</span> &amp; MASK]<br>writeSymbol(s)<br><span class="hljs-keyword">x</span> <span class="hljs-operator">=</span> f[s] (<span class="hljs-keyword">x</span> &gt;&gt; n) + (<span class="hljs-keyword">x</span> &amp; MASK) - <span class="hljs-keyword">c</span>[s]<br>if (<span class="hljs-keyword">x</span> &lt; <span class="hljs-number">2</span>**M):<br>    <span class="hljs-keyword">x</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">x</span> &lt;&lt; M + read<span class="hljs-number">16</span>bits()<br></code></pre></td></tr></table></figure>
+<h4 id="grep指令"><a href="#grep指令" class="headerlink" title="grep指令"></a><code>grep</code>指令</h4><p>实现找到文件中包含指定信息的一行。<code>grep</code>指令实际上是通过基础正则表达式进行搜索的。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">grep [OPTIONS] PATTERN [FILE...]<br></code></pre></td></tr></table></figure>
+
+<p>如果需要找包含空格的关键词，必须加单引号：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">grep &#x27;Red Hat&#x27; test.txt<br></code></pre></td></tr></table></figure>
+
+<p><code>egrep</code>可进一步使用扩展的正则表达式。</p>
+<h4 id="find指令与locate指令"><a href="#find指令与locate指令" class="headerlink" title="find指令与locate指令"></a><code>find</code>指令与<code>locate</code>指令</h4><p>实现文件搜索。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">find [OPTION] [path...] [expression]<br></code></pre></td></tr></table></figure>
+
+<p>例如，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">find /usr/bin -name *.cpp -print<br></code></pre></td></tr></table></figure>
+
+<p><code>find</code>会依据给定的地址进行向下搜索，同时通过<code>-name</code>可使用通配符进行文件搜索。</p>
+<p>此外还可以通过<code>-type</code>参数指定查找的文件形式：</p>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">b</td>
+<td align="center">块设备文件</td>
+</tr>
+<tr>
+<td align="center">f</td>
+<td align="center">普通文件</td>
+</tr>
+<tr>
+<td align="center">c</td>
+<td align="center">字符设备文件</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td align="center">命名管道</td>
+</tr>
+<tr>
+<td align="center">d</td>
+<td align="center">目录文件</td>
+</tr>
+<tr>
+<td align="center">l</td>
+<td align="center">符号链接</td>
+</tr>
+</tbody></table>
+<p><code>locate</code>指令相比<code>find</code>指令执行更迅速，因为其基于检索文件名数据库来确定文件的位置，可以使用<code>updatedb</code>命令更新数据库文件的最新版本。</p>
+<h4 id="终端运行程序"><a href="#终端运行程序" class="headerlink" title="终端运行程序"></a>终端运行程序</h4><p>类似上述指令实际上都是调用了程序，在shell中调用程序只需要键入程序名称(可执行文件名称)即可，在其后加上<code>&amp;</code>可使其启动程序后在后台运行。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">code &amp;<br></code></pre></td></tr></table></figure>
 
 
+
+<h4 id="whereis指令"><a href="#whereis指令" class="headerlink" title="whereis指令"></a><code>whereis</code>指令</h4><p>可用于查找特定程序，并提供该文件的二进制可执行文件、源代码文件和使用手册存放位置。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">whereis find<br></code></pre></td></tr></table></figure>
+
+<p>需要注意的是，<code>whereis</code>检索的子目录是固定在编写的程序中的。</p>
+<h4 id="whatis指令与apropos指令"><a href="#whatis指令与apropos指令" class="headerlink" title="whatis指令与apropos指令"></a><code>whatis</code>指令与<code>apropos</code>指令</h4><p><code>whatis</code>可以获得指定命令的大致功能，而<code>apropos</code>可以通过需求反查相关的指令。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">whatis uname<br>apropos search<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4>
                 
               </div>
             
             <hr/>
             <div>
               <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Compression/" class="category-chain-item">Compression</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
   
   
 </div>
@@ -326,8 +376,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>ANS</div>
-      <div>http://sf122458.github.io/2024/09/21/ans/</div>
+      <div>linux</div>
+      <div>http://sf122458.github.io/2024/12/25/linux/</div>
     </div>
     <div class="license-meta">
       
@@ -339,7 +389,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年9月21日</div>
+          <div>2024年12月25日</div>
         </div>
       
       
@@ -371,18 +421,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/25/linux/" title="linux">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">linux</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/08/18/compression/" title="Image Compression">
-                        <span class="hidden-mobile">Image Compression</span>
+                      <a href="/2024/09/21/ans/" title="ANS">
+                        <span class="hidden-mobile">ANS</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
