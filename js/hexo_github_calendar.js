@@ -73,7 +73,7 @@ var responsiveChart = () => {
             dataitem.x = setposition.x;
             dataitem.y = setposition.y;
             // github_calendar_ctx.fillRect(setposition.x, setposition.y, lineminwitdh, lineminwitdh);
-            fillRoundRect(github_calendar_ctx, setposition.x, setposition.y, lineminwitdh, lineminwitdh, 2, fillcolor=git_thiscolor(git_color, weekdata[day].count));
+            fillRoundRect(github_calendar_ctx, setposition.x, setposition.y, lineminwitdh, lineminwitdh, 0.2*lineminwitdh, fillcolor=git_thiscolor(git_color, weekdata[day].count));
             setposition.y = setposition.y + linemaxwitdh
           }
           setposition.y = 0.025 * width;
@@ -86,11 +86,13 @@ var responsiveChart = () => {
           github_calendar_ctx.fillText("二", 0, 4 * linemaxwitdh);
           github_calendar_ctx.fillText("四", 0, 6 * linemaxwitdh);
           github_calendar_ctx.fillText("六", 0, 8 * linemaxwitdh);
-          var monthindexlist = github_calendar_c.width / 60;
+        //   var monthindexlist = github_calendar_c.width / 60;
+        var monthindexlist = lineminwitdh * 1.5;
         //   console.log(github_calendar_c.width);
           for (var index in git_monthchange) {
             github_calendar_ctx.fillText(git_monthchange[index], monthindexlist, 0.7 * linemaxwitdh);
-            monthindexlist = monthindexlist + github_calendar_c.width / 16;
+            // monthindexlist = monthindexlist + github_calendar_c.width / 16;
+            monthindexlist = monthindexlist + lineminwitdh * 5.5;
           }
         }
         github_calendar_c.onmousemove = function (event) {
