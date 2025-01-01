@@ -38,14 +38,23 @@ mjxSub.forEach(sub => {
 });
 }
 
-var int = self.setInterval("clock()", 1000);
+
+var timesRun = 0;
 function clock() {
+    timesRun += 1;
     if (document.querySelector("mjx-script")) {
         func();
         clearInterval(int);
+    }
+    else if (timesRun > 5)
+    {
+      console.log('MathJax not found!');
+      clearInterval(int);
     }
     else
     {
       console.log('Waiting for MathJax...');
     }
 }
+
+var int = self.setInterval("clock()", 1000);
