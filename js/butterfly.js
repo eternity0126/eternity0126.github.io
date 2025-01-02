@@ -1,10 +1,10 @@
 function func() {
-  console.log('Butterfly.js loaded!');
+  // console.log('Butterfly.js loaded!');
 // 选择所有 mjx-script 元素
 const mjxScripts = document.querySelectorAll('mjx-script');
 // 遍历每个 mjx-script 元素
 mjxScripts.forEach(script => {
-  console.log(script.parentNode.tagName);
+  // console.log(script.parentNode.tagName);
   if (script.parentNode.tagName === 'MJX-MSUB') {
     script.style.cssText = 'vertical-align: -0.2em !important';
   }
@@ -39,22 +39,22 @@ mjxSub.forEach(sub => {
 }
 
 
-var timesRun = 0;
+// var timesRun = 0;
 function clock() {
-    timesRun += 1;
+    // timesRun += 1;
     if (document.querySelector("mjx-script")) {
         func();
-        clearInterval(int);
+        // clearInterval(int);
     }
-    else if (timesRun > 5)
-    {
-      console.log('MathJax not found!');
-      clearInterval(int);
-    }
-    else
-    {
-      console.log('Waiting for MathJax...');
-    }
+    // else if (timesRun > 5)
+    // {
+    //   console.log('MathJax not found!');
+    //   clearInterval(int);
+    // }
+    // else
+    // {
+    //   console.log('Waiting for MathJax...');
+    // }
 }
 
 var int = self.setInterval("clock()", 1000);
