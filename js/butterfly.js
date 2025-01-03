@@ -36,6 +36,7 @@ const mjxSub = document.querySelectorAll('mjx-msub, mjx-msup');
 mjxSub.forEach(sub => {
   sub.style.cssText = 'font-size: 100% !important';
 });
+
 }
 
 
