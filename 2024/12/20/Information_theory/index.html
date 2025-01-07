@@ -1,0 +1,563 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>信息论基础 | Eternity's Blog</title><meta name="author" content="Eternity"><meta name="copyright" content="Eternity"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="信息论基础笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信息论基础">
+<meta property="og:url" content="http://eternity0126.top/2024/12/20/Information_theory/index.html">
+<meta property="og:site_name" content="Eternity&#39;s Blog">
+<meta property="og:description" content="信息论基础笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://eternity0126.top/img/bg.jpg">
+<meta property="article:published_time" content="2024-12-20T10:00:00.000Z">
+<meta property="article:modified_time" content="2025-01-07T15:02:15.475Z">
+<meta property="article:author" content="Eternity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://eternity0126.top/img/bg.jpg"><link rel="shortcut icon" href="/img/favicon-32x32.png"><link rel="canonical" href="http://eternity0126.top/2024/12/20/Information_theory/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '信息论基础',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/modify.css"><link rel="stylesheet" href="/css/butterflyStyle.css"><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/font.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/bg.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bg.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Eternity's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">信息论基础</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">信息论基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-20T10:00:00.000Z" title="发表于 2024-12-20 18:00:00">2024-12-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-07T15:02:15.475Z" title="更新于 2025-01-07 23:02:15">2025-01-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Curriculum/">Curriculum</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h3 id="熵、相对熵与互信息"><a href="#熵、相对熵与互信息" class="headerlink" title="熵、相对熵与互信息"></a>熵、相对熵与互信息</h3><h4 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h4><p>对于字母表为$\mathcal{X}$的离散随机变量$X$，其概率分布为$p(x),x\in\mathcal{X}$，则熵为</p>
+<script type="math/tex; mode=display">
+H(X)=-\sum_{x\in\mathcal{X}}p(x)\log p(x)=E_p\log\frac{1}{p(X)}</script><p>熵的性质：</p>
+<ul>
+<li>$H(X)\geq 0$</li>
+<li>当概率分布为均匀分布时，熵达到最大值，为$\log|\mathcal{X}|$</li>
+</ul>
+<h4 id="联合熵、条件熵"><a href="#联合熵、条件熵" class="headerlink" title="联合熵、条件熵"></a>联合熵、条件熵</h4><p>定义一对离散随机变量$(X,Y)\sim p(x,y)$，其联合熵为</p>
+<script type="math/tex; mode=display">
+H(X,Y)=-\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}p(x,y)\log p(x,y)</script><p>条件熵为</p>
+<script type="math/tex; mode=display">
+H(Y|X)=\sum_{x\in\mathcal{X}}p(x)H(Y|X=x)=-\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}p(x,y)\log p(y|x)</script><p>链式法则：</p>
+<script type="math/tex; mode=display">
+H(X,Y)=H(X)+H(Y|X)=H(Y)+H(X|Y)</script><p>性质：</p>
+<ul>
+<li>当$f(X)$为随机离散变量$X$的函数时，$H(f(X)|X)=0$。即已知$X$可以直接推出$f(X)$，该过程没有信息量的增加。</li>
+</ul>
+<h4 id="相对熵、互信息"><a href="#相对熵、互信息" class="headerlink" title="相对熵、互信息"></a>相对熵、互信息</h4><p>假设概率分布$p(x)$与$q(x)$有相同的字母表$\mathcal{X}$，并满足当$q(x)=0$时，$p(x)=0$，$x\in\mathcal{X}$，则定义相对熵(亦称KL散度)：</p>
+<script type="math/tex; mode=display">
+D(p||q)=\sum_{x\in\mathcal{X}}p(x)\log\frac{p(x)}{q(x)}=E_p\log\frac{p(X)}{q(X)}</script><p><strong>注意一般$D(p||q)\neq D(q||p)$。</strong></p>
+<p>假定$X,Y\sim p(x,y)$，定义在给定另一随机变量知识的条件下，原随机变量不确定度的缩减量为互信息：</p>
+<script type="math/tex; mode=display">
+I(X;Y)=D(p(xy)||p(x)p(y))=\sum_{x\in\mathcal{X}}\sum_{y\in\mathcal{Y}}\log\frac{p(x,y)}{p(x)p(y)}</script><p>性质：</p>
+<ul>
+<li><p>$I(X;Y)=H(X)-H(X|Y)=H(Y)-H(Y|X)=H(X)+H(Y)-H(X,Y)$</p>
+<blockquote>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I(X;Y)&=\sum_{x,y}p(x,y)\log\frac{p(x,y)}{p(x)p(y)}\\
+&=\sum_{x,y}p(x,y)\log p(x|y)-\sum_{x,y}p(x,y)\log p(x)\\
+&=H(X)-H(X|Y)
+\end{aligned}</script></blockquote>
+</li>
+<li><p>$I(X;Y|Z)=H(X|Z)-H(X|Y,Z)$</p>
+</li>
+</ul>
+<h4 id="Jensen不等式"><a href="#Jensen不等式" class="headerlink" title="Jensen不等式"></a>Jensen不等式</h4><p>在区间$(a,b)$内下凸(convex)的函数$f(x)$，对于任意$x_1,x_2\in(a,b),x_1\neq x_2, 0\leq \lambda \leq 1$，有</p>
+<script type="math/tex; mode=display">
+f(\lambda x_1+(1-\lambda)x_2)\leq\lambda f(x_1)+(1-\lambda)f(x_2)</script><p>进一步推广，如果$f$为下凸函数，$X$为随机变量，则</p>
+<script type="math/tex; mode=display">
+Ef(X)\geq f(E(X))</script><h4 id="相对熵的凸性"><a href="#相对熵的凸性" class="headerlink" title="相对熵的凸性"></a>相对熵的凸性</h4><p>$D(p||q)$相对于$(p,q)$为凸函数，即对于$\lambda_1+\lambda_2=1,\lambda_1,\lambda_2\geq0$，有</p>
+<script type="math/tex; mode=display">
+D(\lambda_1 p_1+\lambda_2 p_2||\lambda_1q_1+\lambda_2 q_2)\leq \lambda_1 D(p_1||q_1)+\lambda_2 D(p_2||q_2)</script><h4 id="熵的凹性"><a href="#熵的凹性" class="headerlink" title="熵的凹性"></a>熵的凹性</h4><p>$H(p)$为$p$的凹函数：</p>
+<script type="math/tex; mode=display">
+H(p)=\log|\mathcal{X}|-D(p||u)</script><p>此处$u$为$\mathcal{X}$上的均匀分布。</p>
+<h4 id="数据处理不等式"><a href="#数据处理不等式" class="headerlink" title="数据处理不等式"></a>数据处理不等式</h4><p>如果$p(x,y,z)=p(x)p(y|x)p(z|y)$，则随机变量$X,Y,Z$构成马尔科夫链，记为$X\rightarrow Y\rightarrow Z$</p>
+<p>性质：</p>
+<ul>
+<li>对于任意函数$f$，有$X\rightarrow Y\rightarrow f(Y)$</li>
+</ul>
+<p>数据处理不等式：如果$X\rightarrow Y\rightarrow Z$，则$I(X;Y)\geq I(X;Z)$</p>
+<blockquote>
+<p>证明：</p>
+<script type="math/tex; mode=display">
+I(X;Y,Z)=I(X;Z)+I(X;Y|Z)\\
+I(X;Y,Z)=I(X;Y)+I(X;Z|Y)</script><p>由于$X$与$Z$在条件$Y$下是独立的，则$I(X;Z|Y)=0$，同时$I(X;Y|Z)\geq0$，所以结论得证。</p>
+</blockquote>
+<p>推论：</p>
+<ul>
+<li>对于任意的函数$f$，$I(X;Y)\geq I(X;f(Y))$</li>
+<li><p>如果存在马尔科夫链$X_1-X_2-X_3-X_4$，则$I(X_2;X_3)\geq I(X_1;X_4)$</p>
+</li>
+<li><p>如果存在马尔科夫链$X-Y-Z$，则$I(X;Y)\geq I(X;Y|Z)$，可由数据处理不等式的证明得到。</p>
+</li>
+</ul>
+<h4 id="Fano不等式"><a href="#Fano不等式" class="headerlink" title="Fano不等式"></a>Fano不等式</h4><p>对于任意似然估计量$\hat{X}$，满足马尔科夫链$X-Y-\hat{X}$，定义$P_e=\text{Pr}(X\neq \hat{X})$，有</p>
+<script type="math/tex; mode=display">
+H(P_e)+P_e\log|\mathcal{X}|\geq H(X|\hat{X})\geq H(X|Y)</script><p>推论：对于随机变量$X,Y$，$p=\text{Pr}(X\neq Y)$，则有$H(p)+p\log|\mathcal{X}|\geq H(X|Y)$</p>
+<h3 id="渐进均分性质-AEP"><a href="#渐进均分性质-AEP" class="headerlink" title="渐进均分性质(AEP)"></a>渐进均分性质(AEP)</h3><p>随机变量$X\sim p(x),x\in\mathcal{X}$产生的独立同分布随机序列$X^n=(X_1,X_2,\dots,X_n)$。所有可能的采样有$|\mathcal{X}|^n$个，而典型集的大小为$|A_{\epsilon}^{(n)}|\approx2^{nH(X)}$</p>
+<h4 id="弱大数定律"><a href="#弱大数定律" class="headerlink" title="弱大数定律"></a>弱大数定律</h4><p>考虑独立同分布的随机变量$X_1,X_2,\dots,X_n$，分布的均值为$EX$，定义</p>
+<script type="math/tex; mode=display">
+\overline{X}_n=\frac{1}{n}\sum_{i=1}^nX_i</script><p>则有</p>
+<script type="math/tex; mode=display">
+\lim\limits_{n\rightarrow \infty}\text{Pr}(|\overline{X}_n-EX|>\epsilon)=0</script><h4 id="强大数定律"><a href="#强大数定律" class="headerlink" title="强大数定律"></a>强大数定律</h4><script type="math/tex; mode=display">
+\text{Pr}\left(\lim\limits_{n\rightarrow \infty}\overline{X}_n=EX\right)=1</script><h4 id="概率论中的收敛"><a href="#概率论中的收敛" class="headerlink" title="概率论中的收敛"></a>概率论中的收敛</h4><ul>
+<li>$X_n\overset{D}{\rightarrow}X$依分布收敛：如果函数$F_X(x)=\text{Pr}(X\leq x)$是连续的，当$x\rightarrow \infty$时$\text{Pr}(X_n\leq x)\rightarrow \text{Pr}(X\leq x)$</li>
+<li>$X_n\overset{P}{\rightarrow}X$依概率收敛：对于任意$\epsilon&gt;0$，$\text{Pr}\{|X_n-X|&gt;\epsilon\}\rightarrow 0$</li>
+<li>$X_n\overset{a.s.}{\rightarrow}X$以概率1收敛：$\text{Pr}\left\{\lim\limits_{n\rightarrow \infty}X_n=X\right\}=1$</li>
+<li>$X_n\overset{r}{\rightarrow}X$依$L^r$范数收敛</li>
+</ul>
+<h4 id="AEP"><a href="#AEP" class="headerlink" title="AEP"></a>AEP</h4><p>随机变量$X\sim p(x),x\in\mathcal{X}$产生的独立同分布随机序列$X^n=(X_1,X_2,\dots,X_n)$，有</p>
+<script type="math/tex; mode=display">
+-\frac{1}{n}\log p(X_1,X_2,\dots,X_n)\overset{P}{\rightarrow}H(X)</script><p>AEP表明观测到的序列的概率$p(x_1,x_2,\dots,x_n)$将会收敛于$2^{-nH(X)}$。</p>
+<p>典型集的定义：如果所有长度为$n$的序列$(x_1,\dots,x_n)$所构成的集合满足</p>
+<script type="math/tex; mode=display">
+2^{-n(H(X)+\epsilon)}\leq p(x_1,x_2,\dots,x_n)\leq2^{-n(H(X)-\epsilon)}</script><p>等价于</p>
+<script type="math/tex; mode=display">
+|-\frac{1}{n}\log p(x_1,\dots,x_n)-H(X)|\leq \epsilon</script><p>则称该集合为典型集。</p>
+<p>典型集的性质：</p>
+<ul>
+<li>$\forall (x_1,\dots,x_n)\in A_{\epsilon}^{(n)}$，$H(X)-\epsilon \leq -\frac{1}{n}\log p(x_1,x_2,\dots,x_n)\leq H(X)+\epsilon$</li>
+<li><p>当$n$足够大时，$\text{Pr}\{A_{\epsilon}^{(n)}\}&gt;1-\epsilon$</p>
+</li>
+<li><p>当$n$足够大时，$(1-\epsilon)2^{n(H(X)-\epsilon)}\leq |A_{\epsilon}^{(n)}| \leq 2^{n(H(X)+\epsilon)}$</p>
+</li>
+</ul>
+<h4 id="AEP与数据压缩的关系"><a href="#AEP与数据压缩的关系" class="headerlink" title="AEP与数据压缩的关系"></a>AEP与数据压缩的关系</h4><p>$X_1,X_2,\dots,X_n$是从分布$p(x)$采样出的独立同分布随机变量，数据压缩的目的是寻找用于描述这些随机变量的更短的序列。将$\mathcal{X}^n$中的所有序列分为典型集$A_{\epsilon}^{(n)}$与非典型集$(A_{\epsilon}^{(n)})^c$，则可以使用$nH(X)$个比特以任意小的误差概率来表征序列$\mathcal{X}^n$。即压缩前需要的比特数：$n\log_2|\mathcal{X}|$，压缩后的比特数：$nH(X)$。</p>
+<h3 id="数据压缩"><a href="#数据压缩" class="headerlink" title="数据压缩"></a>数据压缩</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>信源编码$C$对应一个随机变量$X$，</p>
+<p>由$\mathcal{X}$到$D^*$（由字母表$D$中的符号组成的有限长字符）的映射。用$C(x)$表示$x\in\mathcal{X}$对应的codeword，$l(x)$表示$C(x)$的长度，即$C(x)\in D^{l(x)}$。</p>
+<p>对于概率分布为$p(x)$的随机变量$X$，$C(x)$的期望长度$L(C)$为</p>
+<script type="math/tex; mode=display">
+L(C)=\sum_{x\in\mathcal{X}}p(x)l(x)</script><p>定义</p>
+<script type="math/tex; mode=display">
+C(x_1x_2\dots x_n)=C(x_1)C(x_2)\dots C(x_n)</script><p>根据编码不同的特点给出定义：</p>
+<ul>
+<li><p>如果编码能实现一一映射，则称其为非奇异的。</p>
+</li>
+<li><p>如果一个编码的扩展编码是非奇异的，则称其为唯一可译的。</p>
+</li>
+<li>如果没有编码是其他编码的前缀则称为前缀码或即时码。</li>
+</ul>
+<blockquote>
+<p>举例：对于字母表$\mathcal{X}=\{1,2,3,4\}$</p>
+<p>非奇异码：$C(1)=0,C(2)=1,C(3)=10,C(4)=11$</p>
+<p>唯一可译码：$C(1)=10,C(2)=00,C(3)=11,C(4)=110$</p>
+<p>即时码：$C(1)=0,C(2)=10,C(3)=110,C(4)=111$</p>
+</blockquote>
+<p>不同码的包含关系：</p>
+<img src="/2024/12/20/Information_theory/nest.png" class="">
+<h4 id="Kraft不等式"><a href="#Kraft不等式" class="headerlink" title="Kraft不等式"></a>Kraft不等式</h4><p>对于任意大小为$D$的字母表下的前缀码，码长$l_1,l_2,\dots,l_m$必定满足不等式</p>
+<script type="math/tex; mode=display">
+\sum_{i}D^{-l_i}\leq1</script><p>从另一个角度，如果给定一系列满足上述不等式的长度，则存在对应这些长度的前缀码。</p>
+<h4 id="最优码"><a href="#最优码" class="headerlink" title="最优码"></a>最优码</h4><p>任意前缀码长的下界：对于字母表大小为$D$的随机变量$X$，其前缀码的期望码长$L$满足：</p>
+<script type="math/tex; mode=display">
+L\geq H_D(X)</script><p>当且仅当$D^{-l_i}=p_i$时等号成立。$H_D(X)$表示以$D$为对数底数时的熵。</p>
+<h4 id="Shannon码"><a href="#Shannon码" class="headerlink" title="Shannon码"></a>Shannon码</h4><script type="math/tex; mode=display">
+l_i=\lceil\log_D\frac{1}{p_i}\rceil</script><p>可以看出其满足Kraft不等式：</p>
+<script type="math/tex; mode=display">
+\sum D^{-\lceil
+log_D\frac{1}{p_i}\rceil}\leq \sum D^{-\log_D\frac{1}{p_i}}=\sum p_i=1</script><p>所以满足上述码长$\{l_i\}$总是存在的，码长的选择满足</p>
+<script type="math/tex; mode=display">
+\log_D\frac{1}{p_i}\leq l_i < \log_D\frac{1}{p_i}+1</script><p>求概率加权和可以得到</p>
+<script type="math/tex; mode=display">
+H_D(X)\leq L <H_D(X)+1</script><p>从而可以得到最优码的上下界：</p>
+<script type="math/tex; mode=display">
+H_D(X)\leq L^*\leq H_D(X)+1</script><h4 id="Huffman码"><a href="#Huffman码" class="headerlink" title="Huffman码"></a>Huffman码</h4><p>Huffman是最优码，即如果$C^*$是Huffman码而$C$是其他唯一可译码，则有</p>
+<script type="math/tex; mode=display">
+L(C^*)\leq L(C)</script><p>引理：对于任意分布，总存在最优即时码满足以下属性：</p>
+<ul>
+<li><p>码长满足：如果$p_i&gt;p_j$，则$l_j\leq l_k$</p>
+</li>
+<li><p>最长的两个码字长度相同。</p>
+</li>
+<li>最长的两个码字只在最后一个比特上不同，并对应着两个最低概率的符号。</li>
+</ul>
+<h3 id="信道容量"><a href="#信道容量" class="headerlink" title="信道容量"></a>信道容量</h3><h4 id="离散信道"><a href="#离散信道" class="headerlink" title="离散信道"></a>离散信道</h4><p>定义：包含输入字母表$\mathcal{X}$输出字母表$\mathcal{Y}$与概率转移矩阵$p(y|x)$的系统。</p>
+<p>如果输出的概率分布只依赖于相同时间的输入，与先前的输入、输出无关，则该信道是无记忆的，即</p>
+<script type="math/tex; mode=display">
+Y_i-X_i-((X_1,\dots,X_{i-1},X_{i+1},\dots,X_n),(Y_1,\dots,Y_{i-1},Y_{i+1},\dots,Y_n))\\
+p(y^n|x^n)=\prod_{i=1}^{n}p(y_i|x_i)</script><p>信道容量：能以极低错误概率进行传输时的传输速率。离散无记忆信道的信道容量为</p>
+<script type="math/tex; mode=display">
+C=\underset{p(x)}{\max}I(X;Y)</script><p>取最大值需要遍历所有可能的输入分布$p(x)$。</p>
+<p>信道容量的性质：</p>
+<ul>
+<li>$C\geq 0$</li>
+<li><p>$C\leq\log|\mathcal{X}|,C\leq\log\mathcal{Y}$</p>
+</li>
+<li><p>$I(X;Y)$是$p(x)$的连续上凸函数</p>
+</li>
+</ul>
+<h4 id="特殊信道的信道容量"><a href="#特殊信道的信道容量" class="headerlink" title="特殊信道的信道容量"></a>特殊信道的信道容量</h4><ul>
+<li><p>二元对称信道：</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I(X;Y)&=H(Y)-H(Y|X)\\
+&=H(Y)-\sum p(x)H(Y|X=x)\\
+&=H(Y)-\sum p(x)H(p)\\
+&=H(Y)-H(p)\\
+&\leq 1-H(p)
+\end{aligned}</script><p>所以$C\leq 1_H(p)$，令$p(x=0)=p(x=1)=\frac{1}{2}$，有$H(Y)=1$，所以$C=1-H(p)$。</p>
+</li>
+<li><p>二元擦除信道：传输中一些比特丢失或被混淆且接收端能分辨出哪些比特被擦除。</p>
+<p>假设$p(x=1)=1-p(x=0)=\pi$。出现擦除记为$Y=e$，$p(Y=e)=\alpha$，则</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I(X;Y)&=H(Y)-H(Y|X)\\
+&=H(Y)-H(\alpha)\\
+&=H(Y,E)-H(\alpha)\\
+&=H(E)+H(Y|E)-H(\alpha)\\
+&=H(\alpha)+(1-\alpha)H(\pi)-H(\alpha)\\
+&=(1-\alpha)H(\pi)
+\end{aligned}</script><p>其中$H(Y|E)=p(Y=e)H(Y|Y=e)+p(Y\neq e)H(Y|Y\neq e)=(1-\alpha)H(\pi)$</p>
+<p>所以$C=\underset{\pi}{\max}(1-\alpha)H(\pi)=1-\alpha$，当$\pi=\frac{1}{2}$，可以达到信道容量。</p>
+</li>
+<li><p>对称信道：对于转移矩阵，如果每行$p(\cdot|x)$是其他行的另一种排列且每一列的和$\sum_x p(y|x)$都相同，则该信道称为弱对称信道。如果每行、每列都是各自的排列则该信道称为对称信道。</p>
+<blockquote>
+<p>如</p>
+<script type="math/tex; mode=display">
+p(y|x)=\left(\begin{matrix}
+\frac{1}{3}&\frac{1}{6}&\frac{1}{2}\\
+\frac{1}{3}&\frac{1}{2}&\frac{1}{6}
+\end{matrix}\right)</script><p>为弱对称信道，</p>
+<script type="math/tex; mode=display">
+p(y|x)=\left(\begin{matrix}
+0.3&0.2&0.5\\
+0.5&0.3&0.2\\
+0.2&0.5&0.3
+\end{matrix}\right)</script><p>为对称信道。</p>
+</blockquote>
+</li>
+</ul>
+<p>定理：任意弱对称信道的容量为</p>
+<script type="math/tex; mode=display">
+C=\log|\mathcal{Y}|-H(\vec{r})</script><p>此处$\vec{r}$为转移矩阵中的任意一行，同时输入分布为均匀分布时可以达到信道容量。</p>
+<h4 id="信道编码定理"><a href="#信道编码定理" class="headerlink" title="信道编码定理"></a>信道编码定理</h4><p>对于离散无记忆信道，如果$R&lt;C$，则存在一系列$(2^{nR},n)$编码可以使得误差概率趋近于0。</p>
+<h4 id="Source-channel-coding-theorem"><a href="#Source-channel-coding-theorem" class="headerlink" title="Source-channel coding theorem"></a>Source-channel coding theorem</h4><h3 id="微分熵"><a href="#微分熵" class="headerlink" title="微分熵"></a>微分熵</h3><h4 id="微分熵的定义"><a href="#微分熵的定义" class="headerlink" title="微分熵的定义"></a>微分熵的定义</h4><p>对于概率分布为$f(x)$连续随机变量$X$的微分熵定义为</p>
+<script type="math/tex; mode=display">
+h(X)=-\int_Sf(x)\log f(x)dx</script><p>例如正态分布$X\sim\mathcal{N}(0,\sigma^2)$的微分熵为</p>
+<script type="math/tex; mode=display">
+h(x)=\frac{1}{2}\ln2\pi e\sigma^2 \text{  nats}</script><p><strong>微分熵可以为零以及负数。</strong></p>
+<h4 id="联合微分熵与条件微分熵"><a href="#联合微分熵与条件微分熵" class="headerlink" title="联合微分熵与条件微分熵"></a>联合微分熵与条件微分熵</h4><p>假设$(X,Y)\sim f(x,y)$，则</p>
+<script type="math/tex; mode=display">
+h(X,Y)=-\int\int f(x,y)\log f(x,y)dxdy\\
+h(X|Y)=-\int\int f(x,y)\log f(x|y)dxdy</script><p>所以有$h(X|Y)=h(X,Y)-h(Y)$</p>
+<p><strong>定理：假设$(X_1,X_2,\dots,X_n)\sim\mathcal{N}(\vec \mu,K)$，$K$为协方差矩阵，则</strong></p>
+<script type="math/tex; mode=display">
+h(X_1,X_2,\dots,X_n)=\frac{1}{2}\log(2\pi e)^n|K|</script><h4 id="相对熵与互信息"><a href="#相对熵与互信息" class="headerlink" title="相对熵与互信息"></a>相对熵与互信息</h4><p>两个连续随机变量概率分布$f$与$g$之间的KL散度定义为：</p>
+<script type="math/tex; mode=display">
+D(f||g)=\int f\log\frac{f}{g}</script><p>联合概率分布为$f(x,y)$，则互信息为</p>
+<script type="math/tex; mode=display">
+I(X;Y)=D(f(x,y)||f(x)f(y))=\int f(x,y)\log\frac{f(x.y)}{f(x)f(y)}dxdy</script><p>由定义可得</p>
+<script type="math/tex; mode=display">
+I(X;Y)=h(X)-h(X|Y)=h(Y)-h(Y|X)=h(X)+h(Y)-h(XY)</script><h4 id="微分熵的性质"><a href="#微分熵的性质" class="headerlink" title="微分熵的性质"></a>微分熵的性质</h4><ul>
+<li><p>平移变换不会改变微分熵：$h(X)=h(X+C)$</p>
+</li>
+<li><script type="math/tex; mode=display">
+h(AX)=h(X)+\log|\text{det}(A)|</script><p>这里$A$为非奇异方阵，当$A$变为单个标量时，有$h(aX)=h(X)+\log|a|$</p>
+</li>
+</ul>
+<p>定理：令随机变量$X\in \mathbb{R}^n$的均值为0，协方差矩阵为$K$，则</p>
+<script type="math/tex; mode=display">
+h(X)\leq \frac{1}{2}\log(2\pi e)^n|K|</script><p>当且仅当$X\sim\mathcal{N}(0,K)$时等号成立。</p>
+<p>推论：给定随机变量$X\in\mathbb{R}^n$与$Y$，有</p>
+<script type="math/tex; mode=display">
+h(X|Y)\leq \frac{1}{2}\log(2\pi e)^n|D_{X|Y}|</script><h3 id="高斯信道"><a href="#高斯信道" class="headerlink" title="高斯信道"></a>高斯信道</h3><h4 id="高斯信道的定义"><a href="#高斯信道的定义" class="headerlink" title="高斯信道的定义"></a>高斯信道的定义</h4><p>$Y=X+Z,Z\sim\mathcal{N}(0,N)$，同时$Z$可以认为与$X$独立。可以使用$(\mathbb{R},f(y|x),\mathbb{R}),f(y|x)=\frac{1}{\sqrt{2\pi N}}\exp\left[-\frac{(y-x)^2}{2N}\right]$来表示该信道。</p>
+<p>高斯信道的限制之一为输入能量受限，即对于任意码字$(x_1,x_2,\dots,x_n)$满足</p>
+<script type="math/tex; mode=display">
+\frac{1}{n}\sum_{i=1}^n x_i^2\leq P</script><h4 id="高斯信道的信道容量"><a href="#高斯信道的信道容量" class="headerlink" title="高斯信道的信道容量"></a>高斯信道的信道容量</h4><script type="math/tex; mode=display">
+\begin{aligned}
+I(X;Y)&=h(Y)-h(Y|X)\\
+&=h(Y)-h(X+Z|X)\\
+&=h(Y)-h(Z|X)\\
+&=h(Y)-\frac{1}{2}\log 2\pi e N
+\end{aligned}</script><p>由于$EY^2=E(X+Z)^2=EX^2+EZ^2=P+N$，所以$h(Y)\leq\frac{1}{2}\log2\pi e(P+N)$，所以信道容量$C=\frac{1}{2}\log(1+\frac{P}{N})$，可在$X\sim \mathcal{N}(0,P)$时达到。</p>
+<h4 id="注水算法"><a href="#注水算法" class="headerlink" title="注水算法"></a>注水算法</h4><script type="math/tex; mode=display">
+\sum_{i=1}^n(\frac{1}{2\lambda}-N_i)^+=P</script><img src="/2024/12/20/Information_theory/water-filling.png" class="">
+<h3 id="率失真理论"><a href="#率失真理论" class="headerlink" title="率失真理论"></a>率失真理论</h3><h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>失真函数定义为：</p>
+<script type="math/tex; mode=display">
+d:\mathcal{X}\times \mathcal{X}\rightarrow \mathbb{R}^+</script><p>一些失真函数：</p>
+<ul>
+<li><p>Hamming失真：</p>
+<script type="math/tex; mode=display">
+d(x,\hat{x})=\left\{\begin{aligned}
+0,x=\hat{x}\\
+1,x\neq \hat{x}
+\end{aligned}\right.</script></li>
+<li><p>平方误差失真：</p>
+<script type="math/tex; mode=display">
+d(x,\hat{x})=(x-\hat{x})^2</script></li>
+<li></li>
+</ul>
+<p>信息率失真函数定义为：</p>
+<script type="math/tex; mode=display">
+R^{(I)}(D)=\underset{p(\hat{\mathcal{X}|}\mathcal{X}):Ed(X,\hat{X})\leq D}{\min}I(X;\hat{X})</script><p>此处$Ed(X,\hat{X})=\sum_{\mathcal{X},\hat{\mathcal{X}}}p(x)p(\hat{x}|x)d(x,\hat{x})$。最小值由遍历所有条件概率分布得到。</p>
+<p>满足分布$\text{Bernoulli(p)}$二元信源的Hamming率失真函数：</p>
+<script type="math/tex; mode=display">
+R(D)=\left\{
+\begin{aligned}
+&H(p)-H(D),&0\leq D\leq \text{min}(p,1-p)\\
+&0,&D>\text{min}(p,1-p)
+\end{aligned}
+\right.</script><p>高斯信源$\mathcal{N}(0,\sigma^2)$的平方误差率失真函数：</p>
+<script type="math/tex; mode=display">
+R^{(I)}{(D)}=\left\{
+\begin{aligned}
+&\frac{1}{2}\log\frac{\sigma^2}{D},&0\leq D\leq\sigma^2\\
+&0,&D>\sigma^2
+\end{aligned}
+\right.</script><p>forward test channel</p>
+<h4 id="反注水算法"><a href="#反注水算法" class="headerlink" title="反注水算法"></a>反注水算法</h4><p>有$m$个正态随机信源$X_i\sim\mathcal{N}(0,\sigma_i^2)$相互独立，失真由$d(x^m,\hat{x}^m)=\sum_{i=1}^m(x_i-\hat{x}_i)^2$衡量，给定$D&lt;\sum_{i=1}^m\sigma_i^2$（即总失真为固定值），需要如何分配失真使得总码率需求最低？</p>
+<p>每个信源的率失真函数为</p>
+<script type="math/tex; mode=display">
+R(D)=\sum_{i=1}^m\frac{1}{2}\log\frac{\sigma_i^2}{D_i}</script><p>此处</p>
+<script type="math/tex; mode=display">
+D_i=\left\{\begin{aligned}
+\lambda,\text{if }\lambda \leq \sigma_i^2\\
+\sigma_i^2,\text{if }\lambda\geq\sigma_i^2
+\end{aligned}\right.</script><p>$\lambda$的取值满足$\sum_{i=1}^mD_i=D$，也即$D_i=\min(\lambda,\sigma_i^2)$</p>
+<img src="/2024/12/20/Information_theory/reverse-water-filling.png" class=""></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://eternity0126.top">Eternity</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://eternity0126.top/2024/12/20/Information_theory/">http://eternity0126.top/2024/12/20/Information_theory/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://eternity0126.top" target="_blank">Eternity's Blog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/bg.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/12/25/linux/" title="Linux"><img class="cover" src="/img/cover5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Linux</div></div><div class="info-2"><div class="info-item-1">Linux笔记</div></div></div></a><a class="pagination-related" href="/2024/09/21/ans/" title="ANS算法"><img class="cover" src="/img/cover1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">ANS算法</div></div><div class="info-2"><div class="info-item-1">Asymmetric numeral systems</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Eternity</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sf122458"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%86%B5%E3%80%81%E7%9B%B8%E5%AF%B9%E7%86%B5%E4%B8%8E%E4%BA%92%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text">熵、相对熵与互信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%86%B5"><span class="toc-number">1.1.</span> <span class="toc-text">熵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%94%E5%90%88%E7%86%B5%E3%80%81%E6%9D%A1%E4%BB%B6%E7%86%B5"><span class="toc-number">1.2.</span> <span class="toc-text">联合熵、条件熵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E7%86%B5%E3%80%81%E4%BA%92%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.</span> <span class="toc-text">相对熵、互信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Jensen%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">Jensen不等式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E7%86%B5%E7%9A%84%E5%87%B8%E6%80%A7"><span class="toc-number">1.5.</span> <span class="toc-text">相对熵的凸性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%86%B5%E7%9A%84%E5%87%B9%E6%80%A7"><span class="toc-number">1.6.</span> <span class="toc-text">熵的凹性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="toc-number">1.7.</span> <span class="toc-text">数据处理不等式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fano%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="toc-number">1.8.</span> <span class="toc-text">Fano不等式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%90%E8%BF%9B%E5%9D%87%E5%88%86%E6%80%A7%E8%B4%A8-AEP"><span class="toc-number">2.</span> <span class="toc-text">渐进均分性质(AEP)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%B1%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-number">2.1.</span> <span class="toc-text">弱大数定律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E5%A4%A7%E6%95%B0%E5%AE%9A%E5%BE%8B"><span class="toc-number">2.2.</span> <span class="toc-text">强大数定律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%AD%E7%9A%84%E6%94%B6%E6%95%9B"><span class="toc-number">2.3.</span> <span class="toc-text">概率论中的收敛</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AEP"><span class="toc-number">2.4.</span> <span class="toc-text">AEP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AEP%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.5.</span> <span class="toc-text">AEP与数据压缩的关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9"><span class="toc-number">3.</span> <span class="toc-text">数据压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kraft%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">Kraft不等式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E4%BC%98%E7%A0%81"><span class="toc-number">3.3.</span> <span class="toc-text">最优码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Shannon%E7%A0%81"><span class="toc-number">3.4.</span> <span class="toc-text">Shannon码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Huffman%E7%A0%81"><span class="toc-number">3.5.</span> <span class="toc-text">Huffman码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%AE%B9%E9%87%8F"><span class="toc-number">4.</span> <span class="toc-text">信道容量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E4%BF%A1%E9%81%93"><span class="toc-number">4.1.</span> <span class="toc-text">离散信道</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E4%BF%A1%E9%81%93%E7%9A%84%E4%BF%A1%E9%81%93%E5%AE%B9%E9%87%8F"><span class="toc-number">4.2.</span> <span class="toc-text">特殊信道的信道容量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E7%BC%96%E7%A0%81%E5%AE%9A%E7%90%86"><span class="toc-number">4.3.</span> <span class="toc-text">信道编码定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Source-channel-coding-theorem"><span class="toc-number">4.4.</span> <span class="toc-text">Source-channel coding theorem</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E7%86%B5"><span class="toc-number">5.</span> <span class="toc-text">微分熵</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E7%86%B5%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">5.1.</span> <span class="toc-text">微分熵的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%94%E5%90%88%E5%BE%AE%E5%88%86%E7%86%B5%E4%B8%8E%E6%9D%A1%E4%BB%B6%E5%BE%AE%E5%88%86%E7%86%B5"><span class="toc-number">5.2.</span> <span class="toc-text">联合微分熵与条件微分熵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E7%86%B5%E4%B8%8E%E4%BA%92%E4%BF%A1%E6%81%AF"><span class="toc-number">5.3.</span> <span class="toc-text">相对熵与互信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AE%E5%88%86%E7%86%B5%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">5.4.</span> <span class="toc-text">微分熵的性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E4%BF%A1%E9%81%93"><span class="toc-number">6.</span> <span class="toc-text">高斯信道</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E4%BF%A1%E9%81%93%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">6.1.</span> <span class="toc-text">高斯信道的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E4%BF%A1%E9%81%93%E7%9A%84%E4%BF%A1%E9%81%93%E5%AE%B9%E9%87%8F"><span class="toc-number">6.2.</span> <span class="toc-text">高斯信道的信道容量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%B0%B4%E7%AE%97%E6%B3%95"><span class="toc-number">6.3.</span> <span class="toc-text">注水算法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%87%E5%A4%B1%E7%9C%9F%E7%90%86%E8%AE%BA"><span class="toc-number">7.</span> <span class="toc-text">率失真理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">7.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E6%B3%A8%E6%B0%B4%E7%AE%97%E6%B3%95"><span class="toc-number">7.2.</span> <span class="toc-text">反注水算法</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/12/31/font/" title="Hexo采用部分字体时Mathjax公式字体大小异常的问题"><img src="/img/cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo采用部分字体时Mathjax公式字体大小异常的问题"/></a><div class="content"><a class="title" href="/2024/12/31/font/" title="Hexo采用部分字体时Mathjax公式字体大小异常的问题">Hexo采用部分字体时Mathjax公式字体大小异常的问题</a><time datetime="2024-12-31T04:00:00.000Z" title="发表于 2024-12-31 12:00:00">2024-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/25/linux/" title="Linux"><img src="/img/cover5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux"/></a><div class="content"><a class="title" href="/2024/12/25/linux/" title="Linux">Linux</a><time datetime="2024-12-25T15:12:08.000Z" title="发表于 2024-12-25 23:12:08">2024-12-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/12/20/Information_theory/" title="信息论基础"><img src="/img/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="信息论基础"/></a><div class="content"><a class="title" href="/2024/12/20/Information_theory/" title="信息论基础">信息论基础</a><time datetime="2024-12-20T10:00:00.000Z" title="发表于 2024-12-20 18:00:00">2024-12-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/21/ans/" title="ANS算法"><img src="/img/cover1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ANS算法"/></a><div class="content"><a class="title" href="/2024/09/21/ans/" title="ANS算法">ANS算法</a><time datetime="2024-09-21T05:00:00.000Z" title="发表于 2024-09-21 13:00:00">2024-09-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/21/compressai/" title="CompressAI中EntropyModel与GaussianConditional的源码分析"><img src="/img/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CompressAI中EntropyModel与GaussianConditional的源码分析"/></a><div class="content"><a class="title" href="/2024/09/21/compressai/" title="CompressAI中EntropyModel与GaussianConditional的源码分析">CompressAI中EntropyModel与GaussianConditional的源码分析</a><time datetime="2024-09-21T05:00:00.000Z" title="发表于 2024-09-21 13:00:00">2024-09-21</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Eternity</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = '/js/tex-chtml-full.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><div class="aplayer no-destroy" data-id="13063373972" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script src="/js/butterfly.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="/js/aplayer.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="js/hexo_github_calendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://vercel.eternity0126.top/api?user=sf122458";
+            var git_color =['#ebedf0', '#a2f7af', '#6ce480', '#54ad63', '#469252', '#31753c', '#1f5f2a', '#13531f', '#084111', '#032b09', '#000000'];
+            var git_user ="sf122458";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log("已挂载hexo-github-calendar https://github.com/Barry-Flynn/hexo-github-calendar");
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
