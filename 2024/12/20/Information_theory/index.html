@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://eternity0126.top/img/bg.jpg">
 <meta property="article:published_time" content="2024-12-20T10:00:00.000Z">
-<meta property="article:modified_time" content="2025-01-09T01:47:20.133Z">
+<meta property="article:modified_time" content="2025-01-09T06:41:24.227Z">
 <meta property="article:author" content="Eternity">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://eternity0126.top/img/bg.jpg"><link rel="shortcut icon" href="/img/favicon-32x32.png"><link rel="canonical" href="http://eternity0126.top/2024/12/20/Information_theory/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
@@ -145,7 +145,7 @@
   isHighlightShrink: false,
   isToc: true,
   isShuoshuo: false
-}</script><link rel="stylesheet" href="/css/modify.css"><link rel="stylesheet" href="/css/butterflyStyle.css"><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/font.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/bg.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bg.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Eternity's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">信息论基础</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">信息论基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-20T10:00:00.000Z" title="发表于 2024-12-20 18:00:00">2024-12-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-09T01:47:20.133Z" title="更新于 2025-01-09 09:47:20">2025-01-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Curriculum/">Curriculum</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h3 id="熵、相对熵与互信息"><a href="#熵、相对熵与互信息" class="headerlink" title="熵、相对熵与互信息"></a>熵、相对熵与互信息</h3><h4 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h4><p>对于字母表为$\mathcal{X}$的离散随机变量$X$，其概率分布为$p(x),x\in\mathcal{X}$，则熵为</p>
+}</script><link rel="stylesheet" href="/css/modify.css"><link rel="stylesheet" href="/css/butterflyStyle.css"><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/font.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/bg.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bg.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Eternity's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">信息论基础</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">信息论基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-20T10:00:00.000Z" title="发表于 2024-12-20 18:00:00">2024-12-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-09T06:41:24.227Z" title="更新于 2025-01-09 14:41:24">2025-01-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Curriculum/">Curriculum</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h3 id="熵、相对熵与互信息"><a href="#熵、相对熵与互信息" class="headerlink" title="熵、相对熵与互信息"></a>熵、相对熵与互信息</h3><h4 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h4><p>对于字母表为$\mathcal{X}$的离散随机变量$X$，其概率分布为$p(x),x\in\mathcal{X}$，则熵为</p>
 <script type="math/tex; mode=display">
 H(X)=-\sum_{x\in\mathcal{X}}p(x)\log p(x)=E_p\log\frac{1}{p(X)}</script><p>熵的性质：</p>
 <ul>
@@ -488,7 +488,13 @@ R(D)=\left\{
 \end{aligned}
 \right.</script><blockquote>
 <p>证明：</p>
-</blockquote>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I(X;\hat{X})&=H(X)-H(X|\hat{X})\\
+&=H(p)-H(X\oplus \hat{X}|\hat{X})\\
+&\geq H(p)-H(X\oplus \hat{X})\\
+&\geq H(p)-H(D)
+\end{aligned}</script></blockquote>
 <p>高斯信源$\mathcal{N}(0,\sigma^2)$的平方误差率失真函数：</p>
 <script type="math/tex; mode=display">
 R^{(I)}{(D)}=\left\{
