@@ -1,0 +1,492 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MySQL | Eternity's Blog</title><meta name="author" content="Eternity"><meta name="copyright" content="Eternity"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="MySQL指令记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="http://eternity0126.top/2025/03/14/Web/SpringBoot/MySQL/index.html">
+<meta property="og:site_name" content="Eternity&#39;s Blog">
+<meta property="og:description" content="MySQL指令记录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://eternity0126.top/img/cover3.jpg">
+<meta property="article:published_time" content="2025-03-14T04:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-14T14:26:26.654Z">
+<meta property="article:author" content="Eternity">
+<meta property="article:tag" content="JavaWeb">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://eternity0126.top/img/cover3.jpg"><link rel="shortcut icon" href="/img/favicon-32x32.png"><link rel="canonical" href="http://eternity0126.top/2025/03/14/Web/SpringBoot/MySQL/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MySQL',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/modify.css"><link rel="stylesheet" href="/css/butterflyStyle.css"><link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.7.0/style.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/font.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/bg.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/cover3.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Eternity's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">MySQL</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">MySQL</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-14T04:00:00.000Z" title="发表于 2025-03-14 12:00:00">2025-03-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-03-14T14:26:26.654Z" title="更新于 2025-03-14 22:26:26">2025-03-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/JavaWeb/">JavaWeb</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h3 id="基础指令"><a href="#基础指令" class="headerlink" title="基础指令"></a>基础指令</h3><p>登陆MySQL：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u用户名 -p密码 [-h数据库服务器IP地址 -P端口号]</span><br></pre></td></tr></table></figure>
+<h4 id="DDL"><a href="#DDL" class="headerlink" title="DDL"></a>DDL</h4><h5 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br><span class="line"></span><br><span class="line">select database();</span><br><span class="line"></span><br><span class="line">use 数据库名;</span><br><span class="line"></span><br><span class="line">create database [if not exists] 数据库名 [default charset utf8mb4];</span><br><span class="line"></span><br><span class="line">drop database [if exists] 数据库名;</span><br></pre></td></tr></table></figure>
+<h5 id="表结构"><a href="#表结构" class="headerlink" title="表结构"></a>表结构</h5><p>创建表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">	字段1 字段类型 [约束] [comment &#x27;字段1注释&#x27;],</span><br><span class="line">	......</span><br><span class="line">	字段2 字段类型 [约束] [comment &#x27;字段2注释&#x27;]</span><br><span class="line">)[comment &#x27;表注释&#x27;];</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table user(</span><br><span class="line">	id int primary key auto_increment comment &#x27;ID,唯一标识&#x27;,</span><br><span class="line">	username varchar(50) not null unique comment &#x27;用户名&#x27;,</span><br><span class="line">    name varchar(10) not null comment &#x27;姓名&#x27;,</span><br><span class="line">    age int comment &#x27;年龄&#x27;,</span><br><span class="line">    gender char(1) default &#x27;男&#x27; comment &#x27;性别&#x27;</span><br><span class="line">) comment &#x27;用户信息表&#x27;;</span><br></pre></td></tr></table></figure>
+<p>常见的约束：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">约束</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">关键字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">非空约束</td>
+<td style="text-align:center">限制字段不能为null</td>
+<td style="text-align:center">not null</td>
+</tr>
+<tr>
+<td style="text-align:center">唯一约束</td>
+<td style="text-align:center">数据唯一</td>
+<td style="text-align:center">unique</td>
+</tr>
+<tr>
+<td style="text-align:center">主键约束</td>
+<td style="text-align:center">主键是一行数据的唯一标识，要求非空且唯一</td>
+<td style="text-align:center">primary key</td>
+</tr>
+<tr>
+<td style="text-align:center">默认约束</td>
+<td style="text-align:center">未指定时使用默认值</td>
+<td style="text-align:center">default</td>
+</tr>
+<tr>
+<td style="text-align:center">外键约束</td>
+<td style="text-align:center">让两张表的数据建立连接，保证一致性、完整性</td>
+<td style="text-align:center">foreign key</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>数据类型：</p>
+<ul>
+<li>数值类型：<ul>
+<li>整形分为<code>tinyint</code>、<code>smallint</code>、<code>mediumint</code>、<code>int</code>、<code>bigint</code>，分别占用1、2、3、4、8字节。</li>
+<li>浮点数分为<code>float</code>、<code>double</code>，分别占用4、8字节，小数值<code>decimal</code>（不会出现精度损失）。<code>float(5,2)</code>中<code>5</code>表示整个数字长度，<code>2</code>表示小数位数。在类型后可以指定<code>unsigned</code>为无符号数。</li>
+</ul>
+</li>
+<li><p>字符串类型：</p>
+<ul>
+<li><code>char</code>定长字符串：<code>char(10)</code>无论存储内容，均占用10个字符空间，性能比<code>varchar</code>略高。<code>varchar</code>变长字符串：<code>varchar(10)</code>最多占用10个字符空间，占用空间随存储内容变化。</li>
+<li><code>blob</code>存储二进制数据</li>
+<li><code>text</code>存储文本数据</li>
+</ul>
+</li>
+<li><p>日期类型：</p>
+<ul>
+<li><code>date</code>：<code>YYYY-MM-DD</code></li>
+<li><code>time</code>：<code>HH:MM:SS</code></li>
+<li><code>year</code>：<code>YYYY</code></li>
+<li><code>datetime</code>：<code>YYYY-MM-DD HH:MM:SS</code></li>
+<li><code>timestamp</code>：<code>YYYY-MM-DD HH:MM:SS</code>，存储时间戳</li>
+</ul>
+</li>
+</ul>
+<p>表的查改删：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">show tables; -- 查询当前数据库所有表</span><br><span class="line">desc 表名; -- 查询表结构</span><br><span class="line">show create table 表名; -- 查询建表语句</span><br><span class="line"></span><br><span class="line">alter table 表名 add 字段名 字段类型 [约束] comment &#x27;注释&#x27;; -- 添加字段</span><br><span class="line">alter table 表名 modify 字段名 字段类型 comment &#x27;注释&#x27;; -- 修改字段类型</span><br><span class="line">alter table 表名 change 旧字段名 新字段名 新字段类型 comment &#x27;注释&#x27;; -- 修改字段名</span><br><span class="line">alter table 表名 drop column 字段名; -- 删除字段</span><br><span class="line"></span><br><span class="line">alter table 旧表名 rename to 新表名字; -- 修改表名</span><br><span class="line">drop table 表名; -- 删除表</span><br></pre></td></tr></table></figure>
+<h4 id="DML"><a href="#DML" class="headerlink" title="DML"></a>DML</h4><p>数据的增删改：</p>
+<ul>
+<li><p>添加数据：<code>insert</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-- 指定字段添加数据</span><br><span class="line">insert into 表名(字段1, 字段2) values (值1, 值2), (值1, 值2);</span><br><span class="line"></span><br><span class="line">-- 全部字段添加数据</span><br><span class="line">insert into 表名 values (值1, 值2, ...), (值1, 值2, ...);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改数据：<code>update</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-- 修改数据(注意where, 否则会对所有数据更新)</span><br><span class="line">update 表名 set 字段名1 = 值1, 字段名2 = 值2, ... [where 条件];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据：<code>delete</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-- 删除数据(注意where, 否则会删除所有相关数据)</span><br><span class="line">delete from 表名 [where 条件];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意将值设为<code>null</code>使用<code>update</code>。</p>
+<h4 id="DQL"><a href="#DQL" class="headerlink" title="DQL"></a>DQL</h4><p>数据的查询：<code>select</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">select </span><br><span class="line">	字段列表</span><br><span class="line">from </span><br><span class="line">	表名列表</span><br><span class="line">where</span><br><span class="line">	条件列表</span><br><span class="line">group by</span><br><span class="line">	分组字段列表</span><br><span class="line">having</span><br><span class="line">	分组后条件列表</span><br><span class="line">order by</span><br><span class="line">	排序字段列表</span><br><span class="line">limit</span><br><span class="line">	分页参数</span><br></pre></td></tr></table></figure>
+<h5 id="基本查询与条件查询"><a href="#基本查询与条件查询" class="headerlink" title="基本查询与条件查询"></a>基本查询与条件查询</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select 字段列表 from 表名;</span><br><span class="line">select * from 表名; -- 不建议，会导致慢查询</span><br><span class="line"></span><br><span class="line">select 字段1 [as] 别名1, 字段2 [as] &#x27;别名 2&#x27; from 表名; -- 为查询字段设置别名</span><br><span class="line"></span><br><span class="line">select distinct 字段列表 from 表名; -- 去重查询</span><br><span class="line"></span><br><span class="line">select 字段列表 from 表名 where 条件列表;</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is null</code></td>
+<td>判断为<code>null</code></td>
+</tr>
+<tr>
+<td><code>between min_val and max_val</code></td>
+<td>在指定范围内（包含边界）</td>
+</tr>
+<tr>
+<td><code>in (...)</code></td>
+<td>在多个值中匹配</td>
+</tr>
+<tr>
+<td><code>=</code></td>
+<td>等于</td>
+</tr>
+<tr>
+<td><code>!=</code>或<code>&lt;&gt;</code></td>
+<td>不等于</td>
+</tr>
+<tr>
+<td><code>like</code></td>
+<td>模糊匹配，<code>_</code>匹配单个字符，<code>%</code>匹配多个字符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h5><p>聚合函数：对列进行纵向计算，所有聚合函数不会统计<code>null</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>count</code></td>
+<td>统计数量</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td>求最小值</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td>求最大值</td>
+</tr>
+<tr>
+<td><code>sum</code></td>
+<td>求和</td>
+</tr>
+<tr>
+<td><code>avg</code></td>
+<td>求均值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select count(id) from table1;</span><br><span class="line"></span><br><span class="line">select count(*) from table1; -- 统计总数据量，推荐</span><br><span class="line"></span><br><span class="line">select avg(salary) from table1;</span><br></pre></td></tr></table></figure>
+<p>分组查询：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 分组字段/聚合函数(不能为*) from 表名 [where 条件列表] group by 分组字段名 [having 分组后过滤条件];</span><br></pre></td></tr></table></figure>
+<p><code>where</code>对比<code>having</code>：</p>
+<ul>
+<li><code>where</code>在分组前执行，<code>having</code>在分组后对结果过滤</li>
+<li><code>where</code>不能对聚合函数判断</li>
+</ul>
+<h5 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 字段名 from 表名 order by 排序字段 排序方式;</span><br></pre></td></tr></table></figure>
+<p>排序方式</p>
+<ul>
+<li>升序(<code>asc</code>)，默认</li>
+<li>降序(<code>desc</code>)</li>
+</ul>
+<h5 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 字段名 from 表名 limit 起始索引, 查询记录数;</span><br></pre></td></tr></table></figure>
+<p><code>limit</code>为<code>mysql</code>专用的，起始索引从0开始，如果起始索引为0则可省略。前端一般传入页码，需要(页码-1)*每页展示数计算起始索引。</p>
+<h4 id="多表关系"><a href="#多表关系" class="headerlink" title="多表关系"></a>多表关系</h4><p>一对多：在数据库表中多的一方，添加字段，来关联一的一方的主键。</p>
+<p>建立数据库关联：在多的一方添加外键约束关联一的一方。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 创建表时添加约束</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> 表名(</span><br><span class="line">	字段名 数据类型,</span><br><span class="line">    ...</span><br><span class="line">    [<span class="keyword">constraint</span>] [外键名称] <span class="keyword">foreign</span> key (外键字段名) <span class="keyword">references</span> 主表 (字段名)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 建表后添加外键</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">constraint</span> 外键名称 <span class="keyword">foreign</span> key (外键字段名) <span class="keyword">references</span> 主表(字段名);</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">add</span> <span class="keyword">constraint</span> fk_emp_dept_id <span class="keyword">foreign</span> key (dept_id) <span class="keyword">references</span> dept(id);</span><br></pre></td></tr></table></figure>
+<p>删除外键约束：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">drop</span> <span class="keyword">foreign</span> key fk_emp_dept_id;</span><br></pre></td></tr></table></figure>
+<p>上述物理外键容易引发死锁问题，同时不适用于分布式数据库，因此<strong>目前更常用的方案是在业务层逻辑中解决外键关联问题，即使用逻辑外键，而数据库层面无关联</strong>。</p>
+<p>一对一：多用于单表拆分，将一张表的基础字段放在一张表中，其他字段放在另一张表中，以提升操作效率。</p>
+<p>在任意一方加入外键关联另外一方的主键，并且设置外键为<code>unique</code>。</p>
+<p>多对多：建立第三张中间表，中间表至少包含两个外键，分别关联两方主键。</p>
+<h3 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> 表名<span class="number">1</span>, 表名<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>此时会组合表1、表2的所有信息。</p>
+<p>通过多表之间的关联过滤：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select emp.id, emp.name from emp, dept where emp.dept_id = dept.id;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>连接查询</p>
+<ul>
+<li><p>内连接：查询A、B交集部分数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 隐式内连接(常用)</span></span><br><span class="line"><span class="keyword">select</span> 字段列表 <span class="keyword">from</span> 表<span class="number">1</span> [<span class="keyword">as</span>] 别名<span class="number">1</span>, 表<span class="number">2</span> [<span class="keyword">as</span>] 别名<span class="number">2</span> <span class="keyword">where</span> 连接条件 ...;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 显示内连接</span></span><br><span class="line"><span class="keyword">select</span> 字段列表 <span class="keyword">from</span> 表<span class="number">1</span> [<span class="keyword">inner</span>] <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 连接条件 ...;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>外连接：</p>
+<ul>
+<li><p>左外连接：查询左表所有数据（常用）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段列表 <span class="keyword">from</span> 表<span class="number">1</span> <span class="keyword">left</span> [<span class="keyword">outer</span>] <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 连接条件;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 输出所有员工姓名以及对应的部门名称</span></span><br><span class="line"><span class="keyword">select</span> e.name, d.name <span class="keyword">from</span> emp e <span class="keyword">left</span> <span class="keyword">outer</span> <span class="keyword">join</span> dept <span class="keyword">on</span> e.dept_id <span class="operator">=</span> d.id;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>右外连接：查询右表所有数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 字段列表 <span class="keyword">from</span> 表<span class="number">1</span> <span class="keyword">right</span> [<span class="keyword">outer</span>] <span class="keyword">join</span> 表<span class="number">2</span> <span class="keyword">on</span> 连接条件;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>子查询：SQL语句嵌套select语句，称为嵌套查询。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tl <span class="keyword">where</span> column1 <span class="operator">=</span> (<span class="keyword">select</span> column1 <span class="keyword">from</span> t2 ...);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 标量子查询</span></span><br><span class="line"><span class="comment">-- 查询最早入职的员工信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> entry_date <span class="operator">=</span> (<span class="keyword">select</span> <span class="built_in">min</span>(entry_date) <span class="keyword">from</span> emp);</span><br><span class="line"><span class="comment">-- 查询在员工xxx之后入职的员工信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> entry_date <span class="operator">&gt;</span> (<span class="keyword">select</span> entry_date <span class="keyword">from</span> emp <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;xxx&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 列子查询</span></span><br><span class="line"><span class="comment">-- 查询&quot;教研部&quot;和&quot;咨询部&quot;下所有的员工信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> dept_id <span class="operator">=</span> (<span class="keyword">select</span> id <span class="keyword">from</span> dept <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;教研部&#x27;</span> <span class="keyword">or</span> name <span class="operator">=</span> <span class="string">&#x27;咨询部&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 行子查询</span></span><br><span class="line"><span class="comment">-- 查询与员工xxx的薪资与职位相同的员工信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> salary <span class="operator">=</span> (<span class="keyword">select</span> salary <span class="keyword">from</span> emp <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;xxx&#x27;</span>) <span class="keyword">and</span> job <span class="operator">=</span> (<span class="keyword">select</span> job <span class="keyword">from</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;xxx&#x27;</span>);</span><br><span class="line"><span class="comment">-- **简化写法**(推荐)</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> (salary, job) <span class="operator">=</span> (<span class="keyword">select</span> salary, job <span class="keyword">from</span> emp <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;xxx&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 表子查询</span></span><br><span class="line"><span class="comment">-- 获取每个部门中薪资最高的员工信息(将查询项也视为一个表)</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp e, (<span class="keyword">select</span> dept_id, <span class="built_in">max</span>(salary) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> dept_id) a <span class="keyword">where</span> e.dept_id <span class="operator">=</span> a.dept_id <span class="keyword">and</span> e.salary <span class="operator">=</span> a.salary;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>案例</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 查询&quot;教研部&quot;的男性员工, 且在&quot;2011-05-01&quot;之后入职的员工信息</span></span><br><span class="line"><span class="keyword">select</span> e.<span class="operator">*</span> <span class="keyword">from</span> emp e, dept d <span class="keyword">where</span> e.dept_id <span class="operator">=</span> d.id <span class="keyword">and</span> d.name <span class="operator">=</span> <span class="string">&#x27;教研部&#x27;</span> <span class="keyword">and</span> e.gender <span class="operator">=</span> <span class="number">1</span> <span class="keyword">and</span> e.entry_date <span class="operator">&gt;</span> <span class="string">&#x27;2011-05-01&#x27;</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> gender <span class="operator">=</span> <span class="number">1</span> <span class="keyword">and</span> dept_id <span class="operator">=</span> (<span class="keyword">select</span> id <span class="keyword">from</span> dept <span class="keyword">where</span> name<span class="operator">=</span><span class="string">&#x27;教研部&#x27;</span>) <span class="keyword">and</span> entry_date <span class="operator">&gt;</span> ;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询工资低于公司平均工资且性别为男的员工信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> gender <span class="operator">=</span> <span class="number">1</span> <span class="keyword">and</span> salary <span class="operator">&lt;</span> (<span class="keyword">select</span> <span class="built_in">avg</span>(salary) <span class="keyword">from</span> emp);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询部门人数超过10人的部门名称</span></span><br><span class="line"><span class="keyword">select</span> d.name <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> emp e, dept d <span class="keyword">where</span> e.dept_id <span class="operator">=</span> d.id <span class="keyword">group</span> <span class="keyword">by</span> d.name <span class="keyword">having</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 查询在&quot;2010-05-01&quot;后入职, 且薪资高于10000的&quot;教研部&quot;员工信息, 并根据薪资倒序排序</span></span><br><span class="line"><span class="keyword">select</span> e.<span class="operator">*</span> <span class="keyword">from</span> emp e, dept d <span class="keyword">where</span> d.dept_id <span class="operator">=</span> d.id <span class="keyword">and</span> d.entry_date <span class="operator">&gt;</span> <span class="string">&#x27;2010-05-01&#x27;</span> <span class="keyword">and</span> e.salary <span class="operator">&gt;</span> <span class="number">10000</span> <span class="keyword">and</span> d.name <span class="operator">=</span> <span class="string">&#x27;教研部&#x27;</span> <span class="keyword">order</span> <span class="keyword">by</span> e.salary <span class="keyword">desc</span>;</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp <span class="keyword">where</span> entry_data <span class="operator">&gt;</span> <span class="string">&#x27;2010-05-01&#x27;</span> <span class="keyword">and</span> salary <span class="operator">&gt;</span> <span class="number">10000</span> <span class="keyword">and</span> dept_id <span class="operator">=</span></span><br><span class="line">    (<span class="keyword">select</span> id <span class="keyword">from</span> dept <span class="keyword">where</span> name <span class="operator">=</span> &quot;教研部&quot;) <span class="keyword">order</span> <span class="keyword">by</span> salary <span class="keyword">desc</span>;</span><br><span class="line">    </span><br><span class="line"><span class="comment">-- 查询工资低于本部门平均工资的员工信息</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> emp e, (<span class="keyword">select</span> dept_id, <span class="built_in">avg</span>(salary) <span class="keyword">from</span> emp <span class="keyword">group</span> <span class="keyword">by</span> dept_id) a <span class="keyword">where</span> e.dept_id <span class="operator">=</span> a.dept_id <span class="keyword">and</span> e.salary <span class="operator">&lt;</span> a.salary;</span><br></pre></td></tr></table></figure>
+<h3 id="事务管理"><a href="#事务管理" class="headerlink" title="事务管理"></a>事务管理</h3><p>事务是一组操作的集合，事务会把所有的操作作为一个整体一起向系统提交或撤销操作请求，只会同时成功或同时失败。</p>
+<p>三步操作：开启事务、提交事务/回滚事务。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">start transaction;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">commit/rollback;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://eternity0126.top">Eternity</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://eternity0126.top/2025/03/14/Web/SpringBoot/MySQL/">http://eternity0126.top/2025/03/14/Web/SpringBoot/MySQL/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://eternity0126.top" target="_blank">Eternity's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaWeb/">JavaWeb</a></div><div class="post-share"><div class="social-share" data-image="/img/cover3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/03/14/Web/SpringBoot/MyBatis/" title="MyBatis"><img class="cover" src="/img/cover2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">MyBatis</div></div><div class="info-2"><div class="info-item-1">MyBatis的相关内容</div></div></div></a><a class="pagination-related" href="/2025/03/14/Web/SpringBoot/SpringAOP/" title="SpringAOP"><img class="cover" src="/img/cover5.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">SpringAOP</div></div><div class="info-2"><div class="info-item-1">SpringAOP的相关内容</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/02/01/Web/Maven/Maven/" title="Maven"><img class="cover" src="/img/cover5.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-01</div><div class="info-item-2">Maven</div></div><div class="info-2"><div class="info-item-1">Maven的相关内容</div></div></div></a><a class="pagination-related" href="/2025/03/14/Web/SpringBoot/MyBatis/" title="MyBatis"><img class="cover" src="/img/cover2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-14</div><div class="info-item-2">MyBatis</div></div><div class="info-2"><div class="info-item-1">MyBatis的相关内容</div></div></div></a><a class="pagination-related" href="/2025/03/14/Web/SpringBoot/SpringAOP/" title="SpringAOP"><img class="cover" src="/img/cover5.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-14</div><div class="info-item-2">SpringAOP</div></div><div class="info-2"><div class="info-item-1">SpringAOP的相关内容</div></div></div></a><a class="pagination-related" href="/2025/03/14/Web/SpringBoot/SpringBoot/" title="SpringBoot"><img class="cover" src="/img/cover4.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-03-14</div><div class="info-item-2">SpringBoot</div></div><div class="info-2"><div class="info-item-1">SpringBoot的相关内容</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Eternity</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sf122458"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text">基础指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DDL"><span class="toc-number">1.1.</span> <span class="toc-text">DDL</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.2.</span> <span class="toc-text">表结构</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DML"><span class="toc-number">1.2.</span> <span class="toc-text">DML</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DQL"><span class="toc-number">1.3.</span> <span class="toc-text">DQL</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2%E4%B8%8E%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text">基本查询与条件查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.3.2.</span> <span class="toc-text">分组查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.3.3.</span> <span class="toc-text">排序查询</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.3.4.</span> <span class="toc-text">分页查询</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E5%85%B3%E7%B3%BB"><span class="toc-number">1.4.</span> <span class="toc-text">多表关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.</span> <span class="toc-text">多表查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">事务管理</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/14/Web/SpringBoot/MyBatis/" title="MyBatis"><img src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MyBatis"/></a><div class="content"><a class="title" href="/2025/03/14/Web/SpringBoot/MyBatis/" title="MyBatis">MyBatis</a><time datetime="2025-03-14T04:00:00.000Z" title="发表于 2025-03-14 12:00:00">2025-03-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/14/Web/SpringBoot/MySQL/" title="MySQL"><img src="/img/cover3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL"/></a><div class="content"><a class="title" href="/2025/03/14/Web/SpringBoot/MySQL/" title="MySQL">MySQL</a><time datetime="2025-03-14T04:00:00.000Z" title="发表于 2025-03-14 12:00:00">2025-03-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/14/Web/SpringBoot/SpringAOP/" title="SpringAOP"><img src="/img/cover5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringAOP"/></a><div class="content"><a class="title" href="/2025/03/14/Web/SpringBoot/SpringAOP/" title="SpringAOP">SpringAOP</a><time datetime="2025-03-14T04:00:00.000Z" title="发表于 2025-03-14 12:00:00">2025-03-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/14/Web/SpringBoot/SpringBoot/" title="SpringBoot"><img src="/img/cover4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot"/></a><div class="content"><a class="title" href="/2025/03/14/Web/SpringBoot/SpringBoot/" title="SpringBoot">SpringBoot</a><time datetime="2025-03-14T04:00:00.000Z" title="发表于 2025-03-14 12:00:00">2025-03-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/02/01/Web/Java/thread/" title="Java多线程"><img src="/img/bg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java多线程"/></a><div class="content"><a class="title" href="/2025/02/01/Web/Java/thread/" title="Java多线程">Java多线程</a><time datetime="2025-02-01T10:00:00.000Z" title="发表于 2025-02-01 18:00:00">2025-02-01</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Eternity</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+      
+      const script = document.createElement('script')
+      script.src = '/js/tex-chtml-full.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><div class="aplayer no-destroy" data-id="13063373972" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script src="/js/butterfly.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="/js/aplayer.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="js/hexo_github_calendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://vercel.eternity0126.top/api?user=sf122458";
+            var git_color =['#ebedf0', '#a2f7af', '#6ce480', '#54ad63', '#469252', '#31753c', '#1f5f2a', '#13531f', '#084111', '#032b09', '#000000'];
+            var git_user ="sf122458";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log("已挂载hexo-github-calendar https://github.com/Barry-Flynn/hexo-github-calendar");
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
