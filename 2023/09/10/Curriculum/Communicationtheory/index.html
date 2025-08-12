@@ -222,7 +222,7 @@
 <li><p>误码率($Pe$)：出错的码元数/传输的总码元数</p>
 <p>误信率($Pb$)：错误信息的比特数/传输的总比特数</p>
 <p><strong>二进制下误码率等于误信率</strong>；两种均取决于信号功率、信道特性和调制方式等</p>
-<p><strong>系统输出端的信噪比（接收机输出端信号平均功率与噪声平均功率的比值）：$\text{SNR(dB)}=10\lg\frac{P_{signal}}{P_{noise}}$</strong></p>
+<p><strong>系统输出端的信噪比（接收机输出端信号平均功率与噪声平均功率的比值）：$\text{SNR(dB)}=10\lg\frac{P<em>{signal}}{P</em>{noise}}$</strong></p>
 </li>
 </ul>
 </li>
@@ -259,7 +259,7 @@ R_{bN}=\log_2N\cdot R_{BN}</script><p>对应单位为$\text{bit/s}=\text{bit/sym
 <li>输出码元与前后码元的差错无关</li>
 </ul>
 <p>无记忆二进制编码信道：</p>
-<p><img src="/img/post/pc/无记忆二进制编码信道.png" style="zoom: 67%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/img"  style="zoom: 67%;" /></p>
 <p>有</p>
 <script type="math/tex; mode=display">
 \begin{align}
@@ -304,7 +304,7 @@ R\le C=B\log_2(1+\frac{S}{N})</script><p>当$R,\frac{S}{N}$给定时，要实现
 B\ge B_{min}=\frac{R}{\log_2(1+\frac{S}{N})}</script><h2 id="第二章-随机信号和噪声"><a href="#第二章-随机信号和噪声" class="headerlink" title="第二章 随机信号和噪声"></a>第二章 随机信号和噪声</h2><h3 id="随机过程的基本概念"><a href="#随机过程的基本概念" class="headerlink" title="随机过程的基本概念"></a>随机过程的基本概念</h3><h4 id="随机过程的定义"><a href="#随机过程的定义" class="headerlink" title="随机过程的定义"></a>随机过程的定义</h4><p>由概率论中随机变量$X(e)$推广到不仅与样本元素$e$有关，还与时间$t$有关，得到随机过程$X(t,e)$。</p>
 <p>随机过程的两种定义：</p>
 <ul>
-<li>设随机实验E的样本空间为$S=\{e\}$，若对每个元素$e\in S$，总有一个确知的时间函数$X(t,e)$，$t\in T$与之对应。对于所有的$e\in S$，可得到一簇时间$t$的函数，将这簇函数的全体称为随机过程，记作$X(t,e)$或$X(t)$<ul>
+<li>设随机实验E的样本空间为$S={e}$，若对每个元素$e\in S$，总有一个确知的时间函数$X(t,e)$，$t\in T$与之对应。对于所有的$e\in S$，可得到一簇时间$t$的函数，将这簇函数的全体称为随机过程，记作$X(t,e)$或$X(t)$<ul>
 <li>对给定的$t_i$和$e_j$，$X(t,e)$是一个确定的数值</li>
 <li>对给定的$t_i$，$X(t,e)$是一个随机变量$X(e)$</li>
 <li>对给定的$e_j$，$X(t,e)$是一个时间函数，称为样本函数$x(t,e_j)$</li>
@@ -353,14 +353,14 @@ C_{XY}(t_1,t_2)=E\{[X(t_1)-m_X(t_1)][Y(t_2)-m_Y(t_2)]\}=R_{XY}(t_1,t_2)-m_X(t_1)
 <p>存在几个<strong>重要关系</strong>：</p>
 <ul>
 <li><p>正交</p>
-<p>对任意的$t_1,t_2$，总有$R_{XY}(t_1,t_2)=0$，则$X(t)$与$Y(t)$正交</p>
+<p>对任意的$t<em>1,t_2$，总有$R</em>{XY}(t_1,t_2)=0$，则$X(t)$与$Y(t)$正交</p>
 </li>
 <li><p>不相关</p>
-<p>对任意的$t_1,t_2$，总有$C_{XY}(t_1,t_2)=0$，则$X(t)$和$Y(t)$不相关</p>
+<p>对任意的$t<em>1,t_2$，总有$C</em>{XY}(t_1,t_2)=0$，则$X(t)$和$Y(t)$不相关</p>
 <p>若$X(t)$和$Y(t)$不相关，则必有$E[X(t_1)Y(t_2)]=E[X(t_1)]E[Y(t_2)]$</p>
 </li>
 <li><p>相互独立</p>
-<p>对所有的$t_1,t_2$，$f_{XY}(x,y;t_1,t_2)=f_X(x,t_1)f_Y(y,t_2)$，则$X(t)$和$Y(t)$相互独立</p>
+<p>对所有的$t<em>1,t_2$，$f</em>{XY}(x,y;t_1,t_2)=f_X(x,t_1)f_Y(y,t_2)$，则$X(t)$和$Y(t)$相互独立</p>
 </li>
 </ul>
 <p><strong>注意：均值为0时，正交与不相关等价；独立一定不相关，反之不一定</strong></p>
@@ -406,7 +406,7 @@ f_X(x_1,x_2;t_1,t_2)=f_X(x_1,x_2;t_1+\epsilon,t_2+\epsilon)\newline\rightarrow f
 </li>
 <li><p>$R_X(0)\ge|R(\tau)|$，即$X(t)$在同一时刻取值的相关性最大</p>
 </li>
-<li><p><strong>如果$E[X(t)]=m_X\neq 0$，那么$\lim\limits_{\tau\rightarrow \infty}R_X(\tau)=m_X^2$</strong></p>
+<li><p><strong>如果$E[X(t)]=m<em>X\neq 0$，那么$\lim\limits</em>{\tau\rightarrow \infty}R_X(\tau)=m_X^2$</strong></p>
 <p>当$\tau\rightarrow\infty$，可以将$X(t)$与$X(t+\tau)$视为不相关，则$E[X(t)X(t+\tau)]=E[X(t)]E[X(t+\tau)]$，两者均值均为$m_X$</p>
 </li>
 <li><p>如果$X(t)$含有周期分量，那么$R_X(\tau)$也将含有相同周期的周期分量</p>
@@ -414,11 +414,11 @@ f_X(x_1,x_2;t_1,t_2)=f_X(x_1,x_2;t_1+\epsilon,t_2+\epsilon)\newline\rightarrow f
 </ul>
 <p><img src="/img/post/pc/自相关函数曲线.png" alt="image-20230920204044338"></p>
 <p><strong>注意：$R_X(\tau)$可以存在小于0的部分</strong></p>
-<p><em>已知广义平稳随机过程的自相关函数，可直接求出均方值$R_X(0)$、均值$\lim\limits_{\tau\rightarrow\infty}R_X(\tau)=m_X^2$、方差$\sigma^2_X=R_X(0)-\lim\limits_{\tau\rightarrow\infty}R_X(\tau)$</em></p>
+<p><em>已知广义平稳随机过程的自相关函数，可直接求出均方值$R<em>X(0)$、均值$\lim\limits</em>{\tau\rightarrow\infty}R<em>X(\tau)=m_X^2$、方差$\sigma^2_X=R_X(0)-\lim\limits</em>{\tau\rightarrow\infty}R_X(\tau)$</em></p>
 </li>
-<li><p>互相关函数：若$R_{XY}(t_1,t_2)=R_{XY}(t_2-t_1)=R_{XY}(\tau)$，则称$X(t),Y(t)$联合平稳</p>
+<li><p>互相关函数：若$R<em>{XY}(t_1,t_2)=R</em>{XY}(t<em>2-t_1)=R</em>{XY}(\tau)$，则称$X(t),Y(t)$联合平稳</p>
 <ul>
-<li>$R_{XY}(-\tau)=R_{YX}(\tau)$</li>
+<li>$R<em>{XY}(-\tau)=R</em>{YX}(\tau)$</li>
 <li>$|R_{XY}(\tau)|\le\sqrt{R_X(0)R_Y(0)}\le\frac{1}{2}[R_X(0)+R_Y(0)]$</li>
 </ul>
 </li>
@@ -433,9 +433,9 @@ R_X(t_1,t_2)&=E[X(t_1)X(t_2)]\newline&=E[X(t_1)X(t_2)|A]P(A)+E[X(t_1)X(t_2)|\ove
 \end{aligned}
 \right.
 \end{aligned}</script><h4 id="随机过程的各态遍历性"><a href="#随机过程的各态遍历性" class="headerlink" title="随机过程的各态遍历性"></a>随机过程的各态遍历性</h4><ul>
-<li><p>时间均值：$\left<X(t)\right>=\lim\limits_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^{T}X(t)dt$</p>
+<li><p>时间均值：$\left<X(t)\right>=\lim\limits<em>{T\rightarrow\infty}\frac{1}{2T}\int</em>{-T}^{T}X(t)dt$</p>
 </li>
-<li><p>时间自相关函数：$\left<X(t),X(t+\tau)\right>=\lim\limits_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^TX(t)X(t+\tau)dt$</p>
+<li><p>时间自相关函数：$\left<X(t),X(t+\tau)\right>=\lim\limits<em>{T\rightarrow\infty}\frac{1}{2T}\int</em>{-T}^TX(t)X(t+\tau)dt$</p>
 </li>
 <li><p>各态遍历性</p>
 <p>设$X(t)$为平稳随机过程，若</p>
@@ -462,9 +462,9 @@ R_X(t_1,t_2)&=E[X(t_1)X(t_2)]\newline&=E[X(t_1)X(t_2)|A]P(A)+E[X(t_1)X(t_2)|\ove
 E[n^2(t)]=E[n_1^2(t)]+E[n_2^2(t)]+2E[n_1(t)n_2(t)]</script><ul>
 <li>正交时，$E[n_1(t)n_2(t)]=0,E[n^2(t)]=15W$</li>
 <li>不相关，$E[n_1(t)n_2(t)]=E[n_1(t)]E[n_2(t)]=-2,E[n^2(t)]=11W$</li>
-<li>$E[n_1(t)n_2(t)]=R_{n_1n_2}(0)=2,,E[n^2(t)]=19W$</li>
+<li>$E[n<em>1(t)n_2(t)]=R</em>{n_1n_2}(0)=2,,E[n^2(t)]=19W$</li>
 </ul>
-<h3 id="随机过程的功率谱密度"><a href="#随机过程的功率谱密度" class="headerlink" title="随机过程的功率谱密度"></a>随机过程的功率谱密度</h3><h4 id="功率谱密度的定义"><a href="#功率谱密度的定义" class="headerlink" title="功率谱密度的定义"></a>功率谱密度的定义</h4><p>引入$x(t)$的截尾函数$x_T(t)$，$x_T(t)$的频谱为$X_T(f)=\int_{-T}^Tx_T(t)e^{-j2\pi ft}dt$，根据Parseval方程，有</p>
+<h3 id="随机过程的功率谱密度"><a href="#随机过程的功率谱密度" class="headerlink" title="随机过程的功率谱密度"></a>随机过程的功率谱密度</h3><h4 id="功率谱密度的定义"><a href="#功率谱密度的定义" class="headerlink" title="功率谱密度的定义"></a>功率谱密度的定义</h4><p>引入$x(t)$的截尾函数$x<em>T(t)$，$x_T(t)$的频谱为$X_T(f)=\int</em>{-T}^Tx_T(t)e^{-j2\pi ft}dt$，根据Parseval方程，有</p>
 <script type="math/tex; mode=display">
 \begin{align}
 P&=\lim\limits_{T\rightarrow\infty}\frac{1}{2T}\int_{-T}^Tx^2(t)dt\newline
@@ -544,7 +544,7 @@ R_{XY}(\tau)=\int_{-\infty}^{\infty}R_X(\tau-u)h(u)du=R_X(\tau)*h(\tau)</script>
 <li><p>输入输出的互功率谱密度</p>
 <p><strong>当$X(t)$广义平稳时，</strong>$R_{XY}(\tau)=h(\tau)*R_X(\tau)$，有</p>
 <script type="math/tex; mode=display">
-S_{XY}(f)=S_X(f)H(f)</script><p>同理有$S_{YX}(f)=S_X(f)H^<em>(f)=S_{XY}^</em>(f)$</p>
+S_{XY}(f)=S_X(f)H(f)</script><p>同理有$S<em>{YX}(f)=S_X(f)H^*(f)=S</em>{XY}^*(f)$</p>
 </li>
 </ul>
 <p><img src="/img/post/pc/线性系统.png" alt="线性系统"></p>
@@ -647,7 +647,7 @@ x(t)&=s(t)+n(t)\newline
 </li>
 <li><p>频域：$X_c(f)=\frac{A_c}{2}[X(f+f_c)+X(f-f_c)]$</p>
 <p>已调信号分为上边带(USB)与下边带(LSB)，<strong>无载波分量</strong>——抑制载波的双边带调制。</p>
-<p><img src="/img/post/pc/DSB.png" alt="DSB" style="zoom: 80%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/img"  alt="DSB" style="zoom: 80%;" /></p>
 </li>
 <li><p>带宽：$B_T=2B=2f_x$</p>
 </li>
@@ -664,8 +664,8 @@ z(t)&=[a_cx(t)\cos(\omega_ct)]\cdot2\cos\omega_ct\newline
 </li>
 </ul>
 <h4 id="振幅调制-AM"><a href="#振幅调制-AM" class="headerlink" title="振幅调制(AM)"></a>振幅调制(AM)</h4><ul>
-<li><p>时域：$x_c(t)=[A_0+x’(t)]\cdot A_c’\cos\omega_ct$，其中$A_0&gt;|x(t)|_{\text{max}}$，否则会出现过调失真。</p>
-<p>令$\frac{|x’(t)|_{\text{max}}}{A_0}=m,\frac{x’(t)}{|x’(t)|_{\text{max}}}=x(t)$，则$x_c(t)=A_c[1+mx(t)]\cos\omega_ct$。</p>
+<li><p>时域：$x<em>c(t)=[A_0+x’(t)]\cdot A_c’\cos\omega_ct$，其中$A_0&gt;|x(t)|</em>{\text{max}}$，否则会出现过调失真。</p>
+<p>令$\frac{|x’(t)|<em>{\text{max}}}{A_0}=m,\frac{x’(t)}{|x’(t)|</em>{\text{max}}}=x(t)$，则$x_c(t)=A_c[1+mx(t)]\cos\omega_ct$。</p>
 <p>$m$称为调制系数，<strong>包络检波解调的条件是$m\le1$</strong>。</p>
 </li>
 <li><p>频域：$X_c(f)=\frac{A_c}{2}[\delta(f+f_c)+\delta(f-f_c)]+\frac{mA_c}{2}[X(f+f_c)+X(f-f_c)]$，<strong>需要发送单独的载波分量</strong>。</p>
@@ -688,7 +688,7 @@ S_T=\frac{A_c^2}{2}+\frac{A_c^2m^2}{2}S_X</script></li>
 </ul>
 <h4 id="单边带调制-SSB"><a href="#单边带调制-SSB" class="headerlink" title="单边带调制(SSB)"></a>单边带调制(SSB)</h4><p><img src="/img/post/pc/SSB调制.png" alt="SSB调制"></p>
 <ul>
-<li><p>频域：$X_{SSB}(f)=X_{DSB}(f)\cdot H_{SSB}(f)$</p>
+<li><p>频域：$X<em>{SSB}(f)=X</em>{DSB}(f)\cdot H_{SSB}(f)$</p>
 </li>
 <li><p>SSB信号的产生</p>
 <ul>
@@ -723,7 +723,7 @@ S_T=\frac{A_c^2}{2}+\frac{A_c^2m^2}{2}S_X</script></li>
 </ul>
 <h4 id="残留边带调制-VSB"><a href="#残留边带调制-VSB" class="headerlink" title="残留边带调制(VSB)"></a>残留边带调制(VSB)</h4><p>处理双边带调制信号，所使用的滤波器为残留边带滤波器。</p>
 <p><strong>要求残留边带氯气的滚降特性关于$f_c$满足互补对称特性。</strong></p>
-<p>解调为相干解调，要求<strong>$H_{VSB}(f-f_c)+H_{VSB}(f+f_c)=\text{constant}$</strong>。</p>
+<p>解调为相干解调，要求<strong>$H<em>{VSB}(f-f_c)+H</em>{VSB}(f+f_c)=\text{constant}$</strong>。</p>
 <p><img src="/img/post/pc/VSB.png" alt="VSB"></p>
 <h3 id="幅度调制系统的抗噪声性能"><a href="#幅度调制系统的抗噪声性能" class="headerlink" title="幅度调制系统的抗噪声性能"></a>幅度调制系统的抗噪声性能</h3><script type="math/tex; mode=display">
 (\frac{S}{N})_0=\frac{E[x_0^2(t)]}{E[n_0^2(t)]}</script><p><strong>分别为接收机输出端信号与噪声</strong></p>
@@ -773,7 +773,7 @@ X_c(f)&=\frac{A_c}{2}\sum_{-\infty}^{\infty}J_n(\beta)[\delta(f-f_c-nf_m)+\delta
 \end{aligned}</script><ul>
 <li><p>$J_n(\beta)$的特性：</p>
 <ul>
-<li>$J_{-n}(\beta)=(-1)^nJ_n(\beta)$，如$J_{-1}(\beta)=-J_1(\beta),J_{-2}(\beta)=J_2(\beta)$</li>
+<li>$J<em>{-n}(\beta)=(-1)^nJ_n(\beta)$，如$J</em>{-1}(\beta)=-J<em>1(\beta),J</em>{-2}(\beta)=J_2(\beta)$</li>
 <li>整体上随$n$增大而减小</li>
 </ul>
 </li>
@@ -855,18 +855,18 @@ x_s(t)&=x(t)\cdot\sum_{n=-\infty}^{\infty}\delta(t-nT_s)\\
 </ul>
 <h4 id="带通信号的取样"><a href="#带通信号的取样" class="headerlink" title="带通信号的取样"></a>带通信号的取样</h4><p>带通信号的取样定理：设带通信号$x(t)$的频谱宽度为$B_T$，最高频率为$f_H=mB_T+kB_T$，$m$是小于$\frac{f_H}{B_T}$的最大整数，$0&lt;k&lt;1$。则当采样频率为$f_s=\frac{2f_H}{m}=2B_T(1+\frac{k}{m})$时，$x(t)$可由取样值$x(nT_s)$完全确定。</p>
 <p>即带通信号取样频率与信号带宽相关；对于窄带高频信号，$f_H&gt;&gt;B_T$，$f_s\rightarrow2B_T$，此时$x(t)$可视为低通信号。</p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230130449279.png" alt="image-20231230130449279" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230130449279" style="zoom:50%;" /></p>
 <hr>
-<h3 id="4-2-模拟信号的量化"><a href="#4-2-模拟信号的量化" class="headerlink" title="4.2 模拟信号的量化"></a>4.2 模拟信号的量化</h3><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226212549583.png" alt="image-20231226212549583" style="zoom:50%;" /></p>
+<h3 id="4-2-模拟信号的量化"><a href="#4-2-模拟信号的量化" class="headerlink" title="4.2 模拟信号的量化"></a>4.2 模拟信号的量化</h3><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231226212549583" style="zoom:50%;" /></p>
 <ul>
 <li>量化的步骤：<ul>
-<li>将$x(t)$的幅值分为$Q$个量化级(量化电平数)，每个量化间隔记为$\Delta_i=x_i-x_{i-1},(i=1,2,…,Q)$。</li>
-<li>如果样值$x(nT_s)$落在区间$(x_{i-1},x_i)$内，相应的量化值$x_q(nT_s)$取$m_i$，这一步是由量化器的特性决定的。</li>
+<li>将$x(t)$的幅值分为$Q$个量化级(量化电平数)，每个量化间隔记为$\Delta<em>i=x_i-x</em>{i-1},(i=1,2,…,Q)$。</li>
+<li>如果样值$x(nT<em>s)$落在区间$(x</em>{i-1},x_i)$内，相应的量化值$x_q(nT_s)$取$m_i$，这一步是由量化器的特性决定的。</li>
 </ul>
 </li>
 </ul>
 <p>量化误差：取样值与量化电平的误差，$e=x-x_q$，该误差无法消除，称为量化误差。</p>
-<h4 id="均匀量化"><a href="#均匀量化" class="headerlink" title="均匀量化"></a>均匀量化</h4><p>设信号幅度在$x_p=\pm|x(t)_{max}|$之间。则$\Delta=\frac{2x_p}{Q}=\frac{2x_p}{2^L}$，其中$L$为量化电平的二进制代码长度。</p>
+<h4 id="均匀量化"><a href="#均匀量化" class="headerlink" title="均匀量化"></a>均匀量化</h4><p>设信号幅度在$x<em>p=\pm|x(t)</em>{max}|$之间。则$\Delta=\frac{2x_p}{Q}=\frac{2x_p}{2^L}$，其中$L$为量化电平的二进制代码长度。</p>
 <p>特点：量化间隔$\Delta$为常数；$m_i$取值为$m_i=\pm\frac{\Delta}{2},\pm\frac{3\Delta}{2},…,\pm\frac{(Q-1)\Delta}{2}$，量化误差$e\in(-\frac{\Delta}{2},\frac{\Delta}{2}]$</p>
 <ul>
 <li><p>量化噪声的平均功率：$N_q=\frac{\Delta^2}{12}$，<strong>只与量化台阶有关</strong>。</p>
@@ -889,7 +889,7 @@ N_q=\sum_{i=1}^Q\frac{P_i}{\Delta}\int_{x_{i-1}}^{x_i}(x-m_i)^2dx=\sum_{i=1}^Q\f
 </ul>
 <p>因此，量化信噪比的相关因素仅有码元长度（或量化级数或量化台阶）和模拟信号功率。</p>
 <p>当输入信号为正弦信号时，$x_p=A,\overline{x^2(t)}=\frac{A^2}{2}\Rightarrow k=\sqrt{2}$</p>
-<p>当输入信号功率等于峰值功率时，有$(\frac{S}{N_q})_{max}=4.77+6.02L$。</p>
+<p>当输入信号功率等于峰值功率时，有$(\frac{S}{N<em>q})</em>{max}=4.77+6.02L$。</p>
 <p>而当输入信号幅值概率分布为均匀分布且双极性正负峰值相等时，有</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -903,7 +903,7 @@ k&=\sqrt\frac{x_p^2}{\overline{x^2(t)}}=\sqrt{3}\newline
 <h3 id="4-3-编码"><a href="#4-3-编码" class="headerlink" title="4.3 编码"></a>4.3 编码</h3><h4 id="A87-6的13折线近似"><a href="#A87-6的13折线近似" class="headerlink" title="A87.6的13折线近似"></a>A87.6的13折线近似</h4><p>原理：$x$、$y$轴均为归一化信号，将$x$轴采用<strong>对分法</strong>，$y$轴采用<strong>等分法</strong>，均分为8段，再将每段16等分，得到各段的量化台阶。</p>
 <p>最小的量化台阶为$\Delta=\frac{1}{2048}$。</p>
 <p>编码为8位折叠二进制码，其关于零电平对称，对小信号的影响小。</p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226214900261.png" alt="image-20231226214900261" style="zoom: 80%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231226214900261" style="zoom: 80%;" /></p>
 <div class="table-container">
 <table>
 <thead>
@@ -999,7 +999,7 @@ x_{i+1}=x_i+16\times\Delta_i</script><ul>
 <p>均匀量化编码与非均匀量化编码对比：<strong>非均匀量化的编码位数更少，所需传输带宽减小</strong>。</p>
 <hr>
 <h3 id="4-4-PCM通信系统"><a href="#4-4-PCM通信系统" class="headerlink" title="4.4 PCM通信系统"></a>4.4 PCM通信系统</h3><p>将模拟信号经取样、量化、编码，以数字信号传输的过程称为脉冲编码调制(PCM)。</p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226220555903.png" alt="image-20231226220555903" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231226220555903" style="zoom:50%;" /></p>
 <p>两次低通滤波作用分别为：</p>
 <ul>
 <li>获得带限信号</li>
@@ -1020,14 +1020,14 @@ B_{PCM}\ge\frac{L}{2T_s}=\frac{Lf_s}{2}=\frac{R_B}{2}</script><p>通常，PCM信
 </blockquote>
 <p><strong>注意区分模拟信号$x(t)$的带宽与量化器输出的PCM信号的带宽！！！</strong></p>
 <h4 id="时分复用"><a href="#时分复用" class="headerlink" title="时分复用"></a>时分复用</h4><p>设取样周期为$T_s$，若传输一路信号的每个样点值所占用的时间为$\tau$，则可在$T_s-\tau$的时间里传送其它路信号的样点值，只要各样点值不重叠。这种用时间划分从而在同一信道中同时传输多路信号的方式称为时分复用(TDM)。</p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230111717801.png" alt="image-20231230111717801" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230111717801" style="zoom:50%;" /></p>
 <hr>
 <h3 id="4-5-增量调制"><a href="#4-5-增量调制" class="headerlink" title="4.5 增量调制"></a>4.5 增量调制</h3><p>减小冗余和降低带宽的一种方法就是对相邻样值的差值作PCM调制——差分脉冲编码调制(DPCM)。一种简单的方法是将差值用一位二进制编码表示，即增量调制(DM)。</p>
 <ul>
 <li><p>原理图</p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230111805650.png" alt="image-20231230111805650" style="zoom:50%;" /></p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230111855719.png" alt="image-20231230111855719" style="zoom:50%;" /></p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230111911269.png" alt="image-20231230111911269" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230111805650" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230111855719" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230111911269" style="zoom:50%;" /></p>
 </li>
 <li><p>过载噪声</p>
 <p>当$\Delta$和$f_s$给定后，$x(t)$的变化率不能太快，否则$\hat{x}(t)$的变化速度跟不上$x(t)$，而产生“斜率过载” ，由此产生的噪声为过载噪声。即模拟信号$x(t)$的变化率应满足$x(t)$的最大斜率不大于$\hat{x}(t)$的斜率。</p>
@@ -1040,10 +1040,10 @@ A_{max}=\frac{\Delta\cdot f_s}{2\pi f}</script></blockquote>
 <li><p>量化噪声</p>
 <p>单边功率谱密度为</p>
 <script type="math/tex; mode=display">
-S_e(f)=\frac{\Delta^2}{3f_s},0<f<f_s</script><p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230160343217.png" alt="image-20231230160343217" style="zoom:50%;" /></p>
+S_e(f)=\frac{\Delta^2}{3f_s},0<f<f_s</script><p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230160343217" style="zoom:50%;" /></p>
 </li>
 </ul>
-<h2 id="第五章-数字基带传输"><a href="#第五章-数字基带传输" class="headerlink" title="第五章 数字基带传输"></a>第五章 数字基带传输</h2><p><img src="F:\上海交大\大三上\通信原理\数字基带传输.jpg" style="zoom:67%;" /></p>
+<h2 id="第五章-数字基带传输"><a href="#第五章-数字基带传输" class="headerlink" title="第五章 数字基带传输"></a>第五章 数字基带传输</h2><p><img src="/2023/09/10/Curriculum/Communicationtheory/undefined"  style="zoom:67%;" /></p>
 <p>数字基带传输系统</p>
 <p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226222018513.png" alt="image-20231226222018513"></p>
 <hr>
@@ -1071,12 +1071,12 @@ S_e(f)=\frac{\Delta^2}{3f_s},0<f<f_s</script><p><img src="/C:/Users/Eternity/App
 <h4 id="差分码"><a href="#差分码" class="headerlink" title="差分码"></a>差分码</h4><ul>
 <li><p>定义：用相邻码元是否有电平转换表示消息代码的‘0’与‘1’，也称为相对码。</p>
 </li>
-<li><p>编码器为：$a_k=d_k\oplus a_{k-1}=(d_k+a_{k-1})\mod2$。</p>
+<li><p>编码器为：$a<em>k=d_k\oplus a</em>{k-1}=(d<em>k+a</em>{k-1})\mod2$。</p>
 <blockquote>
 <p>示例：消息码‘10110001’的传输码为‘011011110’</p>
 </blockquote>
 </li>
-<li><p>译码器为：$d_k=a_k\oplus a_{k-1}=(a_k+a_{k-1})\mod2$，即对传输码相邻码元进行比较，极性相同输出0，否则输出1。</p>
+<li><p>译码器为：$d<em>k=a_k\oplus a</em>{k-1}=(a<em>k+a</em>{k-1})\mod2$，即对传输码相邻码元进行比较，极性相同输出0，否则输出1。</p>
 </li>
 <li><p>特点：<strong>消息代码与差分码码元间是否发生改变相关，因此差分码即使极性反转也不影响译码结果，可以克服相位键控的相位模糊问题。</strong>不影响信源特性，功率谱与原信号功率谱相同。</p>
 </li>
@@ -1151,12 +1151,12 @@ P_s(f)&=\frac{1}{4}f_s\cdot |G(f)|^2+\frac{1}{4}\delta(f)\newline
 \end{aligned}</script></blockquote>
 <p>当$g_1(t)=0$，$g_2(t)$为单极性非归零码时，仅在$f=0$处存在离散谱线。</p>
 <p><strong>当$g_1(t)$与$g_2(t)$为双极性脉冲且等概时，离散谱不存在。</strong></p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231231204712989.png" alt="image-20231231204712989" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231231204712989" style="zoom:50%;" /></p>
 <hr>
 <h3 id="5-3-数据传输中的码间串扰"><a href="#5-3-数据传输中的码间串扰" class="headerlink" title="5.3 数据传输中的码间串扰"></a>5.3 数据传输中的码间串扰</h3><p>码间串扰指相邻码元由于波形展宽、畸变对当前码元判决造成影响。</p>
-<p>将输入信号写为$d(t)=\sum_{i=0}^{\infty}a_i\delta(t-iT)$，信道噪声为$n_c(t)$，功率谱密度为$S_{n_c}(f)$。令$g(t)=g_T(t)<em>h_c(t)</em>h_R(t)$，输出为</p>
+<p>将输入信号写为$d(t)=\sum<em>{i=0}^{\infty}a_i\delta(t-iT)$，信道噪声为$n_c(t)$，功率谱密度为$S</em>{n_c}(f)$。令$g(t)=g_T(t)<em>h_c(t)</em>h_R(t)$，输出为</p>
 <script type="math/tex; mode=display">
-y(t)=d(t)*g(t)+n_c(t)*h_R(t)=\sum_{i}a_ig(t-iT)+n(t)</script><p>$n(t)$为经过接收滤波器的输出噪声，功率谱密度为$S_n(f)=S_{n_c}(f)\cdot|H_R(f)|^2$。</p>
+y(t)=d(t)*g(t)+n_c(t)*h_R(t)=\sum_{i}a_ig(t-iT)+n(t)</script><p>$n(t)$为经过接收滤波器的输出噪声，功率谱密度为$S<em>n(f)=S</em>{n_c}(f)\cdot|H_R(f)|^2$。</p>
 <p>在第$k$个码元取样时刻，即$t=t_0+kT$，有</p>
 <script type="math/tex; mode=display">
 y(t_0+kT)=\sum_{i}a_ig(t_0+kT-iT)+n(t_0+kT)</script><p>上式可以简记为</p>
@@ -1164,7 +1164,7 @@ y(t_0+kT)=\sum_{i}a_ig(t_0+kT-iT)+n(t_0+kT)</script><p>上式可以简记为</p>
 y_k=\sum_ia_ig_{k-i}+n_k=a_kg_0+\sum_{i\neq k}a_kg_{k-i}+n_k</script><p>分析上式，可以得到$y_k$由三部分组成：</p>
 <ul>
 <li>$a_kg_0$：第$k$个码元波形在取样时刻$t_k$时的输出</li>
-<li><p>$\sum_{i\neq k}a_kg_{k-i}$：除第$k$个码元波形外，其他所有码元在取样时刻$t_k$输出总和，这部分会对当前码元波形的判决产生干扰，即ISI，<strong>应尽可能使这部分为0</strong>。</p>
+<li><p>$\sum<em>{i\neq k}a_kg</em>{k-i}$：除第$k$个码元波形外，其他所有码元在取样时刻$t_k$输出总和，这部分会对当前码元波形的判决产生干扰，即ISI，<strong>应尽可能使这部分为0</strong>。</p>
 </li>
 <li><p>$n_k$：信道噪声，为随机干扰。</p>
 </li>
@@ -1209,7 +1209,7 @@ g(t)&=\frac{\sin\frac{\pi t}{T}}{\frac{\pi t}{T}}
 <li>$G(f)$带宽满足$\frac{1}{2T}&lt;B_T\leq\frac{1}{T}$，此时条件为<strong>$G(f)$关于$f=0$偶对称， $G(f)$的滚降部分关于$f=\frac{1}{2T}$奇对称</strong>。由于带宽增大，频带利用率下降，但是$G(f)$更容易实现。</li>
 </ul>
 <blockquote>
-<p><strong>上述均为码元速率为$R_B=\frac{1}{T}$下的最佳传输特性，从时域波形来分析，即码元波形距离$t=0$处最近的一个过零点为$t=T$。而满足$G_{\sum}(f)$平坦特性的$G(f)$带宽也可大于$\frac{1}{T}$，但其频带利用率会更低，在时域上表现为$t=0$与$t=T$之间有其他过零点。</strong></p>
+<p><strong>上述均为码元速率为$R<em>B=\frac{1}{T}$下的最佳传输特性，从时域波形来分析，即码元波形距离$t=0$处最近的一个过零点为$t=T$。而满足$G</em>{\sum}(f)$平坦特性的$G(f)$带宽也可大于$\frac{1}{T}$，但其频带利用率会更低，在时域上表现为$t=0$与$t=T$之间有其他过零点。</strong></p>
 </blockquote>
 <p>如果输入脉冲为矩形脉冲序列时，相当于$d(t)$经过脉冲产生器$p(t)$得到$x(t)$，则$x(t)=d(t)*p(t)=\sum_{i=0}^{\infty}a_ip(t-iT)$，系统总特性为$G’(f)=P(f)\cdot G(f)$。</p>
 <h4 id="升余弦谱"><a href="#升余弦谱" class="headerlink" title="升余弦谱"></a>升余弦谱</h4><p>升余弦谱的传输特性满足：</p>
@@ -1222,7 +1222,7 @@ G(f)=\left\{
 \end{aligned}
 \right.</script><p>其中$\beta$为滚降区域宽度，满足$0&lt;\beta\leq\frac{1}{2T}$。定义滚降系数为$\alpha=\beta/\frac{1}{2T}$，则升余弦谱带宽为</p>
 <script type="math/tex; mode=display">
-B_T=\frac{1}{2T}+\beta=\frac{1+\alpha}{2T}</script><p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231226225106074.png" alt="image-20231226225106074" style="zoom:67%;" /></p>
+B_T=\frac{1}{2T}+\beta=\frac{1+\alpha}{2T}</script><p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231226225106074" style="zoom:67%;" /></p>
 <p>特点：$G(f)$易实现，波形收敛速度快。</p>
 <blockquote>
 <p>注意的重点是，上述的$T$都是码元速率，在此条件下，无ISI的条件都是在$[-\frac{1}{2T},\frac{1}{2T}]$内平坦。</p>
@@ -1231,9 +1231,9 @@ B_T=\frac{1}{2T}+\beta=\frac{1+\alpha}{2T}</script><p><img src="/C:/Users/Eterni
 <h3 id="5-5-部分响应信号——Nyquist第二准则"><a href="#5-5-部分响应信号——Nyquist第二准则" class="headerlink" title="5.5 部分响应信号——Nyquist第二准则"></a>5.5 部分响应信号——Nyquist第二准则</h3><p>先前的系统传输特性存在难以实现或频带利用率低的问题，要想获得易实现、收敛速度快、频带利用率为$2\text{bit/s/Hz}$的传输特性，则需要引入ISI，可以尝试保证ISI可控。</p>
 <p><strong>Nyquist第二准则：人为引入可控的ISI，使频带利用率达到$2\text{bit/s/Hz}$。</strong></p>
 <p>$H_L(f)$为满足Nyquist第一准则的理想LPF，即将传输特性限制在$B_T=\frac{1}{2T}$，保证频带利用率最大。</p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231231213214414.png" alt="image-20231231213214414" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231231213214414" style="zoom:50%;" /></p>
 <h4 id="双二进制系统"><a href="#双二进制系统" class="headerlink" title="双二进制系统"></a>双二进制系统</h4><p><img src="C:\Users\Eternity\AppData\Roaming\Typora\typora-user-images\image-20231118104605997.png" alt="image-20231118104605997"></p>
-<p>预编码：$c_k=a_k\oplus c_{k-1},b_k=c_k+c_{k-1}$，先由信息码获得差分码，再将差分码进行相关编码。</p>
+<p>预编码：$c<em>k=a_k\oplus c</em>{k-1},b<em>k=c_k+c</em>{k-1}$，先由信息码获得差分码，再将差分码进行相关编码。</p>
 <p>译码：</p>
 <ul>
 <li><p>单极性波：$\hat{a}_k=b_k\mod2$</p>
@@ -1248,14 +1248,14 @@ B_T=\frac{1}{2T}+\beta=\frac{1+\alpha}{2T}</script><p><img src="/C:/Users/Eterni
 \right.</script><p>$\hat{a}_k$只取决于$b_k$，不会发生误码扩散。</p>
 </li>
 </ul>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231231213417724.png" alt="image-20231231213417724" style="zoom:50%;" /></p>
-<h4 id="修正双二进制系统"><a href="#修正双二进制系统" class="headerlink" title="修正双二进制系统"></a>修正双二进制系统</h4><p>预编码：$c_k=a_k\oplus c_{k-2},b_k=c_k-c_{k-2}=(a_k\oplus c_{k-2})-c_{k-2}$</p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231231213417724" style="zoom:50%;" /></p>
+<h4 id="修正双二进制系统"><a href="#修正双二进制系统" class="headerlink" title="修正双二进制系统"></a>修正双二进制系统</h4><p>预编码：$c<em>k=a_k\oplus c</em>{k-2},b<em>k=c_k-c</em>{k-2}=(a<em>k\oplus c</em>{k-2})-c_{k-2}$</p>
 <p>译码：$\hat{a}_k=b_k\mod2$</p>
-<h4 id="一般部分响应系统"><a href="#一般部分响应系统" class="headerlink" title="一般部分响应系统"></a>一般部分响应系统</h4><p>相关编码可用有限抽头的横向滤波器实现：$b_k=\sum_{i=0}^{N}k_ia_{k-i}$。</p>
+<h4 id="一般部分响应系统"><a href="#一般部分响应系统" class="headerlink" title="一般部分响应系统"></a>一般部分响应系统</h4><p>相关编码可用有限抽头的横向滤波器实现：$b<em>k=\sum</em>{i=0}^{N}k<em>ia</em>{k-i}$。</p>
 <p>对于M进制PAM信号：</p>
 <ul>
-<li>预编码：$a_k=\left(\sum_{i=0}^Nk_ic_{k-i}\right)\mod M$</li>
-<li>相关编码：$a_k=\sum_{i=0}^Nk_ic_{k-i}$</li>
+<li>预编码：$a<em>k=\left(\sum</em>{i=0}^Nk<em>ic</em>{k-i}\right)\mod M$</li>
+<li>相关编码：$a<em>k=\sum</em>{i=0}^Nk<em>ic</em>{k-i}$</li>
 <li>译码：$\hat{a}_k=b_k\mod M$</li>
 </ul>
 <p><img src="C:\Users\Eternity\AppData\Roaming\Typora\typora-user-images\image-20231118105204772.png" alt="image-20231118105204772"></p>
@@ -1275,7 +1275,7 @@ B_T=\frac{1}{2T}+\beta=\frac{1+\alpha}{2T}</script><p><img src="/C:/Users/Eterni
 (P_e)_{\text{min}}&=\frac{2(M-1)}{M}Q\left(\sqrt{\left(\frac{3}{M^2-1}\right)\cdot\frac{2E_s}{N_0}}\right)
 \end{aligned}</script><p>最佳基带传输系统的设计步骤：</p>
 <ul>
-<li>明确技术要求：如$R_b$、$P_{eb}$、传输距离、发送功率上限等。</li>
+<li>明确技术要求：如$R<em>b$、$P</em>{eb}$、传输距离、发送功率上限等。</li>
 <li>选择信道，了解信道特征，如$H_c(f)$、$S_n(f)$。</li>
 <li>选择波形和码型：<ul>
 <li>波形——根据无ISI条件，如$G(f)$选择升余弦谱，$p(t)$选尽量窄的脉冲。</li>
@@ -1303,12 +1303,12 @@ S_o(f)=S_i(f)|H(f)|^2</script></blockquote>
 <p>$H_{eq}(f)=\frac{k\cdot\exp(-j2\pi ft_d)}{H_c(f)}$</p>
 </li>
 <li><p>时域均衡：使包括均衡器在内的整个系统的冲激响应满足无ISI的条件，使用横向滤波器消除ISI。</p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231231214415256.png" alt="image-20231231214415256" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231231214415256" style="zoom:50%;" /></p>
 </li>
 </ul>
 <p>评价最佳准则可分为：</p>
 <ul>
-<li><p>最小峰值准则：选择$\{c_n\}$使得$D=\frac{1}{g_0}\sum_{i\neq 0}|g_i|$最小，导出迫零算法，即迫使$g_0$附近有限个$g_{k},k\neq0$为0。</p>
+<li><p>最小峰值准则：选择${c<em>n}$使得$D=\frac{1}{g_0}\sum</em>{i\neq 0}|g<em>i|$最小，导出迫零算法，即迫使$g_0$附近有限个$g</em>{k},k\neq0$为0。</p>
 <p>可转换为求解矩阵方程：</p>
 <script type="math/tex; mode=display">
 \left[\begin{aligned}&g_{F,0}\quad g_{F,-1}\quad ...\quad g_{F,-2N}\newline
@@ -1324,7 +1324,7 @@ S_o(f)=S_i(f)|H(f)|^2</script></blockquote>
   \end{aligned}\right]=\left[\begin{align}0\newline0\newline...\newline1\newline...\newline0\newline0\end{align}\right]</script><p>计算$g_k$时，</p>
 <script type="math/tex; mode=display">
 g_k=\sum_{n=-N}^{N}c_{n}g_{F,k-n}</script></li>
-<li><p>最小均方误差准则：选择$\{c_n\}$使得$\epsilon_k=E[e^2_k]$最小，导出最小均方算法。</p>
+<li><p>最小均方误差准则：选择${c_n}$使得$\epsilon_k=E[e^2_k]$最小，导出最小均方算法。</p>
 </li>
 </ul>
 <h2 id="第六章-匹配滤波器"><a href="#第六章-匹配滤波器" class="headerlink" title="第六章 匹配滤波器"></a>第六章 匹配滤波器</h2><p>最佳基带传输系统的设计也可以是在信道特征$H_c(f)$已知以及发送滤波器$G_T(f)$给定条件下，寻找最佳接受滤波器$H_R(f)$。</p>
@@ -1339,8 +1339,8 @@ g_k=\sum_{n=-N}^{N}c_{n}g_{F,k-n}</script></li>
 <li>$R(\tau)\leftrightarrow|A(f)|^2$，代表信号能谱密度</li>
 </ul>
 <p>而对于白噪声（随机过程，服从高斯分布）基于自相关统计自相关。</p>
-<p>当滤波器为$h(t)$时，输出信号在$t=t_0$时的取值：$s_0(t_0)=\int_{-\infty}^{\infty}A(f)H(f)e^{j2\pi ft_0}df$</p>
-<p>输出噪声的平均功率：$E[n_0^2(t)]=\int_{-\infty}^{\infty}\frac{N_0}{2}|H(f)|^2df$</p>
+<p>当滤波器为$h(t)$时，输出信号在$t=t<em>0$时的取值：$s_0(t_0)=\int</em>{-\infty}^{\infty}A(f)H(f)e^{j2\pi ft_0}df$</p>
+<p>输出噪声的平均功率：$E[n<em>0^2(t)]=\int</em>{-\infty}^{\infty}\frac{N_0}{2}|H(f)|^2df$</p>
 <p><strong>当$H_m(f)=A^<em>(f)e^{-j2\pi ft_0}$时，$h_m(t)=s_i^</em>(t_0-t)$，此时$d=\frac{2E}{N_0}$</strong></p>
 <blockquote>
 <p>推导：</p>
@@ -1373,7 +1373,7 @@ d=\frac{s_0^2(t)}{E[n^2_0(t)]}=\frac{2E}{N_0}</script><p>MF可以理解为一个
 y(t)=x(t)*h_m(t)=\int_{0}^{T}x(\tau)s_i[T-(t-\tau)]d\tau</script><p>当$t=T$时，$y(T)=\int_{0}^{T}x(\tau)s_i(\tau)d\tau$，为时间自相关。</p>
 </li>
 </ul>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231231221235009.png" alt="image-20231231221235009" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231231221235009" style="zoom:50%;" /></p>
 <h4 id="MF的性质"><a href="#MF的性质" class="headerlink" title="MF的性质"></a>MF的性质</h4><ul>
 <li><p>输出信号$s_0(t)$是输入信号$s_i(t)$的自相关函数。</p>
 </li>
@@ -1403,8 +1403,8 @@ s_i(t)=\left\{
 <script type="math/tex; mode=display">
 s_i(t)\leftrightarrow A(f)=\int_{-\infty}^{\infty}s_i(t)e^{-j2\pi ft}dt=\frac{A}{j2\pi f}[1-e^{-j2\pi fT}]\\
 H_m(f)=A^*(f)e^{-j2\pi fT}=\frac{A}{j2\pi f}(e^{j2\pi fT}-1)e^{-j2\pi ft_0}</script></blockquote>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231231221442998.png" alt="image-20231231221442998" style="zoom:50%;" /></p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231231221511494.png" alt="image-20231231221511494" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231231221442998" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231231221511494" style="zoom:50%;" /></p>
 <h4 id="射频脉冲的MF"><a href="#射频脉冲的MF" class="headerlink" title="射频脉冲的MF"></a>射频脉冲的MF</h4><script type="math/tex; mode=display">
 s_i(t)=\left\{
 \begin{aligned}
@@ -1421,8 +1421,8 @@ s_i(t)&=s_1(t)\cdot \cos\omega_0t\newline
 H_m(f)&=\frac{A}{2}[\frac{1}{j2\pi(f-f_0)}+\frac{1}{j2\pi(f+f_0)}](1-e^{-j2\pi fT})\newline
 
 \end{aligned}</script></blockquote>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231231221846625.png" alt="image-20231231221846625" style="zoom:50%;" /></p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231231221858735.png" alt="image-20231231221858735" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231231221846625" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231231221858735" style="zoom:50%;" /></p>
 <hr>
 <h3 id="6-4-将色噪声转化为白噪声的方法"><a href="#6-4-将色噪声转化为白噪声的方法" class="headerlink" title="6.4 将色噪声转化为白噪声的方法"></a>6.4 将色噪声转化为白噪声的方法</h3><p>可将MF分解为$H(f)=H_1(f)H_2(t)$，当色噪声功率谱为$S_n(f)$，需要$S_n(f)|H_1(f)|^2=C$，此时信号经过$H_1(f)$后输出为</p>
 <script type="math/tex; mode=display">
@@ -1431,7 +1431,7 @@ A'(f)=A(f)H_1(f)</script><p>$H_2(f)$起匹配作用：</p>
 H_2(f)=A'^*(f)e^{-j2\pi ft_0}=A^*(f)H^*_1(f)e^{-j2\pi ft_0}</script><p>所以等效输出为：</p>
 <script type="math/tex; mode=display">
 H(f)=H_1(f)H_2(f)=|H_1(f)|^2A^*(f)e^{-j2\pi ft_0}=\frac{C}{S_n(f)}A^*(f)e^{-j2\pi ft_0}</script><h2 id="第七章-最佳接收"><a href="#第七章-最佳接收" class="headerlink" title="第七章 最佳接收"></a>第七章 最佳接收</h2><p>对二进制信号的检测：</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240102214705487.png" alt="image-20240102214705487" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240102214705487" style="zoom:50%;" /></p>
 <p>对有噪信号，检测属于有限状态中的哪一个，需要借助怎样的判决依据？</p>
 <p>接收机的组成：</p>
 <p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231213222800939.png" alt="image-20231213222800939"></p>
@@ -1439,12 +1439,12 @@ H(f)=H_1(f)H_2(f)=|H_1(f)|^2A^*(f)e^{-j2\pi ft_0}=\frac{C}{S_n(f)}A^*(f)e^{-j2\p
 <hr>
 <h3 id="7-1-判决理论"><a href="#7-1-判决理论" class="headerlink" title="7.1 判决理论"></a>7.1 判决理论</h3><p>本章中最佳指<strong>差错概率最小</strong>。</p>
 <h4 id="最大后验与最小差错概率准则"><a href="#最大后验与最小差错概率准则" class="headerlink" title="最大后验与最小差错概率准则"></a>最大后验与最小差错概率准则</h4><ul>
-<li><p>最大后验概率准则：<img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231213223200215.png" alt="image-20231213223200215" style="zoom:50%;" /></p>
+<li><p>最大后验概率准则：<img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231213223200215" style="zoom:50%;" /></p>
 <p>将此转换为对条件概率的求解：</p>
 <script type="math/tex; mode=display">
 P(H_1|y)=\frac{P(H_1)P(y|H_1)}{P(y)}=\frac{P(H_1)f(y|H_1)}{f(y)}</script><p>可得似然比检验。</p>
 </li>
-<li><p>似然比检验：<img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231213223528119.png" alt="image-20231213223528119" style="zoom:50%;" /></p>
+<li><p>似然比检验：<img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231213223528119" style="zoom:50%;" /></p>
 <p>一般写作：</p>
 <script type="math/tex; mode=display">
 \lambda(y)=\frac{f(y|H_1)}{f(y|H_0)}\</script><p>当选用最小差错概率准则时，$\lambda_0=\frac{P(H_0)}{P(H_1)}$</p>
@@ -1499,14 +1499,14 @@ Pe&=P(H_0)P(D_1|H_0)+P(H_1)P(D_0|H_1)\newline&=P(H_0)\int_{y_T}^{\infty}f(y|H_0)
 V_T=\frac{1}{2}N_0\ln\lambda_0-\frac{1}{2}\int_{0}^{T}[s_0^2(t)-s_1^2(t)]dt</script><p>先验等概时，</p>
 <script type="math/tex; mode=display">
 V_T=\frac{1}{2}\int_{0}^T[s_1^2(t)-s_0^2(t)]dt</script><p>接收机模型为：</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228220441319.png" alt="image-20231228220441319" style="zoom:67%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228220441319" style="zoom:67%;" /></p>
 <p>可以使用MF进行等效：</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228221343689.png" alt="image-20231228221343689" style="zoom:67%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228221343689" style="zoom:67%;" /></p>
 <p>对于某一判决变量$X$，求解其在$H_0$和$H_1$下的概率密度分布。</p>
 <p>首先要明确：</p>
 <p>求均值、积分是线性操作，确知信号$r(t)$在经过线性变换后仍是高斯分布，同时两种操作可交换次序。</p>
 <p>此外，明确信号与噪声不相关。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103222216513.png" alt="image-20240103222216513" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103222216513" style="zoom:50%;" /></p>
 <p>引入参量：码元平均能量和相关系数</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -1522,9 +1522,9 @@ Pe=\frac{1}{2}\text{erfc}(\sqrt{\frac{E(1-\rho)}{2N_0}})</script><blockquote>
 <li>信号相关系数$\rho$，在$E,N_0$相等情况下，极性相反的信号差错概率最小。</li>
 </ul>
 </blockquote>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228221540899.png" alt="image-20231228221540899" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228221710399.png" alt="image-20231228221710399" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228221641895.png" alt="image-20231228221641895" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228221540899" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228221710399" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228221641895" style="zoom:50%;" /></p>
 <hr>
 <h3 id="7-3-随机相位信号检测"><a href="#7-3-随机相位信号检测" class="headerlink" title="7.3 随机相位信号检测"></a>7.3 随机相位信号检测</h3><p>随相信号：$s_i(t)$同一码元内相位取值不变，不同码元内相位取值随机。</p>
 <h4 id="正交接收机模型"><a href="#正交接收机模型" class="headerlink" title="正交接收机模型"></a>正交接收机模型</h4><p>已知二进制信号</p>
@@ -1546,10 +1546,10 @@ f(\theta)=\left\{
 &R\cos\varphi=\int_{0}^Tr(t)\cos\omega_0tdt\newline
 &R\sin\varphi=\int_{0}^Tr(t)\sin\omega_0tdt
 \end{aligned}</script><p>取$R$为观测变量，判决变量$\eta$满足$I_0(\frac{2A\eta}{N_0})=\lambda_0\exp(\frac{A^2T}{2N_0})$。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228222526219.png" alt="image-20231228222526219" style="zoom: 50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228222526219" style="zoom: 50%;" /></p>
 <p>使用MF替代：</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228222550877.png" alt="image-20231228222550877" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228222630249.png" alt="image-20231228222630249" style="zoom:67%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228222550877" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228222630249" style="zoom:67%;" /></p>
 <hr>
 <h3 id="7-4-准最佳接受"><a href="#7-4-准最佳接受" class="headerlink" title="7.4 准最佳接受"></a>7.4 准最佳接受</h3><p>准最佳接收就是将最佳接收机中的相关器部分不是用MF代替，而是用准匹配滤波器（例如LPF或BPF）代替，此时系统性能会有一定程度下降，但简单，易实现。</p>
 <h2 id="第八章-数字信号的带通传输"><a href="#第八章-数字信号的带通传输" class="headerlink" title="第八章 数字信号的带通传输"></a>第八章 数字信号的带通传输</h2><p>主要指标</p>
@@ -1563,7 +1563,7 @@ f(\theta)=\left\{
 <li><p>时域波形：</p>
 <script type="math/tex; mode=display">
 s_{ASK}(t)=[\sum_na_ng(t-nT)]\cos\omega_0t</script><p>实现：即在原始数字信号序列上乘以载波$\cos\omega_0t$。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228223617749.png" alt="image-20231228223617749" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228223617749" style="zoom:50%;" /></p>
 </li>
 </ul>
 <ul>
@@ -1577,19 +1577,19 @@ R_{ASK}(\tau)&=E\{b(t)\cos(\omega_0t+\theta)\cdot b(t+\tau)\cos(\omega_0(t+\tau)
 \Rightarrow S_{ASK}(f)&=\frac{1}{4}[S_b(f-f_0)+S_b(f+f_0)]
 \end{aligned}</script></li>
 </ul>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228223834488.png" alt="image-20231228223834488" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231228223846664.png" alt="image-20231228223846664" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228223834488" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231228223846664" style="zoom:50%;" /></p>
 <h4 id="解调-1"><a href="#解调-1" class="headerlink" title="解调"></a>解调</h4><ul>
 <li><p>相干解调</p>
 <p>使用最佳相关接收机，<strong>其中一路$s_0(t)=0$，所以最终只需要一路相关。</strong></p>
 </li>
 </ul>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231220211704570.png" alt="image-20231220211704570" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231220213040916.png" alt="image-20231220213040916" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231220211704570" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231220213040916" style="zoom:50%;" /></p>
 <ul>
 <li><p>非相干解调</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229110505306.png" alt="image-20231229110505306" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229110620932.png" alt="image-20231229110620932" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231229110505306" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231229110620932" style="zoom:50%;" /></p>
 <p>在大信噪比下，$erfc(x)\rightarrow\frac{1}{\sqrt{\pi}x}e^{-x^2}$</p>
 <p>$Pe=\frac{1}{2}\exp(-\frac{A^2T}{8N_0})=\frac{1}{2}\exp(-\frac{E}{2N_0})$</p>
 </li>
@@ -1602,15 +1602,15 @@ R_{ASK}(\tau)&=E\{b(t)\cos(\omega_0t+\theta)\cdot b(t+\tau)\cos(\omega_0(t+\tau)
 s_{FSK}(t)=\sum_ia_ig(t-iT_b)\cos(\omega_1t+\theta_1)+\sum_i\overline{a}_ig(t-iT_b)\cos(\omega_0t+\theta_0)</script><p>  由两个独立载波源产生，会发生相位不连续问题。</p>
 </li>
 <li><p>功率谱</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231220213733231.png" alt="image-20231220213733231" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231220213733231" style="zoom:50%;" /></p>
 <p>2）当基带信号为升余弦谱时，2FSK信号传输带宽为$B=2\Delta F+(1+\alpha)R$。</p>
 </li>
 </ul>
 <h4 id="相位连续调制——载波调频法"><a href="#相位连续调制——载波调频法" class="headerlink" title="相位连续调制——载波调频法"></a>相位连续调制——载波调频法</h4><script type="math/tex; mode=display">
-s_{FSK}(t)=A\cos\left[\omega_ct+\Delta\omega\int^{t}_{0}b(\tau)d\tau\right]</script><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231220215109552.png" alt="image-20231220215109552" style="zoom:50%;" /></p>
+s_{FSK}(t)=A\cos\left[\omega_ct+\Delta\omega\int^{t}_{0}b(\tau)d\tau\right]</script><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231220215109552" style="zoom:50%;" /></p>
 <h4 id="解调-2"><a href="#解调-2" class="headerlink" title="解调"></a>解调</h4><ul>
 <li><p>相干解调</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231220215222390.png" alt="image-20231220215222390" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231220215222390" style="zoom:50%;" /></p>
 <p>$Pe=\frac{1}{2}erfc(\sqrt{\frac{E}{2N_0}})=\frac{1}{2}erfc(\sqrt{\frac{A^2T}{4N_0}})$</p>
 <blockquote>
 <p>当$\frac{E}{N_0}$相等时，2FSK相干检测的误码性能与2ASK相同，但是2ASK的信号幅度$A$要大于2FSK</p>
@@ -1618,7 +1618,7 @@ s_{FSK}(t)=A\cos\left[\omega_ct+\Delta\omega\int^{t}_{0}b(\tau)d\tau\right]</scr
 </blockquote>
 </li>
 <li><p>非相干解调：两路正交接收机</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231220215653488.png" alt="image-20231220215653488" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231220215653488" style="zoom:50%;" /></p>
 <p>满足$\omega_1-\omega_0=\frac{2\pi}{T}$，此时解调器一个支路在$t=T$时刻取峰值，另一个支路恰好为0，从而最大可能消除两支路的相互干扰。</p>
 <p>$Pe=\frac{1}{2}\exp(-\frac{E}{2N_0})=\frac{1}{2}\exp(-\frac{A^2T}{4N_0})$</p>
 <blockquote>
@@ -1634,27 +1634,27 @@ s_{2PSK}(t)=[\sum_na_ng(t-nT)]\cos\omega_0t</script></li>
 <li><p>功率谱：$S_{2PSK}(f)=\frac{1}{4}[S_b(f-f_0)+S_b(f+f_0)]$</p>
 <p>主瓣带宽：$B_T=\frac{2}{T}=2R$</p>
 <p>频带利用率：$\eta=\frac{R}{B_T}=\frac{1}{2}\text{bit/s/Hz}$</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229125003930.png" alt="image-20231229125003930" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231229125003930" style="zoom:50%;" /></p>
 </li>
 </ul>
 <h5 id="解调-3"><a href="#解调-3" class="headerlink" title="解调"></a>解调</h5><p><strong>必须采用相干解调，无法检波</strong>。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231220221156337.png" alt="image-20231220221156337" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231220221156337" style="zoom:50%;" /></p>
 <p>因为两路信号完全反相，$\rho=-1$，误码性能最优。</p>
 <p><strong>存在180°相位模糊问题。</strong></p>
 <h4 id="2DPSK"><a href="#2DPSK" class="headerlink" title="2DPSK"></a>2DPSK</h4><p>将数字信息承载在相邻码元载波相位的改变上，或说以前一码元的 载波相位作为参考相位，称为相对调相或差分相移键控（2DPSK： Differential Phase- Shift Keying）。</p>
 <p>对于信息码，“1”对应相对前一码元相位改变$\pi$，“0”对应相对前一码元相位改变$0$。</p>
 <h5 id="调制-4"><a href="#调制-4" class="headerlink" title="调制"></a>调制</h5><p>对信息码进行差分编码，得到相对码：</p>
 <script type="math/tex; mode=display">
-d_k=a_k\oplus d_{k-1}</script><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231220222000741.png" alt="image-20231220222000741" style="zoom:50%;" /></p>
-<h5 id="解调-4"><a href="#解调-4" class="headerlink" title="解调"></a>解调</h5><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103094903787.png" alt="image-20240103094903787" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103094930743.png" alt="image-20240103094930743" style="zoom:50%;" /></p>
+d_k=a_k\oplus d_{k-1}</script><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231220222000741" style="zoom:50%;" /></p>
+<h5 id="解调-4"><a href="#解调-4" class="headerlink" title="解调"></a>解调</h5><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103094903787" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103094930743" style="zoom:50%;" /></p>
 <p>$Pe=\frac{1}{2}\exp(-\frac{A^2T}{2N_0})$，比相干解调弱一些，类似非相干。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103095458419.png" alt="image-20240103095458419" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103095458419" style="zoom:50%;" /></p>
 <hr>
 <h3 id="8-4-四相移相键控-QPSK、QDPSK"><a href="#8-4-四相移相键控-QPSK、QDPSK" class="headerlink" title="8.4 四相移相键控(QPSK、QDPSK)"></a>8.4 四相移相键控(QPSK、QDPSK)</h3><p>多进制调制：用$M$个幅度、频率、相位不同的载波波形表示基带信号的$M$个不同状态。<strong>频带利用率提升，但是功率利用率下降。（以多相调制为例，随着$M$增大，相邻信号相位差减小，更易误判）</strong></p>
 <h4 id="QPSK"><a href="#QPSK" class="headerlink" title="QPSK"></a>QPSK</h4><p>QPSK使用四个不同相位表示四进制数字信息。</p>
 <p>输入为二进制数字序列，<strong>每2bit为一组，组合后获得四种状态，用载波四个不同相位表征。</strong></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229224716465.png" alt="image-20231229224716465" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231229224716465" style="zoom:50%;" /></p>
 <h5 id="调制-5"><a href="#调制-5" class="headerlink" title="调制"></a>调制</h5><ul>
 <li><p>时域波形：</p>
 <script type="math/tex; mode=display">
@@ -1672,10 +1672,10 @@ s_{QPSK}(t)=I(t)\cos\omega_0+Q(t)\sin\omega_0t</script><p>其中$I(t)=\sum_nX_ng
 <p>注意点：</p>
 <ul>
 <li><p>串并转换时，码元速率降为一半。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229225609952.png" alt="image-20231229225609952" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231229225609952" style="zoom:50%;" /></p>
 </li>
 <li><p>2bit的正交合成如下图所示：</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229225729240.png" alt="image-20231229225729240" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231229225729240" style="zoom:50%;" /></p>
 </li>
 </ul>
 </blockquote>
@@ -1686,29 +1686,29 @@ s_{QPSK}(t)=I(t)\cos\omega_0+Q(t)\sin\omega_0t</script><p>其中$I(t)=\sum_nX_ng
 <h5 id="解调-5"><a href="#解调-5" class="headerlink" title="解调"></a>解调</h5><blockquote>
 <p><strong>和2PSK类似只能采用相干解调，对同相和正交支路作相干解调。</strong></p>
 </blockquote>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229230053663.png" alt="image-20231229230053663" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231229230053663" style="zoom:50%;" /></p>
 <p>误比特率：与2PSK相同。</p>
 <h4 id="QDPSK"><a href="#QDPSK" class="headerlink" title="QDPSK"></a>QDPSK</h4><p>将二进制信息的四种可能组合反映在相邻(双比特)码元的相位变化上。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229230147103.png" alt="image-20231229230147103" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231229230147103" style="zoom:50%;" /></p>
 <h5 id="调制-6"><a href="#调制-6" class="headerlink" title="调制"></a>调制</h5><p>在二进制信息<strong>串并转换后先做差分编码</strong>，之后对序列作QPSK调制（$\pm\frac{\pi}{4}$相移）。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229230239723.png" alt="image-20231229230239723" style="zoom:50%;" /></p>
-<h5 id="解调-6"><a href="#解调-6" class="headerlink" title="解调"></a>解调</h5><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231229230535209.png" alt="image-20231229230535209" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103101333762.png" alt="image-20240103101333762" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231229230239723" style="zoom:50%;" /></p>
+<h5 id="解调-6"><a href="#解调-6" class="headerlink" title="解调"></a>解调</h5><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231229230535209" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103101333762" style="zoom:50%;" /></p>
 <hr>
 <h3 id="8-5-正交振幅调制-QAM"><a href="#8-5-正交振幅调制-QAM" class="headerlink" title="8.5 正交振幅调制(QAM)"></a>8.5 正交振幅调制(QAM)</h3><p>QAM是正交载波调制技术与多电平振幅键控的结合。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230102428461.png" alt="image-20231230102428461" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231230102428461" style="zoom:50%;" /></p>
 <h4 id="调制-7"><a href="#调制-7" class="headerlink" title="调制"></a>调制</h4><ul>
 <li>时域表示：<script type="math/tex; mode=display">
 s_{QAM}(t)=I(t)\cos\omega_0t+Q(t)\sin\omega_0t</script>其中，<script type="math/tex; mode=display">
 \begin{aligned}I(t)=\sum_nX_ng(t-nT_s),X_n=\pm1,\pm3...\pm(L-1)\newline
 Q(t)=\sum_nY_ng(t-nT_s),Y_n=\pm1,\pm3...\pm(L-1)
-\end{aligned}</script><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230102828201.png" alt="image-20231230102828201" style="zoom:50%;" /></li>
+\end{aligned}</script><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231230102828201" style="zoom:50%;" /></li>
 </ul>
 <ul>
 <li>功率谱：</li>
 </ul>
-<h4 id="解调-7"><a href="#解调-7" class="headerlink" title="解调"></a>解调</h4><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230103051402.png" alt="image-20231230103051402" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230103123944.png" alt="image-20231230103123944" style="zoom:50%;" /></p>
+<h4 id="解调-7"><a href="#解调-7" class="headerlink" title="解调"></a>解调</h4><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231230103051402" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20231230103123944" style="zoom:50%;" /></p>
 <p>差错率：比MPSK有着更好的抗噪声性能。</p>
 <hr>
 <h3 id="8-6-最小频移键控-MSK"><a href="#8-6-最小频移键控-MSK" class="headerlink" title="8.6 最小频移键控(MSK)"></a>8.6 最小频移键控(MSK)</h3><p>MSK为相位连续的FSK的改进，特点为：</p>
@@ -1734,8 +1734,8 @@ f_0&=(N+\frac{m-1}{4})\frac{1}{T_b}=f_c-\frac{R_B}{4}
 \begin{aligned}
 \theta(t)=a_k\cdot \frac{\pi t}{2T_b}+\phi_k\newline
 \phi_k\mod 2=0\quad\text{or}\quad\pi
-\end{aligned}</script><p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230105158052.png" alt="image-20231230105158052" style="zoom:50%;" /></p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230105120729.png" alt="image-20231230105120729" style="zoom:50%;" /></p>
+\end{aligned}</script><p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230105158052" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230105120729" style="zoom:50%;" /></p>
 <h4 id="调制-8"><a href="#调制-8" class="headerlink" title="调制"></a>调制</h4><ul>
 <li><p>时域表示</p>
 <script type="math/tex; mode=display">
@@ -1744,20 +1744,20 @@ s_{MSK}(t)&=I_k\cos(\frac{\pi t}{2T_b})\cos\omega_ct+Q_k\sin(\frac{\pi t}{2T_b})
 I_k&=\cos\phi_k\newline
 Q_k&=-a_k\cos\phi_k
 \end{aligned}</script><p>相比之前的2PSK调制，存在<strong>时域加权函数</strong>$\cos(\frac{\pi t}{2T_b})$与$\sin(\frac{\pi t}{2T_b})$。</p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230105800449.png" alt="image-20231230105800449" style="zoom:50%;" /></p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230110145065.png" alt="image-20231230110145065" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230105800449" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230110145065" style="zoom:50%;" /></p>
 </li>
 </ul>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230110202825.png" alt="image-20231230110202825" style="zoom:50%;" /></p>
-<h4 id="解调-8"><a href="#解调-8" class="headerlink" title="解调"></a>解调</h4><p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230110303719.png" alt="image-20231230110303719" style="zoom:50%;" /></p>
-<p><img src="/C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20231230110627017.png" alt="image-20231230110627017" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230110202825" style="zoom:50%;" /></p>
+<h4 id="解调-8"><a href="#解调-8" class="headerlink" title="解调"></a>解调</h4><p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230110303719" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/C:"  alt="image-20231230110627017" style="zoom:50%;" /></p>
 <p>考虑180°相位模糊，其中$\pm\cos(\frac{\pi t}{2T_b})\cos\omega_ct$和$\pm\sin(\frac{\pi t}{2T_b})\sin\omega_ct$可由$\pm\cos\omega_1t$和$\pm\cos\omega_0t$相加减获得。<strong>注意I支路与Q支路错开一个$T_b$</strong>。</p>
 <p>误码性能：与QPSK相同。</p>
 <h2 id="第九章-同步"><a href="#第九章-同步" class="headerlink" title="第九章 同步"></a>第九章 同步</h2><h3 id="9-1-载波同步"><a href="#9-1-载波同步" class="headerlink" title="9.1 载波同步"></a>9.1 载波同步</h3><p>当采用相干解调时，接收端都需要提供一个与发送端调制载波同频同相的本地载波，以保证无失真地恢复出基带信号。这个获取本地相干载波的过程称为载波同步。</p>
 <h4 id="插入导频法"><a href="#插入导频法" class="headerlink" title="插入导频法"></a>插入导频法</h4><h5 id="窄带滤波"><a href="#窄带滤波" class="headerlink" title="窄带滤波"></a>窄带滤波</h5><p>发送有用信号的同时，在适当的频谱位置插入载波分量，由于所插入的载波分量具有较高的频率稳定度，故称为导频信号，该方法也称为插入导频法。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240102230347653.png" alt="image-20240102230347653" style="zoom: 67%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240102230347653" style="zoom: 67%;" /></p>
 <p>导频引入90°相移，防止解调时载波幅度混入原始信号中。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240102230538416.png" alt="image-20240102230538416" style="zoom:67%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240102230538416" style="zoom:67%;" /></p>
 <p>存在问题：</p>
 <ul>
 <li><p>滤波器的带宽不够窄</p>
@@ -1765,7 +1765,7 @@ Q_k&=-a_k\cos\phi_k
 <li><p>中心频率固定，因此载波频率和导频相对于窄带滤波器的中心频率 不能有漂移</p>
 </li>
 </ul>
-<h5 id="PLL"><a href="#PLL" class="headerlink" title="PLL"></a>PLL</h5><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240102230847554.png" alt="image-20240102230847554" style="zoom:50%;" /></p>
+<h5 id="PLL"><a href="#PLL" class="headerlink" title="PLL"></a>PLL</h5><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240102230847554" style="zoom:50%;" /></p>
 <p>同步系统中主要是利用锁相环的跟踪、窄带滤波和记忆功能：</p>
 <ul>
 <li>利用跟踪能力，可以获得只有很小相位误差的同步信号；</li>
@@ -1777,10 +1777,10 @@ Q_k&=-a_k\cos\phi_k
 <li>接收信号的频谱中已包含显著的载波分量，则可用窄带滤波器或 锁相环直接提取。 </li>
 <li>对于抑制载波的已调信号，则可通过对信号做非线性变换或采用 特殊的锁相环来获取相干载波。</li>
 </ul>
-<h5 id="平方变换法"><a href="#平方变换法" class="headerlink" title="平方变换法"></a>平方变换法</h5><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103091805885.png" alt="image-20240103091805885" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103091827163.png" alt="image-20240103091827163" style="zoom:50%;" /></p>
-<h5 id="Costas环"><a href="#Costas环" class="headerlink" title="Costas环"></a>Costas环</h5><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103091947183.png" alt="image-20240103091947183" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103091959947.png" alt="image-20240103091959947" style="zoom:50%;" /></p>
+<h5 id="平方变换法"><a href="#平方变换法" class="headerlink" title="平方变换法"></a>平方变换法</h5><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103091805885" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103091827163" style="zoom:50%;" /></p>
+<h5 id="Costas环"><a href="#Costas环" class="headerlink" title="Costas环"></a>Costas环</h5><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103091947183" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103091959947" style="zoom:50%;" /></p>
 <p>特点：</p>
 <ul>
 <li><p>Costas环的工作频率是$f_c$而平方环是$2f_c$。所以当载波频率$f_c$较高时，Costas环更易实现</p>
@@ -1789,15 +1789,15 @@ Q_k&=-a_k\cos\phi_k
 </li>
 </ul>
 <h3 id="9-2-码元同步"><a href="#9-2-码元同步" class="headerlink" title="9.2 码元同步"></a>9.2 码元同步</h3><p>数字信号是由一串相继的码元波形构成，接收端必须知道每个码元的起止时刻。这个在接收端产生与所接收码元的重复频率和相位一致的定时脉冲序列的过程称为码元同步，所产生的定时脉冲序列称为码元同步脉冲。</p>
-<h5 id="非线性变换法"><a href="#非线性变换法" class="headerlink" title="非线性变换法"></a>非线性变换法</h5><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103092231495.png" alt="image-20240103092231495" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103092241078.png" alt="image-20240103092241078" style="zoom:50%;" /></p>
-<h5 id="数字锁相环"><a href="#数字锁相环" class="headerlink" title="数字锁相环"></a>数字锁相环</h5><p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103092257823.png" alt="image-20240103092257823" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103092322006.png" alt="image-20240103092322006" style="zoom:50%;" /></p>
+<h5 id="非线性变换法"><a href="#非线性变换法" class="headerlink" title="非线性变换法"></a>非线性变换法</h5><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103092231495" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103092241078" style="zoom:50%;" /></p>
+<h5 id="数字锁相环"><a href="#数字锁相环" class="headerlink" title="数字锁相环"></a>数字锁相环</h5><p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103092257823" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103092322006" style="zoom:50%;" /></p>
 <h3 id="9-3-帧同步"><a href="#9-3-帧同步" class="headerlink" title="9.3 帧同步"></a>9.3 帧同步</h3><p>数字信号通常是由若干个码元构成一个码字，而若干个码字又 可能构成一个有意义的数据段，很多时候我们需要已知这些码 字或数据段的起止时刻。这个在接收端产生与这些码字或信息 段起止时刻一致的定时脉冲序列的过程称为群同步，群同步中最常见的是<strong>帧同步</strong>。</p>
 <p>帧同步主要是通过对数据格式的特殊设计——即插入特殊的帧 同步码字来完成，因此帧同步是对同步标志进行检测的问题。</p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103091049718.png" alt="image-20240103091049718" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103091109994.png" alt="image-20240103091109994" style="zoom:50%;" /></p>
-<p><img src="C:/Users/Eternity/AppData/Roaming/Typora/typora-user-images/image-20240103091433159.png" alt="image-20240103091433159" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103091049718" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103091109994" style="zoom:50%;" /></p>
+<p><img src="/2023/09/10/Curriculum/Communicationtheory/Users"  alt="image-20240103091433159" style="zoom:50%;" /></p>
 <h2 id="第十章-差错控制编码"><a href="#第十章-差错控制编码" class="headerlink" title="第十章 差错控制编码"></a>第十章 差错控制编码</h2><h3 id="10-1-差错控制编码的基本概念"><a href="#10-1-差错控制编码的基本概念" class="headerlink" title="10.1 差错控制编码的基本概念"></a>10.1 差错控制编码的基本概念</h3><p>从差错控制角度看，信道可分为：</p>
 <ul>
 <li>随机信道</li>
@@ -1832,8 +1832,8 @@ Q_k&=-a_k\cos\phi_k
 <hr>
 <h3 id="10-3-几种常用的简单编码"><a href="#10-3-几种常用的简单编码" class="headerlink" title="10.3 几种常用的简单编码"></a>10.3 几种常用的简单编码</h3><h4 id="奇偶监督码"><a href="#奇偶监督码" class="headerlink" title="奇偶监督码"></a>奇偶监督码</h4><p>监督码元只有一位：使码组中“1”个数为奇（偶）称为奇（偶）监督码。</p>
 <blockquote>
-<p>偶监督码：$a_{n-1}\oplus a_{n-2}\oplus…\oplus a_{0}=0$</p>
-<p>奇监督码：$a_{n-1}\oplus a_{n-2}\oplus…\oplus a_{0}=1$</p>
+<p>偶监督码：$a<em>{n-1}\oplus a</em>{n-2}\oplus…\oplus a_{0}=0$</p>
+<p>奇监督码：$a<em>{n-1}\oplus a</em>{n-2}\oplus…\oplus a_{0}=1$</p>
 <p>只能检测奇数个错码，无纠错能力。</p>
 </blockquote>
 <h4 id="水平垂直奇偶监督码"><a href="#水平垂直奇偶监督码" class="headerlink" title="水平垂直奇偶监督码"></a>水平垂直奇偶监督码</h4><h4 id="恒比码"><a href="#恒比码" class="headerlink" title="恒比码"></a>恒比码</h4><p>确定长度的码组中“0”和“1”的比例恒定的码组作为许用码组。</p>
@@ -1856,7 +1856,7 @@ Q_k&=-a_k\cos\phi_k
 <p><strong>$H$的每一列对应码组该位置元素出错时的矫正子，因此可以根据矫正子与错码位置直接写出$H$，或者根据$H$得出任意码元出错时的矫正子。</strong></p>
 </blockquote>
 <p>错误图样：收发码组之差：$E=B-A$，有$S=EH^T$。</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://eternity0126.top">Eternity</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://eternity0126.top/2023/09/10/Curriculum/Communicationtheory/">http://eternity0126.top/2023/09/10/Curriculum/Communicationtheory/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://eternity0126.top" target="_blank">Eternity's Blog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/bg.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/09/10/Curriculum/DSP/" title="数字信号处理"><img class="cover" src="/img/bg.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">数字信号处理</div></div><div class="info-2"><div class="info-item-1">数字信号处理笔记</div></div></div></a><a class="pagination-related" href="/2022/06/15/DeepLearning/Pytorch/" title="Python语法与Pytorch基础"><img class="cover" src="/img/cover9.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Python语法与Pytorch基础</div></div><div class="info-2"><div class="info-item-1">Pytorch的相关笔记</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Eternity</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/eternity0126"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://eternity0126.github.io/atom.xml" target="_blank" title=""><i class="fas fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">通信原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA"><span class="toc-number">1.1.</span> <span class="toc-text">第一章 通信系统概论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">通信系统的模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">通信系统的组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E9%80%9A%E4%BF%A1%E5%92%8C%E6%95%B0%E5%AD%97%E9%80%9A%E4%BF%A1"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">模拟通信和数字通信</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%B4%A8%E9%87%8F%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.2.</span> <span class="toc-text">通信系统的质量指标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%B4%A8%E9%87%8F%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">数字通信系统的质量指标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%9A%84%E5%BA%A6%E9%87%8F"><span class="toc-number">1.1.3.</span> <span class="toc-text">信息的度量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E4%B8%8E%E4%BF%A1%E9%81%93%E5%AE%B9%E9%87%8F"><span class="toc-number">1.1.4.</span> <span class="toc-text">信道与信道容量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E9%81%93"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">信道</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E4%BF%A1%E9%81%93"><span class="toc-number">1.1.4.1.1.</span> <span class="toc-text">编码信道</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6%E4%BF%A1%E9%81%93"><span class="toc-number">1.1.4.1.2.</span> <span class="toc-text">调制信道</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%81%92%E5%8F%82%E4%BF%A1%E9%81%93"><span class="toc-number">1.1.4.1.3.</span> <span class="toc-text">恒参信道</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%98%E5%8F%82%E4%BF%A1%E9%81%93"><span class="toc-number">1.1.4.1.4.</span> <span class="toc-text">变参信道</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%AE%B9%E9%87%8F"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">信道容量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%92%8C%E5%99%AA%E5%A3%B0"><span class="toc-number">1.2.</span> <span class="toc-text">第二章 随机信号和噪声</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.1.</span> <span class="toc-text">随机过程的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">随机过程的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">随机过程的概率分布函数和概率密度函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">随机过程的数字特征</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%B9%B3%E7%A8%B3%E6%80%A7%E4%B8%8E%E5%90%84%E6%80%81%E9%81%8D%E5%8E%86%E6%80%A7"><span class="toc-number">1.2.2.</span> <span class="toc-text">随机过程的平稳性与各态遍历性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%B9%B3%E7%A8%B3%E6%80%A7"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">随机过程的平稳性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">广义平稳随机过程相关函数的性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%90%84%E6%80%81%E9%81%8D%E5%8E%86%E6%80%A7"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">随机过程的各态遍历性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6"><span class="toc-number">1.2.3.</span> <span class="toc-text">随机过程的功率谱密度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">功率谱密度的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6%E4%B8%8E%E8%87%AA%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">功率谱密度与自相关函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">功率谱密度的性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">相关时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E7%8E%87%E8%B0%B1%E7%AD%89%E6%95%88%E5%B8%A6%E5%AE%BD"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">功率谱等效带宽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%92%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">互功率谱密度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E5%AF%B9%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%93%8D%E5%BA%94"><span class="toc-number">1.2.4.</span> <span class="toc-text">线性系统对随机信号的响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E8%BF%87%E7%A8%8B%E5%92%8C%E7%99%BD%E5%99%AA%E5%A3%B0%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.5.</span> <span class="toc-text">高斯过程和白噪声过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">高斯过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BD%E5%99%AA%E5%A3%B0%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">白噪声过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%84%E5%B8%A6%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.6.</span> <span class="toc-text">窄带随机过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AA%84%E5%B8%A6%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%AD%A3%E4%BA%A4%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">窄带平稳随机过程的正交表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AA%84%E5%B8%A6%E9%AB%98%E6%96%AF%E8%BF%87%E7%A8%8B%E7%9A%84%E5%8C%85%E7%BB%9C%E7%9B%B8%E4%BD%8D%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">窄带高斯过程的包络相位表示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%BC%A6%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%AA%84%E5%B8%A6%E4%BF%A1%E5%8F%B7"><span class="toc-number">1.2.7.</span> <span class="toc-text">正弦信号与窄带信号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%A8%A1%E6%8B%9F%E8%B0%83%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.</span> <span class="toc-text">第三章 模拟调制系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%85%E5%BA%A6%E8%B0%83%E5%88%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">幅度调制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E8%BE%B9%E5%B8%A6%E8%B0%83%E5%88%B6-DSB"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">双边带调制(DSB)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%AF%E5%B9%85%E8%B0%83%E5%88%B6-AM"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">振幅调制(AM)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E8%BE%B9%E5%B8%A6%E8%B0%83%E5%88%B6-SSB"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">单边带调制(SSB)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AE%8B%E7%95%99%E8%BE%B9%E5%B8%A6%E8%B0%83%E5%88%B6-VSB"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">残留边带调制(VSB)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%85%E5%BA%A6%E8%B0%83%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8A%97%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD"><span class="toc-number">1.3.2.</span> <span class="toc-text">幅度调制系统的抗噪声性能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DSB%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8A%97%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">DSB系统的抗噪声性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSB%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8A%97%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">SSB系统的抗噪声性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AM%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8A%97%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">AM系统的抗噪声性能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%BA%A6%E8%B0%83%E5%88%B6"><span class="toc-number">1.3.3.</span> <span class="toc-text">角度调制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%91%E7%8E%87%E8%B0%83%E5%88%B6-FM"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">频率调制(FM)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6"><span class="toc-number">1.3.3.1.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E5%88%86%E6%9E%90"><span class="toc-number">1.3.3.1.2.</span> <span class="toc-text">频谱分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FM%E4%BF%A1%E5%8F%B7%E7%9A%84%E4%BA%A7%E7%94%9F"><span class="toc-number">1.3.3.1.3.</span> <span class="toc-text">FM信号的产生</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83"><span class="toc-number">1.3.3.1.4.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E8%B0%83%E5%88%B6"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">相位调制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%BA%A6%E8%B0%83%E5%88%B6%E7%9A%84%E6%8A%97%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD"><span class="toc-number">1.3.4.</span> <span class="toc-text">角度调制的抗噪声性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E5%88%86%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8-FDM"><span class="toc-number">1.3.5.</span> <span class="toc-text">频分多路复用(FDM)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%95%B0%E5%AD%97%E4%BC%A0%E8%BE%93"><span class="toc-number">1.4.</span> <span class="toc-text">第四章 模拟信号的数字传输</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%8F%96%E6%A0%B7"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 模拟信号的取样</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8E%E9%80%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%8F%96%E6%A0%B7"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">低通信号的取样</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A6%E9%80%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%8F%96%E6%A0%B7"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">带通信号的取样</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E9%87%8F%E5%8C%96"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 模拟信号的量化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%87%E5%8C%80%E9%87%8F%E5%8C%96"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">均匀量化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E5%9D%87%E5%8C%80%E9%87%8F%E5%8C%96"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">非均匀量化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E7%BC%96%E7%A0%81"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A87-6%E7%9A%8413%E6%8A%98%E7%BA%BF%E8%BF%91%E4%BC%BC"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">A87.6的13折线近似</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-PCM%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4 PCM通信系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E6%8C%87%E6%A0%87"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">传输指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">时分复用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E5%A2%9E%E9%87%8F%E8%B0%83%E5%88%B6"><span class="toc-number">1.4.5.</span> <span class="toc-text">4.5 增量调制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%95%B0%E5%AD%97%E5%9F%BA%E5%B8%A6%E4%BC%A0%E8%BE%93"><span class="toc-number">1.5.</span> <span class="toc-text">第五章 数字基带传输</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E6%95%B0%E5%AD%97%E5%9F%BA%E5%B8%A6%E4%BC%A0%E8%BE%93%E7%9A%84%E5%B8%B8%E7%94%A8%E7%A0%81%E5%9E%8B"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1 数字基带传输的常用码型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%A0%81%E5%9E%8B"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">基本码型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E7%A0%81"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">差分码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AMI%E7%A0%81"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">AMI码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HDB-3-%E7%A0%81"><span class="toc-number">1.5.1.4.</span> <span class="toc-text">$HDB_3$码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Manchester%E7%A0%81"><span class="toc-number">1.5.1.5.</span> <span class="toc-text">Manchester码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Miller%E7%A0%81"><span class="toc-number">1.5.1.6.</span> <span class="toc-text">Miller码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E6%95%B0%E5%AD%97%E5%9F%BA%E5%B8%A6%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2 数字基带信号的功率谱密度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%9A%8F%E6%9C%BA%E5%9F%BA%E5%B8%A6%E8%84%89%E5%86%B2%E5%BA%8F%E5%88%97%E7%9A%84%E5%8A%9F%E7%8E%87%E8%B0%B1"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">二进制随机基带脉冲序列的功率谱</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E4%B8%AD%E7%9A%84%E7%A0%81%E9%97%B4%E4%B8%B2%E6%89%B0"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3 数据传输中的码间串扰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-%E6%97%A0ISI%E5%B8%A6%E9%99%90%E4%BF%A1%E5%8F%B7%E8%AE%BE%E8%AE%A1%E2%80%94%E2%80%94Nyquist%E7%AC%AC%E4%B8%80%E5%87%86%E5%88%99"><span class="toc-number">1.5.4.</span> <span class="toc-text">5.4 无ISI带限信号设计——Nyquist第一准则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Nyquist%E7%AC%AC%E4%B8%80%E5%87%86%E5%88%99"><span class="toc-number">1.5.4.1.</span> <span class="toc-text">Nyquist第一准则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%87%E4%BD%99%E5%BC%A6%E8%B0%B1"><span class="toc-number">1.5.4.2.</span> <span class="toc-text">升余弦谱</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-%E9%83%A8%E5%88%86%E5%93%8D%E5%BA%94%E4%BF%A1%E5%8F%B7%E2%80%94%E2%80%94Nyquist%E7%AC%AC%E4%BA%8C%E5%87%86%E5%88%99"><span class="toc-number">1.5.5.</span> <span class="toc-text">5.5 部分响应信号——Nyquist第二准则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.5.5.1.</span> <span class="toc-text">双二进制系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%AD%A3%E5%8F%8C%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.5.5.2.</span> <span class="toc-text">修正双二进制系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E9%83%A8%E5%88%86%E5%93%8D%E5%BA%94%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.5.5.3.</span> <span class="toc-text">一般部分响应系统</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-6-%E6%9C%80%E4%BD%B3%E4%BC%A0%E8%BE%93%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.5.6.</span> <span class="toc-text">5.6 最佳传输系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-7-%E5%9D%87%E8%A1%A1%E5%99%A8"><span class="toc-number">1.5.7.</span> <span class="toc-text">5.7 均衡器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%8C%B9%E9%85%8D%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">1.6.</span> <span class="toc-text">第六章 匹配滤波器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E6%9C%80%E5%A4%A7%E4%BF%A1%E5%99%AA%E6%AF%94%E5%87%86%E5%88%99%E2%80%94%E2%80%94MF%E7%9A%84%E5%AF%BC%E5%87%BA"><span class="toc-number">1.6.1.</span> <span class="toc-text">6.1 最大信噪比准则——MF的导出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-MF%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.6.2.</span> <span class="toc-text">6.2 MF的性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MF%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">MF的设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MF%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.6.2.2.</span> <span class="toc-text">MF的性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MF%E7%9A%84%E8%BE%93%E5%87%BA%E5%99%AA%E5%A3%B0"><span class="toc-number">1.6.2.3.</span> <span class="toc-text">MF的输出噪声</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-MF%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.6.3.</span> <span class="toc-text">6.3 MF的计算举例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A9%E5%BD%A2%E8%84%89%E5%86%B2%E7%9A%84MF"><span class="toc-number">1.6.3.1.</span> <span class="toc-text">矩形脉冲的MF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%84%E9%A2%91%E8%84%89%E5%86%B2%E7%9A%84MF"><span class="toc-number">1.6.3.2.</span> <span class="toc-text">射频脉冲的MF</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E5%B0%86%E8%89%B2%E5%99%AA%E5%A3%B0%E8%BD%AC%E5%8C%96%E4%B8%BA%E7%99%BD%E5%99%AA%E5%A3%B0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.4.</span> <span class="toc-text">6.4 将色噪声转化为白噪声的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%9C%80%E4%BD%B3%E6%8E%A5%E6%94%B6"><span class="toc-number">1.7.</span> <span class="toc-text">第七章 最佳接收</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E5%88%A4%E5%86%B3%E7%90%86%E8%AE%BA"><span class="toc-number">1.7.1.</span> <span class="toc-text">7.1 判决理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%90%8E%E9%AA%8C%E4%B8%8E%E6%9C%80%E5%B0%8F%E5%B7%AE%E9%94%99%E6%A6%82%E7%8E%87%E5%87%86%E5%88%99"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">最大后验与最小差错概率准则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E6%AC%A1%E8%A7%82%E6%B5%8B"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">单次观测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%AC%A1%E8%A7%82%E6%B5%8B"><span class="toc-number">1.7.1.3.</span> <span class="toc-text">多次观测</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E4%BA%8C%E5%85%83%E7%A1%AE%E7%9F%A5%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%A3%80%E6%B5%8B"><span class="toc-number">1.7.2.</span> <span class="toc-text">7.2 二元确知信号的检测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%8E%A5%E6%94%B6%E6%9C%BA%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.7.2.1.</span> <span class="toc-text">相关接收机模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E9%9A%8F%E6%9C%BA%E7%9B%B8%E4%BD%8D%E4%BF%A1%E5%8F%B7%E6%A3%80%E6%B5%8B"><span class="toc-number">1.7.3.</span> <span class="toc-text">7.3 随机相位信号检测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E6%8E%A5%E6%94%B6%E6%9C%BA%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.7.3.1.</span> <span class="toc-text">正交接收机模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E5%87%86%E6%9C%80%E4%BD%B3%E6%8E%A5%E5%8F%97"><span class="toc-number">1.7.4.</span> <span class="toc-text">7.4 准最佳接受</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%B8%A6%E9%80%9A%E4%BC%A0%E8%BE%93"><span class="toc-number">1.8.</span> <span class="toc-text">第八章 数字信号的带通传输</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%B9%85%E5%BA%A6%E9%94%AE%E6%8E%A7-2ASK"><span class="toc-number">1.8.1.</span> <span class="toc-text">8.1 二进制幅度键控(2ASK)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-1"><span class="toc-number">1.8.1.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-1"><span class="toc-number">1.8.1.2.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%A2%91%E7%A7%BB%E9%94%AE%E6%8E%A7-2FSK"><span class="toc-number">1.8.2.</span> <span class="toc-text">8.2 二进制频移键控(2FSK)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-2"><span class="toc-number">1.8.2.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E8%BF%9E%E7%BB%AD%E8%B0%83%E5%88%B6%E2%80%94%E2%80%94%E8%BD%BD%E6%B3%A2%E8%B0%83%E9%A2%91%E6%B3%95"><span class="toc-number">1.8.2.2.</span> <span class="toc-text">相位连续调制——载波调频法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-2"><span class="toc-number">1.8.2.3.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%A7%BB%E7%9B%B8%E9%94%AE%E6%8E%A7-2PSK%E3%80%812DPSK"><span class="toc-number">1.8.3.</span> <span class="toc-text">8.3 二进制移相键控(2PSK、2DPSK)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2PSK"><span class="toc-number">1.8.3.1.</span> <span class="toc-text">2PSK</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-3"><span class="toc-number">1.8.3.1.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-3"><span class="toc-number">1.8.3.1.2.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2DPSK"><span class="toc-number">1.8.3.2.</span> <span class="toc-text">2DPSK</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-4"><span class="toc-number">1.8.3.2.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-4"><span class="toc-number">1.8.3.2.2.</span> <span class="toc-text">解调</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-%E5%9B%9B%E7%9B%B8%E7%A7%BB%E7%9B%B8%E9%94%AE%E6%8E%A7-QPSK%E3%80%81QDPSK"><span class="toc-number">1.8.4.</span> <span class="toc-text">8.4 四相移相键控(QPSK、QDPSK)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#QPSK"><span class="toc-number">1.8.4.1.</span> <span class="toc-text">QPSK</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-5"><span class="toc-number">1.8.4.1.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-5"><span class="toc-number">1.8.4.1.2.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#QDPSK"><span class="toc-number">1.8.4.2.</span> <span class="toc-text">QDPSK</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-6"><span class="toc-number">1.8.4.2.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-6"><span class="toc-number">1.8.4.2.2.</span> <span class="toc-text">解调</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-%E6%AD%A3%E4%BA%A4%E6%8C%AF%E5%B9%85%E8%B0%83%E5%88%B6-QAM"><span class="toc-number">1.8.5.</span> <span class="toc-text">8.5 正交振幅调制(QAM)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-7"><span class="toc-number">1.8.5.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-7"><span class="toc-number">1.8.5.2.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6-%E6%9C%80%E5%B0%8F%E9%A2%91%E7%A7%BB%E9%94%AE%E6%8E%A7-MSK"><span class="toc-number">1.8.6.</span> <span class="toc-text">8.6 最小频移键控(MSK)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-8"><span class="toc-number">1.8.6.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-8"><span class="toc-number">1.8.6.2.</span> <span class="toc-text">解调</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E5%90%8C%E6%AD%A5"><span class="toc-number">1.9.</span> <span class="toc-text">第九章 同步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-%E8%BD%BD%E6%B3%A2%E5%90%8C%E6%AD%A5"><span class="toc-number">1.9.1.</span> <span class="toc-text">9.1 载波同步</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E5%AF%BC%E9%A2%91%E6%B3%95"><span class="toc-number">1.9.1.1.</span> <span class="toc-text">插入导频法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AA%84%E5%B8%A6%E6%BB%A4%E6%B3%A2"><span class="toc-number">1.9.1.1.1.</span> <span class="toc-text">窄带滤波</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PLL"><span class="toc-number">1.9.1.1.2.</span> <span class="toc-text">PLL</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%B3%95"><span class="toc-number">1.9.1.2.</span> <span class="toc-text">直接法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B9%B3%E6%96%B9%E5%8F%98%E6%8D%A2%E6%B3%95"><span class="toc-number">1.9.1.2.1.</span> <span class="toc-text">平方变换法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Costas%E7%8E%AF"><span class="toc-number">1.9.1.2.2.</span> <span class="toc-text">Costas环</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-%E7%A0%81%E5%85%83%E5%90%8C%E6%AD%A5"><span class="toc-number">1.9.2.</span> <span class="toc-text">9.2 码元同步</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E6%B3%95"><span class="toc-number">1.9.2.0.1.</span> <span class="toc-text">非线性变换法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E9%94%81%E7%9B%B8%E7%8E%AF"><span class="toc-number">1.9.2.0.2.</span> <span class="toc-text">数字锁相环</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-3-%E5%B8%A7%E5%90%8C%E6%AD%A5"><span class="toc-number">1.9.3.</span> <span class="toc-text">9.3 帧同步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%E7%BC%96%E7%A0%81"><span class="toc-number">1.10.</span> <span class="toc-text">第十章 差错控制编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%E7%BC%96%E7%A0%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.10.1.</span> <span class="toc-text">10.1 差错控制编码的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-%E7%BA%A0%E9%94%99%E7%BC%96%E7%A0%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-number">1.10.2.</span> <span class="toc-text">10.2 纠错编码的基本原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E7%9A%84%E7%AE%80%E5%8D%95%E7%BC%96%E7%A0%81"><span class="toc-number">1.10.3.</span> <span class="toc-text">10.3 几种常用的简单编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%87%E5%81%B6%E7%9B%91%E7%9D%A3%E7%A0%81"><span class="toc-number">1.10.3.1.</span> <span class="toc-text">奇偶监督码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%A5%87%E5%81%B6%E7%9B%91%E7%9D%A3%E7%A0%81"><span class="toc-number">1.10.3.2.</span> <span class="toc-text">水平垂直奇偶监督码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%81%92%E6%AF%94%E7%A0%81"><span class="toc-number">1.10.3.3.</span> <span class="toc-text">恒比码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4-%E7%BA%BF%E6%80%A7%E5%88%86%E7%BB%84%E7%A0%81"><span class="toc-number">1.10.4.</span> <span class="toc-text">10.4 线性分组码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%89%E6%98%8E%E7%A0%81"><span class="toc-number">1.10.4.1.</span> <span class="toc-text">汉明码</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="同向双指针（滑动窗口）"><img src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="同向双指针（滑动窗口）"/></a><div class="content"><a class="title" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="同向双指针（滑动窗口）">同向双指针（滑动窗口）</a><time datetime="2025-03-23T04:00:00.000Z" title="发表于 2025-03-23 12:00:00">2025-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找"><img src="/img/cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="二分查找"/></a><div class="content"><a class="title" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找">二分查找</a><time datetime="2025-03-23T04:00:00.000Z" title="发表于 2025-03-23 12:00:00">2025-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88/" title="相向双指针"><img src="/img/cover9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="相向双指针"/></a><div class="content"><a class="title" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88/" title="相向双指针">相向双指针</a><time datetime="2025-03-23T04:00:00.000Z" title="发表于 2025-03-23 12:00:00">2025-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/17/Web/Vue/Vue/" title="Vue"><img src="/img/cover5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue"/></a><div class="content"><a class="title" href="/2025/03/17/Web/Vue/Vue/" title="Vue">Vue</a><time datetime="2025-03-17T15:15:35.612Z" title="发表于 2025-03-17 23:15:35">2025-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/14/Web/SpringBoot/MyBatis/" title="MyBatis"><img src="/img/cover2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MyBatis"/></a><div class="content"><a class="title" href="/2025/03/14/Web/SpringBoot/MyBatis/" title="MyBatis">MyBatis</a><time datetime="2025-03-14T04:00:00.000Z" title="发表于 2025-03-14 12:00:00">2025-03-14</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Eternity</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://eternity0126.top">Eternity</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://eternity0126.top/2023/09/10/Curriculum/Communicationtheory/">http://eternity0126.top/2023/09/10/Curriculum/Communicationtheory/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://eternity0126.top" target="_blank">Eternity's Blog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/bg.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/09/10/Curriculum/DSP/" title="数字信号处理"><img class="cover" src="/img/bg.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">数字信号处理</div></div><div class="info-2"><div class="info-item-1">数字信号处理笔记</div></div></div></a><a class="pagination-related" href="/2022/06/15/DeepLearning/Pytorch/" title="Python语法与Pytorch基础"><img class="cover" src="/img/cover9.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Python语法与Pytorch基础</div></div><div class="info-2"><div class="info-item-1">Pytorch的相关笔记</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Eternity</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/eternity0126"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://eternity0126.github.io/atom.xml" target="_blank" title=""><i class="fas fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">通信原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA"><span class="toc-number">1.1.</span> <span class="toc-text">第一章 通信系统概论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">通信系统的模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">通信系统的组成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E9%80%9A%E4%BF%A1%E5%92%8C%E6%95%B0%E5%AD%97%E9%80%9A%E4%BF%A1"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">模拟通信和数字通信</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%B4%A8%E9%87%8F%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.2.</span> <span class="toc-text">通信系统的质量指标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%B4%A8%E9%87%8F%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">数字通信系统的质量指标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%9A%84%E5%BA%A6%E9%87%8F"><span class="toc-number">1.1.3.</span> <span class="toc-text">信息的度量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E4%B8%8E%E4%BF%A1%E9%81%93%E5%AE%B9%E9%87%8F"><span class="toc-number">1.1.4.</span> <span class="toc-text">信道与信道容量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E9%81%93"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">信道</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E4%BF%A1%E9%81%93"><span class="toc-number">1.1.4.1.1.</span> <span class="toc-text">编码信道</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6%E4%BF%A1%E9%81%93"><span class="toc-number">1.1.4.1.2.</span> <span class="toc-text">调制信道</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%81%92%E5%8F%82%E4%BF%A1%E9%81%93"><span class="toc-number">1.1.4.1.3.</span> <span class="toc-text">恒参信道</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%98%E5%8F%82%E4%BF%A1%E9%81%93"><span class="toc-number">1.1.4.1.4.</span> <span class="toc-text">变参信道</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%AE%B9%E9%87%8F"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">信道容量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E5%92%8C%E5%99%AA%E5%A3%B0"><span class="toc-number">1.2.</span> <span class="toc-text">第二章 随机信号和噪声</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.1.</span> <span class="toc-text">随机过程的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">随机过程的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">随机过程的概率分布函数和概率密度函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">随机过程的数字特征</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%B9%B3%E7%A8%B3%E6%80%A7%E4%B8%8E%E5%90%84%E6%80%81%E9%81%8D%E5%8E%86%E6%80%A7"><span class="toc-number">1.2.2.</span> <span class="toc-text">随机过程的平稳性与各态遍历性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%B9%B3%E7%A8%B3%E6%80%A7"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">随机过程的平稳性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">广义平稳随机过程相关函数的性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%90%84%E6%80%81%E9%81%8D%E5%8E%86%E6%80%A7"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">随机过程的各态遍历性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6"><span class="toc-number">1.2.3.</span> <span class="toc-text">随机过程的功率谱密度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">功率谱密度的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6%E4%B8%8E%E8%87%AA%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">功率谱密度与自相关函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">功率谱密度的性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%97%B6%E9%97%B4"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">相关时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E7%8E%87%E8%B0%B1%E7%AD%89%E6%95%88%E5%B8%A6%E5%AE%BD"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">功率谱等效带宽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%92%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">互功率谱密度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E5%AF%B9%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%93%8D%E5%BA%94"><span class="toc-number">1.2.4.</span> <span class="toc-text">线性系统对随机信号的响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E8%BF%87%E7%A8%8B%E5%92%8C%E7%99%BD%E5%99%AA%E5%A3%B0%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.5.</span> <span class="toc-text">高斯过程和白噪声过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">高斯过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%99%BD%E5%99%AA%E5%A3%B0%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">白噪声过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AA%84%E5%B8%A6%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.6.</span> <span class="toc-text">窄带随机过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AA%84%E5%B8%A6%E5%B9%B3%E7%A8%B3%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%9A%84%E6%AD%A3%E4%BA%A4%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">窄带平稳随机过程的正交表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AA%84%E5%B8%A6%E9%AB%98%E6%96%AF%E8%BF%87%E7%A8%8B%E7%9A%84%E5%8C%85%E7%BB%9C%E7%9B%B8%E4%BD%8D%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">窄带高斯过程的包络相位表示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%BC%A6%E4%BF%A1%E5%8F%B7%E4%B8%8E%E7%AA%84%E5%B8%A6%E4%BF%A1%E5%8F%B7"><span class="toc-number">1.2.7.</span> <span class="toc-text">正弦信号与窄带信号</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E6%A8%A1%E6%8B%9F%E8%B0%83%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.</span> <span class="toc-text">第三章 模拟调制系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%85%E5%BA%A6%E8%B0%83%E5%88%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">幅度调制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E8%BE%B9%E5%B8%A6%E8%B0%83%E5%88%B6-DSB"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">双边带调制(DSB)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%AF%E5%B9%85%E8%B0%83%E5%88%B6-AM"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">振幅调制(AM)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E8%BE%B9%E5%B8%A6%E8%B0%83%E5%88%B6-SSB"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">单边带调制(SSB)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AE%8B%E7%95%99%E8%BE%B9%E5%B8%A6%E8%B0%83%E5%88%B6-VSB"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">残留边带调制(VSB)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%85%E5%BA%A6%E8%B0%83%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8A%97%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD"><span class="toc-number">1.3.2.</span> <span class="toc-text">幅度调制系统的抗噪声性能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DSB%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8A%97%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">DSB系统的抗噪声性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSB%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8A%97%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">SSB系统的抗噪声性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AM%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%8A%97%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">AM系统的抗噪声性能</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%BA%A6%E8%B0%83%E5%88%B6"><span class="toc-number">1.3.3.</span> <span class="toc-text">角度调制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%91%E7%8E%87%E8%B0%83%E5%88%B6-FM"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">频率调制(FM)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6"><span class="toc-number">1.3.3.1.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E5%88%86%E6%9E%90"><span class="toc-number">1.3.3.1.2.</span> <span class="toc-text">频谱分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FM%E4%BF%A1%E5%8F%B7%E7%9A%84%E4%BA%A7%E7%94%9F"><span class="toc-number">1.3.3.1.3.</span> <span class="toc-text">FM信号的产生</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83"><span class="toc-number">1.3.3.1.4.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E8%B0%83%E5%88%B6"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">相位调制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%BA%A6%E8%B0%83%E5%88%B6%E7%9A%84%E6%8A%97%E5%99%AA%E5%A3%B0%E6%80%A7%E8%83%BD"><span class="toc-number">1.3.4.</span> <span class="toc-text">角度调制的抗噪声性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E5%88%86%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8-FDM"><span class="toc-number">1.3.5.</span> <span class="toc-text">频分多路复用(FDM)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%95%B0%E5%AD%97%E4%BC%A0%E8%BE%93"><span class="toc-number">1.4.</span> <span class="toc-text">第四章 模拟信号的数字传输</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%8F%96%E6%A0%B7"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1 模拟信号的取样</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8E%E9%80%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%8F%96%E6%A0%B7"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">低通信号的取样</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A6%E9%80%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%8F%96%E6%A0%B7"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">带通信号的取样</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7%E7%9A%84%E9%87%8F%E5%8C%96"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2 模拟信号的量化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%87%E5%8C%80%E9%87%8F%E5%8C%96"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">均匀量化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E5%9D%87%E5%8C%80%E9%87%8F%E5%8C%96"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">非均匀量化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E7%BC%96%E7%A0%81"><span class="toc-number">1.4.3.</span> <span class="toc-text">4.3 编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A87-6%E7%9A%8413%E6%8A%98%E7%BA%BF%E8%BF%91%E4%BC%BC"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">A87.6的13折线近似</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-PCM%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.4.4.</span> <span class="toc-text">4.4 PCM通信系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E6%8C%87%E6%A0%87"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">传输指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">时分复用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E5%A2%9E%E9%87%8F%E8%B0%83%E5%88%B6"><span class="toc-number">1.4.5.</span> <span class="toc-text">4.5 增量调制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%95%B0%E5%AD%97%E5%9F%BA%E5%B8%A6%E4%BC%A0%E8%BE%93"><span class="toc-number">1.5.</span> <span class="toc-text">第五章 数字基带传输</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E6%95%B0%E5%AD%97%E5%9F%BA%E5%B8%A6%E4%BC%A0%E8%BE%93%E7%9A%84%E5%B8%B8%E7%94%A8%E7%A0%81%E5%9E%8B"><span class="toc-number">1.5.1.</span> <span class="toc-text">5.1 数字基带传输的常用码型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%A0%81%E5%9E%8B"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">基本码型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E7%A0%81"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">差分码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AMI%E7%A0%81"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">AMI码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HDB-3-%E7%A0%81"><span class="toc-number">1.5.1.4.</span> <span class="toc-text">$HDB_3$码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Manchester%E7%A0%81"><span class="toc-number">1.5.1.5.</span> <span class="toc-text">Manchester码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Miller%E7%A0%81"><span class="toc-number">1.5.1.6.</span> <span class="toc-text">Miller码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E6%95%B0%E5%AD%97%E5%9F%BA%E5%B8%A6%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%8A%9F%E7%8E%87%E8%B0%B1%E5%AF%86%E5%BA%A6"><span class="toc-number">1.5.2.</span> <span class="toc-text">5.2 数字基带信号的功率谱密度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%9A%8F%E6%9C%BA%E5%9F%BA%E5%B8%A6%E8%84%89%E5%86%B2%E5%BA%8F%E5%88%97%E7%9A%84%E5%8A%9F%E7%8E%87%E8%B0%B1"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">二进制随机基带脉冲序列的功率谱</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E4%B8%AD%E7%9A%84%E7%A0%81%E9%97%B4%E4%B8%B2%E6%89%B0"><span class="toc-number">1.5.3.</span> <span class="toc-text">5.3 数据传输中的码间串扰</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-%E6%97%A0ISI%E5%B8%A6%E9%99%90%E4%BF%A1%E5%8F%B7%E8%AE%BE%E8%AE%A1%E2%80%94%E2%80%94Nyquist%E7%AC%AC%E4%B8%80%E5%87%86%E5%88%99"><span class="toc-number">1.5.4.</span> <span class="toc-text">5.4 无ISI带限信号设计——Nyquist第一准则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Nyquist%E7%AC%AC%E4%B8%80%E5%87%86%E5%88%99"><span class="toc-number">1.5.4.1.</span> <span class="toc-text">Nyquist第一准则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%87%E4%BD%99%E5%BC%A6%E8%B0%B1"><span class="toc-number">1.5.4.2.</span> <span class="toc-text">升余弦谱</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-%E9%83%A8%E5%88%86%E5%93%8D%E5%BA%94%E4%BF%A1%E5%8F%B7%E2%80%94%E2%80%94Nyquist%E7%AC%AC%E4%BA%8C%E5%87%86%E5%88%99"><span class="toc-number">1.5.5.</span> <span class="toc-text">5.5 部分响应信号——Nyquist第二准则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.5.5.1.</span> <span class="toc-text">双二进制系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%AD%A3%E5%8F%8C%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.5.5.2.</span> <span class="toc-text">修正双二进制系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E9%83%A8%E5%88%86%E5%93%8D%E5%BA%94%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.5.5.3.</span> <span class="toc-text">一般部分响应系统</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-6-%E6%9C%80%E4%BD%B3%E4%BC%A0%E8%BE%93%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.5.6.</span> <span class="toc-text">5.6 最佳传输系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-7-%E5%9D%87%E8%A1%A1%E5%99%A8"><span class="toc-number">1.5.7.</span> <span class="toc-text">5.7 均衡器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%8C%B9%E9%85%8D%E6%BB%A4%E6%B3%A2%E5%99%A8"><span class="toc-number">1.6.</span> <span class="toc-text">第六章 匹配滤波器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E6%9C%80%E5%A4%A7%E4%BF%A1%E5%99%AA%E6%AF%94%E5%87%86%E5%88%99%E2%80%94%E2%80%94MF%E7%9A%84%E5%AF%BC%E5%87%BA"><span class="toc-number">1.6.1.</span> <span class="toc-text">6.1 最大信噪比准则——MF的导出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-MF%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.6.2.</span> <span class="toc-text">6.2 MF的性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MF%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">MF的设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MF%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">1.6.2.2.</span> <span class="toc-text">MF的性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MF%E7%9A%84%E8%BE%93%E5%87%BA%E5%99%AA%E5%A3%B0"><span class="toc-number">1.6.2.3.</span> <span class="toc-text">MF的输出噪声</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-MF%E7%9A%84%E8%AE%A1%E7%AE%97%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.6.3.</span> <span class="toc-text">6.3 MF的计算举例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A9%E5%BD%A2%E8%84%89%E5%86%B2%E7%9A%84MF"><span class="toc-number">1.6.3.1.</span> <span class="toc-text">矩形脉冲的MF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%84%E9%A2%91%E8%84%89%E5%86%B2%E7%9A%84MF"><span class="toc-number">1.6.3.2.</span> <span class="toc-text">射频脉冲的MF</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E5%B0%86%E8%89%B2%E5%99%AA%E5%A3%B0%E8%BD%AC%E5%8C%96%E4%B8%BA%E7%99%BD%E5%99%AA%E5%A3%B0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.4.</span> <span class="toc-text">6.4 将色噪声转化为白噪声的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%9C%80%E4%BD%B3%E6%8E%A5%E6%94%B6"><span class="toc-number">1.7.</span> <span class="toc-text">第七章 最佳接收</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E5%88%A4%E5%86%B3%E7%90%86%E8%AE%BA"><span class="toc-number">1.7.1.</span> <span class="toc-text">7.1 判决理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%90%8E%E9%AA%8C%E4%B8%8E%E6%9C%80%E5%B0%8F%E5%B7%AE%E9%94%99%E6%A6%82%E7%8E%87%E5%87%86%E5%88%99"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">最大后验与最小差错概率准则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E6%AC%A1%E8%A7%82%E6%B5%8B"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">单次观测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E6%AC%A1%E8%A7%82%E6%B5%8B"><span class="toc-number">1.7.1.3.</span> <span class="toc-text">多次观测</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E4%BA%8C%E5%85%83%E7%A1%AE%E7%9F%A5%E4%BF%A1%E5%8F%B7%E7%9A%84%E6%A3%80%E6%B5%8B"><span class="toc-number">1.7.2.</span> <span class="toc-text">7.2 二元确知信号的检测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%8E%A5%E6%94%B6%E6%9C%BA%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.7.2.1.</span> <span class="toc-text">相关接收机模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E9%9A%8F%E6%9C%BA%E7%9B%B8%E4%BD%8D%E4%BF%A1%E5%8F%B7%E6%A3%80%E6%B5%8B"><span class="toc-number">1.7.3.</span> <span class="toc-text">7.3 随机相位信号检测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E6%8E%A5%E6%94%B6%E6%9C%BA%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.7.3.1.</span> <span class="toc-text">正交接收机模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E5%87%86%E6%9C%80%E4%BD%B3%E6%8E%A5%E5%8F%97"><span class="toc-number">1.7.4.</span> <span class="toc-text">7.4 准最佳接受</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%B8%A6%E9%80%9A%E4%BC%A0%E8%BE%93"><span class="toc-number">1.8.</span> <span class="toc-text">第八章 数字信号的带通传输</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%B9%85%E5%BA%A6%E9%94%AE%E6%8E%A7-2ASK"><span class="toc-number">1.8.1.</span> <span class="toc-text">8.1 二进制幅度键控(2ASK)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-1"><span class="toc-number">1.8.1.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-1"><span class="toc-number">1.8.1.2.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-2-%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%A2%91%E7%A7%BB%E9%94%AE%E6%8E%A7-2FSK"><span class="toc-number">1.8.2.</span> <span class="toc-text">8.2 二进制频移键控(2FSK)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-2"><span class="toc-number">1.8.2.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E8%BF%9E%E7%BB%AD%E8%B0%83%E5%88%B6%E2%80%94%E2%80%94%E8%BD%BD%E6%B3%A2%E8%B0%83%E9%A2%91%E6%B3%95"><span class="toc-number">1.8.2.2.</span> <span class="toc-text">相位连续调制——载波调频法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-2"><span class="toc-number">1.8.2.3.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3-%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%A7%BB%E7%9B%B8%E9%94%AE%E6%8E%A7-2PSK%E3%80%812DPSK"><span class="toc-number">1.8.3.</span> <span class="toc-text">8.3 二进制移相键控(2PSK、2DPSK)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2PSK"><span class="toc-number">1.8.3.1.</span> <span class="toc-text">2PSK</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-3"><span class="toc-number">1.8.3.1.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-3"><span class="toc-number">1.8.3.1.2.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2DPSK"><span class="toc-number">1.8.3.2.</span> <span class="toc-text">2DPSK</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-4"><span class="toc-number">1.8.3.2.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-4"><span class="toc-number">1.8.3.2.2.</span> <span class="toc-text">解调</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-%E5%9B%9B%E7%9B%B8%E7%A7%BB%E7%9B%B8%E9%94%AE%E6%8E%A7-QPSK%E3%80%81QDPSK"><span class="toc-number">1.8.4.</span> <span class="toc-text">8.4 四相移相键控(QPSK、QDPSK)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#QPSK"><span class="toc-number">1.8.4.1.</span> <span class="toc-text">QPSK</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-5"><span class="toc-number">1.8.4.1.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-5"><span class="toc-number">1.8.4.1.2.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#QDPSK"><span class="toc-number">1.8.4.2.</span> <span class="toc-text">QDPSK</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-6"><span class="toc-number">1.8.4.2.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-6"><span class="toc-number">1.8.4.2.2.</span> <span class="toc-text">解调</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-%E6%AD%A3%E4%BA%A4%E6%8C%AF%E5%B9%85%E8%B0%83%E5%88%B6-QAM"><span class="toc-number">1.8.5.</span> <span class="toc-text">8.5 正交振幅调制(QAM)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-7"><span class="toc-number">1.8.5.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-7"><span class="toc-number">1.8.5.2.</span> <span class="toc-text">解调</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6-%E6%9C%80%E5%B0%8F%E9%A2%91%E7%A7%BB%E9%94%AE%E6%8E%A7-MSK"><span class="toc-number">1.8.6.</span> <span class="toc-text">8.6 最小频移键控(MSK)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%88%B6-8"><span class="toc-number">1.8.6.1.</span> <span class="toc-text">调制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E8%B0%83-8"><span class="toc-number">1.8.6.2.</span> <span class="toc-text">解调</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E5%90%8C%E6%AD%A5"><span class="toc-number">1.9.</span> <span class="toc-text">第九章 同步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-%E8%BD%BD%E6%B3%A2%E5%90%8C%E6%AD%A5"><span class="toc-number">1.9.1.</span> <span class="toc-text">9.1 载波同步</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E5%AF%BC%E9%A2%91%E6%B3%95"><span class="toc-number">1.9.1.1.</span> <span class="toc-text">插入导频法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AA%84%E5%B8%A6%E6%BB%A4%E6%B3%A2"><span class="toc-number">1.9.1.1.1.</span> <span class="toc-text">窄带滤波</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PLL"><span class="toc-number">1.9.1.1.2.</span> <span class="toc-text">PLL</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%B3%95"><span class="toc-number">1.9.1.2.</span> <span class="toc-text">直接法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B9%B3%E6%96%B9%E5%8F%98%E6%8D%A2%E6%B3%95"><span class="toc-number">1.9.1.2.1.</span> <span class="toc-text">平方变换法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Costas%E7%8E%AF"><span class="toc-number">1.9.1.2.2.</span> <span class="toc-text">Costas环</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-%E7%A0%81%E5%85%83%E5%90%8C%E6%AD%A5"><span class="toc-number">1.9.2.</span> <span class="toc-text">9.2 码元同步</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E6%B3%95"><span class="toc-number">1.9.2.0.1.</span> <span class="toc-text">非线性变换法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E9%94%81%E7%9B%B8%E7%8E%AF"><span class="toc-number">1.9.2.0.2.</span> <span class="toc-text">数字锁相环</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-3-%E5%B8%A7%E5%90%8C%E6%AD%A5"><span class="toc-number">1.9.3.</span> <span class="toc-text">9.3 帧同步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%E7%BC%96%E7%A0%81"><span class="toc-number">1.10.</span> <span class="toc-text">第十章 差错控制编码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-%E5%B7%AE%E9%94%99%E6%8E%A7%E5%88%B6%E7%BC%96%E7%A0%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.10.1.</span> <span class="toc-text">10.1 差错控制编码的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-%E7%BA%A0%E9%94%99%E7%BC%96%E7%A0%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-number">1.10.2.</span> <span class="toc-text">10.2 纠错编码的基本原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-3-%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E7%9A%84%E7%AE%80%E5%8D%95%E7%BC%96%E7%A0%81"><span class="toc-number">1.10.3.</span> <span class="toc-text">10.3 几种常用的简单编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%87%E5%81%B6%E7%9B%91%E7%9D%A3%E7%A0%81"><span class="toc-number">1.10.3.1.</span> <span class="toc-text">奇偶监督码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%A5%87%E5%81%B6%E7%9B%91%E7%9D%A3%E7%A0%81"><span class="toc-number">1.10.3.2.</span> <span class="toc-text">水平垂直奇偶监督码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%81%92%E6%AF%94%E7%A0%81"><span class="toc-number">1.10.3.3.</span> <span class="toc-text">恒比码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4-%E7%BA%BF%E6%80%A7%E5%88%86%E7%BB%84%E7%A0%81"><span class="toc-number">1.10.4.</span> <span class="toc-text">10.4 线性分组码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%89%E6%98%8E%E7%A0%81"><span class="toc-number">1.10.4.1.</span> <span class="toc-text">汉明码</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/08/12/DeepLearning/LoRA/" title="LoRA"><img src="/img/cover9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LoRA"/></a><div class="content"><a class="title" href="/2025/08/12/DeepLearning/LoRA/" title="LoRA">LoRA</a><time datetime="2025-08-12T04:00:00.000Z" title="发表于 2025-08-12 12:00:00">2025-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找"><img src="/img/cover7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="二分查找"/></a><div class="content"><a class="title" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" title="二分查找">二分查找</a><time datetime="2025-03-23T04:00:00.000Z" title="发表于 2025-03-23 12:00:00">2025-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="同向双指针（滑动窗口）"><img src="/img/cover8.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="同向双指针（滑动窗口）"/></a><div class="content"><a class="title" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" title="同向双指针（滑动窗口）">同向双指针（滑动窗口）</a><time datetime="2025-03-23T04:00:00.000Z" title="发表于 2025-03-23 12:00:00">2025-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88/" title="相向双指针"><img src="/img/cover9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="相向双指针"/></a><div class="content"><a class="title" href="/2025/03/23/%E7%AE%97%E6%B3%95/%E7%9B%B8%E5%90%91%E5%8F%8C%E6%8C%87%E9%92%88/" title="相向双指针">相向双指针</a><time datetime="2025-03-23T04:00:00.000Z" title="发表于 2025-03-23 12:00:00">2025-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/03/17/Web/Vue/Vue/" title="Vue"><img src="/img/cover5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue"/></a><div class="content"><a class="title" href="/2025/03/17/Web/Vue/Vue/" title="Vue">Vue</a><time datetime="2025-03-17T15:15:35.612Z" title="发表于 2025-03-17 23:15:35">2025-03-17</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Eternity</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
   const loadMathjax = () => {
     if (!window.MathJax) {
       window.MathJax = {
